@@ -1,0 +1,130 @@
+Duncan Gans and Kyle Morrison
+Lab 13
+
+Data Set 1
+
+1. Effect of baseball statistics on Win-Loss Ratio of a baseball team
+
+2. seanlahmann.com.baseball-archive/statistics
+
+3. Examples: 996
+Attributes: Various baseball team statistics such as Hits, Runs, Team ERA,
+Bases on Balls. Likely 10-15 of these depending on how many we'd like to use.
+Our class attribute would be the rank of the given season, which is a number
+that is 1, 2, 3, 4, 5, or 6. 
+Type of Data: ints
+Missing Data: No missing values
+
+4. The data set includes s large series of different team statistics that could
+plausibly have an impact on the success of a team. We would then compare it to 
+the success of a team (rank within a division at the end of a year). This would
+be interesting because it is very real world, all the data exists, and as a
+baseball fan, it is interesting.
+
+5. It should be very easy to implement. All of the data is already there and is
+in nice excel format with no missing data. The data is clearly meant to be used
+for statistical learners. That said, I'm sure we'll run into some problems. (:
+
+I think it is highly likely we will use this data set for project 2.
+
+Data Set 2
+
+1. Effect of economic policy on life expectancy
+
+2. worldbank.org, more specifically the economic policy sections and life
+ expectancy
+
+3. Examples: 20, ideally
+Attributes: 5 different economic indicators, and life expectancies for 
+20 countries.
+Type of data: Ints.
+Missing data: Potentially there will be some, but we'll try to use countries
+that have data for all of these attributes
+
+4. This data set includes several different economic indicators from 20
+different countries along with life expectancy. It is interesting because
+it could be neat to see how these economic statistics correlate with life
+expectancy
+
+5. This could be really easy to do for project 2 because all of the pieces
+of data are ints including the final class attribute. It would be very easy
+to integrate with different methods. I don't see it being all that akward.
+We would have to preprocess the class attributes to be in quintiles or 
+something because otherwise you couldn't predict it very well.
+
+Data Set 3: 
+
+1. Effect of education parameters on income distribution
+
+2. worldbank.org, more specifically the education sections and GINI index 
+statistics to show income distribution.
+
+3. Examples: 20
+Attributes: 9 different education indicators, and GINI indices for 20 countries
+Type of Data: Ints
+Missing Data: Potentially there will be some, but we'll try to use countries
+that have data for all of these attributes
+
+4. This data set would include several diffferent economic indicators to get 
+an idea of the education system of a country, and then see its effect on income
+distribution. I think it would be intruiging to see the effect of education on
+income distribution
+
+5. This could be really easy to do for project 2 because all of the pieces
+of data are ints including the final class attribute. It would be very easy
+to integrate with different methods. I don't see it being all that akward.
+We would have to preprocess the class attributes to be in quintiles or 
+something because otherwise you couldn't predict it very well.
+
+Data Set 4:
+
+1. Effect of health on GDP
+
+2. worldbank.org, more specifically the health sections and GDP index 
+per capita statistics to show economic prosperity.
+
+3. Examples: 20
+Attributes: 14 different health indicators, and GDP indices for 20 countries
+Type of Data: Ints
+Missing Data: Potentially there will be some, but we'll try to use countries
+that have data for all of these attributes
+
+4. This data set would include several diffferent health indicators to get
+an idea of the overall health of a country, and then see its effect on the GDP
+per capita, or wealth of a country. I think it could be valuable to see the 
+effect of health on wealth.
+
+5. This could be really easy to do for project 2 because all of the pieces
+of data are ints including the final class attribute. It would be very easy
+to integrate with different methods. I don't see it being all that akward
+except for initially combining all of the data.
+We would have to preprocess the class attributes to be in quintiles or 
+something because otherwise you couldn't predict it very well.
+
+Data Set 5:
+
+1. Effect of education on proportion of congressional seats held by women
+at the highest level of government
+
+2. worldbank.org, more specifically the education sections and the statistic
+for the amount of seats held by women.  
+
+3. Examples: 20
+Attributes: 11 different education indicators, and proportion of seats held
+by women for 20 countries
+Type of Data: Ints
+Missing Data: Potentially there will be some, but we'll try to use countries
+that have data for all of these attributes
+
+4. This data set would include several different education indicators to get
+an idea of the education system of a country, and then see its effect on 
+proportions of seats held by women in a country. This could give some semblance
+of an idea of how education can effect gender equality.
+
+5. This could be really easy to do for project 2 because all of the pieces
+of data are ints including the final class attribute. It would be very easy
+to integrate with different methods. I don't see it being all that akward
+except for initially combining all of the data.
+We would have to preprocess the class attributes to be in quintiles or 
+something because otherwise you couldn't predict it very well.
+

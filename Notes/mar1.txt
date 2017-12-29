@@ -1,0 +1,31 @@
+Models we've learned so far
+
+
+Inputs ->>>  |Model| ->>>> output
+		|________>>> Prediction Yea or Nay
+
+
+
+Neural Nets - Some General Structure
+
+1. No hidden layers - attributes (numeric)
+		Stores Numbers, Passes along signal, Signl is contained
+	-> 0
+	-> 0
+	-> 0	->O ->>> Number Output
+	-> 0
+	-> 0
+		Edges/arcs have a weight to show how important feature is.
+This is the old method without hidden layers	
+
+
+	Mathematically, often want the sum of values coming in to equal 1
+	Range into node: [0 - 1]
+	With binary Task
+		output to be 1 or 0 - A step function
+		   _____________ 1   Threshold that determines 0 or 1
+		   |
+	0 ---------|
+
+
+

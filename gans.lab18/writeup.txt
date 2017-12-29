@@ -1,0 +1,25 @@
+Duncan Gans
+Lab 18 Observations and Questions
+
+1. This is really cool. I'm very surprised at how helpful this is and how 
+simple the grid method is. It obviously takes a lot of time when a lot of
+the computing space is being taken up, but it almost makes all the work
+we did in the previous project obsolete. Honestly, I don't know if this 
+counts as an observation, but despite the time it took, I thought this
+was really really cool.
+
+2. What I thought was interesting was that I had always assumed that adding
+more hidden layers and nodes to those layers unilaterally made a model more
+ efficient and accurate, however with the wine data, the layers that worked 
+the best included 50 nodes whereas with the initial data, it worked best with
+200, which was the maximum amount of nodes, and could have worked better with
+even more nodes.
+
+3. I'm curious if there's a way to visualize or see how more model parameters
+interact with eachother. With just two, it was hard to see how different 
+parameters influenced eachother. I think it could be neat to somehow show 
+and visualize the accuracy of decision trees with variations between 3 pruning
+parameters, and see how one of them can affect another. We were able to see 
+this a bit in our project we did, but using this method, I'm sure you could
+get an even more comprehensive view.
+

@@ -1,0 +1,16 @@
+K-Means clustering
+
+Reminder:
+	When "Clustering" we want to 
+	a. Maximize differences between classes
+	b. minimize differences within classes
+
+K-Means Algorithm
+	1. Number of clusters
+	2. Pick N example at random
+		define "centroid" of cluster
+	3. Put others examples in cluster with the centroid they are closest to
+	4. Redefine the centroid for each cluster	
+		-> Now abstract point
+	5. Repeat 3 (for all examples) and 4
+		until data stops moving/clusters are fixed

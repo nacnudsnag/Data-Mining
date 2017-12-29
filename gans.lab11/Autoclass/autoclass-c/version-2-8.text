@@ -1,0 +1,110 @@
+
+
+	AUTOCLASS C VERSION 2.8 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text -
+        Add new search parameter "read_compact_p", which directs
+        AutoClass to read the "results" and "checkpoint" files in
+        either binary format -- ".results-bin"/".chkpt-bin"
+        (read_compact_p = true); or ascii format -- ".results"/".chkpt"
+        (read_compact_p = false).  The default is read_compact_p = true.
+
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 2.8.
+
+  2. autoclass-c/prog/io-results.c -
+        In "validate_data_pathname", prefer the user supplied file
+        extension, and only attempt to open ".db2", and then
+        ".db2-bin", if no extension (/name.) or an invalid extension
+        is supplied.  Check for presence of '.' in pathname.
+
+        In "validate_results_pathname" prefer the user supplied file
+        extension, and only attempt to open ".result-bin", and then
+        ".results", if no extension (/name.) or an invalid extension
+        is supplied.  Check for presence of '.' in pathname.
+
+        In "make_and_validate_pathname" check for presence of '.' in
+        pathname.
+
+        In "get_clsf_seq" simplify the test for "ascii" or "binary"
+        results file format -- also more portable.
+
+  3. autoclass-c/prog/search-control.c -
+        In "autoclass_search" use make_and_validate_pathname and
+        search parameter "save_compact_p" to determine file extension
+        of "results" file prior to calling validate_results_pathname.
+
+        Add "read_compact_p" search parameter for use in reading
+        "results" and "checkpoint" files.
+
+        Make short search trial printout more portable.
+
+  4. autoclass-c/load-ac; autoclass-c/prog/autoclass.make.*
+        Define make files with -I and -L parameters for SunOS 4.1.3 and
+        change naming convention: .sun. => .sunos. or .solaris.
+        Specifically the files are now --
+        autoclass.make.solaris.cc, autoclass.make.solaris.gcc,
+        autoclass.make.sunos.acc, and autoclass.make.sunos.gcc
+
+  5. autoclass-c/prog/io-read-data.c, autoclass.h -
+        In "translate_discrete", allocate space for translations
+        using (strlen( value) + 1), rather than sizeof(shortstr) --
+        prevents corruption of discrete data translation tables when
+        translations are longer than (SHORT_STRING_LENGTH - 1) = 40
+        characters. In "get_line_tokens" and "read_from_string", add
+        length checking for "form"; make it and length check for
+        "datum_string" explicit.  Increase output string length in
+        "output_created_translations".
+
+  6. autoclass-c/prog/io-read-data.c, autoclass.h -
+        Increase from 3000 to 20000 the value of VERY_LONG_STRING_LENGTH 
+        to handle very large datum lines.
+
+  7. autoclass-c/prog/io-results.c -
+        In VALIDATE_RESULTS_PATHNAME and VALIDATE_DATA_PATHNAME,
+        use binary_file, rather than file, were it is intended.
+
+  8. autoclass-c/prog/intf-reports.c, io-read-data.c, autoclass.h -
+        Increase DATA_ALLOC_INCREMENT from 100 to 1000 for reading very
+        large datasets.  Add DATA_ALLOC_INCREMENT logic of READ_DATA
+        to XREF_GET_DATA.  This will prevent segmentation faults
+        encountered when reading very large .db2 files into the 
+        reports processing function of AutoClass.
+
+  9. autoclass-c/prog/autoclass.make.solaris.cc, autoclass.make.solaris.gcc,
+      autoclass.make.sunos.acc, and autoclass.make.sunos.gcc -
+        Comment out "depend: $(SRCS)", so that all source files are not
+        compiled even when only one file changes.
+
+ 10. autoclass-c/prog/intf-reports.c -
+        In FORMAT_DISCRETE_ATTRIBUTE, do not process attributes with
+        warning or error messages -- this prevents segmentation faults.
+
+        In XREF_GET_DATA, free database allocated memory after it is 
+        transferred into report data structures.  This reduces the
+        amount of memory required when generating reports for very
+        large data bases, and prevents running out of memory. 
+
+        In all functions calling malloc/realloc for dynamic memory
+        allocation, checks have been added to notify the user if
+        memory is exhausted.
+
+ 11. autoclass-c/load-ac & autoclass-c/prog/autoclass.make.hp.cc -
+        Port the "make" file for HP-UX operating system using the
+        bundled "cc" compiler.
+
+
+======================================================================
+
+
+

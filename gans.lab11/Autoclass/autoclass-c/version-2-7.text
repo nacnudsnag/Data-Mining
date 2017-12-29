@@ -1,0 +1,42 @@
+
+
+	AUTOCLASS C VERSION 2.7 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text -
+        Add documentation for search parameter "interactive_p".  This
+        will allow AutoClass to be run as a background task, since it
+        will not be querying standard input for the "quit" character.
+
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 2.7.  Add "G_interactive_p".
+
+  2. autoclass-c/prog/globals.h -
+        Add "G_interactive_p".
+
+  3. autoclass-c/prog/utils.c -
+        In "char_input_test", test for "G_interactive_p" -- if false,
+        do not do the test.
+
+  4. autoclass-c/prog/search-control.c -
+        In "autoclass_search", process "interactive_p" from the
+        search parameters file, and output advisory message if set to
+        false.
+
+  5. autoclass-c/prog/search-control-2.c -
+        In "print_initial_report", notify user that "typing q to quit"
+        is not functional when "interactive_p" = false.
+
+======================================================================
+
+
+

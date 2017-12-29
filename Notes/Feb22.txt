@@ -1,0 +1,26 @@
+DT's Weaknesses
+	"Greedy Approach"
+	1. Local Decision on where to split is not a global decision
+	2. Prone to overfitting data
+
+Alternative:
+	1. Make lots of trees
+		To make different Trees
+			Change data we build the tree with each time
+			"Sampling with replacement"
+			Make new Dataset sampling from the original
+			Get same # of examples -> some duplicates/ some omitted
+	2. Let these trees "Vote"
+		"Voting" 
+			simple: All trees and all data is one particular class
+			trying again:
+				for each data points(testing data)
+				each tree puts that data into a class
+				->but trees might disagree
+			More Likely
+				for a given tree, some probability of example belonging in one class or another
+				Leaf nodes are not "pure"
+			All probabilities are pooled through the voting press
+
+When stuff is random <- like these forest splits -> should not do it just once
+

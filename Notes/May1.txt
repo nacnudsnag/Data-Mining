@@ -1,0 +1,52 @@
+Parameter Sweeps
+	Systematic exploration of parameters
+
+	note: Parameter settings might have non linear affect against
+	other parameters.
+
+	goal: explore different combinations of parameter settings to
+	see how they, when they interact with eachother can affect the
+	classifier
+	
+	slearn has 'grid search'
+		eg. RF, 2 different # of estimates, 2 different depths
+	
+	eg. 				  Depth
+					  100	  200
+
+			#of 	       2   100%   20%	
+			estimators     
+				       5   60%    13%
+
+	Essentially, you test every possible combination that crosses parameter
+	values, that we decide to care about and want to look at.
+
+	Randomized search:
+	
+		"Throw darts" at combinations
+		just sample some of them
+		potentially, more adventurous with parameter settings
+	
+	"Learning Takes Time"
+		x exploration
+		Unix: Run jobs in the background so you don't have to wait.
+
+	When waiting, type in:
+		python3 mycode.py > & output.txt &
+
+	Neural Nets things
+	Digits as example
+	? how many input nodes ?
+	? how many ouput nodes ?
+		
+	With digits, there are 64 inputs, one for each non class attribute, and
+	10 Output nodes, one for each output, i.e. which num it is,
+
+
+	64 nodes connect to all the layers (default is 100) and then outputs to
+	boolean values on one of the ten output nodes. Because of the 
+	complexity, you simply can't learn and adjust all edges adquately with 
+	200 iterations.
+	
+	If one class is underrepresented, weight the minority class, or	
+	sample from the data to get better balance

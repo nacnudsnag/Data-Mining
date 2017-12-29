@@ -1,0 +1,24 @@
+
+
+
+      CROSS REFERENCE   CASE NUMBER => MOST PROBABLE CLASS
+
+
+      AutoClass PREDICTION for the 2 "TEST" cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo-test.db2
+
+      based on the "TRAINING" classification of 98 cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo-train.db2
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.hd2
+      with log-A<X/H> (approximate marginal likelihood) = -691.531
+      from classification results file
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.results-bin
+      and using models
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model - index = 0
+
+
+
+     Case #  Class  Prob         Case #  Class  Prob         Case #  Class  Prob 
+------------------------------------------------------------------------------------------
+          1    1   0.999              2    0   0.848    
+

@@ -1,0 +1,18 @@
+None had a P value of less than .05. 
+
+0 = K value of 1
+1 = K value of 3
+2 = K value of 5
+3 = K value of 7
+4 = K value of 9
+
+The p-value for 0, 1 is 0.7443966143741509
+The p-value for 0, 2 is 0.6108943752692866
+The p-value for 0, 3 is 0.4297096305431762
+The p-value for 0, 4 is 0.2136129979606709
+The p-value for 1, 2 is 0.06856526821177723
+The p-value for 1, 3 is 0.24561987173994076
+The p-value for 1, 4 is 0.12410320106992935
+The p-value for 2, 3 is 0.47188328756988573
+The p-value for 2, 4 is 0.16965207901385548
+The p-value for 3, 4 is 0.1592820942812087

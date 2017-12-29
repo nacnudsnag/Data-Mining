@@ -1,0 +1,564 @@
+
+		GENERAL INFORMATION FOR AUTOCLASS C
+-------------------------------------------------------------------------------
+
+CONTENTS:
+	What Is Autoclass 
+	What Is Autoclass III
+	What Is Autoclass X
+	What Is Autoclass C
+        Update History
+	Compatibility & Porting Considerations
+        Limitations 
+	Building The Autoclass C System
+	Use Of The Autoclass C System
+	Theoretical Questions
+	Technical Questions
+	Implementation Questions
+	References
+
+
+WHAT IS AUTOCLASS:
+
+   AutoClass is an unsupervised Bayesian classification system that seeks a
+   maximum posterior probability classification.
+
+   Key features:
+   - determines the number of classes automatically;
+   - can use mixed discrete and real valued data;
+   - can handle missing values;
+   - processing time is roughly linear in the amount of the data;
+   - cases have probabilistic class membership;
+   - allows correlation between attributes within a class; 
+   - generates reports describing the classes found; and
+   - predicts "test" case class memberships from a "training"
+     classification.
+
+   Inputs consist of a database of attribute vectors (cases), either real or 
+   discrete valued, and a class model.  Default class models are provided.  
+   AutoClass finds the set of classes that is maximally probable with respect 
+   to the data and model.  The output is a set of class descriptions, and 
+   partial membership of the cases in the classes.
+
+   For more details see "Bayesian Classification (AutoClass): Theory and 
+   Results" (kdd-95.ps in ~/autoclass-c/doc/), "Bayesian Classification
+   Theory" (tr-fia-90-12-7-01.ps in ~/autoclass-c/doc/).  A list of 
+   references is included below.
+
+
+WHAT IS AUTOCLASS III:
+
+   AutoClass III, programmed in Common Lisp, is the official released 
+   implementation of AutoClass available from COSMIC (NASA's software 
+   distribution agency): 
+
+	COSMIC
+	University of Georgia
+	382 East Broad Street
+	Athens, GA  30602  USA
+	voice: (706) 542-3265  fax: (706) 542-4807
+	telex: 41- 190 UGA IRC ATHENS
+	e-mail:	cosmic@@uga.bitnet  or service@@cossack.cosmic.uga.edu
+
+   Request "AutoClass III - Automatic Class Discovery from Data (ARC-13180)".
+
+
+WHAT IS AUTOCLASS X:
+
+   AutoClass X is an experimental extension to AutoClass III, available
+   only domestically, by means of a non-disclosure agreement.  It
+   implements hierarchical classification where attributes are 
+   associated with appropriate levels of the class hierarchy.  The 
+   search methodology is currently in development.  It is implemented
+   in Common Lisp.  Contact Will Taylor (taylor@ptolemy.arc.nasa.gov).
+
+
+WHAT IS AUTOCLASS C:
+
+   AutoClass C is a publicly available implementation of AutoClass
+   III, with some improvements from AutoClass X, done in the C
+   language.  It was programmed by Dr. Diane Cook
+   (cook@centauri.uta.edu) and Joseph Potts (potts@cse.uta.edu) of
+   the University of Texas at Arlington.   Will Taylor
+   (taylor@ptolemy.arc.nasa.gov) "productized" the software through
+   extensive testing, addition of sample data bases, and re-working
+   the user documentation.
+
+   Significant new features of the C implementation are:
+
+   - it is about 10-20 times faster than the Lisp implementations:
+      AutoClass III & AutoClass X;
+   - it uses double precision floating point for its "inner loop"
+     weight calculations, producing a higher "signal-to-noise"
+     ratio than the Lisp versions, and thus more precise
+     convergences for very large data sets (adding double precision
+     to the Lisp versions would slow them down even more).
+
+   It provides four models:
+
+      single_multinomial - discrete attribute multinomial model,
+        including missing values.
+      single_normal - real valued attribute model with without
+        missing values; sub-types: location and scalar.
+      single_normal_missing - real valued attribute model with missing 
+        values; sub-types: location and scalar.
+      multi_normal - real valued covariant normal model without
+        missing values.
+
+   Additional models were done in Lisp for AutoClass X, and may be
+   implemented in C at some later time.  These models are:
+
+      single_multinomial_ignore - discrete attribute multinomial model,
+        ignoring missing values.
+      single_poisson - models low value count (integer) attributes 
+        as Poisson distributions.
+      multi_multinomial_dense - a dense covariant multinomial model.
+      multi_multinomial_sparse - a sparse covariant multinomial model.
+
+   The C implementation also does not provide single_multinomial model
+   value translations, and canonical model group/attribute ordering.
+
+
+UPDATE HISTORY:
+
+   Version: 1.0	   15 Apr 95    initial version of AutoClass C
+
+   Version: 1.5	   08 May 95    ported to Sun Solaris 2.4; corrected string
+                                overwrite problems; compilation of file
+        search-control.c is now optimized; & added binary data file input 
+        option.  (See "autoclass-c/version-1-5.text")
+
+   Version: 2.0	   08 Jun 95    ported to SGI IRIX version 5.2; converted
+                                binary i/o from non-standard (open/close/
+        read/write) to ANSI (fopen/fclose/fread/fwrite); converted from 
+        srand/rand to srand48/lrand48 for random number generation; added
+        prediction capability which uses a "training" classification to
+        predict probabilistic class membership for the cases of a "test"
+        data file; added new ".s-params" parameter "screen_output_p"; added
+        output of real and discrete attribute statistics when data base is
+        initially read; corrected garbage output when ".r-params" parameter
+        "xref_class_report_att_list" contains mixed real and discrete
+        attributes; corrected the handling of unknown real values in reports
+        output; and corrected an error in function "output_warning_msgs"
+        which caused an abort condition.  (See "autoclass-c/version-2-0.text")
+
+   Version: 2.5	   28 Jul 95    Influence values report has been
+                                significantly revised and reformatted; 
+        add SunOS/Solaris C compiler support; correct segmentation fault
+        which occurs when more than 25 type = real, subtype = scalar
+        attributes are defined; correct "LOG domain" errors in generation
+        of influence values for model "single_multinomial"; and added mods 
+        for port to Linux operating system using gcc compiler. (See
+        "autoclass-c/version-2-5.text") 
+
+   Version: 2.6	   02 Aug 95    Correct segmentation fault which occurs
+                                when more than 50 type = real, subtype = 
+        scalar attributes are defined; add function safe_log to prevent 
+        "log: SING error" error messages; and require user to confirm 
+        search runs using test settings for .s-params file parameters: 
+        start_fn_type and randomize_random_p.  (See
+        "autoclass-c/version-2-6.text") 
+
+   Version: 2.7	   16 Aug 95    Add search parameter to allow AutoClass
+                                to be run as a background task.  (See
+        "autoclass-c/version-2-7.text") 
+
+   Version: 2.8	   03 Sep 96    Add search parameter "read_compact_p",
+        which directs AutoClass to read the "results" and "checkpoint"
+        files in either binary format or ascii format; redefine make
+        files with -I and -L parameters for SunOS 4.1.3; change make
+        file naming conventions; prevent corruption of discrete data 
+        translation tables when translations are longer than 40
+        characters; increase from 3000 to 20000 the value of 
+        VERY_LONG_STRING_LENGTH to handle very large datum lines;
+        increase DATA_ALLOC_INCREMENT from 100 to 1000 for reading very
+        large datasets; add DATA_ALLOC_INCREMENT logic of READ_DATA
+        to XREF_GET_DATA -- this will prevent segmentation faults
+        encountered when reading very large .db2 files into the 
+        reports processing function of AutoClass; in
+        FORMAT_DISCRETE_ATTRIBUTE, do not process attributes with
+        warning or error messages -- this prevents segmentation faults;
+        in XREF_GET_DATA, free database allocated memory after it is 
+        transferred into report data structures --this reduces the
+        amount of memory required when generating reports for very
+        large data bases, and prevents running out of memory; in all 
+        functions calling malloc/realloc for dynamic memory allocation, 
+        checks have been added to notify the user if memory is exhausted;
+        and port the "make" file for HP-UX operating system using the
+        bundled "cc" compiler.  (See "autoclass-c/version-2-8.text") 
+
+   Version: 2.9	   21 Oct 96    Correct bugs which occur when generating
+        reports of discrete type data -- these were introduced in version 
+        2.8.  Added new parameter for both ".s-params" & ".r-params"
+        files: break_on_warnings_p.  (See "autoclass-c/version-2-9.text")
+
+   Version: 3.0	   15 Apr 97    New parameter for .r-params files:
+        report_mode -- "text" (current report output) or "data"
+        (parsable format for further processing); correct minor bugs;
+        improve input checking for .hd2 file; correct segmentation
+        fault which occurred in prediction runs when the size of the
+        "test" database was larger than that of the "training"
+        database; and new parameter for .s-params & .r-params files: 
+        free_storage_p.  (See "autoclass-c/version-3-0.text")
+
+   Version: 3.1	   04 Jul 97    New parameters for .r-params files:
+        comment_data_headers_p, max_num_xref_class_probs,
+        start_sigma_contours_att, & stop_sigma_contours_att.  Allow
+        checkpoint files to be loaded for reconvergence.  Allow
+        reports to be generated for data sets of 100,000 cases and 
+        more, without causing a segmentation fault.  For "-predict"
+        runs, handle "test" cases which are not predicted in be in 
+        any of the "training" classes.  When there is more than one
+        covariant normal correlation matrix, print all of them.
+        In the case cross-reference report (report_type = "xref_case")
+        generated with the data option (report_mode = "data"), other class
+        probabilities are now printed.  In the case and class cross-
+        reference reports, the print out of probabilities has increased
+        by one significant digit (0.04 => 0.041), and the minimum value 
+        printed is now 0.001, rather than 0.01.  Add capability to
+        compute sigma class contour values for specified pairs of 
+        real valued attributes.  (See "autoclass-c/version-3-1.text")
+
+   Version: 3.2    13 Apr 98    Changed the behavior of search
+        parameter force_new_search_p; amplified some documentation
+        sections; corrected several segmentation faults in reports
+        generation; corrected several errors in sigma contours output;
+        correct problem with cross-reference reports class assignment
+        when there are more than five marginal probabilities; change
+        layout of influence values report to print matrices after all 
+        class attributes are listed; warn user when default start_j_list 
+        may not find the correct number of classes in data set; warn 
+        user of search trials which do not converge and print 
+        convergence summary at the end of each run; the multi-normal 
+        model was corrected to prevent oscillation in the expectation 
+        maximization calculations; and allow non-contiguous groups of 
+        attributes to be specified for sigma contours calculations.
+        (See "autoclass-c/version-3-2.text") 
+
+   Version: 3.2.1  04 Jun 98    Minor documentation changes.  (See
+        "autoclass-c/version-3-2-1.text")
+
+   Version: 3.2.2  02 Jul 98    Minor documentation changes.  (See
+        "autoclass-c/version-3-2-2.text")
+
+   Version: 3.3    23 Sep 98    Integrated source port of version
+        3.2.2 to Windows NT/95. Update sample AutoClass C run files
+        contained in autoclass-c/sample. (See
+        "autoclass-c/version-3-3.text")
+
+   Version: 3.3.1  30 Nov 98    Correct incompatibility with
+        .results[-bin] files written by AutoClass C versions prior 
+        to version 3.3.  (See "autoclass-c/version-3-3-1.text")
+
+   Version: 3.3.2  13 Sep 99    In all situations warning and error 
+        messages are now written to the log file.  (See
+        "autoclass-c/version-3-3-2.text")
+
+   Version: 3.3.3  01 May 00    Add Dec Alpha support; correct Dec
+        Alpha crashes when attampting to free memory at the end of
+        search runs; conditionalize two warning tests to fail in
+        batch mode; and separate log files are now written for
+        "-search" (.log) and "-reports" (.rlog).  (See
+        "autoclass-c/version-3-3-3.text")
+
+   Version: 3.3.4  24 Jan 02    Correct bugs in -predict and -report
+        modes; correct "safe_log" function for range near 0; and 
+        minor code cleanup.  (See "autoclass-c/version-3-3-4.text")
+
+   Version: 3.3.5  07 Mar 07    Add FreeBSD and MacOSX support; correct
+        minor bugs.  (See "autoclass-c/version-3-3-5.text")
+
+
+COMPATIBILITY & PORTING CONSIDERATIONS:
+
+   AutoClass C was written in ANSI C using the GNU gcc compiler
+   version 2.6.3 running on a SunSparc under SunOS 4.1.3.
+
+   It has also been ported to and tested on:
+     - SunSparc under Solaris 2.6 using GCC version 2.95.2;
+     - SunSparc under Solaris 2.4 using SPARCompiler C version 3.00;
+     - SunSparc under SunOS 4.1.3 using SPARCompiler C version 3.00;
+     - SGI Indigo under IRIX 5.2 using the bundled cc compiler;
+     - Redhat Linux version 6.1, GCC version 2.95.2;
+     - HP9000/735 & HP9000/C110 under HPUX 10.10 using the bundled
+           cc compiler;
+     - Windows NT/95 using the Microsoft Visual C++ 5.0 compiler.
+
+   Considerations for porting to other platforms, operating systems,
+   and compilers:
+
+   - int & float types must be at least 32 bit words
+   - floating point arithmetic must be IEEE standard
+   - values.h constant #defines are not consistent with IEEE standard --
+        used Symbolics Genera 8.3 values in autoclass.h
+   - globals.c, io-results.c, & search-control-2.c:
+        G_safe_file_writing_p = TRUE; only supported under Unix, 
+        since it does system calls to mv (rename file) and rm (delete
+        file).
+   - utils.c: char_input_test -- which implements the typing of 'q'
+        and <return> to quit the search --  uses Unix system call fcntl,
+        and file fcntlcom-ac.h; get_universal_time -- uses Unix system
+        call time.
+   - init.c: init -- uses Unix system call getcwd (get current working
+        directory); sets "normalizer" value for random number generator 
+        library function "srand48".
+   - search-control.c, search-basic.c, search-control-2.c, & utils.c:
+        Use C library functions srand48/lrand48 for random number
+        generation.
+
+
+LIMITATIONS:
+
+   AutoClass C is limited by memory requirements that are roughly in 
+   proportion to the number of data, times the number of attributes (the 
+   data space); plus the number of classes, times number of modeled 
+   attributes (the model space); plus a fixed program space.  Thus there 
+   should be no limit on the number of attributes beyond the program 
+   addressable memory, but there are definite tradeoffs with respect to
+   the model space, and performance degradations as paging requirements 
+   increase.
+
+   For very large data sets, you may well find that even if you can handle
+   the data, the processing time is excessive.  If that is the case, it may 
+   be worthwhile to try class generation on random subsets of the data set.  
+   This should pick out the major classes, although it will miss small 
+   ones that are only vaguely represented in the random subsets. You can 
+   then switch to prediction mode to classify the entire data set.
+
+
+BUILDING THE AUTOCLASS C SYSTEM -- UNIX PLATFORMS
+
+    Assuming that "." is not in $PATH --
+
+    % cd ~/autoclass-c 		# or equivalent
+    % chmod u+x load-ac         # if you have not already done so
+    % load-ac
+
+    { Which compiler, GNU(gcc) or SunOS(acc)? - {gcc|acc}: }
+    { Which compiler, GNU(gcc) or Solaris(cc)? - {gcc|cc}: }
+    { no prompt if SGI or Linux }
+
+    <compiler and linker messages>
+
+    % ./autoclass-c/autoclass    # show autoclass options
+
+    AutoClass Search: 
+      % ./autoclass -search <.db2[-bin] file path> <.hd2 file path>
+             <.model file path> <.s-params file path> 
+
+    AutoClass Reports: 
+      % ./autoclass -reports <.results[-bin] file path> <.search file path> 
+             <.r-params file path> 
+
+    AutoClass Prediction: 
+      % ./autoclass -predict <test.. .db2 file path>
+             <training.. .results[-bin] file path>
+             <training.. .search file path> <training.. .r-params file path> 
+
+
+BUILDING THE AUTOCLASS C SYSTEM -- MAC OSX PLATFORMS
+
+    Assuming that "." is not in $PATH --
+
+    % cd ~/autoclass-c 		# or equivalent
+    % chmod u+x load-ac-macosx  # if you have not already done so
+    % load-ac-macosx
+
+    <compiler and linker messages>
+
+    % ./autoclass-c/autoclass    # show autoclass options
+
+    AutoClass Search: 
+      % ./autoclass -search <.db2[-bin] file path> <.hd2 file path>
+             <.model file path> <.s-params file path> 
+
+    AutoClass Reports: 
+      % ./autoclass -reports <.results[-bin] file path> <.search file path> 
+             <.r-params file path> 
+
+    AutoClass Prediction: 
+      % ./autoclass -predict <test.. .db2 file path>
+             <training.. .results[-bin] file path>
+             <training.. .search file path> <training.. .r-params file path> 
+
+
+
+BUILDING THE AUTOCLASS C SYSTEM -- WINDOWS PLATFORMS
+
+    Use Mirosoft Visual C++ 5.0 Developer Studio to build Autoclass.exe
+        File->Open Workspace: f:\autoclass-c-win\prog\AutoclassC.dsw
+        Build->Build Autoclass.exe
+
+    f:\autoclass-c-win> copy prog\Debug\Autoclass.exe .
+
+    f:\autoclass-c-win> Autoclass.exe    # show autoclass options
+
+    AutoClass Search: 
+      f:\autoclass-c-win> Autoclass.exe -search <.db2[-bin] file path> <.hd2 file path>
+             <.model file path> <.s-params file path> 
+
+    AutoClass Reports: 
+      f:\autoclass-c-win> Autoclass.exe -reports <.results[-bin] file path>
+             <.search file path> <.r-params file path> 
+
+    AutoClass Prediction: 
+      f:\autoclass-c-win> Autoclass.exe -predict <test.. .db2 file path>
+             <training.. .results[-bin] file path>
+             <training.. .search file path> <training.. .r-params file path> 
+
+
+USE OF THE AUTOCLASS C SYSTEM -- UNIX & MAC OSX PLATFORMS 
+
+   Assuming that "." is not in $PATH --
+
+   To use Autoclass, first you need data (your ".db2" file), then you need to
+   describe it to AutoClass (your ".hd2" & ".model" files), and also tell
+   AutoClass what parameter values to use for the search (your ".s-params"
+   file) and for the report generation (your ".r-params" file).  Next, you
+   generate classification results from your data using
+
+        % cd ~/autoclass-c
+        % ./autoclass-c/autoclass -search data/glass/glassc.db2  
+                data/glass/glass-3c.hd2 data/glass/glass-mnc.model 
+                data/glass/glassc.s-params
+
+   and you produce reports with
+
+        % ./autoclass-c/autoclass -reports data/glass/glassc.results-bin
+                data/glass/glassc.search data/glass/glassc.r-params
+
+   and, optionally, use this classification for prediction of test cases
+
+        % ./autoclass-c/autoclass -predict data/glass/glassc-predict.db2
+                data/glass/glassc.results-bin
+                data/glass/glassc.search data/glass/glassc.r-params
+
+   See autoclass-c/doc/introduction-c.text for detailed documentation of the 
+   AutoClass C system.
+
+   A database with sample classification run output is provided in
+   ~/autoclass-c/sample/.
+
+   Test databases, with .db2, .hd2, .model, .s-params, and .r-params
+   files for each of the model term types, are provided in:
+        ~/autoclass-c/data/autos/
+        ~/autoclass-c/data/3-dim/
+        ~/autoclass-c/data/glass/
+        ~/autoclass-c/data/rna/
+        ~/autoclass-c/data/soybean/
+
+   Test summary output for these databases is provided in:
+        ~/autoclass-c/data/tests.c
+   Note that the parameters specified in the .s-params files for the
+   test data bases specify repeatable, non-random classification
+   runs.  For proper random classifications of your data sets,
+   remove these "override" parameters in your .s-params files.
+
+
+USE OF THE AUTOCLASS C SYSTEM -- WINDOWS PLATFORMS 
+
+   To use Autoclass, first you need data (your ".db2" file), then you need to
+   describe it to AutoClass (your ".hd2" & ".model" files), and also tell
+   AutoClass what parameter values to use for the search (your ".s-params"
+   file) and for the report generation (your ".r-params" file).  Next, you
+   generate classification results from your data using
+
+        > cd f:\autoclass-c-win             # for example
+        f:\autoclass-c-win> Autoclass.exe -search data\glass\glassc.db2  
+                data\glass\glass-3c.hd2 data\glass\glass-mnc.model 
+                data\glass\glassc.s-params
+
+   and you produce reports with
+
+        f:\autoclass-c-win> Autoclass.exe -reports data\glass\glassc.results-bin
+                data\glass\glassc.search data\glass\glassc.r-params
+
+   and, optionally, use this classification for prediction of test cases
+
+        f:\autoclass-c-win> Autoclass.exe -predict data\glass\glassc-predict.db2
+                data\glass\glassc.results-bin
+                data\glass\glassc.search data\glass\glassc.r-params
+
+   See autoclass-c-win\doc\introduction-c.text for detailed documentation of the 
+   AutoClass C system.
+
+   A database with sample classification run output is provided in
+   f:\autoclass-c-win\sample\.
+
+   Test databases, with .db2, .hd2, .model, .s-params, and .r-params
+   files for each of the model term types, are provided in:
+        f:\autoclass-c-win\data\autos\
+        f:\autoclass-c-win\data\3-dim\
+        f:\autoclass-c-win\data\glass\
+        f:\autoclass-c-win\data\rna\
+        f:\autoclass-c-win\data\soybean\
+
+   Test summary output for these databases is provided in:
+        f:\autoclass-c-win\data\tests.c
+   Note that the parameters specified in the .s-params files for the
+   test data bases specify repeatable, non-random classification
+   runs.  For proper random classifications of your data sets,
+   remove these "override" parameters in your .s-params files.
+
+
+TECHNICAL QUESTIONS:
+ 
+   Contact John Stutz (stutz@ptolemy.arc.nasa.gov) if you have questions 
+   concerning the applicability of AutoClass to your data analysis
+   situation.
+
+
+IMPLEMENTATION QUESTIONS:
+ 
+   Contact Will Taylor (taylor@ptolemy.arc.nasa.gov) if you have questions 
+   concerning the implementation, installation, and running of AutoClass C, 
+   including "bugs" and features you may add to the existing code.
+
+
+REFERENCES:
+
+P. Cheeseman, et al. "Autoclass: A Bayesian Classification System",
+  Proceedings of the Fifth International Conference on Machine Learning, 
+  Ann Arbor, MI. June 12-14 1988.  Morgan Kaufmann, San Francisco, 1988,
+  pp. 54-64, 
+
+P. Cheeseman, et al. "Bayesian Classification", Proceedings of the 
+  Seventh National Conference of Artificial Intelligence (AAAI-88), 
+  St. Paul, MN. August 22-26, 1988.  Morgan Kaufmann, San Francisco, 
+  1988, pp. 607-611.
+J. Goebel, et al. "A Bayesian Classification of the IRAS LRS Atlas",
+  Astron. Astrophys. 222, L5-L8 (1989).
+
+P. Cheeseman, et al. "Automatic Classification of Spectra from the Infrared
+  Astronomical Satellite (IRAS)", NASA Reference Publication 1217 (1989)
+
+P. Cheeseman, "On Finding the Most Probable Model", Computational Models
+  of Discovery and Theory Formation, ed. by Jeff Shrager and Pat Langley.
+  Morgan Kaufmann, San Francisco, 1990, pp. 73-96.
+
+R. Hanson, J. Stutz, P. Cheeseman, "Bayesian Classification Theory",
+  Technical Report FIA-90-12-7-01, NASA Ames Research Center, Artificial 
+  Intelligence Branch, May 1991
+
+R. Hanson, J. Stutz, P. Cheeseman, "Bayesian Classification with 
+  Correlation and Inheritance", Proceedings of 12th International Joint 
+  Conference on Artificial Intelligence, Sydney, Australia. August 24-30,
+  1991.  Morgan Kaufmann Publishers, San Francisco, 1991, pp.692-698.
+
+B. Kanefsky, J. Stutz, P. Cheeseman, "An Automatic Classification of a
+  Landsat/TM Image from Kansas (FIFE)", Technical Report FIA-91-26,
+  NASA Ames Research Center, Artificial Intelligence Branch, September 1991.
+
+B. Kanefsky, J. Stutz, P. Cheeseman, W. Taylor, "An Improved Automatic
+  Classification of a Landsat/TM Image from Kansas (FIFE)", Technical 
+  Report FIA-94-01, NASA Ames Research Center, Artificial Intelligence
+  Branch, January 1994.
+
+J. Stutz, P. Cheeseman, "AutoClass - a Bayesian Approach to Classification",
+  in "Maximum Entropy and Bayesian Methods, Cambridge 1994", John Skilling
+  & Subuiso Sibisi Eds. Kluwer Academic Publishers, Dordrecht, 1995.
+
+P. Cheeseman, J. Stutz, "Bayesian Classification (AutoClass): Theory and
+  Results", in Advances in Knowledge Discovery and Data Mining, 
+  Usama M. Fayyad, Gregory Piatetsky-Shapiro, Padhraic Smyth, & Ramasamy
+  Uthurusamy, Eds. The AAAI Press, Menlo Park, expected fall 1995.

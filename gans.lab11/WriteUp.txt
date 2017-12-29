@@ -1,0 +1,94 @@
+Duncan Gans
+Lab 11 Write-up
+
+1. Autoclass stops trying to find a new best because it reaches the maximum
+amount of tries which is set to ten. zoo.log returns the output from a1,
+ which gives back back basic information about the amount of tries, the process
+and other important information. zoo.results-bin is a binary file I don't 
+understand
+
+2. There are 6 Categories 
+
+Category	Examples	Most important Attribute Value
+1		36		Milk, eggs, hair
+2		20		Feathers, legs, toothed
+3		17		Backbone, tail, legs
+4		14		Breathes, fins, legs
+5		9		Legs, hair, eggs
+6		4		Fins, aquatic, milk
+
+3. Case text describes all of the different cases and which cluster they fall
+into along with the probability of falling into that cluster. Class text 
+focuses more the classes, and for each class, illustrates all the items in the
+class and their individual attribute pairs.
+
+4.
+zoo-predict.case-text-1 - Illustrates each case, which category it should fall
+into and the probability of falling into that category
+
+zoo-predict.class-text-1 - Illustrates each cluster, which cases will wall into
+it with their respective class-attribute values.
+
+zoo.log - represents the output of the autoclass function
+
+zoo.results_bin - Lots of Binary data I don't understand
+
+5. The output is very different with only two types. The autoclass trys to 
+group it into a reptile, mammal distinction while putting a lot of exceptions
+into the reptiles category. By limiting it to just two categories, a lot of 
+animals weren't able to really fit into any one category and so had low 
+probabilities for each. 
+The first cluster is animals with backbones, breathing above water, and for 
+the most part have 2 or 4 legs, and often produce milk. The second cluster are
+invertebrates that breathe underwater, often have fins, and for the most part,
+all produce eggs. There are 60 of cluster one, and 40 of class two, the most
+important attribute pairs for cluster 1 are Legs, Breathes, and Backbone, 
+whereas the most important pairs for cluster 2 are Legs, Milk, and Breathes.
+
+6. With three clusters it is able to divide up the animals a bit better.
+Class zero was mostly animals that lay eggs, and had no fins (i.e. reptiles
+and fish. 
+Class one was vertebrates that used milk, often mammals it appears.
+Class two was fish and other aquatic creates is appears.
+Class 		Examples		Most Important Attribute Value
+1		39			Toothed, Milk, Legs
+2		39			Milk, Hair, Legs
+3		22			Legs, Fins Aquatic
+
+7. As for the clusters increased it was able to make the clusters more specific
+at first it made there be less crossover as theclusters fell in line with real
+animal variation, however as the variations increased more, there were some 
+small clusters, many that ended up being very similar to other clusters. There
+is clearly a sweet spot for deciding the write amount of clusters. 
+
+8. The suggested number of clusters ended up being around 6. Out of the three
+best tries, 2 used 7 classes, and the best try used 6. Although it could 
+have grouped them all into individual clusters, it didn't to make it more useful.
+
+9. Penguins would fit into class 1, which is the bird class.
+   Platypuses would fall into class 4 it looks like, but possibly class 6.
+There is one animal with both the ability to produce milk and eggs, that 
+looks similar to a platypus, although the autoclass has trouble fitting it into
+a clear category
+
+10. With just two classes, which is the best choice even when 3 is expected
+is very different. The code essentially decides to break everything into 
+animals with 2 or 4 legs, and animals with other numbers of legs. Because of
+that, the descriptive ability of the clusters is more limited. The attributes
+that are also valueable are simply attributes that track an amount of legs such
+as breathes. Since breathes will correlate with fish that have no legs, legs
+also has a high impact, but that is simply because there is correlation between
+the two.
+
+11. With more tries, it was able to create more "Best" clusterings, including
+some that were not around 7. Previously, at 100 tries the best clusterings 
+wehre all around 7. However, with more tries, there were a coupele around
+4 and 5. The best try still ended up being 6. The clusterings themeselves 
+where similar, but appeared a little more concrete and defined.
+It is evident what class is what set. Class 1 is mammals, 2 is birds, 3 is fish
+4 is 6 legged invertebrates, maybe bugs, class 5 seems to be reptiles, and
+class 6 looks like amphibians. Although it was possible to parse the categories
+before, there were lots of exceptions, and lots more overlap.
+
+
+

@@ -1,0 +1,4 @@
+Don't simply divide range into thirds
+	Instead make sure you use medians/quartiles
+
+

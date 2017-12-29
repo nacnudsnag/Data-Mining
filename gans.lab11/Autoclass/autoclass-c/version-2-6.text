@@ -1,0 +1,61 @@
+
+
+	AUTOCLASS C VERSION 2.6 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. 
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 2.6.
+
+  2. autoclass-c/prog/model-transforms.c -
+        In "generate_singleton_transform", correct segmentation fault
+        which occurs when more than 50 type = real, subtype = scalar
+        attributes are defined in the ".hd2" & ".model" files.
+
+        In "log_transform", use "safe_log" to transform values --
+        prevent "log: SING error" error messages.
+
+  3. autoclass-c/prog/model-expander-3.c -
+        In "check_term", since att_info can be realloc'ed in
+        for transformed attributes, reset data_base->att_info for each
+        time thru loop.
+
+  5. autoclass-c/prog/utils-math.c -
+        Add "safe_log".
+
+  6. autoclass-c/prog/autoclass.h -
+        Add function prototype for "safe_log".
+
+  7. autoclass-c/prog/model-multi-normal-cn.c -
+  	In "multi_normal_cn_model_term_builder" change log calls to 
+	safe_log to prevent "log: SING error" error messages.
+
+  8. autoclass-c/prog/model-single-normal-cm.c -
+	In "build_sn_cm_priors" and "single_normal_cm_model_term_builder"
+	change log calls to safe_log to prevent "log: SING error" error
+	messages.
+
+  9. autoclass-c/prog/model-single-normal-cn.c -
+	In "build_sn_cn_priors" and "single_normal_cn_model_term_builder"
+	change log calls to safe_log to prevent "log: SING error" error
+	messages.
+
+ 10. autoclass-c/prog/search-control.c -
+	In "autoclass_search" test for user overriding of search parameters
+	randomize_random_p and/or start_fn_type.  If done, ask for
+	confirmation to proceed.
+
+
+======================================================================
+
+
+

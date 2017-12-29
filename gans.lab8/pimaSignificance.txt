@@ -1,0 +1,19 @@
+For all of them varying k values had statistically significant differences except for pairs 2 and 3, 2 and 4, 3 and 4, 3 and 5, and 4 and 5.
+
+0 = K value of 1
+1 = K value of 3
+2 = K value of 5
+3 = K value of 7
+4 = K value of 9
+
+
+The p-value for 0, 1 is 0.0007788479430339345
+The p-value for 0, 2 is 0.010279986232146647
+The p-value for 0, 3 is 0.018183474862370725
+The p-value for 0, 4 is 0.0035371033806411143
+The p-value for 1, 2 is 0.3251557473311961
+The p-value for 1, 3 is 0.191488766563562
+The p-value for 1, 4 is 0.04251149089705349
+The p-value for 2, 3 is 0.3067100043052944
+The p-value for 2, 4 is 0.09103964222960383
+The p-value for 3, 4 is 0.2047705473429394

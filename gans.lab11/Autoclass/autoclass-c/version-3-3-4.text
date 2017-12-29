@@ -1,0 +1,81 @@
+
+
+	AUTOCLASS C VERSION 3.3.4 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/sample files were regenerated because of the
+     SAFE_LOG change (item 6. below).  Only very minor changes
+     occurred.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 3.3.4.
+
+  2. autoclass-c/prog/predictions.c -
+     In autoclass_predict, allocate separate storage for
+     test_clsf->reports->class_wt_ordering to prevent 
+     segmentation violation on Linux platforms when running
+     in predict mode.
+
+  3. autoclass-c/prog/autoclass.h, minmax.h -
+     Macros min() and max() have been moved to a new file:
+     minmax.h.
+ 
+     Added `#include "minmax.h"' to the following files:
+     intf-reports.c io-read-data.c matrix-utilities.c
+     model-multi-normal-cn.c model-single-normal-cm.c
+     model-single-normal-cn.c model-update.c
+     search-basic.c search-control-2.c search-control.c
+     statistics.c struct-data.c utils.c
+
+     Removed the prototypes for build_sn_cm_priors() and
+     build_sn_cn_priors().  These functions are used only 
+     in the .c files that contain them, so are now static 
+     functions.
+
+     Changed the prototype for log_gamma(), for reasons 
+     explained below.
+
+  4. autoclass-c/prog/getparams.c -
+     Corrected argument to sizeof() on line 142.
+
+  5. autoclass-c/prog/struct-clsf.c -
+     Zero global pointer and counter variables after deleting the 
+     structures to which they refer.
+
+  6. autoclass-c/prog/utils-math.c -
+     Before, the function safe_log() returned 0.0 when its 
+     argument was less than or equal to LEAST_POSITIVE_SINGLE_FLOAT.
+     This is clearly wrong.  Log(x) approaches -infinity (not 0) 
+     as x approaches 0.  The fix is to have safe_log() return 
+     LEAST_POSITIVE_SINGLE_LOG for x near 0.
+
+  7. autoclass-c/prog/search-control-2.c -
+     In variance, check for lists of length less than 2,
+     and return 0.
+
+
+  Items 3 - 7 were submitted by Jack Wathey <wathey@salk.edu>.
+
+
+  8. autoclass-c/prog/intf-reports.c -
+     Correct FORMAT_DISCRETE_ATTRIBUTE to prevent string overrun and
+     segmentation violations when single multinomial values exceed
+     20 characters, while running in report mode.
+
+  9. autoclass-c/prog/io-results.c -
+     Correct READ_ATT_DS to prevent string overrun and
+     segmentation violations when single multinomial values exceed
+     40 characters, while running in report mode.
+
+
+
+
+

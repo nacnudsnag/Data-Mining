@@ -1,0 +1,98 @@
+
+
+	AUTOCLASS C VERSION 3.0 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text, reports-c.text --
+        New parameter for .s-params & .r-params files: free_storage_p.
+     The default value tells AutoClass to free the majority of its 
+     allocated storage.  If specified as false, AutoClass will not
+     attempt to free storage.
+
+  2. autoclass-c/doc/preparation-c.text -
+        Correct typos "looses" and "scaler".
+
+  3. autoclass-c/doc/reports-c.text --
+        New parameter for .r-params files: report_mode.  It specifies
+     the mode of the reports to generate.  The default, "text", is 
+     the current formatted text layout.  The new "data" option has a
+     parsable numerical layout -- suitable for further processing.
+
+  4. autoclass-c/sample/read.me.c, scriptc.text, imports-85c.influ-o-data-1,
+        imports-85c.case-data-1, imports-85c.class-data-1
+     Updated the sample classification for report_mode = "data"
+     reports.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 3.0.
+
+  2. autoclass-c/prog/autoclass.h, io-results.c, io-results-bin.c, struct-class.c,
+                struct-clsf.c, struct-model.c
+        Correct improper pointer casting:
+    fprintf(stdout, "free_model(%d): %d\n", i_model, (int) model);
+    to
+    fprintf(stdout, "free_model(%d): %p\n", i_model, (void *) model);
+    which generates compiler warnings on 64-bit architectures.
+
+    Change prototype for list_class_storage & list_clsf_storage from 
+    int * to void **.
+
+  3. autoclass-c/prog/search-control.c, intf-reports.c -
+        Process new params option: free_storage_p.
+
+  4. autoclass-c/prog/search-control-2.c -
+        Correct formatted message typos "print print" and "estiamte" in 
+     PRINT_INITIAL_REPORT.
+
+  5. autoclass-c/prog/intf-reports.c -
+        In PRE_FORMAT_ATTRIBUTES, check for num_terms > 0 prior to calling
+     SORT_MNCN_ATTRIBUTES.
+
+  6. autoclass-c/prog/io-read-data.c -
+        In READ_LINE, only return FALSE if no chars have been read -- allows
+     last line with no new-line to be read correctly.
+
+  7. autoclass-c/prog/getparams.c -
+        Correct GETPARAMS for INT_LIST: to allow "= 84, 92 " to be read
+     as 84 & 92, rather than 84 & 84. Also allows "n_clsfs = 2 " to be
+     read properly.
+
+  8. autoclass-c/prog/autoclass.h, intf-reports.c -
+        Implement "report_mode" parameter.
+
+  9. autoclass-c/prog/io-read-data.c -
+        In PROCESS_ATTRIBUTE_DEF, check for incomplete discrete and
+     real attribute definitions.
+
+ 10. autoclass-c/load-ac -
+        Use "/bin/uname -s" to determine if host is running IRIX (SGI).
+
+ 11. autoclass-c/prog/struct-class.c -
+        In FREE_TPARM_DS, allow tparm->tppt to be UNKNOWN or IGNORE.
+     If not matched, print advisory msg, not error msg.  Do not abort.
+
+ 12. autoclass-c/prog/autoclass.h, search-basic.c, model-expander-3.c,
+        struct-class.c, struct-clsf.c, predictions.c, & search-control-2.c
+     When creating the weights for a new class, use database->n_data
+     for the appropriate data base, rather than model->database->n_data.
+     In the "prediction" mode, this correctly builds the test database
+     class weights using the size of the test database, rather than
+     that of the training database -- which is pointed to by the model.
+     Functions modified: SET_UP_CLSF, GET_CLASS, CLASS_MERGED_MARGINAL_FN,
+     COPY_CLASS_DS, ADJUST_CLSF_DS_CLASSES, COPY_CLSF_DS, POP_CLASS_DS,
+     BUILD_CLASS_DS, COPY_TO_CLASS_DS, AUTOCLASS_PREDICT, &
+     PRINT_SEARCH_TRY.  This corrects a segmentation fault which occured
+     during storage deallocation of prediction runs.
+
+======================================================================
+
+
+

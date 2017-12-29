@@ -1,0 +1,5 @@
+Levels of statistical significance. P<.05 meaning you're 95% your results are statistically significant.
+
+Smaller P Value = Better.
+
+p < .05, or 95% Confidence interval is the norm

@@ -1,0 +1,28 @@
+
+
+AUTOCLASS C (version 3.3.5unx) STARTING at Tue Mar 28 22:26:44 2017 
+
+AUTOCLASS -REPORTS default parameters:
+n_clsfs=1; clsf_n_list=(); report_type="all"; report_mode="text"; comment_data_headers_p=false; num_atts_to_list=999; xref_class_report_att_list=(); order_attributes_by_influence_p=true; break_on_warnings_p=true; free_storage_p=true; max_num_xref_class_probs=5; sigma_contours_att_list=()
+
+USER supplied parameters which override the defaults:
+xref_class_report_att_list=(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
+
+ADVISORY[2]: read 17 attribute defs from 
+             /home/dgans/DataMining/gans.lab11/Autoclass/zoo.hd2
+ADVISORY[1]: read 100 datum from 
+             /home/dgans/DataMining/gans.lab11/Autoclass/zoo.db2
+ADVISORY: loaded 2 classifications from 
+          /home/dgans/DataMining/gans.lab11/Autoclass/zoo.results-bin
+ADVISORY: read 12 search trials from 
+          /home/dgans/DataMining/gans.lab11/Autoclass/zoo.search
+
+File written: /home/dgans/DataMining/gans.lab11/Autoclass/zoo.influ-o-text-1
+
+File written: /home/dgans/DataMining/gans.lab11/Autoclass/zoo.case-text-1
+
+File written: /home/dgans/DataMining/gans.lab11/Autoclass/zoo.class-text-1
+
+
+AUTOCLASS C (version 3.3.5unx) STOPPING at Tue Mar 28 22:26:44 2017 
+

@@ -1,0 +1,61 @@
+DTs are a model of our data
+	Goal is to build a model that helps us make predictions:
+	(about data that was not used to build the model)
+
+We must ask the qustion: How good is the model?
+	- There can be multiple versions of DTs for a given data set
+	- What is the "best" model?	
+	- Compare DTs to other Machine Learning Approacthes
+
+What factors into the "Best Model"?
+     1. Prediction Accuracy
+     	accuracy with "Testing Data"
+
+     2. Ease of creation
+     	speed - how long it takes (runtime)
+
+     3. Interperetability
+     	How easy it is to understand the model
+
+     4. Accuracy on training data - Obviously
+
+     5. Can we modify the model, eas of modification with new data
+
+ Prediction Accuracy
+ 	    "Confusion Matrix"
+	    Model Prediction
+	       +		-
+	    ______________________________
+	    |true positive|false negative|
+	    -----------------------------
+Actual Data|false Positive| True Negative|
+           ------------------------------
+
+Want it in true positive or true negative category
+
+Often data is "precious" - you don't have "enough" 
+      Usually you hold back some data for testing
+      	      (Data that you don't use to build model)
+Questions:
+	HOW MUCH DATA?
+	WHICH DATA POINTS?
+
+Answers:
+	1. Use random 80% for training
+	   20% for testing
+	       -However you could end up with unusually fortuitous good splits
+	       	or bad splits.
+	Solution:
+		"Cross fold validataion"
+		       1. Split Data into 5 equal sized subsets - five is not 
+		       	  actually enough, but easier for beginners
+		       2. Repeat five times - Testing data is one of the sets
+		       3. Prediction accuracy - different depending on which
+		       	  subset is used for training
+		       4. Look at the average to asses accuract of model
+		       
+		       Real world Implementation
+		       	    - split into 10 subsets
+			    - twice -> split into two sets of ten subsets
+			    - twenty runs
+			    

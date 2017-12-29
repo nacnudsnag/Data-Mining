@@ -1,0 +1,105 @@
+#!/bin/csh -f
+
+# make the C version of AutoClass
+# with -tags arg, emacs tags files will be generated
+
+
+cd prog
+
+set makeflags = ""
+set etags_flag = -f
+set sunos_solaris = ""
+
+if ( "`/bin/uname -s`" == "IRIX64" ) then  # SGI IRIX 6.4
+  set makeflags = "OSFLAGS=-D_SVR4_SOURCE"
+  make $makeflags -f autoclass.make.sgi
+
+else if ( "`/bin/uname -s`" == "IRIX" ) then  # SGI IRIX 
+  set makeflags = "OSFLAGS=-D_SVR4_SOURCE"
+  make $makeflags -f autoclass.make.sgi
+
+else if (-x /bin/uname && x`/bin/uname` == "xLinux") then  # LINUX 1.2.10
+  set makeflags = "OSFLAGS=-D_POSIX_SOURCE"
+  make $makeflags -f autoclass.make.linux.gcc
+
+else if ( "`/bin/uname -s`" == "HP-UX" ) then # HP UX
+  set makeflags = "OSFLAGS=-D_HPUX_SOURCE"
+  make $makeflags -f autoclass.make.hp.cc
+
+
+else if ( "`/bin/uname -s`" == "OSF1" ) then # DEC ALPHA
+  set makeflags = "OSFLAGS="
+  make $makeflags -f autoclass.make.alpha.cc
+
+else if ( "`/bin/uname -s`" == "FreeBSD" ) then # Free BSD
+  set makeflags = "OSFLAGS="
+  make $makeflags -f autoclass.make.freebsd.gcc
+
+else if ( "`/bin/uname -s`" == "SunOS" ) then # SUN-OS OR SOLARIS
+  if (-f /usr/ucb/hostid) then   # SOLARIS
+    set sunos_solaris = "solaris"
+    echo -n "Which compiler, GNU(gcc) or Solaris(cc)? - {gcc|cc}: "
+    set input = $<
+    if (("$input" != "gcc") && ("$input" != "cc")) then
+      echo "Must be 'gcc', or 'cc'"      
+      exit(1)
+    endif
+    set etags_flag = -o
+  else # SUN-OS
+    set sunos_solaris = "sunos"
+    echo -n "Which compiler, GNU(gcc) or SunOS(acc)? - {gcc|acc}: "
+    set input = $<
+    if (("$input" != "gcc") && ("$input" != "acc")) then
+      echo "Must be 'gcc', or 'acc'"      
+      exit(1)
+    endif
+  endif
+  if ("$input" == "gcc") then
+     if ("$sunos_solaris" == "sunos") then
+       make "OSFLAGS=-DNO_FCNTL_H -D__USE_FIXED_PROTOTYPES__" -f autoclass.make.sunos.gcc
+     else
+       make "OSFLAGS=-DNO_FCNTL_H -D__STDC__ -D__EXTENSIONS__" -f autoclass.make.solaris.gcc
+     endif
+  else if ("$input" == "acc") then
+     make $makeflags -f autoclass.make.sunos.acc
+  else if ("$input" == "cc") then
+     make $makeflags -f autoclass.make.solaris.cc
+  else
+     echo "Must be 'gcc', 'cc', or 'acc'"
+     exit(1)
+  endif 
+
+else
+  echo "Unrecognized Unix operating system"
+  exit
+endif
+
+
+mv autoclass ../autoclass
+
+## if ($1 != "") then    # does not work for SGI IRIX 5.2 csh or Linux 1.3.2
+if ("X$1" != "X") then
+  # compute emacs tags for autoclass
+  etags $etags_flag ../autoclass.TAGS \
+        globals.c init.c io-read-data.c io-read-model.c io-results.c \
+        io-results-bin.c model-expander-3.c matrix-utilities.c \
+	model-single-multinomial.c model-single-normal-cm.c \
+	model-single-normal-cn.c model-multi-normal-cn.c \
+	model-transforms.c model-update.c search-basic.c \
+	search-control.c search-control-2.c \
+        search-converge.c struct-class.c struct-clsf.c \
+	statistics.c predictions.c \
+	struct-data.c struct-matrix.c struct-model.c \
+        utils.c utils-math.c \
+        intf-reports.c intf-extensions.c intf-influence-values.c \
+        intf-sigma-contours.c \
+	prints.c getparams.c autoclass.c \
+        autoclass.h getparams.h globals.h params.h fcntlcom-ac.h minmax.h
+else
+  # remove .o files (for distribution)
+  make -f autoclass.make
+endif
+
+# back up to parent directory
+cd ..
+

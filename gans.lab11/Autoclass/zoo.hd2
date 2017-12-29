@@ -1,0 +1,36 @@
+!#; AutoClass C header file -- extension .hd2
+!#; the following chars in column 1 make the line a comment:
+!#; '!', '#', ';', ' ', and '\n' (empty line)
+
+;;; Zoo data (from Winston)
+;;; 100 Data, 17 attributes
+
+;#! num_db2_format_defs <num of def lines -- min 1, max 4>
+num_db2_format_defs 2
+;; required
+number_of_attributes 17
+;; optional - default values are specified 
+separator_char  ' '
+;; comment_char    ';'
+;; unknown_token   '?'
+;;separator_char     ','
+
+;; <zero-based att#>  <att_type>  <att_sub_type>  <att_description>  <att_param_pairs>
+0  dummy nil "animal name"
+1  discrete nominal hair	range 2
+2  discrete nominal feathers	range 2
+3  discrete nominal eggs	range 2 
+4  discrete nominal milk	range 2
+5  discrete nominal airborne	range 2
+6  discrete nominal aquatic	range 2
+7  discrete nominal predator	range 2
+8  discrete nominal toothed	range 2
+9  discrete nominal backbone	range 2 
+10 discrete nominal breathes	range 2 
+11 discrete nominal venomous	range 2
+12 discrete nominal fins	range 2
+13 discrete nominal legs	range 6
+14 discrete nominal tail	range 2
+15 discrete nominal domestic	range 2
+16 discrete nominal catsize	range 2
+

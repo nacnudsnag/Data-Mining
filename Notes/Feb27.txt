@@ -1,0 +1,3 @@
+Nearest Neighbor works by assigning all data to points. When classifying new data, the data looks for a "nearest neigbor" to find the test case.
+
+When working with binaries, you want to use an odd number

@@ -1,0 +1,59 @@
+
+
+	AUTOCLASS C VERSION 3.3.5 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. 
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+     Update "G_ac_version" to 3.3.5.
+
+  2. autoclass-c/load-ac, autoclass-c/prog/autoclass.make.freebsd.gcc -
+     Add support for the FreeBSD unix variant operating system.
+
+  3. autoclass-c/prog/model-multi-normal-cn.c -
+     Change all calls to log, with safe_log, which checks for a zero
+     argument.  Certain real valued data set values caused a 
+     double precision underflow (< e-308) which resulted in 0.0.
+
+  4. autoclass-c/prog/intf-reports.c, utils-math.c, search-control-2.c,
+     model-update.c, model-transforms.c, model-single-normal-cm.c,
+     model-single-normal-cn.c, model-single-multinomial.c,
+     model-expander-3.c -
+     Make the change in item 3. to all files referencing log.
+
+  5. autoclass-c/sample/read.me.c -
+     Correct file name typo: scriptc.lisp => scriptc.text
+  
+  6. autoclass-c/load-ac -
+     To prevent bad default .cshrc files from crashing the build,
+     change "#!/bin/csh" to "#!/bin/csh -f".
+
+  7. autoclass-c/prog/io-results.c -
+     write_att_DS modified to output warnings_and_errors->num_expander_warnings 
+     and warnings_and_errors->num_expander_errors strings with embedded
+     carriage returns removed.  This corrects a problem which occurs 
+     when the user's data generates warning messages during input checking, 
+     which the user ignores, and the user has specified save_compact_p = false
+     and read_compact_p = false in their .s-params file.  When they 
+     attempt to create reports, "autoclass -reports ..." breaks with
+     an unexpected data error.
+
+  8. autoclass-c/load-ac-macosx, autoclass-c/prog/autoclass.make.macosx.gcc -
+     Add support for the Macintosh OSX 10.4 operating system utilizing
+     gcc 4.0. (OSFLAGS=-DMACOSX)
+ 
+  9. autoclass-c/prog/utils.c, autoclass-c/prog/autoclass.h -
+     Routine "int round(double)" replaced by "int iround(double)".
+     References to "round" were changed to "iround" in all affected routines.
+
+ 10. autoclass-c/prog/autoclass.h -
+     For MacOSX, do not define INFINITY here -- conflicts with OSX math library.

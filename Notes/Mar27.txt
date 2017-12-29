@@ -1,0 +1,47 @@
+Supervised Learning
+	a.k.a. classification
+	-> there is a distinguished "Class attribute"
+
+Unsupervised Learning
+	a.k.a. clustering
+	-> not ONE special attribute
+
+Question: How do data points "hang together"
+	-> Use a model
+
+Prediction: With a new example, what cluster does it fit best into?
+	if we have "missing values", we could infer what the value might be
+	Usually we just want to understand the natural groupings in the data
+	Also can show which variables are most important/have the most bearing on a specific class
+
+Cluster membership is usually probabilistic, not absolute
+	eg. 75% one cluster, 25% another cluster
+	-> lots of overlapping boundaries, can fall in multiple clusters, Fuzzye
+
+In this, a class refers to a specific cluster
+
+Basic Algorithm:
+	Tell AC max # of clusters, eg. 5
+	1. AC randomly divides data into 5 piles
+	2. Create probabilistic description of each pile
+	3. Take data out of piles (still have pile descriptions)
+	4. put data into pile that best describes it
+	5. repeat
+	At some point data stops moving = done
+
+	Repeat some # of times with different starting points -> repitition=try
+
+Can end up with fewer piles, but not more 
+Could potentially run multiple times with different piles
+
+___________________________________________________________
+
+"Bayesian"
+	Takes initial distribution of the data into account
+	When making probabilistic descriptions, it also gives each attribute a weight
+		-> how important it is in defining cluster membership
+	Bayesian statistics looks at the "prior" distributino of the data before clustering
+		uses that distribution for the clustering process
+
+
+

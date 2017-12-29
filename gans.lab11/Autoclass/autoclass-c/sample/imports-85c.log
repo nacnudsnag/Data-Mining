@@ -1,0 +1,1461 @@
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 10:08:23 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=12
+
+
+##############  Starting Input Check  ###############
+
+To log file: 
+   /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+During loading of: 
+   [1] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2,
+   [2] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2,
+   [3] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model.
+
+   [Attribute #, value #, and datum # are zero based.]
+
+ADVISORY[2]: data_file_format settings:
+             separator_char = ',', comment_char = ';', unknown_token = '?'
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[2]: for attribute #5: "num-of-doors" range increased to 3,
+             for value 2 -- translator (2 ?).
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY[1]: discrete translations [ (internal external):count ... ] built 
+             from input data --
+   Attribute #0, "symboling":
+      [ (0 3):27 (1 1):54 (2 2):32 (3 0):67 (4 -1):22 (5 -2):3 ]
+   Attribute #2, "make":
+      [ (0 alfa-romero):3 (1 audi):7 (2 bmw):8 (3 chevrolet):3 (4 dodge):9 (5 honda):13 (6 isuzu):4 (7 jaguar):3 (8 mazda):17 (9 mercedes-benz):8 (10 mercury):1 (11 mitsubishi):13 (12 nissan):18 (13 peugot):11 (14 plymouth):7 (15 porsche):5 (16 renault):2 (17 saab):6 (18 subaru):12 (19 toyota):32 (20 volkswagen):12 (21 volvo):11 ]
+   Attribute #3, "fuel-type":
+      [ (0 gas):185 (1 diesel):20 ]
+   Attribute #4, "aspiration":
+      [ (0 std):168 (1 turbo):37 ]
+   Attribute #5, "num-of-doors":
+      [ (0 two):89 (1 four):114 (2 ?):2 ]
+   Attribute #6, "body-style":
+      [ (0 convertible):6 (1 hatchback):70 (2 sedan):96 (3 wagon):25 (4 hardtop):8 ]
+   Attribute #7, "drive-wheels":
+      [ (0 rwd):76 (1 fwd):120 (2 4wd):9 ]
+   Attribute #8, "engine-location":
+      [ (0 front):202 (1 rear):3 ]
+   Attribute #14, "engine-type":
+      [ (0 dohc):12 (1 ohcv):13 (2 ohc):148 (3 l):12 (4 rotor):4 (5 ohcf):15 (6 dohcv):1 ]
+   Attribute #15, "num-of-cylinders":
+      [ (0 four):159 (1 six):24 (2 five):11 (3 three):1 (4 twelve):1 (5 two):4 (6 eight):5 ]
+   Attribute #17, "fuel-system":
+      [ (0 mpfi):94 (1 2bbl):66 (2 mfi):1 (3 1bbl):11 (4 spfi):1 (5 4bbl):3 (6 idi):20 (7 spdi):9 ]
+ADVISORY[1]: real statistics [ min < (mean : variance) < max ] built 
+             from input data --
+   Attribute #1, "normalized-loses":
+      [  6.5000e+01 < ( 1.2200e+02 : 1.2485e+03) <  2.5600e+02 ]
+   Attribute #9, "wheel-base":
+      [  8.6600e+01 < ( 9.8757e+01 : 3.6085e+01) <  1.2090e+02 ]
+   Attribute #10, "length":
+      [  1.4110e+02 < ( 1.7405e+02 : 1.5147e+02) <  2.0810e+02 ]
+   Attribute #11, "width":
+      [  6.0300e+01 < ( 6.5908e+01 : 4.5795e+00) <  7.2300e+01 ]
+   Attribute #12, "height":
+      [  4.7800e+01 < ( 5.3725e+01 : 5.9417e+00) <  5.9800e+01 ]
+   Attribute #13, "curb-weight":
+      [  1.4880e+03 < ( 2.5556e+03 : 2.6979e+05) <  4.0660e+03 ]
+   Attribute #16, "engine-size":
+      [  6.1000e+01 < ( 1.2691e+02 : 1.7257e+03) <  3.2600e+02 ]
+   Attribute #18, "bore":
+      [  2.5400e+00 < ( 3.3298e+00 : 7.4451e-02) <  3.9400e+00 ]
+   Attribute #19, "stroke":
+      [  2.0700e+00 < ( 3.2554e+00 : 9.9811e-02) <  4.1700e+00 ]
+   Attribute #20, "compression-ratio":
+      [  7.0000e+00 < ( 1.0143e+01 : 1.5700e+01) <  2.3000e+01 ]
+   Attribute #21, "horse-power":
+      [  4.8000e+01 < ( 1.0426e+02 : 1.5695e+03) <  2.8800e+02 ]
+   Attribute #22, "peak-rpm":
+      [  4.1500e+03 < ( 5.1254e+03 : 2.2863e+05) <  6.6000e+03 ]
+   Attribute #23, "city-mpg":
+      [  1.3000e+01 < ( 2.5220e+01 : 4.2591e+01) <  4.9000e+01 ]
+   Attribute #24, "highway-mpg":
+      [  1.6000e+01 < ( 3.0751e+01 : 4.7192e+01) <  5.4000e+01 ]
+   Attribute #25, "price":
+      [  5.1180e+03 < ( 1.3207e+04 : 6.2842e+07) <  4.5400e+04 ]
+ADVISORY[3]: the default model term type, single_multinomial, 
+             will be used for these attributes:
+             #2: "make"
+             #3: "fuel-type"
+             #4: "aspiration"
+             #5: "num-of-doors"
+             #6: "body-style"
+             #7: "drive-wheels"
+             #8: "engine-location"
+             #14: "engine-type"
+             #15: "num-of-cylinders"
+             #17: "fuel-system"
+ADVISORY[3]: read 1 model def from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model
+ADVISORY[2]: log_transform is being applied to attribute #1:
+             "normalized-loses" and will be stored as attribute #26.
+   Attribute #26, "Log normalized-loses":
+      [  4.1744e+00 < ( 4.7637e+00 : 8.0123e-02) <  5.5452e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #18:
+             "bore" and will be stored as attribute #27.
+   Attribute #27, "Log bore":
+      [  9.3216e-01 < ( 1.1995e+00 : 6.7855e-03) <  1.3712e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #19:
+             "stroke" and will be stored as attribute #28.
+   Attribute #28, "Log stroke":
+      [  7.2755e-01 < ( 1.1753e+00 : 1.0509e-02) <  1.4279e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #21:
+             "horse-power" and will be stored as attribute #29.
+   Attribute #29, "Log horse-power":
+      [  3.8712e+00 < ( 4.5841e+00 : 1.1947e-01) <  5.6630e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #22:
+             "peak-rpm" and will be stored as attribute #30.
+   Attribute #30, "Log peak-rpm":
+      [  8.3309e+00 < ( 8.5376e+00 : 8.8318e-03) <  8.7948e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #25:
+             "price" and will be stored as attribute #31.
+   Attribute #31, "Log price":
+      [  8.5405e+00 < ( 9.3501e+00 : 2.5100e-01) <  1.0723e+01 ]
+ADVISORY[2]: log_transform is being applied to attribute #9:
+             "wheel-base" and will be stored as attribute #32.
+   Attribute #32, "Log wheel-base":
+      [  4.4613e+00 < ( 4.5909e+00 : 3.5069e-03) <  4.7950e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #10:
+             "length" and will be stored as attribute #33.
+   Attribute #33, "Log length":
+      [  4.9495e+00 < ( 5.1568e+00 : 5.0053e-03) <  5.3380e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #11:
+             "width" and will be stored as attribute #34.
+   Attribute #34, "Log width":
+      [  4.0993e+00 < ( 4.1877e+00 : 1.0268e-03) <  4.2808e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #12:
+             "height" and will be stored as attribute #35.
+   Attribute #35, "Log height":
+      [  3.8670e+00 < ( 3.9828e+00 : 2.0614e-03) <  4.0910e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #13:
+             "curb-weight" and will be stored as attribute #36.
+   Attribute #36, "Log curb-weight":
+      [  7.3052e+00 < ( 7.8262e+00 : 3.8996e-02) <  8.3104e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #16:
+             "engine-size" and will be stored as attribute #37.
+   Attribute #37, "Log engine-size":
+      [  4.1109e+00 < ( 4.8002e+00 : 7.9679e-02) <  5.7869e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #20:
+             "compression-ratio" and will be stored as attribute #38.
+   Attribute #38, "Log compression-ratio":
+      [  1.9459e+00 < ( 2.2674e+00 : 7.9267e-02) <  3.1355e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #23:
+             "city-mpg" and will be stored as attribute #39.
+   Attribute #39, "Log city-mpg":
+      [  2.5649e+00 < ( 3.1948e+00 : 6.5718e-02) <  3.8918e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #24:
+             "highway-mpg" and will be stored as attribute #40.
+   Attribute #40, "Log highway-mpg":
+      [  2.7726e+00 < ( 3.4011e+00 : 5.0072e-02) <  3.9890e+00 ]
+
+############ Input Check Concluded ##############
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (12).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+BEGINNING SEARCH at Mon Jun 11 10:08:23 2001
+
+[j_in=2]  [cs-3: cycles 13] best2->2(1) [j_in=3]  [cs-3: cycles 11] best3->3(2) [j_in=5]  [cs-3: cycles 31] best5->5(3) [j_in=7]  [cs-3: cycles 27] best7->7(4) [j_in=10]  [cs-3: cycles 50] 10->10(5) [j_in=15]  [cs-3: cycles 18] 15->14(6) [j_in=25]  [cs-3: cycles 8] 25->21(7) [j_in=1]  [cs-3: cycles 4] 1->1(8) [j_in=13]  [cs-3: cycles 27] 13->13(9) [j_in=15]  [cs-3: cycles 19] best15->15(10) [j_in=10]  [cs-3: cycles 13] 10->10(11) [j_in=6]  [cs-3: cycles 43] 6->6(12) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 10:08:26 2001
+  after a total of 12 tries over 4 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16410.967) N_CLASSES  15 FOUND ON TRY   10 *SAVED*
+PROBABILITY  exp(-16437.588) N_CLASSES   7 FOUND ON TRY    4 *SAVED*
+PROBABILITY  exp(-16476.523) N_CLASSES   5 FOUND ON TRY    3
+PROBABILITY  exp(-16512.283) N_CLASSES  10 FOUND ON TRY    5
+PROBABILITY  exp(-16514.296) N_CLASSES   6 FOUND ON TRY   12
+PROBABILITY  exp(-16549.938) N_CLASSES  21 FOUND ON TRY    7
+PROBABILITY  exp(-16583.874) N_CLASSES  10 FOUND ON TRY   11
+PROBABILITY  exp(-16639.164) N_CLASSES  14 FOUND ON TRY    6
+PROBABILITY  exp(-16641.226) N_CLASSES  13 FOUND ON TRY    9
+PROBABILITY  exp(-16844.588) N_CLASSES   3 FOUND ON TRY    2
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try   10    num_cycles   19    max_cycles  200    convergent
+try    4    num_cycles   27    max_cycles  200    convergent
+try    3    num_cycles   31    max_cycles  200    convergent
+try    5    num_cycles   50    max_cycles  200    convergent
+try   12    num_cycles   43    max_cycles  200    convergent
+try    7    num_cycles    8    max_cycles  200    convergent
+try   11    num_cycles   13    max_cycles  200    convergent
+try    6    num_cycles   18    max_cycles  200    convergent
+try    9    num_cycles   27    max_cycles  200    convergent
+try    2    num_cycles   11    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 10:08:26 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 10:08:49 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=10; force_new_search_p=false
+
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY: loaded 2 classifications from 
+          /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+ADVISORY: read 12 search trials from 
+          /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+
+ADVISORY: start_j_list=(2,3,5,7,10,15,25) has been overridden by ()
+          from /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (22).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+RESTARTING SEARCH at Mon Jun 11 10:08:49 2001
+
+[j_in=7]  [cs-3: cycles 40] 7->7(13) [j_in=9]  [cs-3: cycles 29] 9->9(14) [j_in=7]  [cs-3: cycles 96] 7->7(15) [j_in=4]  [cs-3: cycles 29] 4->4(16) [j_in=3]  [cs-3: cycles 33] 3->3(17) [j_in=8]  [cs-3: cycles 38] 8->8(18) [j_in=9]  [cs-3: cycles 31] best9->9(19) [j_in=12]  [cs-3: cycles 16] 12->11(20) [j_in=11]  [cs-3: cycles 11] best11->10(21) [j_in=8]  [cs-3: cycles 30] 8->8(22) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 10:08:53 2001
+  after a total of 22 tries over 9 seconds
+This invocation of "autoclass -search" took 4 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16347.467) N_CLASSES  10 FOUND ON TRY   21 *SAVED*
+PROBABILITY  exp(-16376.557) N_CLASSES   9 FOUND ON TRY   19 *SAVED*
+PROBABILITY  exp(-16384.448) N_CLASSES   8 FOUND ON TRY   22
+PROBABILITY  exp(-16410.967) N_CLASSES  15 FOUND ON TRY   10
+PROBABILITY  exp(-16411.990) N_CLASSES  11 FOUND ON TRY   20
+PROBABILITY  exp(-16437.588) N_CLASSES   7 FOUND ON TRY    4
+PROBABILITY  exp(-16467.782) N_CLASSES   9 FOUND ON TRY   14
+PROBABILITY  exp(-16476.523) N_CLASSES   5 FOUND ON TRY    3
+PROBABILITY  exp(-16494.730) N_CLASSES   8 FOUND ON TRY   18
+PROBABILITY  exp(-16505.551) N_CLASSES   7 FOUND ON TRY   15
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try   21    num_cycles   11    max_cycles  200    convergent
+try   19    num_cycles   31    max_cycles  200    convergent
+try   22    num_cycles   30    max_cycles  200    convergent
+try   10    num_cycles   19    max_cycles  200    convergent
+try   20    num_cycles   16    max_cycles  200    convergent
+try    4    num_cycles   27    max_cycles  200    convergent
+try   14    num_cycles   29    max_cycles  200    convergent
+try    3    num_cycles   31    max_cycles  200    convergent
+try   18    num_cycles   38    max_cycles  200    convergent
+try   15    num_cycles   96    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 10:08:53 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 10:13:51 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_duration=120; force_new_search_p=false
+
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY: loaded 2 classifications from 
+          /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+ADVISORY: read 22 search trials from 
+          /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+
+ADVISORY: start_j_list=(2,3,5,7,10,15,25) has been overridden by ()
+          from /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until Mon Jun 11 10:15:51 2001.
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+RESTARTING SEARCH at Mon Jun 11 10:13:51 2001
+
+[j_in=9]  [cs-3: cycles 15] 9->9(23) [j_in=11]  [cs-3: cycles 24] 11->10(24) [j_in=12]  [cs-3: cycles 12] 12->12(25) [j_in=17]  [cs-3: cycles 12] 17->16(26) [j_in=7]  [cs-3: cycles 16] 7->7(27) [j_in=13]  [cs-3: cycles 10] 13->13(28) [j_in=13]  [cs-3: cycles 10] 13->13(29) [j_in=13]  [cs-3: cycles 13] 13->13(30) [j_in=8]  [cs-3: cycles 15] 8->8(31) [j_in=10]  [cs-3: cycles 25] 10->10(32) [j_in=18]  [cs-3: cycles 28] best18->17(33) [j_in=8]  [cs-3: cycles 16] 8->8(34) [j_in=12]  [cs-3: cycles 18] 12->12(35) [j_in=15]  [cs-3: cycles 22] 15->15(36) [j_in=14]  [cs-3: cycles 13] 14->13(37) [j_in=15]  [cs-3: cycles 14] 15->14(38) [j_in=15]  [cs-3: cycles 14] dup15->14(39) [j_in=15]  [cs-3: cycles 14] dup15->14(40) [j_in=15]  [cs-3: cycles 35] 15->14(41) [j_in=16]  [cs-3: cycles 35] dup16->14(42) [j_in=11]  [cs-3: cycles 38] 11->10(43) [j_in=8]  [cs-3: cycles 16] 8->8(44) [j_in=15]  [cs-3: cycles 14] 15->13(45) [j_in=10]  [cs-3: cycles 30] 10->10(46) [j_in=17]  [cs-3: cycles 11] 17->17(47) [j_in=13]  [cs-3: cycles 23] 13->13(48) [j_in=14]  [cs-3: cycles 23] 14->14(49) [j_in=12]  [cs-3: cycles 31] 12->12(50) [j_in=11]  [cs-3: cycles 24] 11->11(51) [j_in=19]  [cs-3: cycles 26] 19->18(52) [j_in=18]  [cs-3: cycles 14] 18->17(53) [j_in=15]  [cs-3: cycles 31] 15->15(54) [j_in=20]  [cs-3: cycles 16] 20->20(55) [j_in=15]  [cs-3: cycles 18] 15->15(56) [j_in=15]  [cs-3: cycles 18] dup15->15(57) [j_in=15]  [cs-3: cycles 14] 15->14(58) [j_in=20]  [cs-3: cycles 15] 20->18(59) [j_in=14]  [cs-3: cycles 15] 14->13(60) [j_in=14]  [cs-3: cycles 43] 14->14(61) [j_in=15]  [cs-3: cycles 26] 15->14(62) [j_in=17]  [cs-3: cycles 13] 17->16(63) [j_in=14]  [cs-3: cycles 16] 14->14(64) [j_in=16]  [cs-3: cycles 14] 16->16(65) [j_in=22]  [cs-3: cycles 11] 22->20(66) [j_in=20]  [cs-3: cycles 15] 20->19(67) [j_in=14]  [cs-3: cycles 17] 14->14(68) [j_in=13]  [cs-3: cycles 17] 13->13(69) [j_in=15]  [cs-3: cycles 7] best15->15(70) [j_in=14]  [cs-3: cycles 38] 14->14(71) [j_in=14]  [cs-3: cycles 38] 14->14(72) [j_in=14]  [cs-3: cycles 16] best14->13(73) [j_in=13]  [cs-3: cycles 19] 13->12(74) [j_in=17]  [cs-3: cycles 16] best17->15(75) [j_in=13]  [cs-3: cycles 38] best13->12(76) [j_in=17]  [cs-3: cycles 11] 17->16(77) [j_in=13]  [cs-3: cycles 38] dup13->12(78) [j_in=17]  [cs-3: cycles 13] 17->15(79) [j_in=15]  [cs-3: cycles 13] 15->14(80) [j_in=19]  [cs-3: cycles 13] 19->17(81) [j_in=17]  [cs-3: cycles 9] 17->15(82) [j_in=15]  [cs-3: cycles 16] 15->14(83) [j_in=14]  [cs-3: cycles 11] 14->14(84) [j_in=17]  [cs-3: cycles 9] dup17->15(85) [j_in=15]  [cs-3: cycles 7] 15->15(86) [j_in=15]  [cs-3: cycles 7] 15->15(87) [j_in=15]  [cs-3: cycles 7] 15->15(88) [j_in=15]  [cs-3: cycles 7] 15->15(89) [j_in=15]  [cs-3: cycles 7] 15->15(90) [j_in=15]  [cs-3: cycles 7] 15->15(91) [j_in=15]  [cs-3: cycles 7] 15->15(92) [j_in=15]  [cs-3: cycles 13] 15->15(93) [j_in=11]  [cs-3: cycles 22] 11->11(94) [j_in=15]  [cs-3: cycles 13] 15->15(95) [j_in=11]  [cs-3: cycles 22] 11->11(96) [j_in=15]  [cs-3: cycles 13] 15->15(97) [j_in=14]  [cs-3: cycles 34] 14->14(98) [j_in=16]  [cs-3: cycles 13] 16->16(99) [j_in=15]  [cs-3: cycles 9] 15->15(100) [j_in=15]  [cs-3: cycles 9] 15->15(101) [j_in=15]  [cs-3: cycles 9] 15->15(102) [j_in=15]  [cs-3: cycles 9] 15->15(103) [j_in=15]  [cs-3: cycles 9] 15->15(104) [j_in=15]  [cs-3: cycles 23] 15->15(105) [j_in=13]  [cs-3: cycles 19] 13->13(106) [j_in=11]  [cs-3: cycles 18] 11->11(107) [j_in=17]  [cs-3: cycles 27] 17->17(108) [j_in=15]  [cs-3: cycles 17] 15->15(109) [j_in=15]  [cs-3: cycles 17] 15->15(110) [j_in=15]  [cs-3: cycles 12] 15->15(111) [j_in=18]  [cs-3: cycles 16] 18->18(112) [j_in=15]  [cs-3: cycles 12] 15->15(113) [j_in=18]  [cs-3: cycles 16] 18->18(114) [j_in=15]  [cs-3: cycles 17] 15->14(115) [j_in=15]  [cs-3: cycles 17] 15->14(116) [j_in=15]  [cs-3: cycles 17] 15->14(117) [j_in=15]  [cs-3: cycles 25] 15->15(118) [j_in=15]  [cs-3: cycles 25] 15->15(119) [j_in=15]  [cs-3: cycles 25] 15->15(120) [j_in=15]  [cs-3: cycles 12] 15->15(121) [j_in=17]  [cs-3: cycles 12] 17->16(122) [j_in=16]  [cs-3: cycles 12] 16->16(123) [j_in=16]  [cs-3: cycles 12] 16->16(124) [j_in=15]  [cs-3: cycles 11] 15->15(125) [j_in=14]  [cs-3: cycles 15] 14->14(126) [j_in=15]  [cs-3: cycles 11] 15->15(127) [j_in=14]  [cs-3: cycles 15] 14->14(128) 
+
+----------------  NEW BEST CLASSIFICATION FOUND on try 76  -------------
+It has 12 CLASSES with WEIGHTS 30 24 24 22 21 20 17 13 12 9 7 6
+PROBABILITY of both the data and the classification = exp(-16211.601)
+(Also found 75 other better than last report.)
+
+-----------  SEARCH STATUS as of Mon Jun 11 10:14:22 2001  -----------
+It just took 31 seconds since beginning.
+Estimate < 40 seconds to find a classification
+  exp(22.5) [= 5.9e+09] times more probable.
+Estimate >> 7 seconds to find the very best classification,
+ which may be exp(0.0) to exp(3800.8) times more probable.
+Have seen 122 of the estimated > 144 possible classifications (based on 6
+ duplicates do far).
+Log-Normal fit to classifications probabilities has M(ean) -16460.8,
+ S(igma) 90.0
+Choosing initial n-classes randomly from a log_normal [M-S, M, M+S] = 
+ [12.5, 14.6, 16.9]
+Overhead time is 7.3 % of total search time
+WARNING: You may be running out of peaks to find.  Estimates are too 
+ optimistic
+
+[j_in=16]  [cs-3: cycles 29] 16->16(129) [j_in=17]  [cs-3: cycles 31] 17->17(130) [j_in=14]  [cs-3: cycles 29] 14->14(131) [j_in=21]  [cs-3: cycles 14] 21->21(132) [j_in=17]  [cs-3: cycles 13] 17->17(133) [j_in=15]  [cs-3: cycles 19] 15->15(134) [j_in=16]  [cs-3: cycles 20] 16->16(135) [j_in=14]  [cs-3: cycles 19] 14->14(136) [j_in=16]  [cs-3: cycles 22] 16->16(137) [j_in=19]  [cs-3: cycles 17] 19->19(138) [j_in=14]  [cs-3: cycles 11] 14->14(139) [j_in=15]  [cs-3: cycles 12] 15->15(140) [j_in=14]  [cs-3: cycles 11] dup14->14(141) [j_in=15]  [cs-3: cycles 12] dup15->15(142) [j_in=14]  [cs-3: cycles 11] dup14->14(143) [j_in=15]  [cs-3: cycles 29] 15->15(144) [j_in=18]  [cs-3: cycles 12] 18->18(145) [j_in=13]  [cs-3: cycles 11] 13->13(146) [j_in=12]  [cs-3: cycles 13] 12->11(147) [j_in=17]  [cs-3: cycles 17] 17->16(148) [j_in=15]  [cs-3: cycles 20] 15->14(149) [j_in=16]  [cs-3: cycles 18] 16->15(150) [j_in=20]  [cs-3: cycles 13] 20->17(151) [j_in=16]  [cs-3: cycles 20] 16->15(152) [j_in=16]  [cs-3: cycles 20] dup16->15(153) [j_in=16]  [cs-3: cycles 14] 16->15(154) [j_in=17]  [cs-3: cycles 14] 17->16(155) [j_in=15]  [cs-3: cycles 14] 15->14(156) [j_in=15]  [cs-3: cycles 14] 15->14(157) [j_in=15]  [cs-3: cycles 9] 15->15(158) [j_in=14]  [cs-3: cycles 20] 14->14(159) [j_in=16]  [cs-3: cycles 9] 16->16(160) [j_in=15]  [cs-3: cycles 9] 15->15(161) [j_in=14]  [cs-3: cycles 26] 14->12(162) [j_in=15]  [cs-3: cycles 22] 15->13(163) [j_in=12]  [cs-3: cycles 19] 12->11(164) [j_in=14]  [cs-3: cycles 9] 14->14(165) [j_in=16]  [cs-3: cycles 15] 16->16(166) [j_in=15]  [cs-3: cycles 14] 15->15(167) [j_in=18]  [cs-3: cycles 14] 18->18(168) [j_in=13]  [cs-3: cycles 14] 13->12(169) [j_in=13]  [cs-3: cycles 14] 13->12(170) [j_in=13]  [cs-3: cycles 14] 13->12(171) [j_in=13]  [cs-3: cycles 14] 13->12(172) [j_in=13]  [cs-3: cycles 14] 13->12(173) [j_in=13]  [cs-3: cycles 23] 13->13(174) [j_in=13]  [cs-3: cycles 23] 13->13(175) [j_in=13]  [cs-3: cycles 23] 13->13(176) [j_in=13]  [cs-3: cycles 47] 13->12(177) [j_in=15]  [cs-3: cycles 19] 15->14(178) [j_in=17]  [cs-3: cycles 14] 17->16(179) [j_in=16]  [cs-3: cycles 17] 16->15(180) [j_in=14]  [cs-3: cycles 22] 14->13(181) [j_in=16]  [cs-3: cycles 12] 16->16(182) [j_in=13]  [cs-3: cycles 41] 13->13(183) [j_in=15]  [cs-3: cycles 12] 15->15(184) [j_in=14]  [cs-3: cycles 12] 14->14(185) [j_in=15]  [cs-3: cycles 20] 15->15(186) [j_in=16]  [cs-3: cycles 21] 16->16(187) [j_in=16]  [cs-3: cycles 13] 16->16(188) [j_in=15]  [cs-3: cycles 13] 15->15(189) [j_in=13]  [cs-3: cycles 24] 13->13(190) [j_in=15]  [cs-3: cycles 9] 15->15(191) [j_in=17]  [cs-3: cycles 9] 17->17(192) [j_in=16]  [cs-3: cycles 9] 16->16(193) [j_in=15]  [cs-3: cycles 9] 15->15(194) [j_in=17]  [cs-3: cycles 9] 17->17(195) [j_in=16]  [cs-3: cycles 9] dup16->16(196) [j_in=15]  [cs-3: cycles 20] 15->15(197) [j_in=15]  [cs-3: cycles 20] 15->15(198) [j_in=15]  [cs-3: cycles 20] 15->15(199) [j_in=15]  [cs-3: cycles 43] 15->15(200) [j_in=15]  [cs-3: cycles 43] 15->15(201) [j_in=15]  [cs-3: cycles 20] 15->15(202) [j_in=17]  [cs-3: cycles 11] 17->16(203) [j_in=15]  [cs-3: cycles 13] 15->15(204) [j_in=17]  [cs-3: cycles 13] 17->17(205) [j_in=16]  [cs-3: cycles 13] 16->16(206) [j_in=16]  [cs-3: cycles 13] 16->16(207) [j_in=16]  [cs-3: cycles 12] 16->16(208) [j_in=15]  [cs-3: cycles 12] 15->15(209) [j_in=15]  [cs-3: cycles 12] dup15->15(210) [j_in=15]  [cs-3: cycles 12] dup15->15(211) [j_in=15]  [cs-3: cycles 15] 15->13(212) [j_in=14]  [cs-3: cycles 15] 14->14(213) [j_in=14]  [cs-3: cycles 15] 14->14(214) [j_in=14]  [cs-3: cycles 15] 14->14(215) [j_in=14]  [cs-3: cycles 21] 14->13(216) [j_in=16]  [cs-3: cycles 26] 16->15(217) [j_in=15]  [cs-3: cycles 26] 15->14(218) [j_in=15]  [cs-3: cycles 33] 15->15(219) [j_in=16]  [cs-3: cycles 14] 16->16(220) [j_in=14]  [cs-3: cycles 18] 14->14(221) [j_in=13]  [cs-3: cycles 24] 13->13(222) [j_in=16]  [cs-3: cycles 13] 16->16(223) [j_in=15]  [cs-3: cycles 12] 15->15(224) [j_in=14]  [cs-3: cycles 14] 14->14(225) [j_in=13]  [cs-3: cycles 15] 13->13(226) [j_in=17]  [cs-3: cycles 13] 17->16(227) [j_in=16]  [cs-3: cycles 13] 16->16(228) [j_in=15]  [cs-3: cycles 23] 15->15(229) [j_in=15]  [cs-3: cycles 23] 15->15(230) [j_in=15]  [cs-3: cycles 14] 15->14(231) [j_in=17]  [cs-3: cycles 21] 17->16(232) [j_in=12]  [cs-3: cycles 19] 12->12(233) [j_in=15]  [cs-3: cycles 14] 15->14(234) [j_in=17]  [cs-3: cycles 20] 17->16(235) [j_in=14]  [cs-3: cycles 14] 14->14(236) [j_in=17]  [cs-3: cycles 20] 17->16(237) [j_in=14]  [cs-3: cycles 10] 14->14(238) [j_in=15]  [cs-3: cycles 12] 15->15(239) [j_in=16]  [cs-3: cycles 13] 16->16(240) [j_in=15]  [cs-3: cycles 12] 15->15(241) [j_in=16]  [cs-3: cycles 29] 16->16(242) [j_in=16]  [cs-3: cycles 29] 16->16(243) [j_in=16]  [cs-3: cycles 25] 16->16(244) [j_in=14]  [cs-3: cycles 16] 14->14(245) [j_in=19]  [cs-3: cycles 24] 19->19(246) [j_in=15]  [cs-3: cycles 24] 15->14(247) [j_in=15]  [cs-3: cycles 24] 15->14(248) [j_in=15]  [cs-3: cycles 21] 15->14(249) [j_in=16]  [cs-3: cycles 20] 16->15(250) [j_in=15]  [cs-3: cycles 21] 15->14(251) [j_in=16]  [cs-3: cycles 9] 16->16(252) [j_in=17]  [cs-3: cycles 10] 17->17(253) [j_in=19]  [cs-3: cycles 15] 19->19(254) [j_in=16]  [cs-3: cycles 9] 16->16(255) [j_in=17]  [cs-3: cycles 23] 17->16(256) [j_in=19]  [cs-3: cycles 15] 19->18(257) [j_in=16]  [cs-3: cycles 22] 16->15(258) [j_in=18]  [cs-3: cycles 8] 18->16(259) [j_in=18]  [cs-3: cycles 8] 18->16(260) [j_in=18]  [cs-3: cycles 8] 18->16(261) [j_in=18]  [cs-3: cycles 8] 18->16(262) [j_in=18]  [cs-3: cycles 8] 18->16(263) [j_in=18]  [cs-3: cycles 11] 18->18(264) [j_in=16]  [cs-3: cycles 22] 16->16(265) [j_in=19]  [cs-3: cycles 20] 19->19(266) [j_in=15]  [cs-3: cycles 31] 15->15(267) [j_in=16]  [cs-3: cycles 13] 16->16(268) [j_in=17]  [cs-3: cycles 19] 17->17(269) [j_in=14]  [cs-3: cycles 20] 14->14(270) [j_in=17]  [cs-3: cycles 48] 17->17(271) [j_in=18]  [cs-3: cycles 9] 18->18(272) [j_in=18]  [cs-3: cycles 9] 18->18(273) [j_in=18]  [cs-3: cycles 9] 18->18(274) [j_in=18]  [cs-3: cycles 13] 18->17(275) [j_in=16]  [cs-3: cycles 21] 16->16(276) [j_in=18]  [cs-3: cycles 13] 18->17(277) [j_in=16]  [cs-3: cycles 21] 16->16(278) [j_in=18]  [cs-3: cycles 20] 18->18(279) [j_in=14]  [cs-3: cycles 12] 14->14(280) [j_in=15]  [cs-3: cycles 19] 15->15(281) [j_in=14]  [cs-3: cycles 30] 14->14(282) [j_in=15]  [cs-3: cycles 30] 15->15(283) [j_in=16]  [cs-3: cycles 18] 16->16(284) [j_in=16]  [cs-3: cycles 18] 16->16(285) [j_in=16]  [cs-3: cycles 18] 16->16(286) [j_in=16]  [cs-3: cycles 17] 16->16(287) [j_in=15]  [cs-3: cycles 17] 15->15(288) [j_in=17]  [cs-3: cycles 14] 17->17(289) [j_in=12]  [cs-3: cycles 17] 12->11(290) [j_in=15]  [cs-3: cycles 13] 15->14(291) [j_in=15]  [cs-3: cycles 13] 15->14(292) [j_in=15]  [cs-3: cycles 13] 15->14(293) [j_in=15]  [cs-3: cycles 27] 15->15(294) [j_in=16]  [cs-3: cycles 27] 16->15(295) [j_in=15]  [cs-3: cycles 9] 15->15(296) [j_in=18]  [cs-3: cycles 21] 18->18(297) [j_in=14]  [cs-3: cycles 12] 14->14(298) [j_in=12]  [cs-3: cycles 13] 12->12(299) [j_in=17]  [cs-3: cycles 13] 17->17(300) [j_in=19]  [cs-3: cycles 15] 19->19(301) [j_in=14]  [cs-3: cycles 28] 14->14(302) [j_in=14]  [cs-3: cycles 18] 14->14(303) [j_in=15]  [cs-3: cycles 22] 15->15(304) [j_in=16]  [cs-3: cycles 22] 16->16(305) [j_in=15]  [cs-3: cycles 15] 15->15(306) [j_in=18]  [cs-3: cycles 26] 18->17(307) [j_in=16]  [cs-3: cycles 9] 16->16(308) [j_in=19]  [cs-3: cycles 41] 19->18(309) [j_in=19]  [cs-3: cycles 41] 19->18(310) [j_in=19]  [cs-3: cycles 13] 19->18(311) [j_in=17]  [cs-3: cycles 9] 17->17(312) [j_in=16]  [cs-3: cycles 22] 16->16(313) [j_in=16]  [cs-3: cycles 22] 16->16(314) [j_in=16]  [cs-3: cycles 22] 16->16(315) [j_in=16]  [cs-3: cycles 17] 16->15(316) [j_in=16]  [cs-3: cycles 17] 16->15(317) [j_in=16]  [cs-3: cycles 16] 16->16(318) [j_in=16]  [cs-3: cycles 16] 16->16(319) [j_in=16]  [cs-3: cycles 16] 16->16(320) [j_in=16]  [cs-3: cycles 16] 16->16(321) [j_in=16]  [cs-3: cycles 14] 16->15(322) [j_in=16]  [cs-3: cycles 14] 16->15(323) [j_in=16]  [cs-3: cycles 14] 16->15(324) [j_in=16]  [cs-3: cycles 14] 16->15(325) [j_in=16]  [cs-3: cycles 10] 16->15(326) [j_in=16]  [cs-3: cycles 10] 16->15(327) [j_in=16]  [cs-3: cycles 10] 16->15(328) [j_in=16]  [cs-3: cycles 10] 16->15(329) [j_in=16]  [cs-3: cycles 14] 16->16(330) [j_in=16]  [cs-3: cycles 14] 16->16(331) [j_in=16]  [cs-3: cycles 14] 16->16(332) [j_in=16]  [cs-3: cycles 14] 16->16(333) [j_in=16]  [cs-3: cycles 23] 16->14(334) [j_in=16]  [cs-3: cycles 23] 16->14(335) [j_in=16]  [cs-3: cycles 23] 16->14(336) [j_in=16]  [cs-3: cycles 33] 16->14(337) [j_in=13]  [cs-3: cycles 21] 13->12(338) [j_in=14]  [cs-3: cycles 32] 14->14(339) [j_in=18]  [cs-3: cycles 13] 18->18(340) [j_in=18]  [cs-3: cycles 13] 18->18(341) [j_in=18]  [cs-3: cycles 12] 18->18(342) [j_in=17]  [cs-3: cycles 18] 17->17(343) [j_in=16]  [cs-3: cycles 18] 16->16(344) [j_in=13]  [cs-3: cycles 12] 13->13(345) [j_in=13]  [cs-3: cycles 12] 13->13(346) [j_in=13]  [cs-3: cycles 12] 13->13(347) [j_in=13]  [cs-3: cycles 12] 13->13(348) [j_in=13]  [cs-3: cycles 12] 13->13(349) [j_in=13]  [cs-3: cycles 23] 13->13(350) [j_in=14]  [cs-3: cycles 16] 14->13(351) [j_in=14]  [cs-3: cycles 16] dup14->13(352) [j_in=14]  [cs-3: cycles 16] dup14->13(353) [j_in=14]  [cs-3: cycles 28] 14->14(354) [j_in=17]  [cs-3: cycles 17] 17->17(355) [j_in=15]  [cs-3: cycles 20] 15->15(356) [j_in=15]  [cs-3: cycles 20] 15->15(357) [j_in=15]  [cs-3: cycles 20] 15->15(358) [j_in=15]  [cs-3: cycles 13] 15->15(359) [j_in=16]  [cs-3: cycles 17] 16->16(360) [j_in=17]  [cs-3: cycles 13] 17->17(361) [j_in=16]  [cs-3: cycles 17] 16->16(362) [j_in=17]  [cs-3: cycles 16] 17->17(363) [j_in=15]  [cs-3: cycles 12] 15->15(364) [j_in=16]  [cs-3: cycles 18] 16->16(365) [j_in=16]  [cs-3: cycles 15] 16->15(366) [j_in=14]  [cs-3: cycles 15] 14->13(367) [j_in=16]  [cs-3: cycles 15] 16->15(368) [j_in=14]  [cs-3: cycles 15] 14->13(369) [j_in=16]  [cs-3: cycles 46] 16->15(370) [j_in=16]  [cs-3: cycles 46] 16->15(371) [j_in=16]  [cs-3: cycles 10] 16->15(372) [j_in=17]  [cs-3: cycles 10] 17->16(373) [j_in=14]  [cs-3: cycles 14] 14->13(374) [j_in=16]  [cs-3: cycles 11] 16->16(375) [j_in=16]  [cs-3: cycles 11] 16->16(376) [j_in=16]  [cs-3: cycles 11] 16->16(377) [j_in=16]  [cs-3: cycles 11] 16->16(378) [j_in=16]  [cs-3: cycles 13] 16->15(379) [j_in=19]  [cs-3: cycles 12] 19->18(380) [j_in=14]  [cs-3: cycles 13] 14->13(381) [j_in=13]  [cs-3: cycles 20] 13->12(382) [j_in=15]  [cs-3: cycles 9] 15->15(383) [j_in=17]  [cs-3: cycles 9] 17->17(384) [j_in=15]  [cs-3: cycles 9] 15->15(385) [j_in=17]  [cs-3: cycles 9] 17->17(386) [j_in=15]  [cs-3: cycles 9] 15->15(387) [j_in=17]  [cs-3: cycles 18] 17->16(388) [j_in=14]  [cs-3: cycles 11] 14->14(389) [j_in=18]  [cs-3: cycles 18] 18->17(390) [j_in=14]  [cs-3: cycles 11] 14->14(391) [j_in=18]  [cs-3: cycles 15] 18->16(392) [j_in=14]  [cs-3: cycles 12] 14->14(393) [j_in=16]  [cs-3: cycles 16] 16->15(394) [j_in=19]  [cs-3: cycles 9] 19->17(395) [j_in=14]  [cs-3: cycles 13] 14->14(396) [j_in=19]  [cs-3: cycles 25] 19->19(397) [j_in=16]  [cs-3: cycles 13] 16->16(398) [j_in=14]  [cs-3: cycles 22] 14->14(399) [j_in=17]  [cs-3: cycles 11] 17->17(400) [j_in=15]  [cs-3: cycles 11] 15->15(401) [j_in=13]  [cs-3: cycles 22] 13->13(402) [j_in=17]  [cs-3: cycles 21] 17->17(403) [j_in=16]  [cs-3: cycles 18] 16->16(404) [j_in=13]  [cs-3: cycles 23] 13->12(405) [j_in=15]  [cs-3: cycles 16] 15->14(406) [j_in=14]  [cs-3: cycles 12] 14->13(407) [j_in=16]  [cs-3: cycles 12] 16->15(408) [j_in=14]  [cs-3: cycles 22] 14->14(409) [j_in=15]  [cs-3: cycles 14] 15->15(410) [j_in=19]  [cs-3: cycles 14] 19->19(411) [j_in=14]  [cs-3: cycles 22] 14->14(412) [j_in=15]  [cs-3: cycles 11] 15->15(413) [j_in=18]  [cs-3: cycles 21] 18->18(414) [j_in=13]  [cs-3: cycles 11] 13->13(415) [j_in=16]  [cs-3: cycles 15] 16->15(416) [j_in=15]  [cs-3: cycles 15] 15->15(417) [j_in=17]  [cs-3: cycles 15] 17->16(418) [j_in=13]  [cs-3: cycles 44] 13->13(419) [j_in=16]  [cs-3: cycles 26] 16->16(420) 
+
+
+ENDING SEARCH because max duration has expired at Mon Jun 11 10:15:52 2001
+  after a total of 420 tries over 2 minutes 11 seconds
+This invocation of "autoclass -search" took 2 minutes 1 second
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16211.601) N_CLASSES  12 FOUND ON TRY   76 DUPS  1 *SAVED*
+PROBABILITY  exp(-16216.971) N_CLASSES  13 FOUND ON TRY  351 DUPS  2 *SAVED*
+PROBABILITY  exp(-16241.062) N_CLASSES  14 FOUND ON TRY  245
+PROBABILITY  exp(-16245.009) N_CLASSES  16 FOUND ON TRY  135
+PROBABILITY  exp(-16247.711) N_CLASSES  16 FOUND ON TRY  193 DUPS  1
+PROBABILITY  exp(-16247.786) N_CLASSES  13 FOUND ON TRY  183
+PROBABILITY  exp(-16248.708) N_CLASSES  16 FOUND ON TRY  208
+PROBABILITY  exp(-16254.312) N_CLASSES  15 FOUND ON TRY   75
+PROBABILITY  exp(-16254.821) N_CLASSES  17 FOUND ON TRY  133
+PROBABILITY  exp(-16255.435) N_CLASSES  15 FOUND ON TRY  258
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try   76    num_cycles   38    max_cycles  200    convergent
+try  351    num_cycles   16    max_cycles  200    convergent
+try  245    num_cycles   16    max_cycles  200    convergent
+try  135    num_cycles   20    max_cycles  200    convergent
+try  193    num_cycles    9    max_cycles  200    convergent
+try  183    num_cycles   41    max_cycles  200    convergent
+try  208    num_cycles   12    max_cycles  200    convergent
+try   75    num_cycles   16    max_cycles  200    convergent
+try  133    num_cycles   13    max_cycles  200    convergent
+try  258    num_cycles   22    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 10:15:52 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 11:54:25 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=12
+
+
+##############  Starting Input Check  ###############
+
+To log file: 
+   /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+During loading of: 
+   [1] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2,
+   [2] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2,
+   [3] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model.
+
+   [Attribute #, value #, and datum # are zero based.]
+
+ADVISORY[2]: data_file_format settings:
+             separator_char = ',', comment_char = ';', unknown_token = '?'
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[2]: for attribute #5: "num-of-doors" range increased to 3,
+             for value 2 -- translator (2 ?).
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY[1]: discrete translations [ (internal external):count ... ] built 
+             from input data --
+   Attribute #0, "symboling":
+      [ (0 3):27 (1 1):54 (2 2):32 (3 0):67 (4 -1):22 (5 -2):3 ]
+   Attribute #2, "make":
+      [ (0 alfa-romero):3 (1 audi):7 (2 bmw):8 (3 chevrolet):3 (4 dodge):9 (5 honda):13 (6 isuzu):4 (7 jaguar):3 (8 mazda):17 (9 mercedes-benz):8 (10 mercury):1 (11 mitsubishi):13 (12 nissan):18 (13 peugot):11 (14 plymouth):7 (15 porsche):5 (16 renault):2 (17 saab):6 (18 subaru):12 (19 toyota):32 (20 volkswagen):12 (21 volvo):11 ]
+   Attribute #3, "fuel-type":
+      [ (0 gas):185 (1 diesel):20 ]
+   Attribute #4, "aspiration":
+      [ (0 std):168 (1 turbo):37 ]
+   Attribute #5, "num-of-doors":
+      [ (0 two):89 (1 four):114 (2 ?):2 ]
+   Attribute #6, "body-style":
+      [ (0 convertible):6 (1 hatchback):70 (2 sedan):96 (3 wagon):25 (4 hardtop):8 ]
+   Attribute #7, "drive-wheels":
+      [ (0 rwd):76 (1 fwd):120 (2 4wd):9 ]
+   Attribute #8, "engine-location":
+      [ (0 front):202 (1 rear):3 ]
+   Attribute #14, "engine-type":
+      [ (0 dohc):12 (1 ohcv):13 (2 ohc):148 (3 l):12 (4 rotor):4 (5 ohcf):15 (6 dohcv):1 ]
+   Attribute #15, "num-of-cylinders":
+      [ (0 four):159 (1 six):24 (2 five):11 (3 three):1 (4 twelve):1 (5 two):4 (6 eight):5 ]
+   Attribute #17, "fuel-system":
+      [ (0 mpfi):94 (1 2bbl):66 (2 mfi):1 (3 1bbl):11 (4 spfi):1 (5 4bbl):3 (6 idi):20 (7 spdi):9 ]
+ADVISORY[1]: real statistics [ min < (mean : variance) < max ] built 
+             from input data --
+   Attribute #1, "normalized-loses":
+      [  6.5000e+01 < ( 1.2200e+02 : 1.2485e+03) <  2.5600e+02 ]
+   Attribute #9, "wheel-base":
+      [  8.6600e+01 < ( 9.8757e+01 : 3.6085e+01) <  1.2090e+02 ]
+   Attribute #10, "length":
+      [  1.4110e+02 < ( 1.7405e+02 : 1.5147e+02) <  2.0810e+02 ]
+   Attribute #11, "width":
+      [  6.0300e+01 < ( 6.5908e+01 : 4.5795e+00) <  7.2300e+01 ]
+   Attribute #12, "height":
+      [  4.7800e+01 < ( 5.3725e+01 : 5.9417e+00) <  5.9800e+01 ]
+   Attribute #13, "curb-weight":
+      [  1.4880e+03 < ( 2.5556e+03 : 2.6979e+05) <  4.0660e+03 ]
+   Attribute #16, "engine-size":
+      [  6.1000e+01 < ( 1.2691e+02 : 1.7257e+03) <  3.2600e+02 ]
+   Attribute #18, "bore":
+      [  2.5400e+00 < ( 3.3298e+00 : 7.4451e-02) <  3.9400e+00 ]
+   Attribute #19, "stroke":
+      [  2.0700e+00 < ( 3.2554e+00 : 9.9811e-02) <  4.1700e+00 ]
+   Attribute #20, "compression-ratio":
+      [  7.0000e+00 < ( 1.0143e+01 : 1.5700e+01) <  2.3000e+01 ]
+   Attribute #21, "horse-power":
+      [  4.8000e+01 < ( 1.0426e+02 : 1.5695e+03) <  2.8800e+02 ]
+   Attribute #22, "peak-rpm":
+      [  4.1500e+03 < ( 5.1254e+03 : 2.2863e+05) <  6.6000e+03 ]
+   Attribute #23, "city-mpg":
+      [  1.3000e+01 < ( 2.5220e+01 : 4.2591e+01) <  4.9000e+01 ]
+   Attribute #24, "highway-mpg":
+      [  1.6000e+01 < ( 3.0751e+01 : 4.7192e+01) <  5.4000e+01 ]
+   Attribute #25, "price":
+      [  5.1180e+03 < ( 1.3207e+04 : 6.2842e+07) <  4.5400e+04 ]
+ADVISORY[3]: the default model term type, single_multinomial, 
+             will be used for these attributes:
+             #2: "make"
+             #3: "fuel-type"
+             #4: "aspiration"
+             #5: "num-of-doors"
+             #6: "body-style"
+             #7: "drive-wheels"
+             #8: "engine-location"
+             #14: "engine-type"
+             #15: "num-of-cylinders"
+             #17: "fuel-system"
+ADVISORY[3]: read 1 model def from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model
+ADVISORY[2]: log_transform is being applied to attribute #1:
+             "normalized-loses" and will be stored as attribute #26.
+   Attribute #26, "Log normalized-loses":
+      [  4.1744e+00 < ( 4.7637e+00 : 8.0123e-02) <  5.5452e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #18:
+             "bore" and will be stored as attribute #27.
+   Attribute #27, "Log bore":
+      [  9.3216e-01 < ( 1.1995e+00 : 6.7855e-03) <  1.3712e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #19:
+             "stroke" and will be stored as attribute #28.
+   Attribute #28, "Log stroke":
+      [  7.2755e-01 < ( 1.1753e+00 : 1.0509e-02) <  1.4279e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #21:
+             "horse-power" and will be stored as attribute #29.
+   Attribute #29, "Log horse-power":
+      [  3.8712e+00 < ( 4.5841e+00 : 1.1947e-01) <  5.6630e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #22:
+             "peak-rpm" and will be stored as attribute #30.
+   Attribute #30, "Log peak-rpm":
+      [  8.3309e+00 < ( 8.5376e+00 : 8.8318e-03) <  8.7948e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #25:
+             "price" and will be stored as attribute #31.
+   Attribute #31, "Log price":
+      [  8.5405e+00 < ( 9.3501e+00 : 2.5100e-01) <  1.0723e+01 ]
+ADVISORY[2]: log_transform is being applied to attribute #9:
+             "wheel-base" and will be stored as attribute #32.
+   Attribute #32, "Log wheel-base":
+      [  4.4613e+00 < ( 4.5909e+00 : 3.5069e-03) <  4.7950e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #10:
+             "length" and will be stored as attribute #33.
+   Attribute #33, "Log length":
+      [  4.9495e+00 < ( 5.1568e+00 : 5.0053e-03) <  5.3380e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #11:
+             "width" and will be stored as attribute #34.
+   Attribute #34, "Log width":
+      [  4.0993e+00 < ( 4.1877e+00 : 1.0268e-03) <  4.2808e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #12:
+             "height" and will be stored as attribute #35.
+   Attribute #35, "Log height":
+      [  3.8670e+00 < ( 3.9828e+00 : 2.0614e-03) <  4.0910e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #13:
+             "curb-weight" and will be stored as attribute #36.
+   Attribute #36, "Log curb-weight":
+      [  7.3052e+00 < ( 7.8262e+00 : 3.8996e-02) <  8.3104e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #16:
+             "engine-size" and will be stored as attribute #37.
+   Attribute #37, "Log engine-size":
+      [  4.1109e+00 < ( 4.8002e+00 : 7.9679e-02) <  5.7869e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #20:
+             "compression-ratio" and will be stored as attribute #38.
+   Attribute #38, "Log compression-ratio":
+      [  1.9459e+00 < ( 2.2674e+00 : 7.9267e-02) <  3.1355e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #23:
+             "city-mpg" and will be stored as attribute #39.
+   Attribute #39, "Log city-mpg":
+      [  2.5649e+00 < ( 3.1948e+00 : 6.5718e-02) <  3.8918e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #24:
+             "highway-mpg" and will be stored as attribute #40.
+   Attribute #40, "Log highway-mpg":
+      [  2.7726e+00 < ( 3.4011e+00 : 5.0072e-02) <  3.9890e+00 ]
+
+############ Input Check Concluded ##############
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (12).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+BEGINNING SEARCH at Mon Jun 11 11:54:27 2001
+
+[j_in=2]  [cs-3: cycles 8] best2->2(1) [j_in=3]  [cs-3: cycles 14] best3->3(2) [j_in=5]  [cs-3: cycles 38] best5->5(3) [j_in=7]  [cs-3: cycles 24] best7->7(4) [j_in=10]  [cs-3: cycles 22] best10->10(5) [j_in=15]  [cs-3: cycles 38] best15->15(6) [j_in=25]  [cs-3: cycles 9] 25->23(7) [j_in=16]  [cs-3: cycles 45] best16->15(8) [j_in=4]  [cs-3: cycles 13] 4->4(9) [j_in=14]  [cs-3: cycles 11] 14->13(10) [j_in=20]  [cs-3: cycles 10] 20->19(11) [j_in=10]  [cs-3: cycles 20] 10->10(12) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 11:54:30 2001
+  after a total of 12 tries over 4 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16176.428) N_CLASSES  15 FOUND ON TRY    8 *SAVED*
+PROBABILITY  exp(-16210.935) N_CLASSES  15 FOUND ON TRY    6 *SAVED*
+PROBABILITY  exp(-16462.450) N_CLASSES  23 FOUND ON TRY    7
+PROBABILITY  exp(-16494.516) N_CLASSES  13 FOUND ON TRY   10
+PROBABILITY  exp(-16514.158) N_CLASSES  10 FOUND ON TRY    5
+PROBABILITY  exp(-16521.458) N_CLASSES   7 FOUND ON TRY    4
+PROBABILITY  exp(-16522.034) N_CLASSES  10 FOUND ON TRY   12
+PROBABILITY  exp(-16602.618) N_CLASSES   5 FOUND ON TRY    3
+PROBABILITY  exp(-16642.879) N_CLASSES  19 FOUND ON TRY   11
+PROBABILITY  exp(-16659.395) N_CLASSES   4 FOUND ON TRY    9
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try    8    num_cycles   45    max_cycles  200    convergent
+try    6    num_cycles   38    max_cycles  200    convergent
+try    7    num_cycles    9    max_cycles  200    convergent
+try   10    num_cycles   11    max_cycles  200    convergent
+try    5    num_cycles   22    max_cycles  200    convergent
+try    4    num_cycles   24    max_cycles  200    convergent
+try   12    num_cycles   20    max_cycles  200    convergent
+try    3    num_cycles   38    max_cycles  200    convergent
+try   11    num_cycles   10    max_cycles  200    convergent
+try    9    num_cycles   13    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 11:54:30 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 11:55:57 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=350; start_fn_type="block"; randomize_random_p=false
+
+
+##############  Starting Input Check  ###############
+
+To log file: 
+   /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+During loading of: 
+   [1] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2,
+   [2] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2,
+   [3] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model.
+
+   [Attribute #, value #, and datum # are zero based.]
+
+ADVISORY[2]: data_file_format settings:
+             separator_char = ',', comment_char = ';', unknown_token = '?'
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[2]: for attribute #5: "num-of-doors" range increased to 3,
+             for value 2 -- translator (2 ?).
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY[1]: discrete translations [ (internal external):count ... ] built 
+             from input data --
+   Attribute #0, "symboling":
+      [ (0 3):27 (1 1):54 (2 2):32 (3 0):67 (4 -1):22 (5 -2):3 ]
+   Attribute #2, "make":
+      [ (0 alfa-romero):3 (1 audi):7 (2 bmw):8 (3 chevrolet):3 (4 dodge):9 (5 honda):13 (6 isuzu):4 (7 jaguar):3 (8 mazda):17 (9 mercedes-benz):8 (10 mercury):1 (11 mitsubishi):13 (12 nissan):18 (13 peugot):11 (14 plymouth):7 (15 porsche):5 (16 renault):2 (17 saab):6 (18 subaru):12 (19 toyota):32 (20 volkswagen):12 (21 volvo):11 ]
+   Attribute #3, "fuel-type":
+      [ (0 gas):185 (1 diesel):20 ]
+   Attribute #4, "aspiration":
+      [ (0 std):168 (1 turbo):37 ]
+   Attribute #5, "num-of-doors":
+      [ (0 two):89 (1 four):114 (2 ?):2 ]
+   Attribute #6, "body-style":
+      [ (0 convertible):6 (1 hatchback):70 (2 sedan):96 (3 wagon):25 (4 hardtop):8 ]
+   Attribute #7, "drive-wheels":
+      [ (0 rwd):76 (1 fwd):120 (2 4wd):9 ]
+   Attribute #8, "engine-location":
+      [ (0 front):202 (1 rear):3 ]
+   Attribute #14, "engine-type":
+      [ (0 dohc):12 (1 ohcv):13 (2 ohc):148 (3 l):12 (4 rotor):4 (5 ohcf):15 (6 dohcv):1 ]
+   Attribute #15, "num-of-cylinders":
+      [ (0 four):159 (1 six):24 (2 five):11 (3 three):1 (4 twelve):1 (5 two):4 (6 eight):5 ]
+   Attribute #17, "fuel-system":
+      [ (0 mpfi):94 (1 2bbl):66 (2 mfi):1 (3 1bbl):11 (4 spfi):1 (5 4bbl):3 (6 idi):20 (7 spdi):9 ]
+ADVISORY[1]: real statistics [ min < (mean : variance) < max ] built 
+             from input data --
+   Attribute #1, "normalized-loses":
+      [  6.5000e+01 < ( 1.2200e+02 : 1.2485e+03) <  2.5600e+02 ]
+   Attribute #9, "wheel-base":
+      [  8.6600e+01 < ( 9.8757e+01 : 3.6085e+01) <  1.2090e+02 ]
+   Attribute #10, "length":
+      [  1.4110e+02 < ( 1.7405e+02 : 1.5147e+02) <  2.0810e+02 ]
+   Attribute #11, "width":
+      [  6.0300e+01 < ( 6.5908e+01 : 4.5795e+00) <  7.2300e+01 ]
+   Attribute #12, "height":
+      [  4.7800e+01 < ( 5.3725e+01 : 5.9417e+00) <  5.9800e+01 ]
+   Attribute #13, "curb-weight":
+      [  1.4880e+03 < ( 2.5556e+03 : 2.6979e+05) <  4.0660e+03 ]
+   Attribute #16, "engine-size":
+      [  6.1000e+01 < ( 1.2691e+02 : 1.7257e+03) <  3.2600e+02 ]
+   Attribute #18, "bore":
+      [  2.5400e+00 < ( 3.3298e+00 : 7.4451e-02) <  3.9400e+00 ]
+   Attribute #19, "stroke":
+      [  2.0700e+00 < ( 3.2554e+00 : 9.9811e-02) <  4.1700e+00 ]
+   Attribute #20, "compression-ratio":
+      [  7.0000e+00 < ( 1.0143e+01 : 1.5700e+01) <  2.3000e+01 ]
+   Attribute #21, "horse-power":
+      [  4.8000e+01 < ( 1.0426e+02 : 1.5695e+03) <  2.8800e+02 ]
+   Attribute #22, "peak-rpm":
+      [  4.1500e+03 < ( 5.1254e+03 : 2.2863e+05) <  6.6000e+03 ]
+   Attribute #23, "city-mpg":
+      [  1.3000e+01 < ( 2.5220e+01 : 4.2591e+01) <  4.9000e+01 ]
+   Attribute #24, "highway-mpg":
+      [  1.6000e+01 < ( 3.0751e+01 : 4.7192e+01) <  5.4000e+01 ]
+   Attribute #25, "price":
+      [  5.1180e+03 < ( 1.3207e+04 : 6.2842e+07) <  4.5400e+04 ]
+ADVISORY[3]: the default model term type, single_multinomial, 
+             will be used for these attributes:
+             #2: "make"
+             #3: "fuel-type"
+             #4: "aspiration"
+             #5: "num-of-doors"
+             #6: "body-style"
+             #7: "drive-wheels"
+             #8: "engine-location"
+             #14: "engine-type"
+             #15: "num-of-cylinders"
+             #17: "fuel-system"
+ADVISORY[3]: read 1 model def from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model
+ADVISORY[2]: log_transform is being applied to attribute #1:
+             "normalized-loses" and will be stored as attribute #26.
+   Attribute #26, "Log normalized-loses":
+      [  4.1744e+00 < ( 4.7637e+00 : 8.0123e-02) <  5.5452e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #18:
+             "bore" and will be stored as attribute #27.
+   Attribute #27, "Log bore":
+      [  9.3216e-01 < ( 1.1995e+00 : 6.7855e-03) <  1.3712e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #19:
+             "stroke" and will be stored as attribute #28.
+   Attribute #28, "Log stroke":
+      [  7.2755e-01 < ( 1.1753e+00 : 1.0509e-02) <  1.4279e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #21:
+             "horse-power" and will be stored as attribute #29.
+   Attribute #29, "Log horse-power":
+      [  3.8712e+00 < ( 4.5841e+00 : 1.1947e-01) <  5.6630e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #22:
+             "peak-rpm" and will be stored as attribute #30.
+   Attribute #30, "Log peak-rpm":
+      [  8.3309e+00 < ( 8.5376e+00 : 8.8318e-03) <  8.7948e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #25:
+             "price" and will be stored as attribute #31.
+   Attribute #31, "Log price":
+      [  8.5405e+00 < ( 9.3501e+00 : 2.5100e-01) <  1.0723e+01 ]
+ADVISORY[2]: log_transform is being applied to attribute #9:
+             "wheel-base" and will be stored as attribute #32.
+   Attribute #32, "Log wheel-base":
+      [  4.4613e+00 < ( 4.5909e+00 : 3.5069e-03) <  4.7950e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #10:
+             "length" and will be stored as attribute #33.
+   Attribute #33, "Log length":
+      [  4.9495e+00 < ( 5.1568e+00 : 5.0053e-03) <  5.3380e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #11:
+             "width" and will be stored as attribute #34.
+   Attribute #34, "Log width":
+      [  4.0993e+00 < ( 4.1877e+00 : 1.0268e-03) <  4.2808e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #12:
+             "height" and will be stored as attribute #35.
+   Attribute #35, "Log height":
+      [  3.8670e+00 < ( 3.9828e+00 : 2.0614e-03) <  4.0910e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #13:
+             "curb-weight" and will be stored as attribute #36.
+   Attribute #36, "Log curb-weight":
+      [  7.3052e+00 < ( 7.8262e+00 : 3.8996e-02) <  8.3104e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #16:
+             "engine-size" and will be stored as attribute #37.
+   Attribute #37, "Log engine-size":
+      [  4.1109e+00 < ( 4.8002e+00 : 7.9679e-02) <  5.7869e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #20:
+             "compression-ratio" and will be stored as attribute #38.
+   Attribute #38, "Log compression-ratio":
+      [  1.9459e+00 < ( 2.2674e+00 : 7.9267e-02) <  3.1355e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #23:
+             "city-mpg" and will be stored as attribute #39.
+   Attribute #39, "Log city-mpg":
+      [  2.5649e+00 < ( 3.1948e+00 : 6.5718e-02) <  3.8918e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #24:
+             "highway-mpg" and will be stored as attribute #40.
+   Attribute #40, "Log highway-mpg":
+      [  2.7726e+00 < ( 3.4011e+00 : 5.0072e-02) <  3.9890e+00 ]
+
+############ Input Check Concluded ##############
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (350).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+BEGINNING SEARCH at Mon Jun 11 11:55:58 2001
+
+[j_in=2]  [cs-3: cycles 22] best2->2(1) [j_in=3]  [cs-3: cycles 16] best3->3(2) [j_in=5]  [cs-3: cycles 37] best5->5(3) [j_in=7]  [cs-3: cycles 32] best7->7(4) [j_in=10]  [cs-3: cycles 23] best10->10(5) [j_in=15]  [cs-3: cycles 25] 15->14(6) [j_in=25]  [cs-3: cycles 12] 25->24(7) [j_in=2]  [cs-3: cycles 22] dup2->2(8) [j_in=10]  [cs-3: cycles 23] dup10->10(9) [j_in=30]  [cs-3: cycles 28] best30->30(10) [j_in=8]  [cs-3: cycles 37] 8->8(11) [j_in=13]  [cs-3: cycles 13] 13->13(12) [j_in=8]  [cs-3: cycles 37] dup8->8(13) [j_in=5]  [cs-3: cycles 37] dup5->5(14) [j_in=6]  [cs-3: cycles 38] 6->6(15) [j_in=9]  [cs-3: cycles 16] 9->9(16) [j_in=12]  [cs-3: cycles 15] 12->12(17) [j_in=11]  [cs-3: cycles 17] 11->11(18) [j_in=6]  [cs-3: cycles 38] 6->6(19) [j_in=13]  [cs-3: cycles 13] dup13->13(20) [j_in=12]  [cs-3: cycles 15] dup12->12(21) [j_in=13]  [cs-3: cycles 13] dup13->13(22) [j_in=9]  [cs-3: cycles 16] dup9->9(23) [j_in=13]  [cs-3: cycles 13] dup13->13(24) [j_in=20]  [cs-3: cycles 18] 20->20(25) [j_in=11]  [cs-3: cycles 17] dup11->11(26) [j_in=20]  [cs-3: cycles 18] dup20->20(27) [j_in=13]  [cs-3: cycles 13] dup13->13(28) [j_in=12]  [cs-3: cycles 15] dup12->12(29) [j_in=14]  [cs-3: cycles 19] 14->13(30) [j_in=8]  [cs-3: cycles 37] 8->8(31) [j_in=15]  [cs-3: cycles 25] dup15->14(32) [j_in=6]  [cs-3: cycles 38] 6->6(33) [j_in=14]  [cs-3: cycles 19] dup14->13(34) [j_in=14]  [cs-3: cycles 19] dup14->13(35) [j_in=10]  [cs-3: cycles 23] dup10->10(36) [j_in=18]  [cs-3: cycles 21] 18->17(37) [j_in=21]  [cs-3: cycles 13] 21->21(38) [j_in=19]  [cs-3: cycles 15] 19->19(39) [j_in=9]  [cs-3: cycles 16] dup9->9(40) [j_in=13]  [cs-3: cycles 13] dup13->13(41) [j_in=11]  [cs-3: cycles 17] dup11->11(42) [j_in=21]  [cs-3: cycles 13] 21->21(43) [j_in=5]  [cs-3: cycles 37] 5->5(44) [j_in=38]  [cs-3: cycles 10] 38->36(45) [j_in=10]  [cs-3: cycles 23] dup10->10(46) [j_in=13]  [cs-3: cycles 13] dup13->13(47) [j_in=17]  [cs-3: cycles 24] 17->17(48) [j_in=13]  [cs-3: cycles 13] dup13->13(49) [j_in=23]  [cs-3: cycles 21] 23->23(50) [j_in=22]  [cs-3: cycles 26] 22->22(51) [j_in=12]  [cs-3: cycles 15] 12->12(52) [j_in=12]  [cs-3: cycles 15] 12->12(53) [j_in=14]  [cs-3: cycles 19] 14->13(54) [j_in=24]  [cs-3: cycles 14] 24->23(55) [j_in=11]  [cs-3: cycles 17] dup11->11(56) [j_in=20]  [cs-3: cycles 18] dup20->20(57) [j_in=10]  [cs-3: cycles 23] dup10->10(58) [j_in=32]  [cs-3: cycles 28] best32->30(59) [j_in=8]  [cs-3: cycles 37] 8->8(60) [j_in=10]  [cs-3: cycles 23] dup10->10(61) [j_in=7]  [cs-3: cycles 32] dup7->7(62) [j_in=15]  [cs-3: cycles 25] 15->14(63) [j_in=11]  [cs-3: cycles 17] dup11->11(64) [j_in=17]  [cs-3: cycles 24] 17->17(65) [j_in=26]  [cs-3: cycles 10] 26->24(66) [j_in=17]  [cs-3: cycles 24] 17->17(67) [j_in=17]  [cs-3: cycles 24] 17->17(68) [j_in=25]  [cs-3: cycles 12] 25->24(69) [j_in=35]  [cs-3: cycles 10] 35->34(70) [j_in=21]  [cs-3: cycles 13] 21->21(71) [j_in=14]  [cs-3: cycles 19] 14->13(72) [j_in=8]  [cs-3: cycles 37] 8->8(73) [j_in=34]  [cs-3: cycles 28] 34->32(74) [j_in=11]  [cs-3: cycles 17] dup11->11(75) [j_in=24]  [cs-3: cycles 14] 24->23(76) [j_in=18]  [cs-3: cycles 21] dup18->17(77) [j_in=16]  [cs-3: cycles 24] 16->16(78) [j_in=26]  [cs-3: cycles 10] 26->24(79) [j_in=21]  [cs-3: cycles 13] 21->21(80) [j_in=22]  [cs-3: cycles 26] dup22->22(81) [j_in=15]  [cs-3: cycles 25] 15->14(82) [j_in=23]  [cs-3: cycles 21] 23->23(83) [j_in=28]  [cs-3: cycles 13] 28->27(84) [j_in=21]  [cs-3: cycles 13] 21->21(85) [j_in=25]  [cs-3: cycles 12] 25->24(86) [j_in=13]  [cs-3: cycles 13] 13->13(87) [j_in=13]  [cs-3: cycles 13] 13->13(88) [j_in=17]  [cs-3: cycles 24] 17->17(89) 
+
+----------------  NEW BEST CLASSIFICATION FOUND on try 59  -------------
+It has 30 CLASSES with WEIGHTS 21 13 13 10 10 10 9 9 7 7 7 7 7 6 6 6 6 6 5 4 4 4 4 4 4 4 3 3 3 3
+PROBABILITY of both the data and the classification = exp(-16266.782)
+(Also found 58 other better than last report.)
+
+-----------  SEARCH STATUS as of Mon Jun 11 11:56:29 2001  -----------
+It just took 31 seconds since beginning.
+Estimate < 31 seconds to find a classification
+  exp(32.3) [= 1.1e+14] times more probable.
+Estimate >> 0 seconds to find the very best classification,
+ which may be exp(0.0) to exp(6901.4) times more probable.
+Have seen 57 of the estimated > 22 possible classifications (based on 32
+ duplicates do far).
+Log-Normal fit to classifications probabilities has M(ean) -16615.1,
+ S(igma) 120.4
+Choosing initial n-classes randomly from a log_normal [M-S, M, M+S] = 
+ [11.9, 19.9, 33.3]
+Overhead time is 3.1 % of total search time
+WARNING: You may be running out of peaks to find.  Estimates are too 
+ optimistic
+
+[j_in=22]  [cs-3: cycles 26] dup22->22(90) [j_in=6]  [cs-3: cycles 38] 6->6(91) [j_in=16]  [cs-3: cycles 24] 16->16(92) [j_in=22]  [cs-3: cycles 26] dup22->22(93) [j_in=12]  [cs-3: cycles 15] 12->12(94) [j_in=13]  [cs-3: cycles 13] 13->13(95) [j_in=24]  [cs-3: cycles 14] 24->23(96) [j_in=20]  [cs-3: cycles 18] dup20->20(97) [j_in=13]  [cs-3: cycles 13] 13->13(98) [j_in=29]  [cs-3: cycles 11] 29->27(99) [j_in=20]  [cs-3: cycles 18] dup20->20(100) [j_in=29]  [cs-3: cycles 11] dup29->27(101) [j_in=47]  [cs-3: cycles 13] 47->35(102) [j_in=49]  [cs-3: cycles 17] 49->37(103) [j_in=23]  [cs-3: cycles 21] 23->23(104) [j_in=10]  [cs-3: cycles 23] dup10->10(105) [j_in=26]  [cs-3: cycles 10] 26->24(106) [j_in=21]  [cs-3: cycles 13] 21->21(107) [j_in=23]  [cs-3: cycles 21] 23->23(108) [j_in=35]  [cs-3: cycles 10] 35->34(109) [j_in=11]  [cs-3: cycles 17] 11->11(110) [j_in=28]  [cs-3: cycles 13] dup28->27(111) [j_in=37]  [cs-3: cycles 10] 37->35(112) [j_in=16]  [cs-3: cycles 24] 16->16(113) [j_in=18]  [cs-3: cycles 21] dup18->17(114) [j_in=25]  [cs-3: cycles 12] 25->24(115) [j_in=26]  [cs-3: cycles 10] 26->24(116) [j_in=26]  [cs-3: cycles 10] 26->24(117) [j_in=32]  [cs-3: cycles 28] dup32->30(118) [j_in=48]  [cs-3: cycles 17] 48->37(119) [j_in=52]  [cs-3: cycles 16] 52->47(120) [j_in=69]  [cs-3: cycles 15] 69->24(121) [j_in=15]  [cs-3: cycles 25] 15->14(122) [j_in=25]  [cs-3: cycles 12] 25->24(123) [j_in=18]  [cs-3: cycles 21] dup18->17(124) [j_in=39]  [cs-3: cycles 10] 39->36(125) [j_in=18]  [cs-3: cycles 21] dup18->17(126) [j_in=16]  [cs-3: cycles 24] 16->16(127) [j_in=5]  [cs-3: cycles 37] 5->5(128) [j_in=16]  [cs-3: cycles 24] 16->16(129) [j_in=28]  [cs-3: cycles 13] dup28->27(130) [j_in=25]  [cs-3: cycles 12] 25->24(131) [j_in=32]  [cs-3: cycles 28] dup32->30(132) [j_in=7]  [cs-3: cycles 32] dup7->7(133) [j_in=18]  [cs-3: cycles 21] dup18->17(134) [j_in=8]  [cs-3: cycles 37] 8->8(135) [j_in=10]  [cs-3: cycles 23] dup10->10(136) [j_in=29]  [cs-3: cycles 11] dup29->27(137) [j_in=23]  [cs-3: cycles 21] 23->23(138) [j_in=22]  [cs-3: cycles 26] 22->22(139) [j_in=34]  [cs-3: cycles 28] dup34->32(140) [j_in=21]  [cs-3: cycles 13] 21->21(141) [j_in=17]  [cs-3: cycles 24] 17->17(142) [j_in=24]  [cs-3: cycles 14] 24->23(143) [j_in=21]  [cs-3: cycles 13] 21->21(144) [j_in=11]  [cs-3: cycles 17] 11->11(145) [j_in=12]  [cs-3: cycles 15] 12->12(146) [j_in=24]  [cs-3: cycles 14] 24->23(147) [j_in=19]  [cs-3: cycles 15] dup19->19(148) [j_in=35]  [cs-3: cycles 10] 35->34(149) [j_in=19]  [cs-3: cycles 15] dup19->19(150) [j_in=13]  [cs-3: cycles 13] 13->13(151) [j_in=33]  [cs-3: cycles 28] 33->32(152) [j_in=22]  [cs-3: cycles 26] 22->22(153) [j_in=22]  [cs-3: cycles 26] 22->22(154) [j_in=14]  [cs-3: cycles 19] 14->13(155) [j_in=23]  [cs-3: cycles 21] 23->23(156) [j_in=71]  [cs-3: cycles 25] 71->25(157) [j_in=16]  [cs-3: cycles 24] 16->16(158) [j_in=26]  [cs-3: cycles 10] 26->24(159) [j_in=8]  [cs-3: cycles 37] 8->8(160) [j_in=30]  [cs-3: cycles 28] dup30->30(161) [j_in=25]  [cs-3: cycles 12] 25->24(162) [j_in=22]  [cs-3: cycles 26] 22->22(163) [j_in=75]  [cs-3: cycles 13] 75->25(164) [j_in=14]  [cs-3: cycles 19] 14->13(165) [j_in=12]  [cs-3: cycles 15] 12->12(166) [j_in=59]  [cs-3: cycles 19] 59->49(167) [j_in=10]  [cs-3: cycles 23] dup10->10(168) [j_in=26]  [cs-3: cycles 10] 26->24(169) [j_in=15]  [cs-3: cycles 25] 15->14(170) [j_in=29]  [cs-3: cycles 11] dup29->27(171) [j_in=62]  [cs-3: cycles 15] 62->50(172) [j_in=15]  [cs-3: cycles 25] 15->14(173) [j_in=18]  [cs-3: cycles 21] 18->17(174) [j_in=10]  [cs-3: cycles 23] dup10->10(175) [j_in=47]  [cs-3: cycles 13] 47->35(176) [j_in=78]  [cs-3: cycles 19] 78->25(177) [j_in=12]  [cs-3: cycles 15] 12->12(178) [j_in=15]  [cs-3: cycles 25] 15->14(179) [j_in=10]  [cs-3: cycles 23] dup10->10(180) [j_in=19]  [cs-3: cycles 15] dup19->19(181) [j_in=37]  [cs-3: cycles 10] 37->35(182) [j_in=18]  [cs-3: cycles 21] 18->17(183) [j_in=19]  [cs-3: cycles 15] dup19->19(184) [j_in=23]  [cs-3: cycles 21] 23->23(185) [j_in=12]  [cs-3: cycles 15] 12->12(186) [j_in=19]  [cs-3: cycles 15] dup19->19(187) [j_in=18]  [cs-3: cycles 21] 18->17(188) [j_in=5]  [cs-3: cycles 37] 5->5(189) [j_in=29]  [cs-3: cycles 11] dup29->27(190) [j_in=23]  [cs-3: cycles 21] 23->23(191) [j_in=11]  [cs-3: cycles 17] 11->11(192) [j_in=22]  [cs-3: cycles 26] 22->22(193) [j_in=28]  [cs-3: cycles 13] dup28->27(194) [j_in=18]  [cs-3: cycles 21] 18->17(195) [j_in=21]  [cs-3: cycles 13] 21->21(196) [j_in=37]  [cs-3: cycles 10] 37->35(197) [j_in=10]  [cs-3: cycles 23] dup10->10(198) [j_in=27]  [cs-3: cycles 12] 27->25(199) [j_in=27]  [cs-3: cycles 12] 27->25(200) [j_in=26]  [cs-3: cycles 10] 26->24(201) [j_in=15]  [cs-3: cycles 25] 15->14(202) [j_in=32]  [cs-3: cycles 28] dup32->30(203) [j_in=14]  [cs-3: cycles 19] 14->13(204) [j_in=20]  [cs-3: cycles 18] dup20->20(205) [j_in=61]  [cs-3: cycles 14] 61->49(206) [j_in=12]  [cs-3: cycles 15] 12->12(207) [j_in=27]  [cs-3: cycles 12] 27->25(208) [j_in=12]  [cs-3: cycles 15] 12->12(209) [j_in=15]  [cs-3: cycles 25] 15->14(210) [j_in=55]  [cs-3: cycles 18] 55->47(211) [j_in=22]  [cs-3: cycles 26] 22->22(212) [j_in=28]  [cs-3: cycles 13] dup28->27(213) [j_in=13]  [cs-3: cycles 13] 13->13(214) [j_in=15]  [cs-3: cycles 25] 15->14(215) [j_in=21]  [cs-3: cycles 13] 21->21(216) [j_in=33]  [cs-3: cycles 28] dup33->32(217) [j_in=24]  [cs-3: cycles 14] 24->23(218) [j_in=18]  [cs-3: cycles 21] 18->17(219) [j_in=15]  [cs-3: cycles 25] 15->14(220) [j_in=25]  [cs-3: cycles 12] 25->24(221) [j_in=24]  [cs-3: cycles 14] 24->23(222) [j_in=31]  [cs-3: cycles 28] 31->30(223) [j_in=20]  [cs-3: cycles 18] dup20->20(224) [j_in=27]  [cs-3: cycles 12] 27->25(225) [j_in=11]  [cs-3: cycles 17] 11->11(226) [j_in=34]  [cs-3: cycles 28] dup34->32(227) [j_in=11]  [cs-3: cycles 17] 11->11(228) [j_in=42]  [cs-3: cycles 23] 42->34(229) [j_in=23]  [cs-3: cycles 21] 23->23(230) [j_in=26]  [cs-3: cycles 10] 26->24(231) [j_in=19]  [cs-3: cycles 15] dup19->19(232) [j_in=20]  [cs-3: cycles 18] dup20->20(233) [j_in=25]  [cs-3: cycles 12] 25->24(234) [j_in=45]  [cs-3: cycles 13] 45->36(235) [j_in=19]  [cs-3: cycles 15] dup19->19(236) [j_in=17]  [cs-3: cycles 24] 17->17(237) [j_in=18]  [cs-3: cycles 21] 18->17(238) [j_in=29]  [cs-3: cycles 11] dup29->27(239) [j_in=12]  [cs-3: cycles 15] 12->12(240) [j_in=34]  [cs-3: cycles 28] dup34->32(241) [j_in=49]  [cs-3: cycles 17] 49->37(242) [j_in=6]  [cs-3: cycles 38] 6->6(243) [j_in=30]  [cs-3: cycles 28] dup30->30(244) [j_in=21]  [cs-3: cycles 13] 21->21(245) [j_in=41]  [cs-3: cycles 10] 41->38(246) [j_in=32]  [cs-3: cycles 28] dup32->30(247) [j_in=21]  [cs-3: cycles 13] 21->21(248) [j_in=19]  [cs-3: cycles 15] dup19->19(249) [j_in=13]  [cs-3: cycles 13] 13->13(250) [j_in=39]  [cs-3: cycles 10] 39->36(251) [j_in=15]  [cs-3: cycles 25] 15->14(252) [j_in=32]  [cs-3: cycles 28] dup32->30(253) [j_in=22]  [cs-3: cycles 26] 22->22(254) [j_in=20]  [cs-3: cycles 18] dup20->20(255) [j_in=12]  [cs-3: cycles 15] 12->12(256) [j_in=5]  [cs-3: cycles 37] 5->5(257) [j_in=47]  [cs-3: cycles 13] 47->35(258) [j_in=29]  [cs-3: cycles 11] dup29->27(259) [j_in=31]  [cs-3: cycles 28] dup31->30(260) [j_in=39]  [cs-3: cycles 10] 39->36(261) [j_in=14]  [cs-3: cycles 19] 14->13(262) [j_in=29]  [cs-3: cycles 11] dup29->27(263) [j_in=25]  [cs-3: cycles 12] 25->24(264) [j_in=20]  [cs-3: cycles 18] dup20->20(265) [j_in=20]  [cs-3: cycles 18] dup20->20(266) [j_in=23]  [cs-3: cycles 21] 23->23(267) [j_in=9]  [cs-3: cycles 16] 9->9(268) [j_in=33]  [cs-3: cycles 28] dup33->32(269) [j_in=26]  [cs-3: cycles 10] 26->24(270) [j_in=19]  [cs-3: cycles 15] dup19->19(271) [j_in=13]  [cs-3: cycles 13] 13->13(272) [j_in=25]  [cs-3: cycles 12] 25->24(273) [j_in=42]  [cs-3: cycles 23] 42->34(274) [j_in=14]  [cs-3: cycles 19] 14->13(275) [j_in=5]  [cs-3: cycles 37] 5->5(276) [j_in=22]  [cs-3: cycles 26] 22->22(277) [j_in=59]  [cs-3: cycles 19] 59->49(278) [j_in=13]  [cs-3: cycles 13] 13->13(279) [j_in=35]  [cs-3: cycles 10] 35->34(280) [j_in=59]  [cs-3: cycles 19] 59->49(281) [j_in=11]  [cs-3: cycles 17] 11->11(282) [j_in=21]  [cs-3: cycles 13] 21->21(283) [j_in=17]  [cs-3: cycles 24] 17->17(284) [j_in=56]  [cs-3: cycles 16] 56->48(285) [j_in=34]  [cs-3: cycles 28] dup34->32(286) [j_in=53]  [cs-3: cycles 16] 53->48(287) [j_in=47]  [cs-3: cycles 13] 47->35(288) [j_in=9]  [cs-3: cycles 16] 9->9(289) [j_in=13]  [cs-3: cycles 13] 13->13(290) [j_in=36]  [cs-3: cycles 10] 36->34(291) [j_in=33]  [cs-3: cycles 28] dup33->32(292) [j_in=10]  [cs-3: cycles 23] dup10->10(293) [j_in=11]  [cs-3: cycles 17] 11->11(294) [j_in=14]  [cs-3: cycles 19] 14->13(295) [j_in=19]  [cs-3: cycles 15] dup19->19(296) [j_in=18]  [cs-3: cycles 21] 18->17(297) [j_in=16]  [cs-3: cycles 24] 16->16(298) [j_in=51]  [cs-3: cycles 9] 51->38(299) [j_in=31]  [cs-3: cycles 28] dup31->30(300) [j_in=10]  [cs-3: cycles 23] dup10->10(301) [j_in=30]  [cs-3: cycles 28] dup30->30(302) [j_in=20]  [cs-3: cycles 18] dup20->20(303) [j_in=13]  [cs-3: cycles 13] 13->13(304) [j_in=9]  [cs-3: cycles 16] 9->9(305) [j_in=25]  [cs-3: cycles 12] 25->24(306) [j_in=72]  [cs-3: cycles 16] 72->25(307) [j_in=33]  [cs-3: cycles 28] dup33->32(308) [j_in=15]  [cs-3: cycles 25] 15->14(309) [j_in=12]  [cs-3: cycles 15] 12->12(310) [j_in=32]  [cs-3: cycles 28] dup32->30(311) [j_in=69]  [cs-3: cycles 15] 69->24(312) [j_in=27]  [cs-3: cycles 12] 27->25(313) [j_in=35]  [cs-3: cycles 10] 35->34(314) [j_in=18]  [cs-3: cycles 21] 18->17(315) [j_in=18]  [cs-3: cycles 21] 18->17(316) [j_in=11]  [cs-3: cycles 17] 11->11(317) [j_in=33]  [cs-3: cycles 28] dup33->32(318) [j_in=21]  [cs-3: cycles 13] 21->21(319) [j_in=8]  [cs-3: cycles 37] 8->8(320) [j_in=24]  [cs-3: cycles 14] 24->23(321) [j_in=26]  [cs-3: cycles 10] 26->24(322) [j_in=29]  [cs-3: cycles 11] dup29->27(323) [j_in=28]  [cs-3: cycles 13] 28->27(324) [j_in=18]  [cs-3: cycles 21] 18->17(325) [j_in=32]  [cs-3: cycles 28] dup32->30(326) [j_in=18]  [cs-3: cycles 21] 18->17(327) [j_in=12]  [cs-3: cycles 15] 12->12(328) [j_in=29]  [cs-3: cycles 11] dup29->27(329) [j_in=7]  [cs-3: cycles 32] dup7->7(330) [j_in=40]  [cs-3: cycles 10] 40->37(331) [j_in=22]  [cs-3: cycles 26] 22->22(332) [j_in=33]  [cs-3: cycles 28] dup33->32(333) [j_in=14]  [cs-3: cycles 19] 14->13(334) [j_in=23]  [cs-3: cycles 21] 23->23(335) [j_in=22]  [cs-3: cycles 26] 22->22(336) [j_in=20]  [cs-3: cycles 18] dup20->20(337) [j_in=40]  [cs-3: cycles 10] 40->37(338) [j_in=9]  [cs-3: cycles 16] 9->9(339) [j_in=22]  [cs-3: cycles 26] 22->22(340) [j_in=24]  [cs-3: cycles 14] 24->23(341) [j_in=85]  [cs-3: cycles 21] 85->24(342) [j_in=55]  [cs-3: cycles 18] 55->47(343) [j_in=26]  [cs-3: cycles 10] 26->24(344) [j_in=13]  [cs-3: cycles 13] 13->13(345) [j_in=17]  [cs-3: cycles 24] 17->17(346) [j_in=25]  [cs-3: cycles 12] 25->24(347) [j_in=50]  [cs-3: cycles 10] 50->37(348) [j_in=13]  [cs-3: cycles 13] 13->13(349) [j_in=13]  [cs-3: cycles 13] 13->13(350) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 11:58:22 2001
+  after a total of 350 tries over 2 minutes 25 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16266.782) N_CLASSES  30 FOUND ON TRY   59 DUPS  7 *SAVED*
+PROBABILITY  exp(-16283.605) N_CLASSES  30 FOUND ON TRY  223 DUPS  2 *SAVED*
+PROBABILITY  exp(-16305.340) N_CLASSES  32 FOUND ON TRY   74 DUPS  4
+PROBABILITY  exp(-16339.997) N_CLASSES  32 FOUND ON TRY  152 DUPS  6
+PROBABILITY  exp(-16362.340) N_CLASSES  27 FOUND ON TRY   99 DUPS  9
+PROBABILITY  exp(-16399.962) N_CLASSES  30 FOUND ON TRY   10 DUPS  3
+PROBABILITY  exp(-16427.763) N_CLASSES  10 FOUND ON TRY    5 DUPS  13
+PROBABILITY  exp(-16453.536) N_CLASSES   7 FOUND ON TRY    4 DUPS  3
+PROBABILITY  exp(-16455.829) N_CLASSES  19 FOUND ON TRY   39 DUPS  10
+PROBABILITY  exp(-16477.439) N_CLASSES  20 FOUND ON TRY   25 DUPS  12
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try   59    num_cycles   28    max_cycles  200    convergent
+try  223    num_cycles   28    max_cycles  200    convergent
+try   74    num_cycles   28    max_cycles  200    convergent
+try  152    num_cycles   28    max_cycles  200    convergent
+try   99    num_cycles   11    max_cycles  200    convergent
+try   10    num_cycles   28    max_cycles  200    convergent
+try    5    num_cycles   23    max_cycles  200    convergent
+try    4    num_cycles   32    max_cycles  200    convergent
+try   39    num_cycles   15    max_cycles  200    convergent
+try   25    num_cycles   18    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 11:58:22 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 12:07:03 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=350; start_fn_type="block"; randomize_random_p=false; force_new_search_p=true
+
+
+##############  Starting Input Check  ###############
+
+To log file: 
+   /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+During loading of: 
+   [1] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2,
+   [2] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2,
+   [3] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model.
+
+   [Attribute #, value #, and datum # are zero based.]
+
+ADVISORY[2]: data_file_format settings:
+             separator_char = ',', comment_char = ';', unknown_token = '?'
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[2]: for attribute #5: "num-of-doors" range increased to 3,
+             for value 2 -- translator (2 ?).
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY[1]: discrete translations [ (internal external):count ... ] built 
+             from input data --
+   Attribute #0, "symboling":
+      [ (0 3):27 (1 1):54 (2 2):32 (3 0):67 (4 -1):22 (5 -2):3 ]
+   Attribute #2, "make":
+      [ (0 alfa-romero):3 (1 audi):7 (2 bmw):8 (3 chevrolet):3 (4 dodge):9 (5 honda):13 (6 isuzu):4 (7 jaguar):3 (8 mazda):17 (9 mercedes-benz):8 (10 mercury):1 (11 mitsubishi):13 (12 nissan):18 (13 peugot):11 (14 plymouth):7 (15 porsche):5 (16 renault):2 (17 saab):6 (18 subaru):12 (19 toyota):32 (20 volkswagen):12 (21 volvo):11 ]
+   Attribute #3, "fuel-type":
+      [ (0 gas):185 (1 diesel):20 ]
+   Attribute #4, "aspiration":
+      [ (0 std):168 (1 turbo):37 ]
+   Attribute #5, "num-of-doors":
+      [ (0 two):89 (1 four):114 (2 ?):2 ]
+   Attribute #6, "body-style":
+      [ (0 convertible):6 (1 hatchback):70 (2 sedan):96 (3 wagon):25 (4 hardtop):8 ]
+   Attribute #7, "drive-wheels":
+      [ (0 rwd):76 (1 fwd):120 (2 4wd):9 ]
+   Attribute #8, "engine-location":
+      [ (0 front):202 (1 rear):3 ]
+   Attribute #14, "engine-type":
+      [ (0 dohc):12 (1 ohcv):13 (2 ohc):148 (3 l):12 (4 rotor):4 (5 ohcf):15 (6 dohcv):1 ]
+   Attribute #15, "num-of-cylinders":
+      [ (0 four):159 (1 six):24 (2 five):11 (3 three):1 (4 twelve):1 (5 two):4 (6 eight):5 ]
+   Attribute #17, "fuel-system":
+      [ (0 mpfi):94 (1 2bbl):66 (2 mfi):1 (3 1bbl):11 (4 spfi):1 (5 4bbl):3 (6 idi):20 (7 spdi):9 ]
+ADVISORY[1]: real statistics [ min < (mean : variance) < max ] built 
+             from input data --
+   Attribute #1, "normalized-loses":
+      [  6.5000e+01 < ( 1.2200e+02 : 1.2485e+03) <  2.5600e+02 ]
+   Attribute #9, "wheel-base":
+      [  8.6600e+01 < ( 9.8757e+01 : 3.6085e+01) <  1.2090e+02 ]
+   Attribute #10, "length":
+      [  1.4110e+02 < ( 1.7405e+02 : 1.5147e+02) <  2.0810e+02 ]
+   Attribute #11, "width":
+      [  6.0300e+01 < ( 6.5908e+01 : 4.5795e+00) <  7.2300e+01 ]
+   Attribute #12, "height":
+      [  4.7800e+01 < ( 5.3725e+01 : 5.9417e+00) <  5.9800e+01 ]
+   Attribute #13, "curb-weight":
+      [  1.4880e+03 < ( 2.5556e+03 : 2.6979e+05) <  4.0660e+03 ]
+   Attribute #16, "engine-size":
+      [  6.1000e+01 < ( 1.2691e+02 : 1.7257e+03) <  3.2600e+02 ]
+   Attribute #18, "bore":
+      [  2.5400e+00 < ( 3.3298e+00 : 7.4451e-02) <  3.9400e+00 ]
+   Attribute #19, "stroke":
+      [  2.0700e+00 < ( 3.2554e+00 : 9.9811e-02) <  4.1700e+00 ]
+   Attribute #20, "compression-ratio":
+      [  7.0000e+00 < ( 1.0143e+01 : 1.5700e+01) <  2.3000e+01 ]
+   Attribute #21, "horse-power":
+      [  4.8000e+01 < ( 1.0426e+02 : 1.5695e+03) <  2.8800e+02 ]
+   Attribute #22, "peak-rpm":
+      [  4.1500e+03 < ( 5.1254e+03 : 2.2863e+05) <  6.6000e+03 ]
+   Attribute #23, "city-mpg":
+      [  1.3000e+01 < ( 2.5220e+01 : 4.2591e+01) <  4.9000e+01 ]
+   Attribute #24, "highway-mpg":
+      [  1.6000e+01 < ( 3.0751e+01 : 4.7192e+01) <  5.4000e+01 ]
+   Attribute #25, "price":
+      [  5.1180e+03 < ( 1.3207e+04 : 6.2842e+07) <  4.5400e+04 ]
+ADVISORY[3]: the default model term type, single_multinomial, 
+             will be used for these attributes:
+             #2: "make"
+             #3: "fuel-type"
+             #4: "aspiration"
+             #5: "num-of-doors"
+             #6: "body-style"
+             #7: "drive-wheels"
+             #8: "engine-location"
+             #14: "engine-type"
+             #15: "num-of-cylinders"
+             #17: "fuel-system"
+ADVISORY[3]: read 1 model def from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model
+ADVISORY[2]: log_transform is being applied to attribute #1:
+             "normalized-loses" and will be stored as attribute #26.
+   Attribute #26, "Log normalized-loses":
+      [  4.1744e+00 < ( 4.7637e+00 : 8.0123e-02) <  5.5452e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #18:
+             "bore" and will be stored as attribute #27.
+   Attribute #27, "Log bore":
+      [  9.3216e-01 < ( 1.1995e+00 : 6.7855e-03) <  1.3712e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #19:
+             "stroke" and will be stored as attribute #28.
+   Attribute #28, "Log stroke":
+      [  7.2755e-01 < ( 1.1753e+00 : 1.0509e-02) <  1.4279e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #21:
+             "horse-power" and will be stored as attribute #29.
+   Attribute #29, "Log horse-power":
+      [  3.8712e+00 < ( 4.5841e+00 : 1.1947e-01) <  5.6630e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #22:
+             "peak-rpm" and will be stored as attribute #30.
+   Attribute #30, "Log peak-rpm":
+      [  8.3309e+00 < ( 8.5376e+00 : 8.8318e-03) <  8.7948e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #25:
+             "price" and will be stored as attribute #31.
+   Attribute #31, "Log price":
+      [  8.5405e+00 < ( 9.3501e+00 : 2.5100e-01) <  1.0723e+01 ]
+ADVISORY[2]: log_transform is being applied to attribute #9:
+             "wheel-base" and will be stored as attribute #32.
+   Attribute #32, "Log wheel-base":
+      [  4.4613e+00 < ( 4.5909e+00 : 3.5069e-03) <  4.7950e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #10:
+             "length" and will be stored as attribute #33.
+   Attribute #33, "Log length":
+      [  4.9495e+00 < ( 5.1568e+00 : 5.0053e-03) <  5.3380e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #11:
+             "width" and will be stored as attribute #34.
+   Attribute #34, "Log width":
+      [  4.0993e+00 < ( 4.1877e+00 : 1.0268e-03) <  4.2808e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #12:
+             "height" and will be stored as attribute #35.
+   Attribute #35, "Log height":
+      [  3.8670e+00 < ( 3.9828e+00 : 2.0614e-03) <  4.0910e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #13:
+             "curb-weight" and will be stored as attribute #36.
+   Attribute #36, "Log curb-weight":
+      [  7.3052e+00 < ( 7.8262e+00 : 3.8996e-02) <  8.3104e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #16:
+             "engine-size" and will be stored as attribute #37.
+   Attribute #37, "Log engine-size":
+      [  4.1109e+00 < ( 4.8002e+00 : 7.9679e-02) <  5.7869e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #20:
+             "compression-ratio" and will be stored as attribute #38.
+   Attribute #38, "Log compression-ratio":
+      [  1.9459e+00 < ( 2.2674e+00 : 7.9267e-02) <  3.1355e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #23:
+             "city-mpg" and will be stored as attribute #39.
+   Attribute #39, "Log city-mpg":
+      [  2.5649e+00 < ( 3.1948e+00 : 6.5718e-02) <  3.8918e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #24:
+             "highway-mpg" and will be stored as attribute #40.
+   Attribute #40, "Log highway-mpg":
+      [  2.7726e+00 < ( 3.4011e+00 : 5.0072e-02) <  3.9890e+00 ]
+
+############ Input Check Concluded ##############
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (350).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+BEGINNING SEARCH at Mon Jun 11 12:07:05 2001
+
+[j_in=2]  [cs-3: cycles 22] best2->2(1) [j_in=3]  [cs-3: cycles 16] best3->3(2) [j_in=5]  [cs-3: cycles 37] best5->5(3) [j_in=7]  [cs-3: cycles 32] best7->7(4) [j_in=10]  [cs-3: cycles 23] best10->10(5) [j_in=15]  [cs-3: cycles 25] 15->14(6) [j_in=25]  [cs-3: cycles 12] 25->24(7) [j_in=2]  [cs-3: cycles 22] dup2->2(8) [j_in=10]  [cs-3: cycles 23] dup10->10(9) [j_in=30]  [cs-3: cycles 28] best30->30(10) [j_in=8]  [cs-3: cycles 37] 8->8(11) [j_in=13]  [cs-3: cycles 13] 13->13(12) [j_in=8]  [cs-3: cycles 37] dup8->8(13) [j_in=5]  [cs-3: cycles 37] dup5->5(14) [j_in=6]  [cs-3: cycles 38] 6->6(15) [j_in=9]  [cs-3: cycles 16] 9->9(16) [j_in=12]  [cs-3: cycles 15] 12->12(17) [j_in=11]  [cs-3: cycles 17] 11->11(18) [j_in=6]  [cs-3: cycles 38] 6->6(19) [j_in=13]  [cs-3: cycles 13] dup13->13(20) [j_in=12]  [cs-3: cycles 15] dup12->12(21) [j_in=13]  [cs-3: cycles 13] dup13->13(22) [j_in=9]  [cs-3: cycles 16] dup9->9(23) [j_in=13]  [cs-3: cycles 13] dup13->13(24) [j_in=20]  [cs-3: cycles 18] 20->20(25) [j_in=11]  [cs-3: cycles 17] dup11->11(26) [j_in=20]  [cs-3: cycles 18] dup20->20(27) [j_in=13]  [cs-3: cycles 13] dup13->13(28) [j_in=12]  [cs-3: cycles 15] dup12->12(29) [j_in=14]  [cs-3: cycles 19] 14->13(30) [j_in=8]  [cs-3: cycles 37] 8->8(31) [j_in=15]  [cs-3: cycles 25] dup15->14(32) [j_in=6]  [cs-3: cycles 38] 6->6(33) [j_in=14]  [cs-3: cycles 19] dup14->13(34) [j_in=14]  [cs-3: cycles 19] dup14->13(35) [j_in=10]  [cs-3: cycles 23] dup10->10(36) [j_in=18]  [cs-3: cycles 21] 18->17(37) [j_in=21]  [cs-3: cycles 13] 21->21(38) [j_in=19]  [cs-3: cycles 15] 19->19(39) [j_in=9]  [cs-3: cycles 16] dup9->9(40) [j_in=13]  [cs-3: cycles 13] dup13->13(41) [j_in=11]  [cs-3: cycles 17] dup11->11(42) [j_in=21]  [cs-3: cycles 13] 21->21(43) [j_in=5]  [cs-3: cycles 37] 5->5(44) [j_in=38]  [cs-3: cycles 10] 38->36(45) [j_in=10]  [cs-3: cycles 23] dup10->10(46) [j_in=13]  [cs-3: cycles 13] dup13->13(47) [j_in=17]  [cs-3: cycles 24] 17->17(48) [j_in=13]  [cs-3: cycles 13] dup13->13(49) [j_in=23]  [cs-3: cycles 21] 23->23(50) [j_in=22]  [cs-3: cycles 26] 22->22(51) [j_in=12]  [cs-3: cycles 15] 12->12(52) [j_in=12]  [cs-3: cycles 15] 12->12(53) [j_in=14]  [cs-3: cycles 19] 14->13(54) [j_in=24]  [cs-3: cycles 14] 24->23(55) [j_in=11]  [cs-3: cycles 17] dup11->11(56) [j_in=20]  [cs-3: cycles 18] dup20->20(57) [j_in=10]  [cs-3: cycles 23] dup10->10(58) [j_in=32]  [cs-3: cycles 28] best32->30(59) [j_in=8]  [cs-3: cycles 37] 8->8(60) [j_in=10]  [cs-3: cycles 23] dup10->10(61) [j_in=7]  [cs-3: cycles 32] dup7->7(62) [j_in=15]  [cs-3: cycles 25] 15->14(63) [j_in=11]  [cs-3: cycles 17] dup11->11(64) [j_in=17]  [cs-3: cycles 24] 17->17(65) [j_in=26]  [cs-3: cycles 10] 26->24(66) [j_in=17]  [cs-3: cycles 24] 17->17(67) [j_in=17]  [cs-3: cycles 24] 17->17(68) [j_in=25]  [cs-3: cycles 12] 25->24(69) [j_in=35]  [cs-3: cycles 10] 35->34(70) [j_in=21]  [cs-3: cycles 13] 21->21(71) [j_in=14]  [cs-3: cycles 19] 14->13(72) [j_in=8]  [cs-3: cycles 37] 8->8(73) [j_in=34]  [cs-3: cycles 28] 34->32(74) [j_in=11]  [cs-3: cycles 17] dup11->11(75) [j_in=24]  [cs-3: cycles 14] 24->23(76) [j_in=18]  [cs-3: cycles 21] dup18->17(77) [j_in=16]  [cs-3: cycles 24] 16->16(78) [j_in=26]  [cs-3: cycles 10] 26->24(79) [j_in=21]  [cs-3: cycles 13] 21->21(80) [j_in=22]  [cs-3: cycles 26] dup22->22(81) [j_in=15]  [cs-3: cycles 25] 15->14(82) [j_in=23]  [cs-3: cycles 21] 23->23(83) [j_in=28]  [cs-3: cycles 13] 28->27(84) [j_in=21]  [cs-3: cycles 13] 21->21(85) [j_in=25]  [cs-3: cycles 12] 25->24(86) [j_in=13]  [cs-3: cycles 13] 13->13(87) [j_in=13]  [cs-3: cycles 13] 13->13(88) [j_in=17]  [cs-3: cycles 24] 17->17(89) 
+
+----------------  NEW BEST CLASSIFICATION FOUND on try 59  -------------
+It has 30 CLASSES with WEIGHTS 21 13 13 10 10 10 9 9 7 7 7 7 7 6 6 6 6 6 5 4 4 4 4 4 4 4 3 3 3 3
+PROBABILITY of both the data and the classification = exp(-16266.782)
+(Also found 58 other better than last report.)
+
+-----------  SEARCH STATUS as of Mon Jun 11 12:07:36 2001  -----------
+It just took 31 seconds since beginning.
+Estimate < 31 seconds to find a classification
+  exp(32.3) [= 1.1e+14] times more probable.
+Estimate >> 0 seconds to find the very best classification,
+ which may be exp(0.0) to exp(6901.4) times more probable.
+Have seen 57 of the estimated > 22 possible classifications (based on 32
+ duplicates do far).
+Log-Normal fit to classifications probabilities has M(ean) -16615.1,
+ S(igma) 120.4
+Choosing initial n-classes randomly from a log_normal [M-S, M, M+S] = 
+ [11.9, 19.9, 33.3]
+Overhead time is 3.1 % of total search time
+WARNING: You may be running out of peaks to find.  Estimates are too 
+ optimistic
+
+[j_in=22]  [cs-3: cycles 26] dup22->22(90) [j_in=6]  [cs-3: cycles 38] 6->6(91) [j_in=16]  [cs-3: cycles 24] 16->16(92) [j_in=22]  [cs-3: cycles 26] dup22->22(93) [j_in=12]  [cs-3: cycles 15] 12->12(94) [j_in=13]  [cs-3: cycles 13] 13->13(95) [j_in=24]  [cs-3: cycles 14] 24->23(96) [j_in=20]  [cs-3: cycles 18] dup20->20(97) [j_in=13]  [cs-3: cycles 13] 13->13(98) [j_in=29]  [cs-3: cycles 11] 29->27(99) [j_in=20]  [cs-3: cycles 18] dup20->20(100) [j_in=29]  [cs-3: cycles 11] dup29->27(101) [j_in=47]  [cs-3: cycles 13] 47->35(102) [j_in=49]  [cs-3: cycles 17] 49->37(103) [j_in=23]  [cs-3: cycles 21] 23->23(104) [j_in=10]  [cs-3: cycles 23] dup10->10(105) [j_in=26]  [cs-3: cycles 10] 26->24(106) [j_in=21]  [cs-3: cycles 13] 21->21(107) [j_in=23]  [cs-3: cycles 21] 23->23(108) [j_in=35]  [cs-3: cycles 10] 35->34(109) [j_in=11]  [cs-3: cycles 17] 11->11(110) [j_in=28]  [cs-3: cycles 13] dup28->27(111) [j_in=37]  [cs-3: cycles 10] 37->35(112) [j_in=16]  [cs-3: cycles 24] 16->16(113) [j_in=18]  [cs-3: cycles 21] dup18->17(114) [j_in=25]  [cs-3: cycles 12] 25->24(115) [j_in=26]  [cs-3: cycles 10] 26->24(116) [j_in=26]  [cs-3: cycles 10] 26->24(117) [j_in=32]  [cs-3: cycles 28] dup32->30(118) [j_in=48]  [cs-3: cycles 17] 48->37(119) [j_in=52]  [cs-3: cycles 16] 52->47(120) [j_in=69]  [cs-3: cycles 15] 69->24(121) [j_in=15]  [cs-3: cycles 25] 15->14(122) [j_in=25]  [cs-3: cycles 12] 25->24(123) [j_in=18]  [cs-3: cycles 21] dup18->17(124) [j_in=39]  [cs-3: cycles 10] 39->36(125) [j_in=18]  [cs-3: cycles 21] dup18->17(126) [j_in=16]  [cs-3: cycles 24] 16->16(127) [j_in=5]  [cs-3: cycles 37] 5->5(128) [j_in=16]  [cs-3: cycles 24] 16->16(129) [j_in=28]  [cs-3: cycles 13] dup28->27(130) [j_in=25]  [cs-3: cycles 12] 25->24(131) [j_in=32]  [cs-3: cycles 28] dup32->30(132) [j_in=7]  [cs-3: cycles 32] dup7->7(133) [j_in=18]  [cs-3: cycles 21] dup18->17(134) [j_in=8]  [cs-3: cycles 37] 8->8(135) [j_in=10]  [cs-3: cycles 23] dup10->10(136) [j_in=29]  [cs-3: cycles 11] dup29->27(137) [j_in=23]  [cs-3: cycles 21] 23->23(138) [j_in=22]  [cs-3: cycles 26] 22->22(139) [j_in=34]  [cs-3: cycles 28] dup34->32(140) [j_in=21]  [cs-3: cycles 13] 21->21(141) [j_in=17]  [cs-3: cycles 24] 17->17(142) [j_in=24]  [cs-3: cycles 14] 24->23(143) [j_in=21]  [cs-3: cycles 13] 21->21(144) [j_in=11]  [cs-3: cycles 17] 11->11(145) [j_in=12]  [cs-3: cycles 15] 12->12(146) [j_in=24]  [cs-3: cycles 14] 24->23(147) [j_in=19]  [cs-3: cycles 15] dup19->19(148) [j_in=35]  [cs-3: cycles 10] 35->34(149) [j_in=19]  [cs-3: cycles 15] dup19->19(150) [j_in=13]  [cs-3: cycles 13] 13->13(151) [j_in=33]  [cs-3: cycles 28] 33->32(152) [j_in=22]  [cs-3: cycles 26] 22->22(153) [j_in=22]  [cs-3: cycles 26] 22->22(154) [j_in=14]  [cs-3: cycles 19] 14->13(155) [j_in=23]  [cs-3: cycles 21] 23->23(156) [j_in=71]  [cs-3: cycles 25] 71->25(157) [j_in=16]  [cs-3: cycles 24] 16->16(158) [j_in=26]  [cs-3: cycles 10] 26->24(159) [j_in=8]  [cs-3: cycles 37] 8->8(160) [j_in=30]  [cs-3: cycles 28] dup30->30(161) [j_in=25]  [cs-3: cycles 12] 25->24(162) [j_in=22]  [cs-3: cycles 26] 22->22(163) [j_in=75]  [cs-3: cycles 13] 75->25(164) [j_in=14]  [cs-3: cycles 19] 14->13(165) [j_in=12]  [cs-3: cycles 15] 12->12(166) [j_in=59]  [cs-3: cycles 19] 59->49(167) [j_in=10]  [cs-3: cycles 23] dup10->10(168) [j_in=26]  [cs-3: cycles 10] 26->24(169) [j_in=15]  [cs-3: cycles 25] 15->14(170) [j_in=29]  [cs-3: cycles 11] dup29->27(171) [j_in=62]  [cs-3: cycles 15] 62->50(172) [j_in=15]  [cs-3: cycles 25] 15->14(173) [j_in=18]  [cs-3: cycles 21] 18->17(174) [j_in=10]  [cs-3: cycles 23] dup10->10(175) [j_in=47]  [cs-3: cycles 13] 47->35(176) [j_in=78]  [cs-3: cycles 19] 78->25(177) [j_in=12]  [cs-3: cycles 15] 12->12(178) [j_in=15]  [cs-3: cycles 25] 15->14(179) [j_in=10]  [cs-3: cycles 23] dup10->10(180) [j_in=19]  [cs-3: cycles 15] dup19->19(181) [j_in=37]  [cs-3: cycles 10] 37->35(182) [j_in=18]  [cs-3: cycles 21] 18->17(183) [j_in=19]  [cs-3: cycles 15] dup19->19(184) [j_in=23]  [cs-3: cycles 21] 23->23(185) [j_in=12]  [cs-3: cycles 15] 12->12(186) [j_in=19]  [cs-3: cycles 15] dup19->19(187) [j_in=18]  [cs-3: cycles 21] 18->17(188) [j_in=5]  [cs-3: cycles 37] 5->5(189) [j_in=29]  [cs-3: cycles 11] dup29->27(190) [j_in=23]  [cs-3: cycles 21] 23->23(191) [j_in=11]  [cs-3: cycles 17] 11->11(192) [j_in=22]  [cs-3: cycles 26] 22->22(193) [j_in=28]  [cs-3: cycles 13] dup28->27(194) [j_in=18]  [cs-3: cycles 21] 18->17(195) [j_in=21]  [cs-3: cycles 13] 21->21(196) [j_in=37]  [cs-3: cycles 10] 37->35(197) [j_in=10]  [cs-3: cycles 23] dup10->10(198) [j_in=27]  [cs-3: cycles 12] 27->25(199) [j_in=27]  [cs-3: cycles 12] 27->25(200) [j_in=26]  [cs-3: cycles 10] 26->24(201) [j_in=15]  [cs-3: cycles 25] 15->14(202) [j_in=32]  [cs-3: cycles 28] dup32->30(203) [j_in=14]  [cs-3: cycles 19] 14->13(204) [j_in=20]  [cs-3: cycles 18] dup20->20(205) [j_in=61]  [cs-3: cycles 14] 61->49(206) [j_in=12]  [cs-3: cycles 15] 12->12(207) [j_in=27]  [cs-3: cycles 12] 27->25(208) [j_in=12]  [cs-3: cycles 15] 12->12(209) [j_in=15]  [cs-3: cycles 25] 15->14(210) [j_in=55]  [cs-3: cycles 18] 55->47(211) [j_in=22]  [cs-3: cycles 26] 22->22(212) [j_in=28]  [cs-3: cycles 13] dup28->27(213) [j_in=13]  [cs-3: cycles 13] 13->13(214) [j_in=15]  [cs-3: cycles 25] 15->14(215) [j_in=21]  [cs-3: cycles 13] 21->21(216) [j_in=33]  [cs-3: cycles 28] dup33->32(217) [j_in=24]  [cs-3: cycles 14] 24->23(218) [j_in=18]  [cs-3: cycles 21] 18->17(219) [j_in=15]  [cs-3: cycles 25] 15->14(220) [j_in=25]  [cs-3: cycles 12] 25->24(221) [j_in=24]  [cs-3: cycles 14] 24->23(222) [j_in=31]  [cs-3: cycles 28] 31->30(223) [j_in=20]  [cs-3: cycles 18] dup20->20(224) [j_in=27]  [cs-3: cycles 12] 27->25(225) [j_in=11]  [cs-3: cycles 17] 11->11(226) [j_in=34]  [cs-3: cycles 28] dup34->32(227) [j_in=11]  [cs-3: cycles 17] 11->11(228) [j_in=42]  [cs-3: cycles 23] 42->34(229) [j_in=23]  [cs-3: cycles 21] 23->23(230) [j_in=26]  [cs-3: cycles 10] 26->24(231) [j_in=19]  [cs-3: cycles 15] dup19->19(232) [j_in=20]  [cs-3: cycles 18] dup20->20(233) [j_in=25]  [cs-3: cycles 12] 25->24(234) [j_in=45]  [cs-3: cycles 13] 45->36(235) [j_in=19]  [cs-3: cycles 15] dup19->19(236) [j_in=17]  [cs-3: cycles 24] 17->17(237) [j_in=18]  [cs-3: cycles 21] 18->17(238) [j_in=29]  [cs-3: cycles 11] dup29->27(239) [j_in=12]  [cs-3: cycles 15] 12->12(240) [j_in=34]  [cs-3: cycles 28] dup34->32(241) [j_in=49]  [cs-3: cycles 17] 49->37(242) [j_in=6]  [cs-3: cycles 38] 6->6(243) [j_in=30]  [cs-3: cycles 28] dup30->30(244) [j_in=21]  [cs-3: cycles 13] 21->21(245) [j_in=41]  [cs-3: cycles 10] 41->38(246) [j_in=32]  [cs-3: cycles 28] dup32->30(247) [j_in=21]  [cs-3: cycles 13] 21->21(248) [j_in=19]  [cs-3: cycles 15] dup19->19(249) [j_in=13]  [cs-3: cycles 13] 13->13(250) [j_in=39]  [cs-3: cycles 10] 39->36(251) [j_in=15]  [cs-3: cycles 25] 15->14(252) [j_in=32]  [cs-3: cycles 28] dup32->30(253) [j_in=22]  [cs-3: cycles 26] 22->22(254) [j_in=20]  [cs-3: cycles 18] dup20->20(255) [j_in=12]  [cs-3: cycles 15] 12->12(256) [j_in=5]  [cs-3: cycles 37] 5->5(257) [j_in=47]  [cs-3: cycles 13] 47->35(258) [j_in=29]  [cs-3: cycles 11] dup29->27(259) [j_in=31]  [cs-3: cycles 28] dup31->30(260) [j_in=39]  [cs-3: cycles 10] 39->36(261) [j_in=14]  [cs-3: cycles 19] 14->13(262) [j_in=29]  [cs-3: cycles 11] dup29->27(263) [j_in=25]  [cs-3: cycles 12] 25->24(264) [j_in=20]  [cs-3: cycles 18] dup20->20(265) [j_in=20]  [cs-3: cycles 18] dup20->20(266) [j_in=23]  [cs-3: cycles 21] 23->23(267) [j_in=9]  [cs-3: cycles 16] 9->9(268) [j_in=33]  [cs-3: cycles 28] dup33->32(269) [j_in=26]  [cs-3: cycles 10] 26->24(270) [j_in=19]  [cs-3: cycles 15] dup19->19(271) [j_in=13]  [cs-3: cycles 13] 13->13(272) [j_in=25]  [cs-3: cycles 12] 25->24(273) [j_in=42]  [cs-3: cycles 23] 42->34(274) [j_in=14]  [cs-3: cycles 19] 14->13(275) [j_in=5]  [cs-3: cycles 37] 5->5(276) [j_in=22]  [cs-3: cycles 26] 22->22(277) [j_in=59]  [cs-3: cycles 19] 59->49(278) [j_in=13]  [cs-3: cycles 13] 13->13(279) [j_in=35]  [cs-3: cycles 10] 35->34(280) [j_in=59]  [cs-3: cycles 19] 59->49(281) [j_in=11]  [cs-3: cycles 17] 11->11(282) [j_in=21]  [cs-3: cycles 13] 21->21(283) [j_in=17]  [cs-3: cycles 24] 17->17(284) [j_in=56]  [cs-3: cycles 16] 56->48(285) [j_in=34]  [cs-3: cycles 28] dup34->32(286) [j_in=53]  [cs-3: cycles 16] 53->48(287) [j_in=47]  [cs-3: cycles 13] 47->35(288) [j_in=9]  [cs-3: cycles 16] 9->9(289) [j_in=13]  [cs-3: cycles 13] 13->13(290) [j_in=36]  [cs-3: cycles 10] 36->34(291) [j_in=33]  [cs-3: cycles 28] dup33->32(292) [j_in=10]  [cs-3: cycles 23] dup10->10(293) [j_in=11]  [cs-3: cycles 17] 11->11(294) [j_in=14]  [cs-3: cycles 19] 14->13(295) [j_in=19]  [cs-3: cycles 15] dup19->19(296) [j_in=18]  [cs-3: cycles 21] 18->17(297) [j_in=16]  [cs-3: cycles 24] 16->16(298) [j_in=51]  [cs-3: cycles 9] 51->38(299) [j_in=31]  [cs-3: cycles 28] dup31->30(300) [j_in=10]  [cs-3: cycles 23] dup10->10(301) [j_in=30]  [cs-3: cycles 28] dup30->30(302) [j_in=20]  [cs-3: cycles 18] dup20->20(303) [j_in=13]  [cs-3: cycles 13] 13->13(304) [j_in=9]  [cs-3: cycles 16] 9->9(305) [j_in=25]  [cs-3: cycles 12] 25->24(306) [j_in=72]  [cs-3: cycles 16] 72->25(307) [j_in=33]  [cs-3: cycles 28] dup33->32(308) [j_in=15]  [cs-3: cycles 25] 15->14(309) [j_in=12]  [cs-3: cycles 15] 12->12(310) [j_in=32]  [cs-3: cycles 28] dup32->30(311) [j_in=69]  [cs-3: cycles 15] 69->24(312) [j_in=27]  [cs-3: cycles 12] 27->25(313) [j_in=35]  [cs-3: cycles 10] 35->34(314) [j_in=18]  [cs-3: cycles 21] 18->17(315) [j_in=18]  [cs-3: cycles 21] 18->17(316) [j_in=11]  [cs-3: cycles 17] 11->11(317) [j_in=33]  [cs-3: cycles 28] dup33->32(318) [j_in=21]  [cs-3: cycles 13] 21->21(319) [j_in=8]  [cs-3: cycles 37] 8->8(320) [j_in=24]  [cs-3: cycles 14] 24->23(321) [j_in=26]  [cs-3: cycles 10] 26->24(322) [j_in=29]  [cs-3: cycles 11] dup29->27(323) [j_in=28]  [cs-3: cycles 13] 28->27(324) [j_in=18]  [cs-3: cycles 21] 18->17(325) [j_in=32]  [cs-3: cycles 28] dup32->30(326) [j_in=18]  [cs-3: cycles 21] 18->17(327) [j_in=12]  [cs-3: cycles 15] 12->12(328) [j_in=29]  [cs-3: cycles 11] dup29->27(329) [j_in=7]  [cs-3: cycles 32] dup7->7(330) [j_in=40]  [cs-3: cycles 10] 40->37(331) [j_in=22]  [cs-3: cycles 26] 22->22(332) [j_in=33]  [cs-3: cycles 28] dup33->32(333) [j_in=14]  [cs-3: cycles 19] 14->13(334) [j_in=23]  [cs-3: cycles 21] 23->23(335) [j_in=22]  [cs-3: cycles 26] 22->22(336) [j_in=20]  [cs-3: cycles 18] dup20->20(337) [j_in=40]  [cs-3: cycles 10] 40->37(338) [j_in=9]  [cs-3: cycles 16] 9->9(339) [j_in=22]  [cs-3: cycles 26] 22->22(340) [j_in=24]  [cs-3: cycles 14] 24->23(341) [j_in=85]  [cs-3: cycles 21] 85->24(342) [j_in=55]  [cs-3: cycles 18] 55->47(343) [j_in=26]  [cs-3: cycles 10] 26->24(344) [j_in=13]  [cs-3: cycles 13] 13->13(345) [j_in=17]  [cs-3: cycles 24] 17->17(346) [j_in=25]  [cs-3: cycles 12] 25->24(347) [j_in=50]  [cs-3: cycles 10] 50->37(348) [j_in=13]  [cs-3: cycles 13] 13->13(349) [j_in=13]  [cs-3: cycles 13] 13->13(350) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 12:09:30 2001
+  after a total of 350 tries over 2 minutes 26 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16266.782) N_CLASSES  30 FOUND ON TRY   59 DUPS  7 *SAVED*
+PROBABILITY  exp(-16283.605) N_CLASSES  30 FOUND ON TRY  223 DUPS  2 *SAVED*
+PROBABILITY  exp(-16305.340) N_CLASSES  32 FOUND ON TRY   74 DUPS  4
+PROBABILITY  exp(-16339.997) N_CLASSES  32 FOUND ON TRY  152 DUPS  6
+PROBABILITY  exp(-16362.340) N_CLASSES  27 FOUND ON TRY   99 DUPS  9
+PROBABILITY  exp(-16399.962) N_CLASSES  30 FOUND ON TRY   10 DUPS  3
+PROBABILITY  exp(-16427.763) N_CLASSES  10 FOUND ON TRY    5 DUPS  13
+PROBABILITY  exp(-16453.536) N_CLASSES   7 FOUND ON TRY    4 DUPS  3
+PROBABILITY  exp(-16455.829) N_CLASSES  19 FOUND ON TRY   39 DUPS  10
+PROBABILITY  exp(-16477.439) N_CLASSES  20 FOUND ON TRY   25 DUPS  12
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try   59    num_cycles   28    max_cycles  200    convergent
+try  223    num_cycles   28    max_cycles  200    convergent
+try   74    num_cycles   28    max_cycles  200    convergent
+try  152    num_cycles   28    max_cycles  200    convergent
+try   99    num_cycles   11    max_cycles  200    convergent
+try   10    num_cycles   28    max_cycles  200    convergent
+try    5    num_cycles   23    max_cycles  200    convergent
+try    4    num_cycles   32    max_cycles  200    convergent
+try   39    num_cycles   15    max_cycles  200    convergent
+try   25    num_cycles   18    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 12:09:30 2001 
+
+
+AUTOCLASS C (version 3.3.4unx) STARTING at Mon Jun 11 14:47:36 2001 
+
+AUTOCLASS -SEARCH default parameters:
+rel_error=1.000000e-02; start_j_list=(2,3,5,7,10,15,25); n_classes_fn_type="random_ln_normal"; fixed_j=0; min_report_period=30; max_duration=0; max_n_tries=0; n_save=2; log_file_p=true; search_file_p=true; results_file_p=true; min_save_period=1800; max_n_store=10; n_final_summary=10; start_fn_type="random"; try_fn_type="converge_search_3"; initial_cycles_p=true; save_compact_p=true; read_compact_p=true; randomize_random_p=true; n_data=0; halt_range=5.000000e-01; halt_factor=1.000000e-04; rel_delta_range=2.500000e-03; n_average=3; cs4_delta_range=2.500000e-03; sigma_beta_n_values=6; max_cycles=200; converge_print_p=false; force_new_search_p=true; checkpoint_p=false; min_checkpoint_period=10800; reconverge_type=""; screen_output_p=true; interactive_p=true; break_on_warnings_p=true; free_storage_p=true
+
+USER supplied parameters which override the defaults:
+max_n_tries=250; force_new_search_p=true
+
+
+##############  Starting Input Check  ###############
+
+To log file: 
+   /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+During loading of: 
+   [1] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2,
+   [2] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2,
+   [3] /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model.
+
+   [Attribute #, value #, and datum # are zero based.]
+
+ADVISORY[2]: data_file_format settings:
+             separator_char = ',', comment_char = ';', unknown_token = '?'
+ADVISORY[2]: read 26 attribute defs from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+ADVISORY[2]: for attribute #5: "num-of-doors" range increased to 3,
+             for value 2 -- translator (2 ?).
+ADVISORY[1]: read 205 datum from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+ADVISORY[1]: discrete translations [ (internal external):count ... ] built 
+             from input data --
+   Attribute #0, "symboling":
+      [ (0 3):27 (1 1):54 (2 2):32 (3 0):67 (4 -1):22 (5 -2):3 ]
+   Attribute #2, "make":
+      [ (0 alfa-romero):3 (1 audi):7 (2 bmw):8 (3 chevrolet):3 (4 dodge):9 (5 honda):13 (6 isuzu):4 (7 jaguar):3 (8 mazda):17 (9 mercedes-benz):8 (10 mercury):1 (11 mitsubishi):13 (12 nissan):18 (13 peugot):11 (14 plymouth):7 (15 porsche):5 (16 renault):2 (17 saab):6 (18 subaru):12 (19 toyota):32 (20 volkswagen):12 (21 volvo):11 ]
+   Attribute #3, "fuel-type":
+      [ (0 gas):185 (1 diesel):20 ]
+   Attribute #4, "aspiration":
+      [ (0 std):168 (1 turbo):37 ]
+   Attribute #5, "num-of-doors":
+      [ (0 two):89 (1 four):114 (2 ?):2 ]
+   Attribute #6, "body-style":
+      [ (0 convertible):6 (1 hatchback):70 (2 sedan):96 (3 wagon):25 (4 hardtop):8 ]
+   Attribute #7, "drive-wheels":
+      [ (0 rwd):76 (1 fwd):120 (2 4wd):9 ]
+   Attribute #8, "engine-location":
+      [ (0 front):202 (1 rear):3 ]
+   Attribute #14, "engine-type":
+      [ (0 dohc):12 (1 ohcv):13 (2 ohc):148 (3 l):12 (4 rotor):4 (5 ohcf):15 (6 dohcv):1 ]
+   Attribute #15, "num-of-cylinders":
+      [ (0 four):159 (1 six):24 (2 five):11 (3 three):1 (4 twelve):1 (5 two):4 (6 eight):5 ]
+   Attribute #17, "fuel-system":
+      [ (0 mpfi):94 (1 2bbl):66 (2 mfi):1 (3 1bbl):11 (4 spfi):1 (5 4bbl):3 (6 idi):20 (7 spdi):9 ]
+ADVISORY[1]: real statistics [ min < (mean : variance) < max ] built 
+             from input data --
+   Attribute #1, "normalized-loses":
+      [  6.5000e+01 < ( 1.2200e+02 : 1.2485e+03) <  2.5600e+02 ]
+   Attribute #9, "wheel-base":
+      [  8.6600e+01 < ( 9.8757e+01 : 3.6085e+01) <  1.2090e+02 ]
+   Attribute #10, "length":
+      [  1.4110e+02 < ( 1.7405e+02 : 1.5147e+02) <  2.0810e+02 ]
+   Attribute #11, "width":
+      [  6.0300e+01 < ( 6.5908e+01 : 4.5795e+00) <  7.2300e+01 ]
+   Attribute #12, "height":
+      [  4.7800e+01 < ( 5.3725e+01 : 5.9417e+00) <  5.9800e+01 ]
+   Attribute #13, "curb-weight":
+      [  1.4880e+03 < ( 2.5556e+03 : 2.6979e+05) <  4.0660e+03 ]
+   Attribute #16, "engine-size":
+      [  6.1000e+01 < ( 1.2691e+02 : 1.7257e+03) <  3.2600e+02 ]
+   Attribute #18, "bore":
+      [  2.5400e+00 < ( 3.3298e+00 : 7.4451e-02) <  3.9400e+00 ]
+   Attribute #19, "stroke":
+      [  2.0700e+00 < ( 3.2554e+00 : 9.9811e-02) <  4.1700e+00 ]
+   Attribute #20, "compression-ratio":
+      [  7.0000e+00 < ( 1.0143e+01 : 1.5700e+01) <  2.3000e+01 ]
+   Attribute #21, "horse-power":
+      [  4.8000e+01 < ( 1.0426e+02 : 1.5695e+03) <  2.8800e+02 ]
+   Attribute #22, "peak-rpm":
+      [  4.1500e+03 < ( 5.1254e+03 : 2.2863e+05) <  6.6000e+03 ]
+   Attribute #23, "city-mpg":
+      [  1.3000e+01 < ( 2.5220e+01 : 4.2591e+01) <  4.9000e+01 ]
+   Attribute #24, "highway-mpg":
+      [  1.6000e+01 < ( 3.0751e+01 : 4.7192e+01) <  5.4000e+01 ]
+   Attribute #25, "price":
+      [  5.1180e+03 < ( 1.3207e+04 : 6.2842e+07) <  4.5400e+04 ]
+ADVISORY[3]: the default model term type, single_multinomial, 
+             will be used for these attributes:
+             #2: "make"
+             #3: "fuel-type"
+             #4: "aspiration"
+             #5: "num-of-doors"
+             #6: "body-style"
+             #7: "drive-wheels"
+             #8: "engine-location"
+             #14: "engine-type"
+             #15: "num-of-cylinders"
+             #17: "fuel-system"
+ADVISORY[3]: read 1 model def from 
+             /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model
+ADVISORY[2]: log_transform is being applied to attribute #1:
+             "normalized-loses" and will be stored as attribute #26.
+   Attribute #26, "Log normalized-loses":
+      [  4.1744e+00 < ( 4.7637e+00 : 8.0123e-02) <  5.5452e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #18:
+             "bore" and will be stored as attribute #27.
+   Attribute #27, "Log bore":
+      [  9.3216e-01 < ( 1.1995e+00 : 6.7855e-03) <  1.3712e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #19:
+             "stroke" and will be stored as attribute #28.
+   Attribute #28, "Log stroke":
+      [  7.2755e-01 < ( 1.1753e+00 : 1.0509e-02) <  1.4279e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #21:
+             "horse-power" and will be stored as attribute #29.
+   Attribute #29, "Log horse-power":
+      [  3.8712e+00 < ( 4.5841e+00 : 1.1947e-01) <  5.6630e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #22:
+             "peak-rpm" and will be stored as attribute #30.
+   Attribute #30, "Log peak-rpm":
+      [  8.3309e+00 < ( 8.5376e+00 : 8.8318e-03) <  8.7948e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #25:
+             "price" and will be stored as attribute #31.
+   Attribute #31, "Log price":
+      [  8.5405e+00 < ( 9.3501e+00 : 2.5100e-01) <  1.0723e+01 ]
+ADVISORY[2]: log_transform is being applied to attribute #9:
+             "wheel-base" and will be stored as attribute #32.
+   Attribute #32, "Log wheel-base":
+      [  4.4613e+00 < ( 4.5909e+00 : 3.5069e-03) <  4.7950e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #10:
+             "length" and will be stored as attribute #33.
+   Attribute #33, "Log length":
+      [  4.9495e+00 < ( 5.1568e+00 : 5.0053e-03) <  5.3380e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #11:
+             "width" and will be stored as attribute #34.
+   Attribute #34, "Log width":
+      [  4.0993e+00 < ( 4.1877e+00 : 1.0268e-03) <  4.2808e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #12:
+             "height" and will be stored as attribute #35.
+   Attribute #35, "Log height":
+      [  3.8670e+00 < ( 3.9828e+00 : 2.0614e-03) <  4.0910e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #13:
+             "curb-weight" and will be stored as attribute #36.
+   Attribute #36, "Log curb-weight":
+      [  7.3052e+00 < ( 7.8262e+00 : 3.8996e-02) <  8.3104e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #16:
+             "engine-size" and will be stored as attribute #37.
+   Attribute #37, "Log engine-size":
+      [  4.1109e+00 < ( 4.8002e+00 : 7.9679e-02) <  5.7869e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #20:
+             "compression-ratio" and will be stored as attribute #38.
+   Attribute #38, "Log compression-ratio":
+      [  1.9459e+00 < ( 2.2674e+00 : 7.9267e-02) <  3.1355e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #23:
+             "city-mpg" and will be stored as attribute #39.
+   Attribute #39, "Log city-mpg":
+      [  2.5649e+00 < ( 3.1948e+00 : 6.5718e-02) <  3.8918e+00 ]
+ADVISORY[2]: log_transform is being applied to attribute #24:
+             "highway-mpg" and will be stored as attribute #40.
+   Attribute #40, "Log highway-mpg":
+      [  2.7726e+00 < ( 3.4011e+00 : 5.0072e-02) <  3.9890e+00 ]
+
+############ Input Check Concluded ##############
+
+WELCOME TO AUTOCLASS.
+  1) Each time I have finished a new 'trial', or attempt to find a good
+     classification, I will print the number of classes that trial
+     started and ended with, such as 9->7.
+  2) If that trial results in a duplicate of a previous run, I will print
+     'dup' first.
+  3) If that trial results in a classification better than any previous, 
+     I will print 'best' first.
+  4) If more than 30 seconds have passed since the last report, and a new
+     classification has been found which is better than any previous ones,
+     I will report on that classification and on the status of the search
+     so far.
+  5) This report will include an estimate of the time it will take to find
+     another even better classification, and how much better that will be.
+     In addition, I will estimate a lower bound on how long it might take to
+     find the very best classification, and how much better that might be.
+  6) If you are warned about too much time in overhead, you may want to
+     change the parameters n_save, min_save_period, min_report_period, or
+     min_checkpoint_period.
+  7) To quit searching, type a 'q', hit <return>, and wait.  Otherwise I'll
+     go on until I complete trial number (250).
+  8) If needed, every 30 minutes I will save the best 2 classifications
+     so far to file: 
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+     and a description of the search to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.search
+  9) A record of this search will be printed to file:
+     /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+
+BEGINNING SEARCH at Mon Jun 11 14:47:38 2001
+
+[j_in=2]  [cs-3: cycles 18] best2->2(1) [j_in=3]  [cs-3: cycles 10] best3->3(2) [j_in=5]  [cs-3: cycles 35] best5->5(3) [j_in=7]  [cs-3: cycles 38] best7->7(4) [j_in=10]  [cs-3: cycles 27] 10->10(5) [j_in=15]  [cs-3: cycles 13] 15->15(6) [j_in=25]  [cs-3: cycles 19] 25->24(7) [j_in=37]  [cs-3: cycles 14] 37->29(8) [j_in=4]  [cs-3: cycles 31] 4->4(9) [j_in=12]  [cs-3: cycles 20] 12->12(10) [j_in=14]  [cs-3: cycles 14] best14->14(11) [j_in=5]  [cs-3: cycles 14] 5->5(12) [j_in=10]  [cs-3: cycles 19] 10->10(13) [j_in=14]  [cs-3: cycles 14] dup14->14(14) [j_in=7]  [cs-3: cycles 13] 7->7(15) [j_in=39]  [cs-3: cycles 13] 39->32(16) [j_in=8]  [cs-3: cycles 18] 8->8(17) [j_in=8]  [cs-3: cycles 18] dup8->8(18) [j_in=8]  [cs-3: cycles 22] 8->8(19) [j_in=7]  [cs-3: cycles 22] 7->7(20) [j_in=28]  [cs-3: cycles 18] 28->26(21) [j_in=16]  [cs-3: cycles 15] 16->16(22) [j_in=19]  [cs-3: cycles 19] 19->17(23) [j_in=22]  [cs-3: cycles 12] 22->20(24) [j_in=35]  [cs-3: cycles 9] 35->30(25) [j_in=14]  [cs-3: cycles 17] 14->14(26) [j_in=10]  [cs-3: cycles 13] 10->10(27) [j_in=6]  [cs-3: cycles 34] 6->6(28) [j_in=22]  [cs-3: cycles 21] 22->19(29) [j_in=7]  [cs-3: cycles 22] 7->7(30) [j_in=6]  [cs-3: cycles 47] 6->6(31) [j_in=27]  [cs-3: cycles 17] 27->27(32) [j_in=9]  [cs-3: cycles 22] 9->9(33) [j_in=16]  [cs-3: cycles 48] 16->16(34) [j_in=8]  [cs-3: cycles 25] 8->8(35) [j_in=11]  [cs-3: cycles 22] 11->11(36) [j_in=8]  [cs-3: cycles 21] 8->8(37) [j_in=9]  [cs-3: cycles 23] 9->9(38) [j_in=32]  [cs-3: cycles 16] 32->26(39) [j_in=6]  [cs-3: cycles 12] 6->6(40) [j_in=10]  [cs-3: cycles 31] 10->10(41) [j_in=16]  [cs-3: cycles 21] best16->16(42) [j_in=9]  [cs-3: cycles 22] 9->9(43) [j_in=12]  [cs-3: cycles 17] 12->12(44) [j_in=24]  [cs-3: cycles 12] 24->21(45) [j_in=7]  [cs-3: cycles 21] 7->7(46) [j_in=23]  [cs-3: cycles 9] 23->22(47) [j_in=14]  [cs-3: cycles 22] 14->14(48) [j_in=13]  [cs-3: cycles 22] 13->13(49) [j_in=22]  [cs-3: cycles 9] 22->22(50) [j_in=12]  [cs-3: cycles 29] 12->12(51) [j_in=20]  [cs-3: cycles 16] 20->19(52) [j_in=18]  [cs-3: cycles 15] 18->17(53) [j_in=17]  [cs-3: cycles 21] 17->17(54) [j_in=24]  [cs-3: cycles 19] 24->22(55) [j_in=11]  [cs-3: cycles 27] 11->11(56) [j_in=10]  [cs-3: cycles 10] 10->10(57) [j_in=11]  [cs-3: cycles 27] dup11->11(58) [j_in=10]  [cs-3: cycles 11] 10->10(59) [j_in=15]  [cs-3: cycles 17] 15->15(60) [j_in=18]  [cs-3: cycles 15] 18->18(61) [j_in=13]  [cs-3: cycles 13] 13->13(62) [j_in=17]  [cs-3: cycles 14] 17->17(63) [j_in=13]  [cs-3: cycles 9] 13->13(64) [j_in=11]  [cs-3: cycles 13] 11->11(65) [j_in=10]  [cs-3: cycles 11] 10->10(66) [j_in=17]  [cs-3: cycles 14] 17->17(67) [j_in=13]  [cs-3: cycles 15] 13->13(68) [j_in=15]  [cs-3: cycles 14] 15->14(69) [j_in=15]  [cs-3: cycles 14] 15->14(70) [j_in=15]  [cs-3: cycles 14] 15->14(71) [j_in=15]  [cs-3: cycles 12] 15->15(72) [j_in=15]  [cs-3: cycles 12] 15->15(73) [j_in=15]  [cs-3: cycles 12] 15->15(74) [j_in=15]  [cs-3: cycles 12] 15->15(75) [j_in=15]  [cs-3: cycles 14] 15->15(76) [j_in=17]  [cs-3: cycles 9] 17->17(77) [j_in=14]  [cs-3: cycles 11] 14->14(78) [j_in=13]  [cs-3: cycles 19] 13->13(79) [j_in=17]  [cs-3: cycles 67] 17->17(80) [j_in=16]  [cs-3: cycles 26] 16->16(81) [j_in=16]  [cs-3: cycles 26] dup16->16(82) [j_in=16]  [cs-3: cycles 13] 16->16(83) [j_in=16]  [cs-3: cycles 13] dup16->16(84) [j_in=16]  [cs-3: cycles 13] dup16->16(85) [j_in=16]  [cs-3: cycles 13] dup16->16(86) [j_in=16]  [cs-3: cycles 9] 16->16(87) [j_in=18]  [cs-3: cycles 16] 18->18(88) [j_in=17]  [cs-3: cycles 10] 17->17(89) [j_in=16]  [cs-3: cycles 9] 16->16(90) [j_in=19]  [cs-3: cycles 10] 19->19(91) [j_in=12]  [cs-3: cycles 16] 12->11(92) [j_in=12]  [cs-3: cycles 16] 12->11(93) [j_in=12]  [cs-3: cycles 16] 12->11(94) [j_in=12]  [cs-3: cycles 16] 12->11(95) [j_in=12]  [cs-3: cycles 20] 12->12(96) [j_in=22]  [cs-3: cycles 27] 22->21(97) [j_in=16]  [cs-3: cycles 13] 16->16(98) [j_in=13]  [cs-3: cycles 9] 13->13(99) [j_in=12]  [cs-3: cycles 16] 12->12(100) [j_in=19]  [cs-3: cycles 14] 19->18(101) [j_in=14]  [cs-3: cycles 36] 14->14(102) [j_in=18]  [cs-3: cycles 37] 18->18(103) 
+
+----------------  NEW BEST CLASSIFICATION FOUND on try 42  -------------
+It has 16 CLASSES with WEIGHTS 34 22 16 14 14 13 12 11 11 11 10 9 9 9 5 5
+PROBABILITY of both the data and the classification = exp(-16282.909)
+(Also found 41 other better than last report.)
+
+-----------  SEARCH STATUS as of Mon Jun 11 14:48:09 2001  -----------
+It just took 31 seconds since beginning.
+Estimate < 31 seconds to find a classification
+  exp(21.2) [= 1.5e+09] times more probable.
+Estimate >> 7 seconds to find the very best classification,
+ which may be exp(45.1) to exp(3293.8) times more probable.
+Have seen 96 of the estimated > 117 possible classifications (based on 7
+ duplicates do far).
+Log-Normal fit to classifications probabilities has M(ean) -16435.9,
+ S(igma) 83.0
+Choosing initial n-classes randomly from a log_normal [M-S, M, M+S] = 
+ [11.9, 14.2, 16.9]
+Overhead time is 3.1 % of total search time
+WARNING: You may be running out of peaks to find.  Estimates are too 
+ optimistic
+
+[j_in=11]  [cs-3: cycles 21] 11->11(104) [j_in=15]  [cs-3: cycles 26] 15->15(105) [j_in=19]  [cs-3: cycles 9] 19->17(106) [j_in=17]  [cs-3: cycles 21] 17->15(107) [j_in=11]  [cs-3: cycles 23] 11->11(108) [j_in=12]  [cs-3: cycles 24] 12->12(109) [j_in=14]  [cs-3: cycles 14] 14->14(110) [j_in=17]  [cs-3: cycles 9] 17->16(111) [j_in=19]  [cs-3: cycles 9] 19->18(112) [j_in=20]  [cs-3: cycles 9] 20->19(113) [j_in=21]  [cs-3: cycles 15] 21->20(114) [j_in=21]  [cs-3: cycles 15] 21->20(115) [j_in=21]  [cs-3: cycles 15] 21->20(116) [j_in=21]  [cs-3: cycles 17] 21->20(117) [j_in=19]  [cs-3: cycles 16] 19->18(118) [j_in=15]  [cs-3: cycles 25] 15->15(119) [j_in=16]  [cs-3: cycles 15] 16->16(120) [j_in=14]  [cs-3: cycles 22] 14->14(121) [j_in=19]  [cs-3: cycles 19] 19->19(122) [j_in=15]  [cs-3: cycles 17] 15->15(123) [j_in=17]  [cs-3: cycles 9] 17->17(124) [j_in=14]  [cs-3: cycles 17] 14->14(125) [j_in=16]  [cs-3: cycles 17] 16->16(126) [j_in=21]  [cs-3: cycles 10] 21->21(127) [j_in=17]  [cs-3: cycles 16] 17->17(128) [j_in=19]  [cs-3: cycles 55] 19->17(129) [j_in=15]  [cs-3: cycles 19] 15->15(130) [j_in=13]  [cs-3: cycles 20] 13->13(131) [j_in=13]  [cs-3: cycles 20] 13->13(132) [j_in=13]  [cs-3: cycles 34] 13->13(133) [j_in=13]  [cs-3: cycles 34] 13->13(134) [j_in=13]  [cs-3: cycles 17] 13->13(135) [j_in=17]  [cs-3: cycles 21] 17->17(136) [j_in=16]  [cs-3: cycles 16] 16->16(137) [j_in=18]  [cs-3: cycles 44] 18->17(138) [j_in=15]  [cs-3: cycles 14] 15->14(139) [j_in=18]  [cs-3: cycles 25] 18->17(140) [j_in=17]  [cs-3: cycles 26] 17->16(141) [j_in=12]  [cs-3: cycles 36] 12->12(142) [j_in=14]  [cs-3: cycles 28] 14->14(143) [j_in=13]  [cs-3: cycles 16] 13->13(144) [j_in=12]  [cs-3: cycles 19] 12->12(145) [j_in=13]  [cs-3: cycles 16] 13->13(146) [j_in=12]  [cs-3: cycles 19] 12->12(147) [j_in=13]  [cs-3: cycles 24] 13->12(148) [j_in=14]  [cs-3: cycles 15] 14->13(149) [j_in=16]  [cs-3: cycles 14] 16->15(150) [j_in=16]  [cs-3: cycles 19] 16->16(151) [j_in=20]  [cs-3: cycles 15] 20->20(152) [j_in=18]  [cs-3: cycles 17] 18->17(153) [j_in=20]  [cs-3: cycles 17] 20->19(154) [j_in=12]  [cs-3: cycles 52] 12->11(155) [j_in=20]  [cs-3: cycles 16] 20->20(156) [j_in=10]  [cs-3: cycles 11] 10->10(157) [j_in=16]  [cs-3: cycles 25] 16->15(158) [j_in=16]  [cs-3: cycles 25] 16->15(159) [j_in=16]  [cs-3: cycles 25] 16->15(160) [j_in=16]  [cs-3: cycles 16] 16->16(161) [j_in=15]  [cs-3: cycles 13] 15->15(162) [j_in=18]  [cs-3: cycles 16] 18->17(163) [j_in=13]  [cs-3: cycles 18] 13->13(164) [j_in=16]  [cs-3: cycles 30] 16->16(165) [j_in=15]  [cs-3: cycles 15] 15->15(166) [j_in=19]  [cs-3: cycles 19] 19->19(167) [j_in=17]  [cs-3: cycles 18] 17->17(168) [j_in=13]  [cs-3: cycles 21] 13->12(169) [j_in=15]  [cs-3: cycles 20] 15->14(170) [j_in=13]  [cs-3: cycles 21] 13->12(171) [j_in=15]  [cs-3: cycles 13] 15->14(172) [j_in=20]  [cs-3: cycles 10] 20->18(173) [j_in=13]  [cs-3: cycles 15] 13->13(174) [j_in=15]  [cs-3: cycles 13] 15->14(175) [j_in=20]  [cs-3: cycles 16] 20->19(176) [j_in=20]  [cs-3: cycles 16] 20->19(177) [j_in=20]  [cs-3: cycles 16] 20->19(178) [j_in=20]  [cs-3: cycles 9] 20->20(179) [j_in=11]  [cs-3: cycles 29] 11->11(180) [j_in=14]  [cs-3: cycles 27] 14->14(181) [j_in=17]  [cs-3: cycles 28] 17->16(182) [j_in=18]  [cs-3: cycles 27] 18->17(183) [j_in=16]  [cs-3: cycles 20] 16->15(184) [j_in=13]  [cs-3: cycles 17] 13->12(185) [j_in=13]  [cs-3: cycles 17] 13->12(186) [j_in=13]  [cs-3: cycles 16] 13->13(187) [j_in=17]  [cs-3: cycles 13] 17->17(188) [j_in=13]  [cs-3: cycles 16] 13->13(189) [j_in=17]  [cs-3: cycles 13] 17->17(190) [j_in=13]  [cs-3: cycles 9] 13->13(191) [j_in=14]  [cs-3: cycles 13] 14->14(192) [j_in=12]  [cs-3: cycles 13] 12->12(193) [j_in=13]  [cs-3: cycles 9] 13->13(194) [j_in=14]  [cs-3: cycles 13] 14->14(195) [j_in=12]  [cs-3: cycles 54] 12->11(196) [j_in=18]  [cs-3: cycles 16] 18->17(197) [j_in=15]  [cs-3: cycles 15] 15->15(198) [j_in=17]  [cs-3: cycles 31] 17->16(199) [j_in=15]  [cs-3: cycles 11] 15->15(200) [j_in=17]  [cs-3: cycles 9] 17->17(201) [j_in=18]  [cs-3: cycles 12] 18->18(202) [j_in=15]  [cs-3: cycles 11] 15->15(203) [j_in=18]  [cs-3: cycles 12] dup18->18(204) [j_in=15]  [cs-3: cycles 17] 15->15(205) [j_in=15]  [cs-3: cycles 17] 15->15(206) [j_in=15]  [cs-3: cycles 17] 15->15(207) [j_in=15]  [cs-3: cycles 22] 15->15(208) [j_in=17]  [cs-3: cycles 21] 17->17(209) [j_in=21]  [cs-3: cycles 11] 21->21(210) [j_in=19]  [cs-3: cycles 8] 19->19(211) [j_in=9]  [cs-3: cycles 11] best9->9(212) 
+
+----------------  NEW BEST CLASSIFICATION FOUND on try 212  -------------
+It has 9 CLASSES with WEIGHTS 52 35 33 21 16 14 14 10 10
+PROBABILITY of both the data and the classification = exp(-16272.233)
+
+-----------  SEARCH STATUS as of Mon Jun 11 14:48:46 2001  -----------
+It just took 37 seconds to find a classification
+  exp(10.7) [= 4.3e+04] times more probable.
+Estimate < 1 minute 8 seconds to find a classification
+  exp(20.2) [= 5.8e+08] times more probable.
+Estimate >> 7 seconds to find the very best classification,
+ which may be exp(51.8) to exp(3520.2) times more probable.
+Have seen 204 of the estimated > 225 possible classifications (based on 8
+ duplicates do far).
+Log-Normal fit to classifications probabilities has M(ean) -16445.8,
+ S(igma) 85.9
+Choosing initial n-classes randomly from a log_normal [M-S, M, M+S] = 
+ [11.4, 14.5, 18.5]
+Overhead time is 1.4 % of total search time
+WARNING: You may be running out of peaks to find.  Estimates are too 
+ optimistic
+
+[j_in=15]  [cs-3: cycles 29] best15->15(213) [j_in=16]  [cs-3: cycles 14] 16->16(214) [j_in=21]  [cs-3: cycles 14] 21->20(215) [j_in=14]  [cs-3: cycles 9] 14->14(216) [j_in=10]  [cs-3: cycles 22] 10->10(217) [j_in=17]  [cs-3: cycles 12] 17->17(218) [j_in=12]  [cs-3: cycles 17] 12->12(219) [j_in=21]  [cs-3: cycles 22] 21->21(220) [j_in=19]  [cs-3: cycles 17] 19->18(221) [j_in=12]  [cs-3: cycles 17] 12->12(222) [j_in=18]  [cs-3: cycles 14] 18->17(223) [j_in=19]  [cs-3: cycles 25] 19->18(224) [j_in=15]  [cs-3: cycles 19] 15->15(225) [j_in=12]  [cs-3: cycles 12] 12->12(226) [j_in=14]  [cs-3: cycles 20] 14->14(227) [j_in=21]  [cs-3: cycles 25] 21->20(228) [j_in=18]  [cs-3: cycles 10] 18->18(229) [j_in=13]  [cs-3: cycles 15] 13->13(230) [j_in=19]  [cs-3: cycles 14] 19->19(231) [j_in=15]  [cs-3: cycles 28] 15->15(232) [j_in=12]  [cs-3: cycles 23] 12->12(233) [j_in=14]  [cs-3: cycles 34] 14->14(234) [j_in=11]  [cs-3: cycles 32] 11->10(235) [j_in=18]  [cs-3: cycles 39] 18->16(236) [j_in=13]  [cs-3: cycles 10] 13->13(237) [j_in=16]  [cs-3: cycles 20] 16->16(238) [j_in=16]  [cs-3: cycles 20] 16->16(239) [j_in=16]  [cs-3: cycles 28] 16->16(240) [j_in=19]  [cs-3: cycles 18] 19->19(241) [j_in=14]  [cs-3: cycles 16] 14->13(242) [j_in=12]  [cs-3: cycles 14] 12->12(243) [j_in=13]  [cs-3: cycles 16] 13->12(244) [j_in=16]  [cs-3: cycles 9] 16->15(245) [j_in=14]  [cs-3: cycles 16] 14->13(246) [j_in=12]  [cs-3: cycles 14] 12->12(247) [j_in=14]  [cs-3: cycles 14] 14->14(248) [j_in=19]  [cs-3: cycles 26] 19->19(249) [j_in=19]  [cs-3: cycles 18] 19->19(250) 
+
+
+ENDING SEARCH because max number of tries reached at Mon Jun 11 14:48:59 2001
+  after a total of 250 tries over 1 minute 22 seconds
+A log of this search is in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.log
+The search results are stored in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+This search can be restarted by having "force_new_search_p = false" in file:
+ /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.s-params
+ and reinvoking the "autoclass -search ..." form
+
+------------------  SUMMARY OF 10 BEST RESULTS  ------------------
+PROBABILITY  exp(-16230.401) N_CLASSES  15 FOUND ON TRY  213 *SAVED*
+PROBABILITY  exp(-16245.405) N_CLASSES  16 FOUND ON TRY  240 *SAVED*
+PROBABILITY  exp(-16258.217) N_CLASSES  14 FOUND ON TRY  248
+PROBABILITY  exp(-16272.233) N_CLASSES   9 FOUND ON TRY  212
+PROBABILITY  exp(-16282.909) N_CLASSES  16 FOUND ON TRY   42
+PROBABILITY  exp(-16285.766) N_CLASSES  16 FOUND ON TRY   83 DUPS  3
+PROBABILITY  exp(-16289.486) N_CLASSES  13 FOUND ON TRY   99
+PROBABILITY  exp(-16292.727) N_CLASSES  19 FOUND ON TRY  113
+PROBABILITY  exp(-16295.621) N_CLASSES  12 FOUND ON TRY   51
+PROBABILITY  exp(-16297.324) N_CLASSES  15 FOUND ON TRY  184
+
+------------------  SUMMARY OF TRY CONVERGENCE  ------------------
+try  213    num_cycles   29    max_cycles  200    convergent
+try  240    num_cycles   28    max_cycles  200    convergent
+try  248    num_cycles   14    max_cycles  200    convergent
+try  212    num_cycles   11    max_cycles  200    convergent
+try   42    num_cycles   21    max_cycles  200    convergent
+try   83    num_cycles   13    max_cycles  200    convergent
+try   99    num_cycles    9    max_cycles  200    convergent
+try  113    num_cycles    9    max_cycles  200    convergent
+try   51    num_cycles   29    max_cycles  200    convergent
+try  184    num_cycles   20    max_cycles  200    convergent
+
+AUTOCLASS C (version 3.3.4unx) STOPPING at Mon Jun 11 14:48:59 2001 

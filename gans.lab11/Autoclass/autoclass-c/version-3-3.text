@@ -1,0 +1,104 @@
+
+
+	AUTOCLASS C VERSION 3.3 NOTES 
+====================================================================== 
+======================================================================
+
+NOTE: This version is an integrated source port of version 3.2.2 to
+      Windows NT/95.  There are no new capabilities or bug fixes over
+      and above version 3.2.2.
+
+Windows Compatibility Changes:
+-----------------------------------
+  Thanks to Autumn <autumn@netron.com>, we now have an integrated
+  source release of AutoClass C for Unix platforms and Windows
+  platforms (requires Microsoft Visual C++ 5.0).  Due to the Unix
+  "line feed" and the Windows "carriage return/line feed" incompatibility,
+  there are two distributions, one for Unix-based platforms, and one
+  for Windows platforms.
+
+  Summary of source changes:
+     autoclass-c/prog/*.c -
+        Using _MSC_VER in preprocessor forms, remove the include of
+        Unix-specific headers, and add the Win32 equivalent.
+     autoclass-c/prog/autoclass.h -
+        Use rand in place of lrand48, therefore change srand48 to srand.
+     autoclass-c/prog/getparams.c, getparams.h, intf-reports.c, search-control.c
+        Prefixed enum members with T so they would not clash with predefined types.
+     autoclass-c/prog/init.c
+        getcwd is called _getcwd in MSVC.
+     autoclass-c/prog/model-expander-3.c, params.h, struct-class.c -
+        Prefixed enum member IGNORE with T so it would not clash with
+        predefined type.
+     autoclass-c/prog/search-control.c -
+        Made two queries conditional on interactive_p; moved init of stream
+        with stdout -- MSVC doesn't think it's a constant.
+     autoclass-c/prog/utils.c -
+        Created an lrand48 for win32; created a char_input_test() that works
+        with win32.
+     autoclass-c/prog/fcntlcom-ac.h -
+        Adapt for MSVC.
+
+
+Documentation:
+------------------------------
+
+  1. Update sample AutoClass C run files contained in autoclass-c/sample.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+
+     Update "G_ac_version" to 3.3unx or 3.3win, depending on which
+     platform AutoClass C is compiled.
+
+  2. autoclass-c/prog/globals.c, globals.h, intf-extensions.c, intf-reports.c,
+       search-control-2.c, search-control.c, io-results-bin.c,
+       io-results.c, io-read-model.c, & io-read-data.c -
+
+     Add G_slash, which is "/" for Unix, and "\" for Windows.
+     Change all occurrences of local variable "slash" to "G_slash".
+     This will allow AutoClass C to handle both Unix and Windows
+     relative and absolute pathnames properly.
+
+  3. autoclass-c/prog/init.c -
+
+     In INIT, append either "/" or "\" to G_absolute_pathname.
+
+  4. autoclass-c/prog/intf-sigma-contours.c -
+
+     In GENERATE_SIGMA_CONTOURS use %+13e for Windows instead of
+     %13e in order to maintain column alignment for positive and
+     negative values.
+
+  5. autoclass-c/prog/intf-reports.c -
+
+     For Windows, use %+9.2e rather than %9.2 in FORMAT_REAL_ATTRIBUTE
+     and FORMAT_DISCRETE_ATTRIBUTE, in order to maintain column alignment
+     for positive and negative values.
+
+     Call FILTER_E_FORMAT_EXPONENTS to filter Windows peculiar %e format
+     output of e+000 => e+00, and e-000 => e-00.
+
+  6. autoclass-c/prog/intf-sigma-contours.c -
+
+     For Windows, use %+13e rather than %13 in GENERATE_SIGMA_CONTOURS,
+     in order to maintain column alignment for positive and negative values.
+
+     Call FILTER_E_FORMAT_EXPONENTS to filter Windows peculiar %e format
+     output of e+000 => e+00, etc, and e-000 => e-00.
+     
+
+  7. autoclass-c/prog/io-results.c, io-results-bin.c -
+
+     In READ_CLSF_SEQ and LOAD_CLSF_SEQ, truncate unx/win from the version
+     prior to checking for numeric content.
+
+  8. autoclass-c/prog/autoclass.c -
+     In AUTOCLASS_ARGS, display "autoclass" or "Autoclass.exe" depending
+     on platform.
+
+======================================================================
+

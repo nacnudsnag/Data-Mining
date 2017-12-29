@@ -1,0 +1,39 @@
+Processing
+
+Curation - Process of collecting the data
+
+1. Pre-Processiong
+	One hot encoder
+	Label encoder
+	Missing values
+
+2. Visualizing Data, to better understand where we're starting
+	Where we're starting
+
+3. Learning
+	Methodology: explore variations
+		-> Different Parameters	
+		-> Different systems
+	Questions: 
+		Which way is "better"?
+			Confidence intervals and P-Values
+		->Prediction accuracy
+		eg. DT might be "Better" because you can "see 
+		the "decisions"
+
+4. Post - Processing
+	-> to better understand what happened
+	eg question:
+		Which examples came out "wrong"
+		-> "Not categorized correctly"
+	eg. are all the missclassified examples in the same class
+		(is one harder to predict)
+	See if there is a specific class that you should favor
+		-> one class that it is okay to get wrong, 
+		another that it isnt
+
+	eg. are the same examples wrong across different
+	approaches
+		1. Error in the data
+		2. Outliers
+		3. Underrepresented in the data set

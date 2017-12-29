@@ -1,0 +1,12 @@
+One hot encoding -> transofrm from one attribute to many
+	Point: Get away from numeric values where order is not relevant
+	eg. red -> 1, green -> 2, blue -> 3
+
+Missing values
+	sklearn imputer -> impute that missing value is the average across
+	other examples
+	-> Introduces a lot of noise
+	Alternatively:
+		1. Remove examples with missing values
+		2. Remove the given attribute that has missing values
+

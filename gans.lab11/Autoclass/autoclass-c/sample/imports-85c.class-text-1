@@ -1,0 +1,383 @@
+
+
+
+      CROSS REFERENCE    CLASS => CASE NUMBER MEMBERSHIP
+
+
+      AutoClass CLASSIFICATION for the 205 cases in
+        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+      with log-A<X/H> (approximate marginal likelihood) = -16211.601
+      from classification results file
+        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+      and using models
+        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model - index = 0
+
+
+
+                                 CLASS = 0  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+     4   audi            four           sedan              0.976
+                                                        4  0.024
+    29   dodge           four           wagon              1.000
+    38   honda           two            hatchback          1.000
+    39   honda           two            hatchback          1.000
+    40   honda           four           sedan              1.000
+    41   honda           four           sedan              1.000
+    42   honda           four           sedan              1.000
+    43   honda           two            sedan              1.000
+    60   mazda           two            hatchback          1.000
+    61   mazda           four           sedan              1.000
+    62   mazda           two            hatchback          1.000
+    63   mazda           four           sedan              1.000
+    65   mazda           four           hatchback          1.000
+    82   mitsubishi      two            hatchback          1.000
+    86   mitsubishi      four           sedan              1.000
+    87   mitsubishi      four           sedan              1.000
+   100   nissan          four           hatchback          1.000
+   101   nissan          four           sedan              1.000
+   124   plymouth        four           wagon              1.000
+   174   toyota          four           sedan              1.000
+   176   toyota          four           hatchback          1.000
+   177   toyota          four           sedan              1.000
+   178   toyota          four           hatchback          1.000
+   184   volkswagen      two            sedan              1.000
+   186   volkswagen      four           sedan              1.000
+   187   volkswagen      four           sedan              1.000
+   189   volkswagen      four           sedan              1.000
+   190   volkswagen      two            convertible        1.000
+   191   volkswagen      two            hatchback          1.000
+   194   volkswagen      four           wagon              1.000
+
+
+                                 CLASS = 1  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    51   mazda           two            hatchback          1.000
+    52   mazda           two            hatchback          1.000
+
+
+                                 CLASS = 1 (continued) 
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    53   mazda           two            hatchback          1.000
+    54   mazda           four           sedan              1.000
+    55   mazda           four           sedan              1.000
+    90   nissan          two            sedan              1.000
+    92   nissan          two            sedan              1.000
+    93   nissan          four           sedan              1.000
+    94   nissan          four           wagon              1.000
+    95   nissan          two            sedan              1.000
+    96   nissan          two            hatchback          1.000
+    97   nissan          four           sedan              1.000
+    98   nissan          four           wagon              1.000
+    99   nissan          two            hardtop            1.000
+   151   toyota          two            hatchback          1.000
+   152   toyota          two            hatchback          1.000
+   153   toyota          four           hatchback          0.998
+                                                       11  0.002
+   157   toyota          four           sedan              1.000
+   158   toyota          four           hatchback          1.000
+   161   toyota          four           sedan              1.000
+   162   toyota          four           hatchback          1.000
+   163   toyota          four           sedan              1.000
+   164   toyota          two            sedan              1.000
+   165   toyota          two            hatchback          1.000
+
+
+                                 CLASS = 2  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    15   bmw             four           sedan              0.987
+                                                        4  0.013
+    66   mazda           four           sedan              0.998
+                                                        4  0.002
+   102   nissan          four           sedan              1.000
+   103   nissan          four           wagon              1.000
+   104   nissan          four           sedan              1.000
+   108   peugot          four           sedan              1.000
+   110   peugot          four           wagon              0.998
+                                                        4  0.002
+   116   peugot          four           sedan              0.998
+                                                        4  0.002
+   118   peugot          four           sedan              1.000
+   134   saab            four           sedan              1.000
+   136   saab            four           sedan              1.000
+   138   saab            four           sedan              1.000
+   181   toyota          four           sedan              1.000
+   182   toyota          four           wagon              0.875
+                                                        4  0.125
+   195   volvo           four           sedan              1.000
+   196   volvo           four           wagon              1.000
+   197   volvo           four           sedan              1.000
+   198   volvo           four           wagon              1.000
+   199   volvo           four           sedan              1.000
+   200   volvo           four           wagon              1.000
+   201   volvo           four           sedan              1.000
+
+
+                                 CLASS = 2 (continued) 
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+   202   volvo           four           sedan              1.000
+   203   volvo           four           sedan              1.000
+   205   volvo           four           sedan              1.000
+
+
+                                 CLASS = 3  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    20   chevrolet       two            hatchback          1.000
+    21   chevrolet       four           sedan              1.000
+    22   dodge           two            hatchback          1.000
+    23   dodge           two            hatchback          1.000
+    25   dodge           four           hatchback          1.000
+    26   dodge           four           sedan              1.000
+    27   dodge           four           sedan              1.000
+    31   honda           two            hatchback          1.000
+    32   honda           two            hatchback          1.000
+    33   honda           two            hatchback          1.000
+    34   honda           two            hatchback          1.000
+    35   honda           two            hatchback          1.000
+    36   honda           four           sedan              0.999
+                                                       11  0.001
+    45   isuzu           two            sedan              1.000
+    46   isuzu           four           sedan              1.000
+    77   mitsubishi      two            hatchback          1.000
+    78   mitsubishi      two            hatchback          1.000
+    79   mitsubishi      two            hatchback          1.000
+   119   plymouth        two            hatchback          1.000
+   121   plymouth        four           hatchback          1.000
+   122   plymouth        four           sedan              1.000
+   123   plymouth        four           sedan              1.000
+
+
+                                 CLASS = 4  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+     3   alfa-romero     two            hatchback          1.000
+     5   audi            four           sedan              1.000
+     6   audi            two            sedan              1.000
+     7   audi            four           sedan              1.000
+     8   audi            four           wagon              1.000
+     9   audi            four           sedan              1.000
+    10   audi            two            hatchback          1.000
+    11   bmw             two            sedan              1.000
+    12   bmw             four           sedan              1.000
+    13   bmw             two            sedan              1.000
+    14   bmw             four           sedan              1.000
+    76   mercury         two            hatchback          1.000
+   112   peugot          four           sedan              1.000
+   114   peugot          four           wagon              1.000
+   126   porsche         two            hatchback          1.000
+
+
+                                 CLASS = 4 (continued) 
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+   133   saab            two            hatchback          0.999
+                                                        2  0.001
+   135   saab            two            hatchback          1.000
+   137   saab            two            hatchback          0.998
+                                                        2  0.002
+   179   toyota          two            hatchback          1.000
+   180   toyota          two            hatchback          1.000
+   192   volkswagen      four           sedan              1.000
+
+
+                                 CLASS = 5  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    64   mazda           ?              sedan              1.000
+    67   mazda           four           sedan              1.000
+    68   mercedes-benz   four           sedan              1.000
+    69   mercedes-benz   four           wagon              1.000
+    70   mercedes-benz   two            hardtop            1.000
+    71   mercedes-benz   four           sedan              1.000
+    91   nissan          two            sedan              1.000
+   109   peugot          four           sedan              1.000
+   111   peugot          four           wagon              1.000
+   113   peugot          four           sedan              1.000
+   115   peugot          four           wagon              1.000
+   117   peugot          four           sedan              1.000
+   159   toyota          four           sedan              1.000
+   160   toyota          four           hatchback          1.000
+   175   toyota          four           sedan              1.000
+   183   volkswagen      two            sedan              1.000
+   185   volkswagen      four           sedan              1.000
+   188   volkswagen      four           sedan              1.000
+   193   volkswagen      four           sedan              1.000
+   204   volvo           four           sedan              1.000
+
+
+                                 CLASS = 6  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    16   bmw             four           sedan              1.000
+    17   bmw             two            sedan              1.000
+    18   bmw             four           sedan              1.000
+    48   jaguar          four           sedan              1.000
+    49   jaguar          four           sedan              1.000
+    50   jaguar          two            sedan              1.000
+    72   mercedes-benz   four           sedan              1.000
+    73   mercedes-benz   two            convertible        1.000
+    74   mercedes-benz   four           sedan              1.000
+    75   mercedes-benz   two            hardtop            1.000
+   105   nissan          two            hatchback          1.000
+   106   nissan          two            hatchback          1.000
+   107   nissan          two            hatchback          1.000
+
+
+                                 CLASS = 6 (continued) 
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+   127   porsche         two            hardtop            1.000
+   128   porsche         two            hardtop            1.000
+   129   porsche         two            convertible        1.000
+   130   porsche         two            hatchback          1.000
+
+
+                                 CLASS = 7  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    30   dodge           two            hatchback          1.000
+    83   mitsubishi      two            hatchback          1.000
+    84   mitsubishi      two            hatchback          1.000
+    85   mitsubishi      two            hatchback          1.000
+   125   plymouth        two            hatchback          1.000
+   131   renault         four           wagon              1.000
+   132   renault         two            hatchback          1.000
+   168   toyota          two            hardtop            1.000
+   169   toyota          two            hardtop            1.000
+   170   toyota          two            hatchback          1.000
+   171   toyota          two            hardtop            1.000
+   172   toyota          two            hatchback          1.000
+   173   toyota          two            convertible        1.000
+
+
+                                 CLASS = 8  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+   139   subaru          two            hatchback          1.000
+   140   subaru          two            hatchback          1.000
+   141   subaru          two            hatchback          1.000
+   142   subaru          four           sedan              1.000
+   143   subaru          four           sedan              1.000
+   144   subaru          four           sedan              1.000
+   145   subaru          four           sedan              1.000
+   146   subaru          four           sedan              1.000
+   147   subaru          four           wagon              1.000
+   148   subaru          four           wagon              1.000
+   149   subaru          four           wagon              1.000
+   150   subaru          four           wagon              1.000
+
+
+                                 CLASS = 9  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+     1   alfa-romero     two            convertible        1.000
+     2   alfa-romero     two            convertible        1.000
+    47   isuzu           two            hatchback          1.000
+    56   mazda           two            hatchback          1.000
+
+
+                                 CLASS = 9 (continued) 
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    57   mazda           two            hatchback          1.000
+    58   mazda           two            hatchback          1.000
+    59   mazda           two            hatchback          1.000
+   166   toyota          two            sedan              1.000
+   167   toyota          two            hatchback          1.000
+
+
+                                 CLASS = 10  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    24   dodge           two            hatchback          1.000
+    28   dodge           ?              sedan              1.000
+    80   mitsubishi      two            hatchback          1.000
+    81   mitsubishi      two            hatchback          1.000
+    88   mitsubishi      four           sedan              1.000
+    89   mitsubishi      four           sedan              1.000
+   120   plymouth        two            hatchback          1.000
+
+
+                                 CLASS = 11  
+
+
+
+Case #   make            num-of-doors   body-style    (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+    19   chevrolet       two            hatchback          1.000
+    37   honda           four           wagon              1.000
+    44   isuzu           four           sedan              1.000
+   154   toyota          four           wagon              1.000
+   155   toyota          four           wagon              1.000
+   156   toyota          four           wagon              1.000

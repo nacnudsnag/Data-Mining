@@ -1,0 +1,258 @@
+
+
+
+      I N F L U E N C E   V A L U E S   R E P O R T   
+       order attributes by influence values = true
+      =============================================
+
+      AutoClass CLASSIFICATION for the 100 cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.db2
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.hd2
+      with log-A<X/H> (approximate marginal likelihood) = -926.994
+      from classification results file
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.results-bin
+      and using models
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model - index = 0
+
+
+
+
+ORDER OF PRESENTATION:
+
+  * Summary of the generating search.
+  * Weight ordered list of the classes found & class strength heuristic.
+  * List of class cross entropies with respect to the global class.
+  * Ordered list of attribute influence values summed over all classes.
+  * Class listings, ordered by class weight.
+
+
+
+
+
+
+
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+SEARCH SUMMARY 100 tries over  1 second
+
+  _______________ SUMMARY OF 10 BEST RESULTS _________________________  ##
+  PROBABILITY  exp(-926.994) N_CLASSES   2 FOUND ON TRY    1 DUPS  99 *SAVED*  -1
+
+
+   ## - report filenames suffix
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+
+CLASSIFICATION HAS 2 POPULATED CLASSES   (max global influence value = 0.670) 
+
+  We give below a heuristic measure of class strength: the approximate
+  geometric mean probability for instances belonging to each class,
+  computed from the class parameters and statistics.  This approximates
+  the contribution made, by any one instance "belonging" to the class,
+  to the log probability of the data set w.r.t. the classification.  It
+  thus provides a heuristic measure of how strongly each class predicts
+  "its" instances.
+
+   Class     Log of class       Relative         Class     Normalized
+    num        strength       class strength     weight    class weight
+
+     0        -7.79e+00          1.00e+00          60         0.604
+     1        -9.42e+00          1.95e-01          40         0.396
+
+
+CLASS DIVERGENCES
+
+  The class divergence, or cross entropy w.r.t. the single class
+  classification, is a measure of how strongly the class probability
+  distribution  function differs from that of the database as a whole. 
+  It is zero for identical distributions, going infinite when two
+  discrete distributions place probability 1 on differing values of the
+  same attribute.
+
+   Class       class cross entropy       Class     Normalized
+    num        w.r.t. global class       weight    class weight
+
+     0               1.47e+00              60         0.604
+     1               2.67e+00              40         0.396
+
+ORDERED LIST OF NORMALIZED ATTRIBUTE INFLUENCE VALUES SUMMED OVER ALL CLASSES
+
+  This gives a rough heuristic measure of relative influence of each
+  attribute in differentiating the classes from the overall data set.
+  Note that "influence values" are only computable with respect to the
+  model terms.  When multiple attributes are modeled by a single
+  dependent term (e.g. multi_normal_cn), the term influence value is
+  distributed equally over the modeled attributes.
+
+   num                        description                          I-*k 
+
+   013  legs                                                       1.000
+   010  breathes                                                   0.414
+   004  milk                                                       0.343
+   009  backbone                                                   0.338
+   001  hair                                                       0.266
+   003  eggs                                                       0.253
+   012  fins                                                       0.241
+   006  aquatic                                                    0.240
+   014  tail                                                       0.210
+   002  feathers                                                   0.209
+   016  catsize                                                    0.157
+   011  venomous                                                   0.108
+   015  domestic                                                   0.036
+   005  airborne                                                   0.027
+   007  predator                                                   0.025
+   008  toothed                                                    0.008
+   000  animal name                                                -----
+
+CLASS LISTINGS:
+
+  These listings are ordered by class weight --
+    * j is the zero-based class index,
+    * k is the zero-based attribute index, and
+    * l is the zero-based discrete attribute instance index.
+
+  Within each class, the covariant and independent model terms are ordered
+  by their term influence value I-jk.
+
+  Covariant attributes and discrete attribute instance values are both
+  ordered by their significance value.  Significance values are computed
+  with respect to a single class classification, using the divergence from
+  it, abs( log( Prob-jkl / Prob-*kl)), for discrete attributes and the
+  relative separation from it, abs( Mean-jk - Mean-*k) / StDev-jk, for
+  numerical valued attributes.  For the SNcm model, the value line is
+  followed by the probabilities that the value is known, for that class
+  and for the single class classification.
+
+  Entries are attribute type dependent, and the corresponding headers are
+  reproduced with each class.  In these --
+    * num/t denotes model term number,
+    * num/a denotes attribute number,
+    * t     denotes attribute type,
+    * mtt   denotes model term type, and
+    * I-jk  denotes the term influence value for attribute k
+            in class j.  This is the cross entropy or
+            Kullback-Leibler distance between the class and
+            full database probability distributions (see
+            interpretation-c.text).
+    * Mean  StDev
+      -jk   -jk    The estimated mean and standard deviation
+                   for attribute k in class j.
+    * |Mean-jk -   The absolute difference between the
+       Mean-*k|/   two means, scaled w.r.t. the class
+       StDev-jk    standard deviation, to get a measure
+                   of the distance between the attribute
+                   means in the class and full data.
+    * Mean  StDev  The estimated mean and standard
+      -*k   -*k    deviation for attribute k when the
+                   model is applied to the data set
+                   as a whole.
+    * Prob-jk is known  1.00e+00   Prob-*k is  known  9.98e-01
+            The SNcm model allows for the possibility that data
+            values are unknown, and models this with a discrete
+            known/unknown probability.  The gaussian normal for
+            known values is then conditional on the known
+            probability.   In this instance, we have a class
+            where all values are known, as opposed to a database
+            where only 99.8% of values are known.
+
+
+CLASS  0 - weight  60   normalized weight 0.604   relative strength  1.00e+00 *******
+                            class cross entropy w.r.t. global class  1.47e+00 *******
+
+   Model file:   /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model  -  index = 0 
+   Numbers: numb/t = model term number; numb/a = attribute number 
+   Model term types (mtt): (single_multinomial SM)
+
+
+DISCRETE ATTRIBUTE  (t = D)                                     log(
+ numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+ t  a                                                           Prob-*kl)     -jkl      -*kl
+
+12 13 D SM    legs ...............  0.398  0 .................. -4.01e+00   4.18e-03  2.29e-01
+                                           6 .................. -3.61e+00   2.73e-03  1.01e-01
+                                           8 .................. -2.07e+00   2.72e-03  2.15e-02
+                                           5 .................. -1.45e+00   2.72e-03  1.16e-02
+                                           2 ..................  4.98e-01   4.43e-01  2.69e-01
+                                           4 ..................  3.93e-01   5.45e-01  3.68e-01
+09 10 D SM    breathes ...........  0.203  0 .................. -3.26e+00   8.15e-03  2.13e-01
+                                           1 ..................  2.31e-01   9.92e-01  7.87e-01
+08 09 D SM    backbone ...........  0.167  0 .................. -3.11e+00   8.16e-03  1.83e-01
+                                           1 ..................  1.94e-01   9.92e-01  8.17e-01
+11 12 D SM    fins ...............  0.111  1 .................. -1.90e+00   2.58e-02  1.73e-01
+                                           0 ..................  1.64e-01   9.74e-01  8.27e-01
+03 04 D SM    milk ...............  0.096  0 .................. -4.62e-01   3.71e-01  5.89e-01
+                                           1 ..................  4.25e-01   6.29e-01  4.11e-01
+05 06 D SM    aquatic ............  0.087  1 .................. -7.63e-01   1.64e-01  3.51e-01
+                                           0 ..................  2.54e-01   8.36e-01  6.49e-01
+13 14 D SM    tail ...............  0.083  0 .................. -1.00e+00   9.24e-02  2.52e-01
+                                           1 ..................  1.94e-01   9.08e-01  7.48e-01
+00 01 D SM    hair ...............  0.078  0 .................. -4.25e-01   3.72e-01  5.69e-01
+                                           1 ..................  3.77e-01   6.28e-01  4.31e-01
+02 03 D SM    eggs ...............  0.074  1 .................. -4.02e-01   3.87e-01  5.79e-01
+                                           0 ..................  3.75e-01   6.13e-01  4.21e-01
+10 11 D SM    venomous ...........  0.050  1 .................. -2.21e+00   8.15e-03  7.43e-02
+                                           0 ..................  6.90e-02   9.92e-01  9.26e-01
+15 16 D SM    catsize ............  0.048  0 .................. -3.25e-01   4.04e-01  5.59e-01
+                                           1 ..................  3.02e-01   5.96e-01  4.41e-01
+01 02 D SM    feathers ...........  0.047  1 ..................  4.98e-01   3.34e-01  2.03e-01
+                                           0 .................. -1.80e-01   6.66e-01  7.97e-01
+14 15 D SM    domestic ...........  0.011  1 ..................  3.38e-01   1.87e-01  1.34e-01
+                                           0 .................. -6.41e-02   8.13e-01  8.66e-01
+04 05 D SM    airborne ...........  0.009  1 ..................  2.17e-01   3.01e-01  2.43e-01
+                                           0 .................. -8.09e-02   6.99e-01  7.57e-01
+06 07 D SM    predator ...........  0.008  0 ..................  1.33e-01   5.14e-01  4.50e-01
+                                           1 .................. -1.24e-01   4.86e-01  5.50e-01
+07 08 D SM    toothed ............  0.003  0 .................. -9.11e-02   3.66e-01  4.01e-01
+                                           1 ..................  5.66e-02   6.34e-01  5.99e-01
+
+
+CLASS  1 - weight  40   normalized weight 0.396   relative strength  1.95e-01 *******
+                            class cross entropy w.r.t. global class  2.67e+00 *******
+
+   Model file:   /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model  -  index = 0 
+   Numbers: numb/t = model term number; numb/a = attribute number 
+   Model term types (mtt): (single_multinomial SM)
+
+
+DISCRETE ATTRIBUTE  (t = D)                                     log(
+ numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+ t  a                                                           Prob-*kl)     -jkl      -*kl
+
+12 13 D SM    legs ...............  0.670  2 .................. -4.13e+00   4.31e-03  2.69e-01
+                                           4 .................. -1.35e+00   9.57e-02  3.68e-01
+                                           5 ..................  9.10e-01   2.87e-02  1.16e-02
+                                           8 ..................  9.10e-01   5.33e-02  2.15e-02
+                                           6 ..................  9.10e-01   2.50e-01  1.01e-01
+                                           0 ..................  9.06e-01   5.68e-01  2.29e-01
+03 04 D SM    milk ...............  0.271  1 .................. -1.59e+00   8.42e-02  4.11e-01
+                                           0 ..................  4.41e-01   9.16e-01  5.89e-01
+09 10 D SM    breathes ...........  0.240  0 ..................  9.10e-01   5.29e-01  2.13e-01
+                                           1 .................. -5.14e-01   4.71e-01  7.87e-01
+00 01 D SM    hair ...............  0.206  1 .................. -1.16e+00   1.35e-01  4.31e-01
+                                           0 ..................  4.19e-01   8.65e-01  5.69e-01
+02 03 D SM    eggs ...............  0.196  0 .................. -1.15e+00   1.33e-01  4.21e-01
+                                           1 ..................  4.03e-01   8.67e-01  5.79e-01
+08 09 D SM    backbone ...........  0.194  0 ..................  9.10e-01   4.55e-01  1.83e-01
+                                           1 .................. -4.05e-01   5.45e-01  8.17e-01
+01 02 D SM    feathers ...........  0.177  1 .................. -2.79e+00   1.25e-02  2.03e-01
+                                           0 ..................  2.14e-01   9.87e-01  7.97e-01
+05 06 D SM    aquatic ............  0.170  1 ..................  5.97e-01   6.38e-01  3.51e-01
+                                           0 .................. -5.84e-01   3.62e-01  6.49e-01
+11 12 D SM    fins ...............  0.147  1 ..................  8.46e-01   4.04e-01  1.73e-01
+                                           0 .................. -3.27e-01   5.96e-01  8.27e-01
+13 14 D SM    tail ...............  0.141  0 ..................  6.84e-01   5.00e-01  2.52e-01
+                                           1 .................. -4.02e-01   5.00e-01  7.48e-01
+15 16 D SM    catsize ............  0.119  1 .................. -7.51e-01   2.08e-01  4.41e-01
+                                           0 ..................  3.48e-01   7.92e-01  5.59e-01
+10 11 D SM    venomous ...........  0.065  1 ..................  9.10e-01   1.85e-01  7.43e-02
+                                           0 .................. -1.27e-01   8.15e-01  9.26e-01
+14 15 D SM    domestic ...........  0.027  1 .................. -7.76e-01   6.15e-02  1.34e-01
+                                           0 ..................  8.00e-02   9.38e-01  8.66e-01
+04 05 D SM    airborne ...........  0.020  1 .................. -4.16e-01   1.60e-01  2.43e-01
+                                           0 ..................  1.03e-01   8.40e-01  7.57e-01
+06 07 D SM    predator ...........  0.019  0 .................. -2.38e-01   3.55e-01  4.50e-01
+                                           1 ..................  1.60e-01   6.45e-01  5.50e-01
+07 08 D SM    toothed ............  0.006  0 ..................  1.29e-01   4.56e-01  4.01e-01
+                                           1 .................. -9.66e-02   5.44e-01  5.99e-01

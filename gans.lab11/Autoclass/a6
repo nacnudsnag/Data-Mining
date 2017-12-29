@@ -1,0 +1,2 @@
+# to try training/testing data -- this is the testing part
+autoclass -predict zoo-test.db2 zoo.results-bin zoo.search zoo.r-params

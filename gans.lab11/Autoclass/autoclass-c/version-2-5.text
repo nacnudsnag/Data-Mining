@@ -1,0 +1,98 @@
+
+
+	AUTOCLASS C VERSION 2.5 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/reports-c.text -
+        Minor typographical changes.  Added new report generation
+        parameter: order_attributes_by_influence_p.  Its default
+        value is true.  The file extension of the influence values
+        report has been changed from ".influ-text-1" to ".influ-o-text-1"
+        when order_attributes_by_influence_p = true, and to
+        ".influ-no-text-1" when order_attributes_by_influence_p = false.
+
+  2. autoclass-c/doc/interpretation-c.text -
+        Minor changes to the text.
+
+  3. autoclass-c/sample/imports-85c.influ-o-text-1
+        Influence values report has been significantly revised and
+        reformatted.
+
+  4. autoclass-c/doc/search-c.text -
+        Corrected definition of fixed_j.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 2.5.
+
+  2. autoclass-c/prog/intf-reports.c, utils.c -
+        Formatting change to "format_real_attribute" for multiple
+        multivariate attribute groups.
+
+        Remove covariance matrix output and reformat the correlation
+        matrix output to fixed decimal point notation.
+
+        For the influence values report, sort real valued attributes
+        of the same model group by the first significance value, if
+        that group is multi_normal_cn.
+
+        For discrete attributes: relabel the headers "Prob", rather than
+        "Mean"; and correct the instance value significance computation
+        to be "local_prob * log( local_prob / global_prob)".
+
+  3. autoclass-c/prog/autoclass.h -
+        Add #ifndef for MAXPATHLEN.
+
+  4. autoclass-c/prog/io-results.c -
+        In "validate_data_pathname", "validate_results_pathname", &
+        "make_and_validate_pathname", only do fclose, if fopen returns
+        non-NULL.
+
+  5. autoclass-c/prog/search-control-2.c -
+        Add "pad" argument to "print_search_try".
+
+  6. autoclass-c/prog/intf-extensions.c -
+        Formatting change to "get_models_source_info".
+
+  7. autoclass-c/load-ac,
+     autoclass-c/prog/autoclass.make.sun.gcc, autoclass.make.sun.acc,
+     autoclass.make.sun.cc, autoclass.make.sgi -
+     (remove autoclass.make.sun)
+        Add SunOS/Solaris C compiler support.
+
+  8. autoclass-c/prog/io-results.c, io-read-model.c, io-read-data.c,
+     utils.c, intf-reports.c, getparmas.c -
+        Cast return values of "strlen" to int.
+
+  9. autoclass-c/prog/model-transforms.c -
+        In "generate_singleton_transform", correct segmentation fault
+        which occurs when more than 25 type = real, subtype = scalar
+        attributes are defined in the ".hd2" & ".model" files.
+
+ 10. autoclass-c/prog/struct-data.c, io-results.c, io-results-bin.c -
+        Properly initialize att_info array when it exceeds preallocated
+        size. 
+
+ 11. autoclass-c/load-ac,
+     autoclass-c/prog/autoclass.make.linux.gcc, autoclass.make.sun.*,
+     autoclass.make.sgi, fcntlcom-ac.h -
+        Thanks to Andrew Lewycky <plewycky@oise.on.ca>, added mods for
+        port to Linux version 1.2.10, GCC version 2.5.8, libc version
+        4.6.25.
+
+ 12. autoclass-c/prog/model-single-multitnomial.c -
+        In "sm_params_influence_fn", add check for out-of-bounds 
+        arguments to the log function to prevent "log domain" errors.
+
+
+======================================================================
+
+
+

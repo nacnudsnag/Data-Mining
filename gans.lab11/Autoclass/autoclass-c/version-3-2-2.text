@@ -1,0 +1,32 @@
+
+
+	AUTOCLASS C VERSION 3.2.2 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text - clarify the usage of the
+        RECONVERGE_TYPE parameter.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+
+        Update "G_ac_version" to 3.2.2.
+
+  2. autoclass-c/data/uci-dbs-readme.text -
+        Replaced out-of-data information with current Web pointer.
+
+  3. autoclass-c/data/tests.c &
+     autoclass-c/data/glass/ report files
+        Version 3.2 contained changes to the multi-normal-cn model
+     which changed slightly the results of the non-random test
+     cases.  They have been updated.
+
+
+======================================================================
+

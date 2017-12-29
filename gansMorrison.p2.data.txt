@@ -1,0 +1,93 @@
+Duncan Gans & Kyle Morrison
+April 17, 2017
+
+For this assignment, we decided to use Baseball data to predict the success
+of a baseball team. To do so, we look at 20 different attributes and how 
+they affected the winning percentage of a team, categorized as high, medium
+high, medium low, and low. To break it into these quantiles, we looked at the
+median, and the first and third quartile. The non-class attributes range from
+more obvious stuff like runs to less obvious independent variables like double
+plays. Using these attributes we plan to use decision trees and neural nets to
+determine the success of a baseball team. 
+
+Data: Team Baseball Statistics
+Link: http://www.seanlahman.com/baseball-archive/statistics/
+
+Examples: 2259
+Number of Attributes: 21
+Associated Task: Classification
+Missing Values: None
+Attributes Characteristic: Numeric
+
+R (Runs)
+The amount of runs a team scores. Continuous
+
+H (Hits)
+The amount of hits a team completes. Continuous
+
+2B (Second Base)
+The amount of Second Base Hits a team completes. Continuous
+
+3B (Third Base)
+The amount of Third Base Hits a team completes. Continuous
+
+HR (Home Runs)
+The amount of Home Runs a team completes. Continuous
+
+BB (Walks)
+The amount of Walks a team completes. Continuous
+
+SO (Strikeouts)
+The amount of Strike Outs a team completes. Continuous
+
+SB (Stolen Bases)
+The amount of Stolen Bases a team completes. Continuous
+
+RA (Runs Allowed)
+The amount of Runs a team allows. Continuous
+
+SHO (Amount of Shutouts)
+The amount of Shutouts (where other team doesn't score) a team has. Continuous
+
+SV (Saves)
+The amount of saves (when the team is up, and the relief pitcher doesn't lose
+game) in a season. Continuous
+
+HA (Hits Allowed)
+Amount of Hits a teams allows in a season. Continuous
+
+HRA (Home Runs Allowed)
+Amount of Home Runs a team allows in a season. Continuous
+
+BBA (Walks Allowed)
+Amount of Walks allowed. Continuous
+
+SOA (Strikeouts by Pitchers)
+Strikeouts a team completes in a year. Continous
+
+E (Errors)
+Amount of errors a team hs within a year
+
+DP (Double Plays)
+Amount of Double Plays (Two outs in one play) a team completes in a season.
+Continuous
+
+FP (Fielding Percentage)
+Percentage of times the defense handles a battled ball correctly. Continuous
+
+ERA (Earned Run Average)
+Average runs the opposing team completes per game (based off of pitchers 
+success). Continuos
+
+WHIP (Walks + Hits per inning Pitched)
+Measures success of a team based on their pitchers ability to not allow
+hits and walks. Continuous.
+
+yearID,,W,L,Win%,Quartile,IPouts,R,H,2B,3B,HR,BB,SO,SB,RA,SHO,SV,HA,HRA,BBA,SOA,E,DP,FP,ERA,WHIP
+1913,,65,84,0.436241611,4,4119,3.993288591,9.355704698,1.295302013,0.577181208,0.261744966,2.422818792,3.724832215,1.261744966,4.11409396,0.060402685,0.046979866,8.637583893,0.22147651,2.946308725,3.677852349,1.630872483,0.838926174,0.961,3.13,0.008436921
+1913,0.503267974,69,82,0.456953642,3,4119,4.245033113,8.728476821,1.264900662,0.397350993,0.21192053,3.231788079,4.238410596,1.17218543,4.569536424,0.086092715,0.01986755,8.894039735,0.245033113,2.774834437,3.953642384,1.80794702,0.543046358,0.957,3.19,0.008498816
+
+Note: Although Year, Wins, Losses, Win% and IPouts are included, they are not
+factored in to the ultimate data.
+
+

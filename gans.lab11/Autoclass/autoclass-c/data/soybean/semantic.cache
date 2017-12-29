@@ -1,0 +1,21 @@
+;; Object soybean/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "soybean/"
+  :tables (list 
+   (semanticdb-table "soyc.model"
+    :major-mode 'lisp-mode
+    :tags 'nil
+    :file "soyc.model"
+    :pointmax 666
+    )
+   (semanticdb-table "soyc.hd2"
+    :major-mode 'lisp-mode
+    :tags 'nil
+    :file "soyc.hd2"
+    :pointmax 2445
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0beta3"
+  :semanticdb-version "2.0beta3"
+  )

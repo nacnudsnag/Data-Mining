@@ -1,0 +1,81 @@
+X shape is (4898, 10)
+y shape is (4898,)
+GRID SEARCH
+GridSearchCV took 18.21 seconds for 4 candidate parameter settings.
+candidates are: [3]
+rank_test_score is: [4 3 2 1]
+Model with rank: 1
+Mean validation score: 0.635 (std: 0.012)
+Parameters: {'n_estimators': 50, 'max_depth': 10}
+
+candidates are: [2]
+rank_test_score is: [4 3 2 1]
+Model with rank: 2
+Mean validation score: 0.617 (std: 0.008)
+Parameters: {'n_estimators': 10, 'max_depth': 10}
+
+candidates are: [1]
+rank_test_score is: [4 3 2 1]
+Model with rank: 3
+Mean validation score: 0.537 (std: 0.015)
+Parameters: {'n_estimators': 50, 'max_depth': 5}
+
+RANDOM SEARCH
+RandomizedSearchCV took 3.11 seconds for 2 candidates parameter settings.
+candidates are: [0]
+rank_test_score is: [1 2]
+Model with rank: 1
+Mean validation score: 0.617 (std: 0.008)
+Parameters: {'n_estimators': 10, 'max_depth': 10}
+
+candidates are: [1]
+rank_test_score is: [1 2]
+Model with rank: 2
+Mean validation score: 0.532 (std: 0.005)
+Parameters: {'n_estimators': 10, 'max_depth': 5}
+
+candidates are: []
+rank_test_score is: [1 2]
+GRID SEARCH
+GridSearchCV took 1314.65 seconds for 28 candidate parameter settings.
+candidates are: [0 1 2 3]
+rank_test_score is: [ 1  1  1  1 13 13 13 13  9  9  9  9  5  5  5  5 21 21 21 21 17 17 17 17 25
+ 25 25 25]
+Model with rank: 1
+Mean validation score: 0.473 (std: 0.011)
+Parameters: {'max_iter': 500, 'hidden_layer_sizes': 50}
+
+Model with rank: 1
+Mean validation score: 0.473 (std: 0.011)
+Parameters: {'max_iter': 1000, 'hidden_layer_sizes': 50}
+
+Model with rank: 1
+Mean validation score: 0.473 (std: 0.011)
+Parameters: {'max_iter': 2000, 'hidden_layer_sizes': 50}
+
+Model with rank: 1
+Mean validation score: 0.473 (std: 0.011)
+Parameters: {'max_iter': 4000, 'hidden_layer_sizes': 50}
+
+candidates are: []
+rank_test_score is: [ 1  1  1  1 13 13 13 13  9  9  9  9  5  5  5  5 21 21 21 21 17 17 17 17 25
+ 25 25 25]
+candidates are: []
+rank_test_score is: [ 1  1  1  1 13 13 13 13  9  9  9  9  5  5  5  5 21 21 21 21 17 17 17 17 25
+ 25 25 25]
+RANDOM SEARCH
+RandomizedSearchCV took 109.80 seconds for 2 candidates parameter settings.
+candidates are: [0]
+rank_test_score is: [1 2]
+Model with rank: 1
+Mean validation score: 0.473 (std: 0.011)
+Parameters: {'max_iter': 1000, 'hidden_layer_sizes': 50}
+
+candidates are: [1]
+rank_test_score is: [1 2]
+Model with rank: 2
+Mean validation score: 0.467 (std: 0.012)
+Parameters: {'max_iter': 2000, 'hidden_layer_sizes': (100, 100)}
+
+candidates are: []
+rank_test_score is: [1 2]

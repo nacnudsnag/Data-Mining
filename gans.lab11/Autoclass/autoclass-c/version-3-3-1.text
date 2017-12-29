@@ -1,0 +1,31 @@
+
+
+	AUTOCLASS C VERSION 3.3.1 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. 
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+
+        Update "G_ac_version" to 3.3.1.
+
+  2. autoclass-c/prog/io-results.c, io-results-bin.c -
+        In READ_CLSF_SEQ and LOAD_CLSF_SEQ, check for win/unx suffix
+    in ac_version before stripping it off.  This corrects an
+    incompatibility with .results[-bin] files written by AutoClass C
+    versions prior to version 3.3.  The error, for .results-bin files,
+    looks like this: ERROR: expecting "ac_version n.n", found "ac_version ";
+    Abort.
+
+
+
+======================================================================
+

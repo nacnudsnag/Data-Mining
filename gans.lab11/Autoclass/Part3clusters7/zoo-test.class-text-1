@@ -1,0 +1,39 @@
+
+
+
+      CROSS REFERENCE    CLASS => CASE NUMBER MEMBERSHIP
+
+
+      AutoClass PREDICTION for the 2 "TEST" cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo-test.db2
+
+      based on the "TRAINING" classification of 98 cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo-train.db2
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.hd2
+      with log-A<X/H> (approximate marginal likelihood) = -691.531
+      from classification results file
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.results-bin
+      and using models
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model - index = 0
+
+
+
+                                 CLASS = 0  
+
+
+
+Case #   hair   feathers   eggs   milk   airborne   aquatic   predator   toothed   backbone   breathes   venomous   fins   legs   tail   domestic   catsize   (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+     2   1      0          1      1      0          1         1          0         1          1          0          0      4      1      0          1              0.848
+                                                                                                                                                                3  0.152
+
+
+                                 CLASS = 1  
+
+
+
+Case #   hair   feathers   eggs   milk   airborne   aquatic   predator   toothed   backbone   breathes   venomous   fins   legs   tail   domestic   catsize   (Cls  Prob)
+------------------------------------------------------------------------------------------
+
+     1   0      1          1      0      0          1         1          0         1          1          0          0      2      1      0          1              1.000

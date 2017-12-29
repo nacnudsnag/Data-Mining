@@ -1,0 +1,2 @@
+# to generate reports for the initial autoclass run
+autoclass -reports zoo.results-bin zoo.search zoo.r-params

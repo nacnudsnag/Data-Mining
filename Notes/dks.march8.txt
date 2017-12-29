@@ -1,0 +1,120 @@
+Duncan, Kyle, Sean
+March 8, 2017
+CS 2600
+-------------------
+1. DATA SET INFORMATION
+--------------------
+Iris Data set:
+	Examples: 150
+	Attributes: 5 (1 class attribute)
+	Non-Class Attributes are all continuous 
+	The Class Attribute is categorical
+	
+Digits Data Set
+	Examples: 1797 (images, which include 64 pixels)
+	Attributes: 65 (each individual pixel + class attribute)
+	Non-Class Attributes are continuous, a darkness of the pixel
+	Class Attribute is categorical, number between one and ten.
+
+Pima Indians Data Set:
+	Examples: 768
+	Attributes: 9 (1 class attribute)
+	Non-Class Attributes are continuous
+	Class Attribute is categorical
+
+Wine Data Set (white):
+	Examples: 4898
+	Attributes: 12
+	Non-Class Attributes are continuous
+	Class Attributes are continuous (mostly) because there is significance
+	to the quality 6 being close to 5
+
+------------------------------------
+2. Converting to Discrete attributes
+------------------------------------
+If you were interested in converting continuous to discrete attributes you
+could round numbers and group them into discrete categories.
+
+------------------------------------
+3. Converting Discrete to Attributes
+------------------------------------
+Primarily you would convert the discrete values to numerical digits. You would
+then mess around with it a little so that the numerical digits has significance
+for example, if you converted vegetable types to numbers you would make sure
+that asparagus had a number closer to brocolli (because they are intuitively
+similar) than the closeness to a potato. This would ensure that not only are
+the values numerical, but they have real (or subjectively real) continuous
+significance.
+
+----------------------
+4. Approaches Overview
+----------------------
+DECISION TREE:
+Decision Trees use tree-like branching methods to illustrate possible outcomes
+when given certain attributes. 
+
+Tree continually grows by repeatedly choosing the best attribute to split on
+and splits data in nodes recursively, finally stopping once each node is a 
+leaf with one class.
+RANDOM FORESTS:
+A series of multiple decision trees using the mode of the decision trees to
+choose the most effective decision tree, by voting.
+
+Use different splits on same data to create lots of decision trees that then 
+vote to decide the most comprehensive effective tree.
+K-NEAREST NEIGHBOR:
+Considers a set of data points in a multi-dimensional space, and looks at those
+"k" neighbors closest to specific instance, to decide a class.
+
+Each neighbor determines its contribution to the overal space, and votes based
+on their closeness to the given instance. 
+ARTIFICIAL NEURAL NETWORKS:
+A set of interconnected nodes, that are given various weights in a way that
+models the data.
+
+Nodes are initially conected with random weights, and then as data is added,
+back-propogation occurs to adjust weights as needed.
+
+-------------------
+5. Adapted Vs. Fixed
+--------------------
+DECISION TREE: (Not standardized, more of a concept)
+For what is adapted, one can prune the tree through setting max depth, min 
+samples per leaf/split in an effort to reduce overfitting. Decision are
+limited because they rely on classifying and splitting the data into discrete
+categories at every split. 
+RANDOM FORESTS:
+You can change the amount of trees you can create as well as the random seed,
+this can increase the effectiveness by reducing randomness and decreasing 
+overfitting. What is fixed is that at their heart they are still limited by 
+relying solely on decision trees which have their own problems.
+K-NEAREST NEIGHBORS:
+You are able to change what k value (the amount of neighbors you consider) the
+algorithm uses. It's somewhat fixed because you have to quantify a closeness
+based on sometimes discrete data.
+ARTIFICIAL NEURAL NETWORK
+The overal structure is fixed and can be tweaked but not fully abandoned. 
+however you are able to change the iterations and the structure of the hidden
+layers. 
+
+
+
+
+Sorry we didn't get to 6 in class. If you would like us to finish this, we 
+are willing to.
+
+Thanks and Have a great break!
+Duncan, Kyle, Sean
+
+
+
+
+
+
+
+
+
+
+
+
+

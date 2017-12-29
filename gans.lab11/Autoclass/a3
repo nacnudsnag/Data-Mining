@@ -1,0 +1,2 @@
+# to try training (on full dataset for now), after initial run
+autoclass -predict zoo-predict.db2 zoo.results-bin zoo.search zoo.r-params

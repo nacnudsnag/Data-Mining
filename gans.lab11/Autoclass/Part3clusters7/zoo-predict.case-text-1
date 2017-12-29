@@ -1,0 +1,57 @@
+
+
+
+      CROSS REFERENCE   CASE NUMBER => MOST PROBABLE CLASS
+
+
+      AutoClass PREDICTION for the 100 "TEST" cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo-predict.db2
+
+      based on the "TRAINING" classification of 100 cases in
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.db2
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.hd2
+      with log-A<X/H> (approximate marginal likelihood) = -704.771
+      from classification results file
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.results-bin
+      and using models
+        /home/dgans/DataMining/gans.lab11/Autoclass/zoo.model - index = 0
+
+
+
+     Case #  Class  Prob         Case #  Class  Prob         Case #  Class  Prob 
+------------------------------------------------------------------------------------------
+          1    0   0.999             35    0   0.999             69    0   0.999
+          2    0   0.999             36    0   0.999             70    0   1.000
+          3    2   0.999             37    1   1.000             71    1   0.999
+          4    0   0.999             38    2   0.999             72    4   0.978
+          5    0   0.999             39    3   1.000             73    2   0.999
+          6    0   0.999             40    3   1.000             74    6   0.999
+          7    0   1.000             41    1   0.999             75    6   0.992
+          8    2   0.999             42    3   0.996             76    2   0.961
+          9    2   0.999             43    1   1.000             77    5   0.999
+         10    0   0.999             44    0   0.999             78    1   1.000
+         11    0   0.999             45    0   0.999             79    1   1.000
+         12    1   1.000             46    5   0.999             80    4   0.996
+         13    2   0.999             47    0   0.999             81    3   0.991
+         14    5   0.986             48    0   0.991             82    2   0.999
+         15    5   0.998             49    0   0.999             83    1   1.000
+         16    5   0.999             50    0   0.999             84    0   0.999
+         17    1   1.000             51    3   1.000             85    5   0.999
+         18    0   0.999             52    4   0.999             86    2   0.999
+         19    2   0.999             53    5   0.999             87    1   1.000
+         20    6   0.999             54    0   0.999             88    3   0.999
+         21    1   1.000             55    0   0.999             89    4   0.999
+         22    1   1.000             56    1   0.999             90    4   0.995
+         23    0   0.999             57    1   1.000             91    4   0.999
+         24    1   1.000             58    1   0.999             92    2   0.999
+         25    3   0.999             59    1   1.000             93    0   0.999
+         26    4   0.999             60    2   0.999             94    0   0.999
+         27    0   0.999             61    2   0.999             95    1   1.000
+         28    0   0.999             62    4   0.997             96    0   0.999
+         29    0   0.999             63    4   0.930             97    3   1.000
+         30    3   0.999             64    0   0.999             98    0   0.999
+         31    0   1.000             65    0   1.000             99    3   0.991
+         32    0   0.999             66    6   0.999            100    1   1.000
+         33    1   1.000             67    0   0.999    
+         34    2   0.999             68    0   0.999    
+

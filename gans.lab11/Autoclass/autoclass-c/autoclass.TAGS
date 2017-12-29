@@ -1,0 +1,756 @@
+
+prog/globals.c,1197
+void ***G_plist;12,216
+shortstr G_transforms[13,233
+shortstr G_transforms[NUM_TRANSFORMS], G_att_type_data[13,233
+int G_db_length 15,305
+int G_plength 16,354
+clsf_DS G_clsf_store 17,373
+fxlstr G_checkpoint_file;18,402
+time_t G_search_cycle_begin_time,19,429
+time_t G_search_cycle_begin_time, G_last_checkpoint_written,19,429
+time_t G_search_cycle_begin_time, G_last_checkpoint_written, G_min_checkpoint_period;19,429
+database_DS G_input_data_base,20,515
+database_DS G_input_data_base, *G_db_list 20,515
+model_DS *G_model_list 21,565
+int G_break_on_warnings 22,596
+float G_likelihood_tolerance_ratio 23,628
+unsigned int G_save_compact_p 24,674
+shortstr G_ac_version 26,727
+shortstr G_ac_version 28,769
+FILE *G_log_file_fp 30,812
+char G_absolute_pathname[31,858
+int G_line_cnt_max 32,896
+int G_safe_file_writing_p 36,1092
+int G_safe_file_writing_p 38,1133
+char G_data_file_format[40,1174
+int G_solaris 41,1240
+double G_rand_base_normalizer;42,1327
+clsf_DS G_training_clsf 43,1358
+int G_prediction_p 44,1390
+int G_interactive_p 45,1418
+int G_num_cycles 46,1446
+char G_slash 49,1537
+char G_slash 51,1564
+int G_clsf_storage_log_p 55,1612
+int G_n_freed_classes 56,1706
+
+prog/init.c,69
+#define getcwd 6,93
+void init(32,760
+void init_properties(75,1904
+
+prog/io-read-data.c,1463
+void check_stop_processing(69,1545
+void define_data_file_format(117,3366
+void process_data_header_model_files(179,5994
+void log_header(209,7085
+database_DS read_database(253,9241
+int check_for_non_empty(337,12414
+void check_data_base(354,12717
+char *output_warning_msgs(395,14419
+char *output_error_msgs(474,17798
+void output_message_summary(513,19192
+void output_messages(593,23371
+void output_db_error_messages(683,27351
+void read_data(729,29349
+void define_attribute_definitions(845,34415
+void process_attribute_definitions(865,35231
+att_DS process_attribute_def(939,38131
+att_DS create_att_DS(1148,48344
+warn_err_DS create_warn_err_DS(1222,51115
+char ***expand_att_list(1259,52342
+int find_str_in_list(1268,52511
+   char **default_translation,1289,53144
+   char **default_translation, ***processed;1289,53144
+void process_translation_msgs(1395,57277
+char **process_translation(1411,57800
+char **read_data_doit(1457,59405
+float *translate_instance(1490,60690
+double translate_real(1529,62055
+int translate_discrete(1573,63889
+char **get_line_tokens(1633,66503
+int read_from_string(1702,69426
+int read_line(1770,71429
+void find_att_statistics(1806,72253
+void find_real_stats(1836,73203
+void store_real_stats(1897,75473
+void find_discrete_stats(1929,76635
+void output_att_statistics(2013,79796
+void output_real_att_statistics(2050,80946
+void output_created_translations(2088,82326
+void check_errors_and_warnings(2132,83896
+
+prog/io-read-model.c,565
+model_DS *read_model_file(29,892
+char ***read_model_doit(104,3683
+char ***read_lists(190,7192
+char **read_list(221,7938
+model_DS *define_models(302,10729
+void generate_attribute_info(393,14372
+void extend_terms_single(495,18728
+void extend_terms_multi(581,22249
+void extend_default_terms(668,25811
+void read_model_reset(759,29591
+void set_ignore_att_info(787,30511
+int *get_sources_list(816,31684
+int *get_source_list(872,33112
+int exist_intersection(909,34165
+char ***canonicalize_model_group(927,34615
+void print_att_locs_and_ignore_ids(939,34827
+
+prog/io-results.c,1231
+void compress_clsf(28,803
+clsf_DS expand_clsf(66,2185
+void expand_clsf_models(111,3539
+void expand_clsf_wts(157,5152
+void save_clsf_seq(258,8516
+void write_clsf_seq(333,10924
+void write_clsf_DS(358,11683
+void write_database_DS(404,13210
+void write_att_DS(431,14224
+void write_model_DS(548,19377
+void write_term_DS(570,20164
+void write_tparm_DS(591,20666
+void write_mm_d_params(647,22716
+void write_mm_s_params(679,23716
+void write_mn_cn_params(696,24156
+void write_sm_params(731,25340
+void write_sn_cm_params(755,26176
+void write_sn_cn_params(793,27860
+void write_priors_DS(828,29307
+void write_class_DS_s(855,30251
+int make_and_validate_pathname 897,31779
+int validate_results_pathname(998,35576
+int validate_data_pathname(1118,40423
+clsf_DS *get_clsf_seq(1214,44183
+clsf_DS *read_clsf_seq(1274,46355
+clsf_DS read_clsf(1339,48799
+database_DS read_database_DS(1454,52999
+model_DS read_model_DS(1506,54657
+void read_class_DS_s(1558,56307
+void read_att_DS(1641,59586
+void read_tparm_DS(1821,66888
+void read_mm_d_params(1892,69208
+void read_mm_s_params(1927,70426
+void read_mn_cn_params(1946,70999
+void read_sm_params(2047,74476
+void read_sn_cm_params(2096,76083
+void read_sn_cn_params(2138,77483
+
+prog/io-results-bin.c,782
+void safe_fwrite(27,562
+void check_load_header(62,1552
+void dump_clsf_seq(74,1874
+void dump_clsf_DS(105,2694
+void dump_database_DS(145,3910
+void dump_att_DS(164,4376
+void dump_model_DS(254,8532
+void dump_term_DS(268,8845
+void dump_tparm_DS(287,9316
+void dump_mm_d_params(328,10474
+void dump_mm_s_params(362,11475
+void dump_mn_cn_params(381,11939
+void dump_sm_params(412,13082
+void dump_class_DS_s(430,13622
+clsf_DS *load_clsf_seq(457,14479
+clsf_DS load_clsf(530,17224
+database_DS load_database_DS(613,20345
+void load_att_DS(649,21574
+model_DS load_model_DS(802,28172
+void load_class_DS_s(842,29320
+void load_tparm_DS(913,31770
+void load_mm_d_params(966,33340
+void load_mm_s_params(1001,34557
+void load_mn_cn_params(1021,35174
+void load_sm_params(1091,37937
+
+prog/model-expander-3.c,559
+model_DS conditional_expand_model_terms(22,465
+enum MODEL_TYPES model_type 33,866
+model_DS expand_model_terms(56,1724
+void check_model_terms(123,3881
+void check_term(143,4531
+void update_location_info(249,8898
+void expand_model_reset(289,10484
+void update_params_fn(328,11566
+void arrange_model_function_terms(399,13659
+double log_likelihood_fn(418,14425
+double update_l_approx_fn(476,15950
+double update_m_approx_fn(537,17673
+int class_equivalence_fn(599,19315
+double class_merged_marginal_fn(673,21707
+tparm_DS *model_global_tparms(754,24332
+
+prog/matrix-utilities.c,864
+float *setf_v_v(23,499
+float *incf_v_v(35,695
+float *decf_v_v(47,891
+float *incf_v_vs(62,1145
+float *setf_v_vs(78,1460
+fptr *incf_m_vvs(92,1724
+double diagonal_product(112,2198
+fptr *extract_diagonal_matrix(126,2460
+void update_means_and_covariance(152,3453
+fptr *n_sm(198,4723
+float *vector_root_diagonal_matrix(213,5010
+double dot_vv(232,5429
+double dot_mm(250,5854
+float *collect_indexed_values(264,6118
+fptr *copy_to_matrix(278,6405
+float *n_sv(294,6704
+fptr *setf_m_ms(312,6991
+fptr *incf_m_ms(329,7326
+fptr *limit_min_diagonal_values(344,7643
+fptr *invert_factored_square_matrix(356,7892
+double determinent_f(395,8827
+double star_vmv(413,9305
+double trace_star_mm(435,9799
+fptr *extract_rhos(452,10121
+fptr *invert_diagonal_matrix(480,10913
+fptr *root_diagonal_matrix(500,11320
+fptr *star_mm(519,11622
+fptr *make_matrix(546,12143
+
+prog/model-single-multinomial.c,398
+void sm_params_influence_fn(29,914
+void single_multinomial_model_term_builder(82,3047
+double single_multinomial_log_likelihood(138,4955
+double single_multinomial_update_l_approx(158,5618
+double single_multinomial_update_m_approx(185,6473
+void single_multinomial_update_params(209,7248
+int single_multinomial_class_equivalence(243,8390
+void single_multinomial_class_merged_marginal(266,9204
+
+prog/model-single-normal-cm.c,437
+void sn_cm_params_influence_fn(21,442
+static priors_DS build_sn_cm_priors(59,1906
+void single_normal_cm_model_term_builder(114,4260
+double single_normal_cm_log_likelihood(205,7994
+double single_normal_cm_update_l_approx(231,8882
+double single_normal_cm_update_m_approx(262,10011
+void single_normal_cm_update_params(309,11852
+int single_normal_cm_class_equivalence(382,14999
+void single_normal_cm_class_merged_marginal(403,15673
+
+prog/model-single-normal-cn.c,436
+void sn_cn_params_influence_fn(24,527
+static priors_DS build_sn_cn_priors(52,1541
+void single_normal_cn_model_term_builder(107,4020
+double single_normal_cn_log_likelihood(200,7955
+double single_normal_cn_update_l_approx(222,8792
+double single_normal_cn_update_m_approx(246,9627
+void single_normal_cn_update_params(276,10700
+int single_normal_cn_class_equivalence(338,13175
+void single_normal_cn_class_merged_marginal(361,13986
+
+prog/model-multi-normal-cn.c,422
+void mn_cn_params_influence_fn(44,2086
+tparm_DS make_mn_cn_param(98,4325
+void multi_normal_cn_model_term_builder(193,7253
+double multi_normal_cn_log_likelihood(269,9878
+double multi_normal_cn_update_l_approx(303,11302
+double multi_normal_cn_update_m_approx(326,12224
+void multi_normal_cn_update_params(368,13494
+int multi_normal_cn_class_equivalence(435,16307
+void multi_normal_cn_class_merged_marginal(482,18060
+
+prog/model-transforms.c,177
+int find_transform(25,539
+int find_singleton_transform(65,1803
+int generate_singleton_transform(97,3010
+att_DS log_transform(173,6218
+att_DS log_odds_transform_c(310,11102
+
+prog/model-update.c,213
+void update_approximations(32,961
+void update_parameters(84,3047
+int delete_null_classes(112,3863
+void update_wts(160,5470
+int most_probable_class_for_datum_i(327,12336
+void update_ln_p_x_pi_theta(355,13155
+
+prog/search-basic.c,203
+clsf_DS generate_clsf(50,2223
+int random_set_clsf(113,4898
+clsf_DS set_up_clsf(182,7611
+void block_set_clsf(231,9727
+int initialize_parameters(289,11623
+class_DS *delete_class_duplicates(329,12878
+
+prog/search-control.c,30
+int autoclass_search(49,1838
+
+prog/search-control-2.c,1839
+static float cut_where_above_table[35,1063
+int *remove_too_big(50,1786
+int too_big(70,2161
+double within(85,2424
+search_try_DS *safe_subseq_of_tries(102,2936
+void print_initial_report(126,3607
+void print_report(219,8691
+void print_final_report(352,14791
+void print_search_try(444,19101
+void empty_search_try(469,20005
+int total_try_time(480,20189
+search_try_DS try_variation(506,21020
+int search_duration(581,24051
+int converge(602,24896
+int converge_search_3(663,27105
+int converge_search_3a(748,30331
+int converge_search_4(845,34261
+int min_n_peaks(969,39295
+double avg_time_till_improve(980,39509
+double ln_avg_p(989,39727
+double min_best_peak(997,39914
+int random_j_from_ln_normal(1017,40616
+double random_from_normal(1057,42201
+double typical_best(1074,42670
+double cut_where_above 1082,42866
+double erfc_poly(1100,43327
+double approx_inverse_erfc(1111,43541
+double inverse_erfc 1125,43851
+double interpolate(1139,44132
+void upper_end_normal_fit(1176,45050
+double average(1213,46085
+double variance(1230,46388
+double sigma(1246,46726
+double avg_improve_delta_ln_p(1260,46969
+double next_best_delta(1268,47163
+int min_time_till_best(1280,47495
+void save_search(1299,48148
+void write_search_DS(1361,50105
+void write_search_try_DS(1401,51601
+search_DS get_search_DS(1429,52679
+search_DS reconstruct_search(1476,54122
+search_DS get_search_from_file(1524,55774
+void get_search_try_from_file(1612,58779
+int find_duplicate(1690,62067
+search_try_DS *insert_new_trial(1738,63481
+void describe_clsf(1774,64500
+void print_log 1809,65596
+void apply_search_start_fn 1825,66006
+int apply_search_try_fn 1852,67040
+int apply_n_classes_fn 1888,68760
+int validate_search_start_fn 1908,69370
+int validate_search_try_fn 1931,69899
+int validate_n_classes_fn 1955,70475
+void describe_search(1976,70947
+
+prog/search-converge.c,26
+double base_cycle(25,580
+
+prog/struct-class.c,438
+void store_class_DS(31,930
+class_DS get_class_DS(71,2098
+class_DS pop_class_DS(96,2744
+class_DS build_class_DS(136,3744
+class_DS build_compressed_class_DS(178,4957
+class_DS copy_class_DS(205,5777
+class_DS copy_to_class_DS(234,6912
+int class_DS_test(297,9204
+tparm_DS copy_tparm_DS(347,11434
+void free_class_DS(471,15833
+void free_tparm_DS(529,17651
+void **list_class_storage 612,19843
+double class_strength_measure(654,21149
+
+prog/struct-clsf.c,511
+void push_clsf(23,488
+clsf_DS pop_clsf(47,1027
+clsf_DS get_clsf_DS(74,1667
+void adjust_clsf_DS_classes(110,2738
+void display_step(148,4039
+clsf_DS create_clsf_DS(168,4548
+int clsf_DS_max_n_classes(208,5551
+clsf_DS copy_clsf_DS(222,6082
+int clsf_DS_test(265,7639
+void store_clsf_DS_classes(310,9159
+void store_clsf_DS(337,10057
+float *clsf_DS_w_j(371,10847
+void **list_clsf_storage 393,11439
+void free_clsf_DS(464,14020
+char *clsf_att_type(511,15401
+void free_clsf_class_search_storage(525,15836
+
+prog/statistics.c,33
+void central_measures_x(33,1019
+
+prog/predictions.c,73
+clsf_DS autoclass_predict(21,523
+int same_model_and_attributes(98,3610
+
+prog/struct-data.c,411
+database_DS find_database(21,442
+int every_db_DS_same_source_p(46,1175
+database_DS compress_database(66,1656
+int db_DS_equal_p(82,2084
+int att_DS_equal_p(102,2485
+database_DS create_database(145,3822
+database_DS expand_database(182,5020
+int extend_database(276,8325
+int db_same_source_p(318,9893
+int att_info_equal(332,10255
+int att_props_equivalent_p(357,10950
+int att_stats_equivalent_p(382,11658
+
+prog/struct-matrix.c,50
+fptr *compute_factor(20,422
+float *solve(41,861
+
+prog/struct-model.c,155
+model_DS find_similar_model(23,524
+int model_DS_equal_p(44,1075
+model_DS expand_model(58,1411
+model_DS find_model(93,2456
+void free_model_DS(112,2863
+
+prog/utils.c,1641
+void to_screen_and_log_file(40,916
+time_t get_universal_time 60,1402
+char *format_universal_time(89,2010
+char *format_time_duration 105,2416
+int iround 171,4573
+int int_compare_less 188,4944
+int int_compare_greater 198,5126
+int eqstring(206,5226
+float *fill(215,5345
+void checkpoint_clsf(230,5607
+int *delete_duplicates(260,6535
+double max_plus(304,7627
+int class_duplicatesp(317,7786
+int find_term(329,8006
+int find_class(340,8166
+int find_class_test2(351,8365
+int find_database_p(365,8657
+int find_model_p(379,8904
+int member_int(390,9080
+int find_str_in_table(401,9227
+int new_random(421,9716
+long lrand48(441,10363
+float *randomize_list(456,10692
+int y_or_n_p(494,11492
+double sigma_sq(536,12651
+int char_input_test(559,13350
+int char_input_test(585,13822
+int percent_equal(629,15011
+int prefix(642,15248
+void *getf(656,15475
+void *get(670,15695
+void add_property(690,16262
+void add_to_plist 717,16916
+void write_vector_float(738,17446
+void write_matrix_float(758,17906
+void write_matrix_integer(785,18591
+void read_vector_float(814,19403
+void read_matrix_float(835,19912
+void read_matrix_integer(863,20633
+int discard_comment_lines 890,21251
+void flush_line 914,21657
+int read_char_from_single_quotes 931,21955
+int strcontains(956,22484
+int output_int_list(973,22780
+int pop_int_list(996,23326
+void push_int_list(1022,23798
+int member_int_list(1045,24300
+int float_sort_cell_compare_gtr(1061,24647
+int class_case_sort_compare_lsr(1083,25243
+int att_i_sum_sort_compare_gtr(1101,25724
+int float_p_p_star_compare_gtr(1125,26374
+void safe_fprintf(1148,27103
+void safe_sprintf(1180,27970
+
+prog/utils-math.c,153
+double log_gamma(25,549
+int atoi_p 66,1996
+double atof_p 95,2619
+double safe_exp(127,3344
+void mean_and_variance(144,3707
+double safe_log(168,4290
+
+prog/intf-reports.c,1649
+int autoclass_reports(42,1222
+int clsf_search_validity_check(371,16370
+void influence_values_report_streams(398,17166
+xref_data_DS case_class_data_sharing(465,20052
+xref_data_DS case_report_streams(514,22320
+xref_data_DS class_report_streams(561,24361
+xref_data_DS xref_get_data(636,28124
+int map_class_num_clsf_to_report(822,35880
+int map_class_num_report_to_clsf(839,36317
+void autoclass_xref_by_case_report(855,36763
+void classification_header(907,38836
+void xref_paginate_by_case(966,41595
+void xref_output_page_headers(1054,45397
+void autoclass_xref_by_class_report(1120,48183
+void xref_paginate_by_class(1163,49897
+rpt_att_string_DS *xref_class_report_attributes(1232,52855
+void xref_paginate_by_class_hdrs(1317,56270
+void xref_output_line_by_class(1357,57880
+void autoclass_influence_values_report(1429,60840
+void influence_values_header(1484,63196
+void autoclass_class_influence_values_report(1654,71946
+int populated_class_p(1783,78311
+ordered_influ_vals_DS ordered_normalized_influence_values(1799,78857
+void influence_values_explanation(1846,80638
+void search_summary(1867,81438
+void class_weights_and_strengths(1928,83749
+void class_divergences(1987,86524
+void text_stream_header(2041,88902
+void pre_format_attributes(2090,91338
+void print_attribute_header(2240,97546
+int format_attribute(2284,99478
+int format_discrete_attribute(2383,104112
+int format_integer_attribute(2499,109675
+int format_real_attribute(2533,111254
+void generate_mncn_correlation_matrices 2596,114169
+int attribute_model_term_number(2703,118123
+void sort_mncn_attributes(2725,118726
+char *filter_e_format_exponents 2778,120634
+
+prog/intf-extensions.c,340
+clsf_DS *initialize_reports_from_results_pathname(33,798
+clsf_DS init_clsf_for_reports(84,2639
+int *get_class_weight_ordering(140,4507
+char ***get_attribute_model_term_types(176,5849
+char *report_att_type(208,7081
+char *rpt_att_model_term_type(225,7512
+void get_models_source_info(238,7816
+void get_class_model_source_info(259,8528
+
+prog/intf-influence-values.c,115
+void compute_influence_values(29,614
+double influence_value(112,4373
+int find_attribute_modeling_class(224,8993
+
+prog/intf-sigma-contours.c,144
+void generate_sigma_contours 32,708
+int compute_sigma_contour_for_2_atts 209,8517
+int class_att_loc(294,11846
+float get_sigma_x_y 334,12977
+
+prog/prints.c,696
+void sum_vector_f(22,446
+void print_vector_f(44,878
+void print_matrix_f(65,1326
+void print_matrix_i(88,1796
+void print_mm_d_params(106,2125
+void print_mm_s_params(126,2648
+void print_mn_cn_params(132,2792
+void print_sm_params(149,3252
+void print_sn_cm_params(160,3615
+void print_sn_cn_params(187,4601
+void print_tparm_DS(203,5044
+void print_priors_DS(267,6813
+void print_class_DS(286,7318
+void print_term_DS 323,8378
+void print_real_stats_DS(339,8823
+void print_discrete_stats_DS(346,9009
+void print_att_DS(356,9251
+void print_database_DS(387,10056
+void print_model_DS(421,11163
+void print_clsf_DS(460,12285
+void print_search_try_DS(500,13251
+void print_search_DS(524,13835
+
+prog/getparams.c,71
+void putparams(28,679
+int getparams(91,2895
+void defparam(275,10531
+
+prog/autoclass.c,48
+int main(41,1125
+void autoclass_args 206,7892
+
+prog/autoclass.h,6020
+#define square(square42,1397
+#define srand48 48,1594
+#define TRUE 51,1624
+#define FALSE 52,1667
+#define LN_SINGLE_PI 55,1790
+#define ABSOLUTE_MIN_CLASS_WT 56,1850
+#define MIN_CLASS_WT_FACTOR 57,1895
+#define SINGLE_FLOAT_EPSILON 74,2901
+#define DOUBLE_FLOAT_EPSILON 75,2954
+#define LEAST_POSITIVE_SHORT_FLOAT 76,3018
+#define LEAST_POSITIVE_SINGLE_FLOAT 77,3073
+#define LEAST_POSITIVE_LONG_FLOAT 78,3128
+#define LEAST_NEGATIVE_SINGLE_FLOAT 79,3193
+#define MOST_POSITIVE_LONG_FLOAT 80,3249
+#define MOST_POSITIVE_SINGLE_FLOAT 81,3313
+#define MOST_NEGATIVE_SINGLE_FLOAT 82,3367
+#define MOST_NEGATIVE_LONG_FLOAT 83,3422
+#define INFINITY 84,3487
+#define MOST_NEGATIVE_SINGLE_FLOAT_DIV_2 86,3586
+#define LEAST_POSITIVE_SINGLE_LOG 87,3662
+#define LEAST_POSITIVE_LONG_LOG 88,3749
+#define MOST_POSITIVE_SINGLE_LOG 89,3834
+#define MOST_POSITIVE_LONG_LOG 90,3933
+#define LN_1_DIV_ROOT_2PI 91,4028
+#define ARRAY_RANK_LIMIT 92,4080
+#define STRLIMIT 93,4127
+#define SEARCH_LOG_FILE_TYPE 94,4172
+#define REPORT_LOG_FILE_TYPE 95,4220
+#define SEARCH_FILE_TYPE 96,4269
+#define RESULTS_FILE_TYPE 97,4320
+#define DATA_FILE_TYPE 98,4372
+#define HEADER_FILE_TYPE 99,4420
+#define MODEL_FILE_TYPE 100,4468
+#define FLOAT_UNKNOWN 101,4518
+#define INT_UNKNOWN 102,4587
+#define DISPLAY_WTS 103,4635
+#define DISPLAY_PROBS 105,4791
+#define DISPLAY_PARAMS 107,4953
+#define SN_CM_SIGMA_SAFETY_FACTOR 109,5115
+#define SN_CN_SIGMA_SAFETY_FACTOR 110,5160
+#define NUM_ATT_TYPES 114,5330
+#define SIZEOF_ABOVE_CUT_TABLE 115,5357
+#define SIZEOF_CUT_WHERE_ABOVE_TABLE 116,5400
+#define SEARCH_PARAMS_FILE_TYPE 120,5464
+#define REPORTS_PARAMS_FILE_TYPE 121,5516
+#define CHECKPOINT_FILE_TYPE 122,5568
+#define TEMP_CHECKPOINT_FILE_TYPE 123,5617
+#define INFLU_VALS_FILE_TYPE 124,5670
+#define XREF_CLASS_FILE_TYPE 125,5725
+#define XREF_CASE_FILE_TYPE 126,5780
+#define TEMP_SEARCH_FILE_TYPE 127,5834
+#define TEMP_RESULTS_FILE_TYPE 128,5888
+#define RESULTS_BINARY_FILE_TYPE 129,5943
+#define TEMP_RESULTS_BINARY_FILE_TYPE 130,5998
+#define CHECKPOINT_BINARY_FILE_TYPE 131,6057
+#define TEMP_CHECKPOINT_BINARY_FILE_TYPE 132,6110
+#define PREDICT_FILE_TYPE 133,6168
+#define END_OF_INT_LIST 134,6219
+#define MAX_N_START_J_LIST 135,6264
+#define MAX_CLASS_REPORT_ATT_LIST 136,6307
+#define MAX_CLSF_N_LIST 137,6350
+#define MAX_N_SIGMA_CONTOUR_LIST 138,6393
+#define ALL_ATTRIBUTES 140,6490
+#define SHORT_STRING_LENGTH 141,6534
+#define VERY_LONG_STRING_LENGTH 147,6751
+#define VERY_LONG_TOKEN_LENGTH 148,6799
+#define DATA_ALLOC_INCREMENT 150,6846
+#define REL_ERROR 152,6937
+#define NUM_TRANSFORMS 160,7316
+#define NUM_TOKENS_IN_FXLSTR 162,7400
+#define WRITE_PERMISSIONS 165,7646
+#define DATA_BINARY_FILE_TYPE 166,7691
+#define	M_PI	170,7818
+#define	MAXPATHLEN	177,8064
+enum results_data_typesresults_data_types181,8176
+{ INT_TYPE,182,8200
+{ INT_TYPE, CHAR_TYPE,182,8200
+{ INT_TYPE, CHAR_TYPE, FLOAT_TYPE,182,8200
+{ INT_TYPE, CHAR_TYPE, FLOAT_TYPE, DOUBLE_TYPE,182,8200
+    CLASS_TYPE,183,8248
+    TERM_TYPE,184,8265
+    WARN_ERR_TYPE,185,8281
+    REAL_STATS_TYPE,186,8300
+    DISCRETE_STATS_TYPE,187,8322
+    DUMMY_STATS_TYPE,188,8347
+    ATT_TYPE,189,8369
+    DATABASE_TYPE,190,8384
+    MODEL_TYPE,191,8404
+    CLASSIFICATION_TYPE,192,8420
+    CHECKPOINT_TYPE,193,8446
+    TPARM_TYPE194,8467
+typedef float *fptr;fptr199,8514
+typedef char fxlstr[fxlstr201,8604
+typedef struct priors *priors_DS;priors_DS202,8635
+typedef struct class *class_DS;class_DS203,8669
+typedef struct term *term_DS;term_DS204,8701
+typedef struct warn_err *warn_err_DS;warn_err_DS205,8731
+typedef struct real_stats *real_stats_DS;real_stats_DS206,8769
+typedef struct discrete_stats *discrete_stats_DS;discrete_stats_DS207,8811
+typedef struct att *att_DS;att_DS208,8861
+typedef struct database *database_DS;database_DS209,8889
+typedef struct model *model_DS;model_DS210,8927
+typedef struct classification *clsf_DS;clsf_DS211,8959
+typedef struct search_try *search_try_DS;search_try_DS212,8999
+typedef struct search *search_DS;search_DS213,9041
+typedef char shortstr[shortstr217,9096
+typedef char very_long_str[very_long_str218,9140
+typedef struct checkpoint *chkpt_DS;chkpt_DS219,9193
+typedef struct reports *rpt_DS;rpt_DS220,9230
+typedef struct sort_cell *sort_cell_DS;sort_cell_DS221,9262
+typedef struct invalid_value_errors *invalid_value_errors_DS;invalid_value_errors_DS222,9302
+typedef struct incomplete_datum *incomplete_datum_DS;incomplete_datum_DS223,9364
+typedef struct i_discrete *i_discrete_DS;i_discrete_DS224,9418
+typedef struct i_integer *i_integer_DS;i_integer_DS225,9460
+typedef struct i_real *i_real_DS;i_real_DS226,9500
+typedef struct xref_data *xref_data_DS;xref_data_DS227,9534
+typedef struct report_attribute_string *rpt_att_string_DS;rpt_att_string_DS228,9574
+typedef struct ordered_influence_values *ordered_influ_vals_DS;ordered_influ_vals_DS229,9633
+typedef struct formatted_p_p_star *formatted_p_p_star_DS;formatted_p_p_star_DS230,9697
+typedef int *int_list;int_list231,9755
+struct priors priors245,10238
+struct term term289,12197
+struct warn_err warn_err297,12474
+struct real_stats real_stats308,13035
+struct discrete_stats discrete_stats317,13524
+struct att att328,13871
+struct invalid_value_errors invalid_value_errors348,14704
+struct incomplete_datum incomplete_datum354,14825
+struct database database360,14936
+struct model model393,16875
+struct checkpoint checkpoint428,18656
+struct reports reports440,18994
+struct classification classification465,20384
+struct search_try search_try480,20721
+struct search search504,21779
+struct sort_cell sort_cell519,22508
+struct i_discrete i_discrete525,22615
+struct i_integer i_integer533,22920
+struct i_real i_real541,23257
+struct xref_data xref_data556,24082
+struct report_attribute_string report_attribute_string568,24811
+struct ordered_influence_values ordered_influence_values576,25062
+struct formatted_p_p_star formatted_p_p_star586,25421
+
+prog/getparams.h,537
+#define LINLIM 8,183
+typedef unsigned int BOOLEAN;BOOLEAN11,220
+#define MAXPARAMS 14,258
+#define PARAMNAMLEN 15,279
+typedef enum {TSTRING,20,474
+typedef enum {TSTRING, TBOOL,20,474
+typedef enum {TSTRING, TBOOL, TINT,20,474
+typedef enum {TSTRING, TBOOL, TINT, TFLOAT,20,474
+typedef enum {TSTRING, TBOOL, TINT, TFLOAT, TDOUBLE,20,474
+typedef enum {TSTRING, TBOOL, TINT, TFLOAT, TDOUBLE, TINT_LIST}20,474
+typedef enum {TSTRING, TBOOL, TINT, TFLOAT, TDOUBLE, TINT_LIST} PARAMTYPE;PARAMTYPE20,474
+} PARAM, *PARAMP;PARAMP33,844
+
+prog/globals.h,0
+
+prog/params.h,833
+typedef struct new_term_params *tparm_DS;tparm_DS4,87
+enum MODEL_TYPES MODEL_TYPES11,398
+enum MODEL_TYPES {UNKNOWN,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D, MM_S,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D, MM_S, MN_CN,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D, MM_S, MN_CN, SM,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D, MM_S, MN_CN, SM, SN_CM,11,398
+enum MODEL_TYPES {UNKNOWN, TIGNORE, MM_D, MM_S, MN_CN, SM, SN_CM, SN_CN}11,398
+struct mm_d_param mm_d_param14,475
+struct mm_s_param mm_s_param27,1028
+struct mn_cn_param mn_cn_param35,1314
+struct sm_param sm_param51,2174
+struct sn_cm_param sn_cm_param61,2520
+struct sn_cn_param sn_cn_param85,3388
+struct new_term_params new_term_params108,4012
+
+prog/fcntlcom-ac.h,171
+#define	_FNDELAY	26,643
+#define	_FAPPEND	28,712
+#define	_FCREAT	30,765
+#define	_FTRUNC	32,817
+#define	F_GETFL	35,889
+#define	F_SETFL	36,908
+#define O_NDELAY 39,963
+
+prog/minmax.h,44
+#define min(min2,17
+#define max(max3,54

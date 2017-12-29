@@ -1,0 +1,305 @@
+
+
+
+#      CROSS REFERENCE    CLASS => CASE NUMBER MEMBERSHIP
+
+
+#DATA_CLSF_HEADER
+#      AutoClass CLASSIFICATION for the 205 cases in
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+#      with log-A<X/H> (approximate marginal likelihood) = -16211.601
+#      from classification results file
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+#      and using models
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model - index = 0
+
+
+
+DATA_CLASS 0
+#                                 CLASS = 0  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+004     0.976            4   0.024 
+029     1.000        
+038     1.000        
+039     1.000        
+040     1.000        
+041     1.000        
+042     1.000        
+043     1.000        
+060     1.000        
+061     1.000        
+062     1.000        
+063     1.000        
+065     1.000        
+082     1.000        
+086     1.000        
+087     1.000        
+100     1.000        
+101     1.000        
+124     1.000        
+174     1.000        
+176     1.000        
+177     1.000        
+178     1.000        
+184     1.000        
+186     1.000        
+187     1.000        
+189     1.000        
+190     1.000        
+191     1.000        
+194     1.000        
+
+
+DATA_CLASS 1
+#                                 CLASS = 1  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+051     1.000        
+052     1.000        
+053     1.000        
+054     1.000        
+055     1.000        
+090     1.000        
+092     1.000        
+093     1.000        
+094     1.000        
+095     1.000        
+096     1.000        
+097     1.000        
+098     1.000        
+099     1.000        
+151     1.000        
+152     1.000        
+153     0.998           11   0.002 
+157     1.000        
+158     1.000        
+161     1.000        
+162     1.000        
+163     1.000        
+164     1.000        
+165     1.000        
+
+
+DATA_CLASS 2
+#                                 CLASS = 2  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+015     0.987            4   0.013 
+066     0.998            4   0.002 
+102     1.000        
+103     1.000        
+104     1.000        
+108     1.000        
+110     0.998            4   0.002 
+116     0.998            4   0.002 
+118     1.000        
+134     1.000        
+136     1.000        
+138     1.000        
+181     1.000        
+182     0.875            4   0.125 
+195     1.000        
+196     1.000        
+197     1.000        
+198     1.000        
+199     1.000        
+200     1.000        
+201     1.000        
+202     1.000        
+203     1.000        
+205     1.000        
+
+
+DATA_CLASS 3
+#                                 CLASS = 3  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+020     1.000        
+021     1.000        
+022     1.000        
+023     1.000        
+025     1.000        
+026     1.000        
+027     1.000        
+031     1.000        
+032     1.000        
+033     1.000        
+034     1.000        
+035     1.000        
+036     0.999           11   0.001 
+045     1.000        
+046     1.000        
+077     1.000        
+078     1.000        
+079     1.000        
+119     1.000        
+121     1.000        
+122     1.000        
+123     1.000        
+
+
+DATA_CLASS 4
+#                                 CLASS = 4  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+003     1.000        
+005     1.000        
+006     1.000        
+007     1.000        
+008     1.000        
+009     1.000        
+010     1.000        
+011     1.000        
+012     1.000        
+013     1.000        
+014     1.000        
+076     1.000        
+112     1.000        
+114     1.000        
+126     1.000        
+133     0.999            2   0.001 
+135     1.000        
+137     0.998            2   0.002 
+179     1.000        
+180     1.000        
+192     1.000        
+
+
+DATA_CLASS 5
+#                                 CLASS = 5  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+064     1.000        
+067     1.000        
+068     1.000        
+069     1.000        
+070     1.000        
+071     1.000        
+091     1.000        
+109     1.000        
+111     1.000        
+113     1.000        
+115     1.000        
+117     1.000        
+159     1.000        
+160     1.000        
+175     1.000        
+183     1.000        
+185     1.000        
+188     1.000        
+193     1.000        
+204     1.000        
+
+
+DATA_CLASS 6
+#                                 CLASS = 6  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+016     1.000        
+017     1.000        
+018     1.000        
+048     1.000        
+049     1.000        
+050     1.000        
+072     1.000        
+073     1.000        
+074     1.000        
+075     1.000        
+105     1.000        
+106     1.000        
+107     1.000        
+127     1.000        
+128     1.000        
+129     1.000        
+130     1.000        
+
+
+DATA_CLASS 7
+#                                 CLASS = 7  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+030     1.000        
+083     1.000        
+084     1.000        
+085     1.000        
+125     1.000        
+131     1.000        
+132     1.000        
+168     1.000        
+169     1.000        
+170     1.000        
+171     1.000        
+172     1.000        
+173     1.000        
+
+
+DATA_CLASS 8
+#                                 CLASS = 8  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+139     1.000        
+140     1.000        
+141     1.000        
+142     1.000        
+143     1.000        
+144     1.000        
+145     1.000        
+146     1.000        
+147     1.000        
+148     1.000        
+149     1.000        
+150     1.000        
+
+
+DATA_CLASS 9
+#                                 CLASS = 9  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+001     1.000        
+002     1.000        
+047     1.000        
+056     1.000        
+057     1.000        
+058     1.000        
+059     1.000        
+166     1.000        
+167     1.000        
+
+
+DATA_CLASS 10
+#                                 CLASS = 10  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+024     1.000        
+028     1.000        
+080     1.000        
+081     1.000        
+088     1.000        
+089     1.000        
+120     1.000        
+
+
+DATA_CLASS 11
+#                                 CLASS = 11  
+
+#     Case #      Prob         (Class  Prob) (Class  Prob) (Class  Prob) (Class  Prob) 
+
+019     1.000        
+037     1.000        
+044     1.000        
+154     1.000        
+155     1.000        
+156     1.000        

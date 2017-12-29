@@ -1,0 +1,135 @@
+
+
+	AUTOCLASS C VERSION 2.0 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text -
+        Added new ".s-params" parameter screen_output_p, whose default
+        value is true.  If false, no output is directed to the screen.
+        Assuming log_file_p = true, output will be directed to the
+        log file only.
+
+  2.  autoclass-c/doc/introduction-c.text, & prediction-c.text -
+        Added "prediction-c.text" to document the prediction mode of
+        AutoClass C, which uses a "training" classification to predict
+        probabilistic class membership for the cases of a "test" data
+        file.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/io-results.c -
+        In "read_class_DS_s", add debugging info to use with
+        G_clsf_storage_log_p.
+
+  2. autoclass-c/prog/struct-class.c -
+        In "build_class_DS", add debugging info to use with
+        G_clsf_storage_log_p.
+
+  3. autoclass-c/prog/io-results-bin.c -
+        In "load_class_DS_s," add debugging info to use with
+        G_clsf_storage_log_p.
+
+  4. autoclass-c/prog/struct-data.c -
+        In "expand_database", to handle partial databases, read
+        G_s_params_n_data.
+
+  5. autoclass-c/prog/globals.c, globlals.h, search-control.c -
+        Add G_s_params_n_data.   Change G_ac_version to 2.0 in 
+        globals.c.
+
+  6. autoclass-c/prog/io-read-data.c, autoclass.h -
+        In "read_data" test on n_data was off by 1.
+
+        In "output_created_translations" add discrete value occurrance
+        count.
+
+        In "read_data" move "output_created_translations" call to
+        "output_att_statistics".
+
+        Add "output_att_statistics" & "output_real_att_statistics".
+
+        In "create_warn_err_ds", move malloc out of declaration.
+
+  7. autoclass-c/prog/prints.c, autoclass.h -
+        Add "sum_vector_f" for debugging.
+
+  8. autoclass-c/prog/autoclass.c -
+        Make "main" arg list conform to ANSI C.
+
+  9. autoclass-c/prog/model-transforms.c -
+        In "generate_singleton_transform", call "output_real_att_statistics"
+        for each transformed attribute.
+
+ 10. autoclass-c/prog/utils.c -
+        In "randomize_list" do limit check on list index.
+
+ 11. autoclass-c/prog/search-control-2.c -
+        In all convergence functions, allocate mallocs in body of function,
+        rather than in local variable declarations.
+
+        In "get_search_DS", move malloc out of declaration.
+
+ 12. autoclass-c/prog/intf-reports.c -
+        In "xref_get_data", use n_real_att - 1, rather than i, for index to
+        real_attribute_data; and n_discrete_att - 1 for discrete_attribute_data.
+        Corrects garbage output when .r-params parameter
+        "xref_class_report_att_list" contains mixed real and discrete attributes.
+
+        In "xref_class_report_attributes", use %g, rather than %f for real data.
+
+        In "xref_output_line_by_class", handle unknown real values.
+
+ 13. autoclass-c/prog/io-read-data.c, io-results.c, io-results-bin.c,
+                fcntlcom-ac.h -
+        Convert binary i/o from non-standard (open/close/read/write) to
+        ANSI (fopen/fclose/fread/fwrite).
+
+ 14. autoclass-c/prog/search-control.c, search-basic.c, search-control-2.c,
+                utils.c, globals.c, globals.h, init.c -
+        Convert from srand/rand to srand48/lrand48 for random number
+        generation.
+
+ 15. autoclass-c/prog/predictions.c -
+        Add this file to implement the "autoclass -predict ..." capability,
+        which allows cases in a "test" data set to be applied to a
+        "training" data set and have their class membership predicted.
+        Use "prediction_p" and global "G_training_clsf" in "io-read-data.c"
+        to force the "test" database to use the same discrete translations
+        as the "training" database.
+
+ 16. autoclass-c/load-ac; autoclass-c/prog/autoclass.c, autoclass.make,
+                io-results.c, & autoclass.h -
+        Changes to support item 15.
+
+ 17. autoclass-c/prog/struct_data.c, struct-clsf.c, & struct-model.c -
+        In "att_ds_equal_p", check for type = dummy. Remove
+        "db_DS_same_source_p" and use "db_same_source_p", instead.
+
+ 18. autoclass-c/prog/search-control.c -
+        Make FILE * type local variables static, since they are passed to other
+        functions.
+
+ 19. autoclass-c/prog/autoclass.make -
+        Compile code with "-g", rather than "-ggdb" option.
+
+ 20. autoclass-c/load-ac & autoclass-c/prog/autoclass.make.sun,
+     autoclass-c/prog/autoclass.make.sgi -
+        Changes to support SGI IRIX version 5.2 with "cc" compiler.
+
+ 21. autoclass-c/prog/io-read-data.c -
+        In "output_warning_msgs", replaced sizeof(msg) with msg_length
+        in first safe_sprintf call to prevent:
+        "ERROR: vsprintf produced 80 chars (max number is 3) -- called
+                by output_warning_msgs
+        Program received signal SIGABRT, Aborted."
+
+======================================================================
+
+
+

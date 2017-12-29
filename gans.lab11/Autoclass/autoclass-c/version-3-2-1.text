@@ -1,0 +1,31 @@
+
+
+	AUTOCLASS C VERSION 3.2.1 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/checkpoint-c.text - bring up to date the usage of 
+        force_new_search_p in the examples.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c, globals.h, search-control.c, intf-reports.c,
+        autoclass.c, io-results.c, io-results-bin.c -
+
+        Update "G_ac_version" to 3.2.1, and change type from float to
+        string.
+
+  2. autoclass-c/prog/autoclass.h, io-read-data.c -
+        Comment out unused functions: DEFINE_DISCRETE_TRANSLATIONS, and
+     PROCESS_DISCRETE_TRANSLATIONS.
+
+        Unused #defines  MAXINT and DBG_LL commented out.
+
+
+======================================================================
+

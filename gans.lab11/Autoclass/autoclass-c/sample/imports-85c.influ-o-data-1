@@ -1,0 +1,1504 @@
+#DATA_CLSF_HEADER
+#      AutoClass CLASSIFICATION for the 205 cases in
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.db2
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.hd2
+#      with log-A<X/H> (approximate marginal likelihood) = -16211.601
+#      from classification results file
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.results-bin
+#      and using models
+#        /home/wtaylor/AC/3.3.4/autoclass-c/sample/imports-85c.model - index = 0
+
+
+#DATA_SEARCH_SUMMARY
+#SEARCH SUMMARY 420 tries over  2 minutes 11 seconds
+#SUMMARY OF 10 BEST RESULTS
+#PROBABILITY  exp(-16211.601) N_CLASSES  12 FOUND ON TRY   76 DUPS  1 *SAVED*  -1
+#PROBABILITY  exp(-16216.971) N_CLASSES  13 FOUND ON TRY  351 DUPS  2 *SAVED*  -2
+#PROBABILITY  exp(-16241.062) N_CLASSES  14 FOUND ON TRY  245
+#PROBABILITY  exp(-16245.009) N_CLASSES  16 FOUND ON TRY  135
+#PROBABILITY  exp(-16247.711) N_CLASSES  16 FOUND ON TRY  193 DUPS  1
+#PROBABILITY  exp(-16247.786) N_CLASSES  13 FOUND ON TRY  183
+#PROBABILITY  exp(-16248.708) N_CLASSES  16 FOUND ON TRY  208
+#PROBABILITY  exp(-16254.312) N_CLASSES  15 FOUND ON TRY   75
+#PROBABILITY  exp(-16254.821) N_CLASSES  17 FOUND ON TRY  133
+#PROBABILITY  exp(-16255.435) N_CLASSES  15 FOUND ON TRY  258
+
+
+
+DATA_POP_CLASSES
+#CLASSIFICATION HAS 12 POPULATED CLASSES   (max global influence value = 5.892) 
+
+#   Class     Log of class       Relative         Class     Normalized
+#    num        strength       class strength     weight    class weight
+
+00        -6.97e+01          4.31e-03          30         0.146
+01        -6.42e+01          1.00e+00          24         0.117
+02        -7.35e+01          9.35e-05          24         0.116
+03        -6.57e+01          2.33e-01          22         0.107
+04        -7.87e+01          5.02e-07          21         0.103
+05        -8.03e+01          1.06e-07          20         0.098
+06        -7.95e+01          2.31e-07          17         0.083
+07        -6.85e+01          1.38e-02          13         0.063
+08        -6.96e+01          4.58e-03          12         0.059
+09        -6.87e+01          1.20e-02           9         0.044
+10        -6.70e+01          6.45e-02           7         0.034
+11        -7.82e+01          8.38e-07           6         0.029
+
+
+DATA_CLASS_DIVS
+#CLASS DIVERGENCES
+
+#   Class       class cross entropy       Class     Normalized
+#    num        w.r.t. global class       weight    class weight
+
+00               1.18e+01              30         0.146
+01               1.99e+01              24         0.117
+02               1.35e+01              24         0.116
+03               2.31e+01              22         0.107
+04               9.64e+00              21         0.103
+05               1.71e+01              20         0.098
+06               2.21e+01              17         0.083
+07               1.68e+01              13         0.063
+08               1.94e+01              12         0.059
+09               2.22e+01               9         0.044
+10               2.13e+01               7         0.034
+11               1.49e+01               6         0.029
+
+DATA_NORM_INF_VALS
+#ORDERED LIST OF NORMALIZED ATTRIBUTE INFLUENCE VALUES SUMMED OVER ALL CLASSES
+
+#   num                        description                          I-*k 
+
+038  Log compression-ratio                                      1.000
+002  make                                                       0.645
+029  Log horse-power                                            0.599
+037  Log engine-size                                            0.597
+027  Log bore                                                   0.559
+028  Log stroke                                                 0.553
+031  Log price                                                  0.543
+036  Log curb-weight                                            0.523
+034  Log width                                                  0.480
+017  fuel-system                                                0.470
+033  Log length                                                 0.439
+032  Log wheel-base                                             0.416
+035  Log height                                                 0.362
+026  Log normalized-loses                                       0.334
+014  engine-type                                                0.300
+039  Log city-mpg                                               0.230
+015  num-of-cylinders                                           0.219
+007  drive-wheels                                               0.209
+040  Log highway-mpg                                            0.179
+006  body-style                                                 0.156
+030  Log peak-rpm                                               0.139
+005  num-of-doors                                               0.117
+003  fuel-type                                                  0.111
+004  aspiration                                                 0.095
+008  engine-location                                            0.019
+000  symboling                                                  -----
+001  normalized-loses                                           -----
+009  wheel-base                                                 -----
+010  length                                                     -----
+011  width                                                      -----
+012  height                                                     -----
+013  curb-weight                                                -----
+016  engine-size                                                -----
+018  bore                                                       -----
+019  stroke                                                     -----
+020  compression-ratio                                          -----
+021  horse-power                                                -----
+022  peak-rpm                                                   -----
+023  city-mpg                                                   -----
+024  highway-mpg                                                -----
+025  price                                                      -----
+
+
+DATA_CLASS 0
+#CLASS  0 - weight  30   normalized weight 0.146   relative strength  4.31e-03 *******
+#                            class cross entropy w.r.t. global class  1.18e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  1.490 ( 2.18e+00  4.09e-02)  2.25e+00 ( 2.27e+00  2.81e-01)
+              o                     
+02 28 R SNcm  Log stroke            1.347 ( 1.24e+00  2.09e-02)  3.26e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+03 29 R SNcm  Log horse-power       1.320 ( 4.49e+00  5.91e-02)  1.51e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+11 37 R SNcn  Log engine-size       1.210 ( 4.75e+00  5.26e-02)  9.12e-01 ( 4.80e+00  2.82e-01)
+10 36 R SNcn  Log curb-weight       1.191 ( 7.76e+00  3.88e-02)  1.58e+00 ( 7.83e+00  1.97e-01)
+05 31 R SNcm  Log price             0.811 ( 9.17e+00  1.53e-01)  1.16e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+01 27 R SNcm  Log bore              0.679 ( 1.18e+00  2.77e-02)  5.78e-01 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+07 33 R SNcn  Log length            0.580 ( 5.16e+00  2.56e-02)  2.44e-02 ( 5.16e+00  7.06e-02)
+24 02 D SM    make                  0.577  subaru               -3.69e+00   1.47e-03  5.85e-02
+                                           peugot               -3.60e+00   1.47e-03  5.36e-02
+                                           volvo                -3.60e+00   1.47e-03  5.36e-02
+                                           bmw                  -3.28e+00   1.47e-03  3.91e-02
+                                           mercedes-benz        -3.28e+00   1.47e-03  3.91e-02
+                                           saab                 -3.00e+00   1.47e-03  2.93e-02
+                                           porsche              -2.81e+00   1.47e-03  2.45e-02
+                                           isuzu                -2.59e+00   1.47e-03  1.96e-02
+                                           alfa-romero          -2.31e+00   1.47e-03  1.48e-02
+                                           chevrolet            -2.31e+00   1.47e-03  1.48e-02
+                                           jaguar               -2.31e+00   1.47e-03  1.48e-02
+                                           renault              -1.91e+00   1.47e-03  9.93e-03
+                                           volkswagen            1.36e+00   2.27e-01  5.85e-02
+                                           mercury              -1.24e+00   1.47e-03  5.08e-03
+                                           honda                 1.13e+00   1.95e-01  6.33e-02
+                                           mazda                 6.77e-01   1.63e-01  8.27e-02
+                                           mitsubishi            4.40e-01   9.83e-02  6.33e-02
+                                           nissan               -2.83e-01   6.60e-02  8.76e-02
+                                           dodge                -2.63e-01   3.38e-02  4.39e-02
+                                           toyota               -1.75e-01   1.31e-01  1.56e-01
+                                           audi                 -3.70e-02   3.30e-02  3.42e-02
+                                           plymouth             -1.32e-02   3.38e-02  3.42e-02
+19 07 D SM    drive-wheels          0.451  rwd                  -3.54e+00   1.08e-02  3.71e-01
+                                           4wd                  -1.44e+00   1.08e-02  4.53e-02
+                                           fwd                   5.16e-01   9.78e-01  5.84e-01
+06 32 R SNcn  Log wheel-base        0.448 ( 4.59e+00  2.51e-02)  1.01e-01 ( 4.59e+00  5.91e-02)
+08 34 R SNcn  Log width             0.417 ( 4.18e+00  1.43e-02)  3.38e-01 ( 4.19e+00  3.20e-02)
+17 14 D SM    engine-type           0.237  ohcf                 -2.77e+00   4.61e-03  7.35e-02
+                                           ohcv                 -2.63e+00   4.61e-03  6.38e-02
+                                           dohc                 -2.55e+00   4.61e-03  5.89e-02
+                                           l                    -2.55e+00   4.61e-03  5.89e-02
+                                           rotor                -1.47e+00   4.61e-03  2.01e-02
+                                           ohc                   3.02e-01   9.72e-01  7.19e-01
+                                           dohcv                -1.85e-01   4.61e-03  5.55e-03
+16 15 D SM    num-of-cylinders      0.181  six                  -3.24e+00   4.61e-03  1.17e-01
+                                           five                 -2.46e+00   4.61e-03  5.41e-02
+                                           eight                -1.69e+00   4.61e-03  2.50e-02
+                                           two                  -1.47e+00   4.61e-03  2.01e-02
+                                           four                  2.30e-01   9.72e-01  7.73e-01
+                                           three                -1.85e-01   4.61e-03  5.55e-03
+                                           twelve               -1.85e-01   4.61e-03  5.55e-03
+15 17 D SM    fuel-system           0.175  idi                  -3.19e+00   4.04e-03  9.77e-02
+                                           spdi                 -2.40e+00   4.04e-03  4.43e-02
+                                           4bbl                 -1.32e+00   4.04e-03  1.52e-02
+                                           1bbl                  9.03e-01   1.33e-01  5.40e-02
+                                           mfi                  -3.03e-01   4.04e-03  5.46e-03
+                                           spfi                 -3.03e-01   4.04e-03  5.46e-03
+                                           2bbl                  2.78e-01   4.24e-01  3.21e-01
+                                           mpfi                 -7.73e-02   4.23e-01  4.57e-01
+00 26 R SNcm  Log normalized-loses  0.148 ( 4.65e+00  2.96e-01)  3.97e-01 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  9.29e-01   Prob-*k   is  known  8.00e-01
+22 04 D SM    aspiration            0.143  turbo                -2.42e+00   1.61e-02  1.82e-01
+                                           std                   1.85e-01   9.84e-01  8.18e-01
+13 39 R SNcn  Log city-mpg          0.093 ( 3.25e+00  1.93e-01)  3.08e-01 ( 3.19e+00  2.56e-01)
+09 35 R SNcn  Log height            0.064 ( 4.00e+00  3.85e-02)  3.33e-01 ( 3.98e+00  4.53e-02)
+23 03 D SM    fuel-type             0.058  diesel               -1.82e+00   1.61e-02  9.95e-02
+                                           gas                   8.85e-02   9.84e-01  9.00e-01
+14 40 R SNcn  Log highway-mpg       0.057 ( 3.46e+00  1.93e-01)  3.17e-01 ( 3.40e+00  2.23e-01)
+21 05 D SM    num-of-doors          0.037  two                  -3.64e-01   3.01e-01  4.34e-01
+                                           four                  2.15e-01   6.88e-01  5.55e-01
+                                           ?                    -5.12e-02   1.08e-02  1.13e-02
+20 06 D SM    body-style            0.028  hardtop              -1.82e+00   6.46e-03  3.98e-02
+                                           convertible           2.52e-01   3.87e-02  3.01e-02
+                                           wagon                -1.69e-01   1.03e-01  1.22e-01
+                                           sedan                 1.12e-01   5.22e-01  4.67e-01
+                                           hatchback            -3.43e-02   3.29e-01  3.41e-01
+04 30 R SNcm  Log peak-rpm          0.008 ( 8.54e+00  9.74e-02)  8.24e-03 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+18 08 D SM    engine-location       0.000  rear                 -5.12e-02   1.61e-02  1.70e-02
+                                           front                 8.63e-04   9.84e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.183504e+00  2.769699e-02  1.243264e+00  2.086877e-02  0.000000e+00
+000027 00038  1.183504e+00  2.769699e-02  2.175283e+00  4.094751e-02  0.000000e+00
+000027 00029  1.183504e+00  2.769699e-02  4.494909e+00  5.907737e-02  0.000000e+00
+000027 00030  1.183504e+00  2.769699e-02  8.538372e+00  9.740177e-02  0.000000e+00
+000027 00039  1.183504e+00  2.769699e-02  3.254188e+00  1.929121e-01  0.000000e+00
+000028 00038  1.243264e+00  2.086877e-02  2.175283e+00  4.094751e-02  0.000000e+00
+000028 00029  1.243264e+00  2.086877e-02  4.494909e+00  5.907737e-02  0.000000e+00
+000028 00030  1.243264e+00  2.086877e-02  8.538372e+00  9.740177e-02  0.000000e+00
+000028 00039  1.243264e+00  2.086877e-02  3.254188e+00  1.929121e-01  0.000000e+00
+000038 00029  2.175283e+00  4.094751e-02  4.494909e+00  5.907737e-02  0.000000e+00
+000038 00030  2.175283e+00  4.094751e-02  8.538372e+00  9.740177e-02  0.000000e+00
+000038 00039  2.175283e+00  4.094751e-02  3.254188e+00  1.929121e-01  0.000000e+00
+000029 00030  4.494909e+00  5.907737e-02  8.538372e+00  9.740177e-02  0.000000e+00
+000029 00039  4.494909e+00  5.907737e-02  3.254188e+00  1.929121e-01  0.000000e+00
+000030 00039  8.538372e+00  9.740177e-02  3.254188e+00  1.929121e-01  0.000000e+00
+
+
+DATA_CLASS 1
+#CLASS  1 - weight  24   normalized weight 0.117   relative strength  1.00e+00 *******
+#                            class cross entropy w.r.t. global class  1.99e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  2.132 ( 2.21e+00  2.06e-02)  2.61e+00 ( 2.27e+00  2.81e-01)
+              o                     
+03 29 R SNcm  Log horse-power       2.025 ( 4.22e+00  4.87e-02)  7.43e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+08 34 R SNcn  Log width             1.795 ( 4.16e+00  4.90e-03)  5.89e+00 ( 4.19e+00  3.20e-02)
+10 36 R SNcn  Log curb-weight       1.655 ( 7.61e+00  4.36e-02)  5.04e+00 ( 7.83e+00  1.97e-01)
+11 37 R SNcn  Log engine-size       1.639 ( 4.56e+00  4.87e-02)  4.97e+00 ( 4.80e+00  2.82e-01)
+06 32 R SNcn  Log wheel-base        1.554 ( 4.55e+00  9.76e-03)  4.19e+00 ( 4.59e+00  5.91e-02)
+05 31 R SNcm  Log price             1.297 ( 8.86e+00  1.40e-01)  3.46e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+01 27 R SNcm  Log bore              1.256 ( 1.14e+00  1.93e-02)  3.10e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+07 33 R SNcn  Log length            1.001 ( 5.10e+00  2.20e-02)  2.43e+00 ( 5.16e+00  7.06e-02)
+15 17 D SM    fuel-system           0.995  mpfi                 -4.51e+00   5.00e-03  4.57e-01
+                                           idi                  -2.97e+00   5.00e-03  9.77e-02
+                                           1bbl                 -2.38e+00   5.00e-03  5.40e-02
+                                           spdi                 -2.18e+00   5.00e-03  4.43e-02
+                                           4bbl                 -1.11e+00   5.00e-03  1.52e-02
+                                           2bbl                  1.10e+00   9.65e-01  3.21e-01
+                                           mfi                  -8.81e-02   5.00e-03  5.46e-03
+                                           spfi                 -8.81e-02   5.00e-03  5.46e-03
+24 02 D SM    make                  0.978  mitsubishi           -3.55e+00   1.82e-03  6.33e-02
+                                           honda                -3.55e+00   1.82e-03  6.33e-02
+                                           subaru               -3.47e+00   1.82e-03  5.85e-02
+                                           volkswagen           -3.47e+00   1.82e-03  5.85e-02
+                                           peugot               -3.38e+00   1.82e-03  5.36e-02
+                                           volvo                -3.38e+00   1.82e-03  5.36e-02
+                                           dodge                -3.18e+00   1.82e-03  4.39e-02
+                                           bmw                  -3.07e+00   1.82e-03  3.91e-02
+                                           mercedes-benz        -3.07e+00   1.82e-03  3.91e-02
+                                           audi                 -2.93e+00   1.82e-03  3.42e-02
+                                           plymouth             -2.93e+00   1.82e-03  3.42e-02
+                                           saab                 -2.78e+00   1.82e-03  2.93e-02
+                                           porsche              -2.60e+00   1.82e-03  2.45e-02
+                                           isuzu                -2.38e+00   1.82e-03  1.96e-02
+                                           alfa-romero          -2.10e+00   1.82e-03  1.48e-02
+                                           jaguar               -2.10e+00   1.82e-03  1.48e-02
+                                           chevrolet            -2.09e+00   1.82e-03  1.48e-02
+                                           renault              -1.70e+00   1.82e-03  9.93e-03
+                                           nissan                1.42e+00   3.62e-01  8.76e-02
+                                           mercury              -1.03e+00   1.82e-03  5.08e-03
+                                           toyota                9.49e-01   4.02e-01  1.56e-01
+                                           mazda                 8.92e-01   2.02e-01  8.27e-02
+09 35 R SNcn  Log height            0.791 ( 3.98e+00  1.30e-02)  9.05e-02 ( 3.98e+00  4.53e-02)
+02 28 R SNcm  Log stroke            0.662 ( 1.15e+00  3.58e-02)  7.74e-01 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+13 39 R SNcn  Log city-mpg          0.486 ( 3.43e+00  1.92e-01)  1.22e+00 ( 3.19e+00  2.56e-01)
+14 40 R SNcn  Log highway-mpg       0.448 ( 3.61e+00  1.92e-01)  1.07e+00 ( 3.40e+00  2.23e-01)
+00 26 R SNcm  Log normalized-loses  0.280 ( 4.70e+00  2.11e-01)  2.93e-01 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  9.92e-01   Prob-*k   is  known  8.00e-01
+19 07 D SM    drive-wheels          0.234  rwd                  -1.38e+00   9.33e-02  3.71e-01
+                                           4wd                  -1.22e+00   1.33e-02  4.53e-02
+                                           fwd                   4.25e-01   8.93e-01  5.84e-01
+17 14 D SM    engine-type           0.223  ohcf                 -2.55e+00   5.72e-03  7.35e-02
+                                           ohcv                 -2.41e+00   5.72e-03  6.38e-02
+                                           dohc                 -2.33e+00   5.72e-03  5.89e-02
+                                           l                    -2.33e+00   5.72e-03  5.89e-02
+                                           rotor                -1.26e+00   5.72e-03  2.01e-02
+                                           ohc                   2.95e-01   9.66e-01  7.19e-01
+                                           dohcv                 2.97e-02   5.72e-03  5.55e-03
+16 15 D SM    num-of-cylinders      0.170  six                  -3.02e+00   5.72e-03  1.17e-01
+                                           five                 -2.25e+00   5.72e-03  5.41e-02
+                                           eight                -1.47e+00   5.72e-03  2.50e-02
+                                           two                  -1.26e+00   5.72e-03  2.01e-02
+                                           four                  2.23e-01   9.66e-01  7.73e-01
+                                           three                 2.97e-02   5.72e-03  5.55e-03
+                                           twelve                2.97e-02   5.72e-03  5.55e-03
+22 04 D SM    aspiration            0.133  turbo                -2.21e+00   2.00e-02  1.82e-01
+                                           std                   1.81e-01   9.80e-01  8.18e-01
+23 03 D SM    fuel-type             0.051  diesel               -1.60e+00   2.00e-02  9.95e-02
+                                           gas                   8.46e-02   9.80e-01  9.00e-01
+04 30 R SNcm  Log peak-rpm          0.034 ( 8.51e+00  9.70e-02)  2.33e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+20 06 D SM    body-style            0.024  convertible          -1.32e+00   8.00e-03  3.01e-02
+                                           wagon                -3.29e-01   8.80e-02  1.22e-01
+                                           hardtop               1.87e-01   4.80e-02  3.98e-02
+                                           hatchback             1.80e-01   4.08e-01  3.41e-01
+                                           sedan                -4.14e-02   4.48e-01  4.67e-01
+21 05 D SM    num-of-doors          0.008  ?                     1.63e-01   1.33e-02  1.13e-02
+                                           two                   1.29e-01   4.93e-01  4.34e-01
+                                           four                 -1.18e-01   4.93e-01  5.55e-01
+18 08 D SM    engine-location       0.000  rear                  1.63e-01   2.00e-02  1.70e-02
+                                           front                -3.07e-03   9.80e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.139663e+00  1.931792e-02  1.147543e+00  3.583464e-02  0.000000e+00
+000027 00038  1.139663e+00  1.931792e-02  2.213537e+00  2.062745e-02  0.000000e+00
+000027 00029  1.139663e+00  1.931792e-02  4.221948e+00  4.874634e-02  0.000000e+00
+000027 00030  1.139663e+00  1.931792e-02  8.514974e+00  9.701241e-02  0.000000e+00
+000027 00039  1.139663e+00  1.931792e-02  3.428599e+00  1.921410e-01  0.000000e+00
+000028 00038  1.147543e+00  3.583464e-02  2.213537e+00  2.062745e-02  0.000000e+00
+000028 00029  1.147543e+00  3.583464e-02  4.221948e+00  4.874634e-02  0.000000e+00
+000028 00030  1.147543e+00  3.583464e-02  8.514974e+00  9.701241e-02  0.000000e+00
+000028 00039  1.147543e+00  3.583464e-02  3.428599e+00  1.921410e-01  0.000000e+00
+000038 00029  2.213537e+00  2.062745e-02  4.221948e+00  4.874634e-02  0.000000e+00
+000038 00030  2.213537e+00  2.062745e-02  8.514974e+00  9.701241e-02  0.000000e+00
+000038 00039  2.213537e+00  2.062745e-02  3.428599e+00  1.921410e-01  0.000000e+00
+000029 00030  4.221948e+00  4.874634e-02  8.514974e+00  9.701241e-02  0.000000e+00
+000029 00039  4.221948e+00  4.874634e-02  3.428599e+00  1.921410e-01  0.000000e+00
+000030 00039  8.514974e+00  9.701241e-02  3.428599e+00  1.921410e-01  0.000000e+00
+
+
+DATA_CLASS 2
+#CLASS  2 - weight  24   normalized weight 0.116   relative strength  9.35e-05 *******
+#                            class cross entropy w.r.t. global class  1.35e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+07 33 R SNcn  Log length            1.363 ( 5.23e+00  2.04e-02)  3.73e+00 ( 5.16e+00  7.06e-02)
+10 36 R SNcn  Log curb-weight       1.339 ( 8.01e+00  5.01e-02)  3.68e+00 ( 7.83e+00  1.97e-01)
+24 02 D SM    make                  1.060  honda                -3.54e+00   1.83e-03  6.33e-02
+                                           mitsubishi           -3.54e+00   1.83e-03  6.33e-02
+                                           subaru               -3.47e+00   1.83e-03  5.85e-02
+                                           volkswagen           -3.47e+00   1.83e-03  5.85e-02
+                                           dodge                -3.18e+00   1.83e-03  4.39e-02
+                                           mercedes-benz        -3.06e+00   1.83e-03  3.91e-02
+                                           audi                 -2.93e+00   1.83e-03  3.42e-02
+                                           plymouth             -2.93e+00   1.83e-03  3.42e-02
+                                           porsche              -2.59e+00   1.83e-03  2.45e-02
+                                           isuzu                -2.37e+00   1.83e-03  1.96e-02
+                                           alfa-romero          -2.09e+00   1.83e-03  1.48e-02
+                                           chevrolet            -2.09e+00   1.83e-03  1.48e-02
+                                           jaguar               -2.09e+00   1.83e-03  1.48e-02
+                                           volvo                 2.02e+00   4.04e-01  5.36e-02
+                                           renault              -1.69e+00   1.83e-03  9.93e-03
+                                           saab                  1.43e+00   1.23e-01  2.93e-02
+                                           peugot                1.11e+00   1.63e-01  5.36e-02
+                                           mercury              -1.02e+00   1.83e-03  5.08e-03
+                                           toyota               -7.00e-01   7.73e-02  1.56e-01
+                                           mazda                -6.78e-01   4.20e-02  8.27e-02
+                                           nissan                3.35e-01   1.22e-01  8.76e-02
+                                           bmw                   6.20e-02   4.16e-02  3.91e-02
+09 35 R SNcn  Log height            0.914 ( 4.03e+00  1.86e-02)  2.28e+00 ( 3.98e+00  4.53e-02)
+12 38 R SNcn  Log compression-rati  0.831 ( 2.17e+00  8.19e-02)  1.15e+00 ( 2.27e+00  2.81e-01)
+              o                     
+02 28 R SNcm  Log stroke            0.811 ( 1.15e+00  2.99e-02)  7.50e-01 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+05 31 R SNcm  Log price             0.794 ( 9.70e+00  1.90e-01)  1.82e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+06 32 R SNcn  Log wheel-base        0.716 ( 4.65e+00  3.57e-02)  1.70e+00 ( 4.59e+00  5.91e-02)
+08 34 R SNcn  Log width             0.694 ( 4.21e+00  1.36e-02)  1.66e+00 ( 4.19e+00  3.20e-02)
+15 17 D SM    fuel-system           0.656  2bbl                 -4.16e+00   5.03e-03  3.21e-01
+                                           idi                  -2.97e+00   5.03e-03  9.77e-02
+                                           1bbl                 -2.37e+00   5.03e-03  5.40e-02
+                                           spdi                 -2.18e+00   5.03e-03  4.43e-02
+                                           4bbl                 -1.10e+00   5.03e-03  1.52e-02
+                                           mpfi                  7.47e-01   9.65e-01  4.57e-01
+                                           mfi                  -8.27e-02   5.03e-03  5.46e-03
+                                           spfi                 -8.27e-02   5.03e-03  5.46e-03
+01 27 R SNcm  Log bore              0.643 ( 1.27e+00  4.67e-02)  1.58e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+03 29 R SNcm  Log horse-power       0.622 ( 4.85e+00  1.74e-01)  1.54e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+21 05 D SM    num-of-doors          0.502  two                  -3.47e+00   1.35e-02  4.34e-01
+                                           four                  5.61e-01   9.73e-01  5.55e-01
+                                           ?                     1.69e-01   1.34e-02  1.13e-02
+11 37 R SNcn  Log engine-size       0.499 ( 4.96e+00  1.37e-01)  1.16e+00 ( 4.80e+00  2.82e-01)
+20 06 D SM    body-style            0.443  hatchback            -3.73e+00   8.18e-03  3.41e-01
+                                           hardtop              -1.60e+00   8.04e-03  3.98e-02
+                                           convertible          -1.32e+00   8.04e-03  3.01e-02
+                                           wagon                 6.92e-01   2.44e-01  1.22e-01
+                                           sedan                 4.49e-01   7.31e-01  4.67e-01
+13 39 R SNcn  Log city-mpg          0.427 ( 2.98e+00  1.92e-01)  1.13e+00 ( 3.19e+00  2.56e-01)
+14 40 R SNcn  Log highway-mpg       0.340 ( 3.22e+00  1.92e-01)  9.29e-01 ( 3.40e+00  2.23e-01)
+19 07 D SM    drive-wheels          0.270  4wd                  -1.22e+00   1.34e-02  4.53e-02
+                                           fwd                  -8.29e-01   2.55e-01  5.84e-01
+                                           rwd                   6.80e-01   7.32e-01  3.71e-01
+17 14 D SM    engine-type           0.236  ohcf                 -2.55e+00   5.75e-03  7.35e-02
+                                           rotor                -1.25e+00   5.75e-03  2.01e-02
+                                           l                     1.04e+00   1.66e-01  5.89e-02
+                                           ohcv                  9.60e-01   1.67e-01  6.38e-02
+                                           dohc                  7.23e-01   1.22e-01  5.89e-02
+                                           ohc                  -3.09e-01   5.28e-01  7.19e-01
+                                           dohcv                 3.51e-02   5.75e-03  5.55e-03
+16 15 D SM    num-of-cylinders      0.141  five                 -2.24e+00   5.75e-03  5.41e-02
+                                           eight                -1.47e+00   5.75e-03  2.50e-02
+                                           two                  -1.25e+00   5.75e-03  2.01e-02
+                                           six                   8.77e-01   2.82e-01  1.17e-01
+                                           four                 -1.14e-01   6.89e-01  7.73e-01
+                                           three                 3.51e-02   5.75e-03  5.55e-03
+                                           twelve                3.51e-02   5.75e-03  5.55e-03
+00 26 R SNcm  Log normalized-loses  0.139 ( 4.65e+00  2.17e-01)  5.10e-01 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  8.77e-01   Prob-*k   is  known  8.00e-01
+23 03 D SM    fuel-type             0.051  diesel               -1.60e+00   2.01e-02  9.95e-02
+                                           gas                   8.45e-02   9.80e-01  9.00e-01
+04 30 R SNcm  Log peak-rpm          0.031 ( 8.56e+00  9.70e-02)  2.18e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  1.00e-00   Prob-*k   is  known  9.90e-01
+22 04 D SM    aspiration            0.019  turbo                 3.62e-01   2.62e-01  1.82e-01
+                                           std                  -1.02e-01   7.38e-01  8.18e-01
+18 08 D SM    engine-location       0.000  rear                  1.69e-01   2.01e-02  1.70e-02
+                                           front                -3.18e-03   9.80e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.273063e+00  4.665289e-02  1.152840e+00  2.991673e-02  0.000000e+00
+000027 00038  1.273063e+00  4.665289e-02  2.173604e+00  8.186153e-02  0.000000e+00
+000027 00029  1.273063e+00  4.665289e-02  4.851816e+00  1.736595e-01  0.000000e+00
+000027 00030  1.273063e+00  4.665289e-02  8.558702e+00  9.700139e-02  0.000000e+00
+000027 00039  1.273063e+00  4.665289e-02  2.978263e+00  1.921192e-01  0.000000e+00
+000028 00038  1.152840e+00  2.991673e-02  2.173604e+00  8.186153e-02  0.000000e+00
+000028 00029  1.152840e+00  2.991673e-02  4.851816e+00  1.736595e-01  0.000000e+00
+000028 00030  1.152840e+00  2.991673e-02  8.558702e+00  9.700139e-02  0.000000e+00
+000028 00039  1.152840e+00  2.991673e-02  2.978263e+00  1.921192e-01  0.000000e+00
+000038 00029  2.173604e+00  8.186153e-02  4.851816e+00  1.736595e-01  0.000000e+00
+000038 00030  2.173604e+00  8.186153e-02  8.558702e+00  9.700139e-02  0.000000e+00
+000038 00039  2.173604e+00  8.186153e-02  2.978263e+00  1.921192e-01  0.000000e+00
+000029 00030  4.851816e+00  1.736595e-01  8.558702e+00  9.700139e-02  0.000000e+00
+000029 00039  4.851816e+00  1.736595e-01  2.978263e+00  1.921192e-01  0.000000e+00
+000030 00039  8.558702e+00  9.700139e-02  2.978263e+00  1.921192e-01  0.000000e+00
+
+
+DATA_CLASS 3
+#CLASS  3 - weight  22   normalized weight 0.107   relative strength  2.33e-01 *******
+#                            class cross entropy w.r.t. global class  2.31e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+01 27 R SNcm  Log bore              2.197 ( 1.09e+00  1.46e-02)  7.70e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+12 38 R SNcn  Log compression-rati  2.168 ( 2.24e+00  1.96e-02)  1.15e+00 ( 2.27e+00  2.81e-01)
+              o                     
+10 36 R SNcn  Log curb-weight       1.884 ( 7.56e+00  4.50e-02)  5.81e+00 ( 7.83e+00  1.97e-01)
+08 34 R SNcn  Log width             1.847 ( 4.16e+00  4.89e-03)  6.25e+00 ( 4.19e+00  3.20e-02)
+11 37 R SNcn  Log engine-size       1.817 ( 4.51e+00  4.87e-02)  6.05e+00 ( 4.80e+00  2.82e-01)
+03 29 R SNcm  Log horse-power       1.749 ( 4.23e+00  6.27e-02)  5.62e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+05 31 R SNcm  Log price             1.731 ( 8.77e+00  9.77e-02)  5.94e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.12e-01   Prob-*k   is  known  9.80e-01
+07 33 R SNcn  Log length            1.443 ( 5.05e+00  3.55e-02)  2.99e+00 ( 5.16e+00  7.06e-02)
+24 02 D SM    make                  1.316  toyota               -4.37e+00   1.98e-03  1.56e-01
+                                           nissan               -3.79e+00   1.98e-03  8.76e-02
+                                           mazda                -3.73e+00   1.98e-03  8.27e-02
+                                           subaru               -3.39e+00   1.98e-03  5.85e-02
+                                           volkswagen           -3.39e+00   1.98e-03  5.85e-02
+                                           peugot               -3.30e+00   1.98e-03  5.36e-02
+                                           volvo                -3.30e+00   1.98e-03  5.36e-02
+                                           bmw                  -2.98e+00   1.98e-03  3.91e-02
+                                           mercedes-benz        -2.98e+00   1.98e-03  3.91e-02
+                                           audi                 -2.85e+00   1.98e-03  3.42e-02
+                                           saab                 -2.70e+00   1.98e-03  2.93e-02
+                                           porsche              -2.52e+00   1.98e-03  2.45e-02
+                                           alfa-romero          -2.01e+00   1.98e-03  1.48e-02
+                                           jaguar               -2.01e+00   1.98e-03  1.48e-02
+                                           chevrolet             1.79e+00   8.89e-02  1.48e-02
+                                           plymouth              1.64e+00   1.76e-01  3.42e-02
+                                           renault              -1.61e+00   1.98e-03  9.93e-03
+                                           dodge                 1.61e+00   2.19e-01  4.39e-02
+                                           isuzu                 1.51e+00   8.89e-02  1.96e-02
+                                           honda                 1.42e+00   2.63e-01  6.33e-02
+                                           mercury              -9.43e-01   1.98e-03  5.08e-03
+                                           mitsubishi            7.38e-01   1.32e-01  6.33e-02
+09 35 R SNcn  Log height            0.936 ( 3.94e+00  1.86e-02)  2.34e+00 ( 3.98e+00  4.53e-02)
+06 32 R SNcn  Log wheel-base        0.919 ( 4.54e+00  2.39e-02)  2.30e+00 ( 4.59e+00  5.91e-02)
+15 17 D SM    fuel-system           0.916  mpfi                 -4.43e+00   5.44e-03  4.57e-01
+                                           idi                  -2.89e+00   5.44e-03  9.77e-02
+                                           spdi                 -2.10e+00   5.44e-03  4.43e-02
+                                           1bbl                  1.60e+00   2.66e-01  5.40e-02
+                                           4bbl                 -1.03e+00   5.44e-03  1.52e-02
+                                           2bbl                  7.81e-01   7.01e-01  3.21e-01
+                                           mfi                  -4.79e-03   5.44e-03  5.46e-03
+                                           spfi                 -4.79e-03   5.44e-03  5.46e-03
+13 39 R SNcn  Log city-mpg          0.875 ( 3.52e+00  1.92e-01)  1.69e+00 ( 3.19e+00  2.56e-01)
+14 40 R SNcn  Log highway-mpg       0.772 ( 3.67e+00  1.92e-01)  1.43e+00 ( 3.40e+00  2.23e-01)
+02 28 R SNcm  Log stroke            0.741 ( 1.18e+00  3.15e-02)  1.07e-02 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+19 07 D SM    drive-wheels          0.430  rwd                  -3.24e+00   1.45e-02  3.71e-01
+                                           4wd                  -1.14e+00   1.45e-02  4.53e-02
+                                           fwd                   5.08e-01   9.71e-01  5.84e-01
+04 30 R SNcm  Log peak-rpm          0.344 ( 8.62e+00  9.68e-02)  8.36e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+20 06 D SM    body-style            0.224  wagon                -2.64e+00   8.70e-03  1.22e-01
+                                           hardtop              -1.52e+00   8.70e-03  3.98e-02
+                                           convertible          -1.24e+00   8.70e-03  3.01e-02
+                                           hatchback             5.94e-01   6.17e-01  3.41e-01
+                                           sedan                -2.70e-01   3.56e-01  4.67e-01
+17 14 D SM    engine-type           0.216  ohcf                 -2.47e+00   6.21e-03  7.35e-02
+                                           ohcv                 -2.33e+00   6.21e-03  6.38e-02
+                                           dohc                 -2.25e+00   6.21e-03  5.89e-02
+                                           l                    -2.25e+00   6.21e-03  5.89e-02
+                                           rotor                -1.17e+00   6.21e-03  2.01e-02
+                                           ohc                   2.92e-01   9.63e-01  7.19e-01
+                                           dohcv                 1.13e-01   6.21e-03  5.55e-03
+00 26 R SNcm  Log normalized-loses  0.174 ( 4.85e+00  1.98e-01)  4.41e-01 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  9.04e-01   Prob-*k   is  known  8.00e-01
+16 15 D SM    num-of-cylinders      0.166  six                  -2.94e+00   6.21e-03  1.17e-01
+                                           five                 -2.16e+00   6.21e-03  5.41e-02
+                                           eight                -1.39e+00   6.21e-03  2.50e-02
+                                           two                  -1.17e+00   6.21e-03  2.01e-02
+                                           four                  2.20e-01   9.63e-01  7.73e-01
+                                           three                 1.13e-01   6.21e-03  5.55e-03
+                                           twelve                1.13e-01   6.21e-03  5.55e-03
+22 04 D SM    aspiration            0.129  turbo                -2.13e+00   2.17e-02  1.82e-01
+                                           std                   1.79e-01   9.78e-01  8.18e-01
+23 03 D SM    fuel-type             0.048  diesel               -1.52e+00   2.17e-02  9.95e-02
+                                           gas                   8.28e-02   9.78e-01  9.00e-01
+21 05 D SM    num-of-doors          0.045  four                 -3.13e-01   4.06e-01  5.55e-01
+                                           two                   2.90e-01   5.80e-01  4.34e-01
+                                           ?                     2.47e-01   1.45e-02  1.13e-02
+18 08 D SM    engine-location       0.001  rear                  2.47e-01   2.17e-02  1.70e-02
+                                           front                -4.84e-03   9.78e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.086656e+00  1.464831e-02  1.175612e+00  3.148571e-02  0.000000e+00
+000027 00038  1.086656e+00  1.464831e-02  2.244900e+00  1.960514e-02  0.000000e+00
+000027 00029  1.086656e+00  1.464831e-02  4.232154e+00  6.266793e-02  0.000000e+00
+000027 00030  1.086656e+00  1.464831e-02  8.618498e+00  9.683663e-02  0.000000e+00
+000027 00039  1.086656e+00  1.464831e-02  3.519540e+00  1.917928e-01  0.000000e+00
+000028 00038  1.175612e+00  3.148571e-02  2.244900e+00  1.960514e-02  0.000000e+00
+000028 00029  1.175612e+00  3.148571e-02  4.232154e+00  6.266793e-02  0.000000e+00
+000028 00030  1.175612e+00  3.148571e-02  8.618498e+00  9.683663e-02  0.000000e+00
+000028 00039  1.175612e+00  3.148571e-02  3.519540e+00  1.917928e-01  0.000000e+00
+000038 00029  2.244900e+00  1.960514e-02  4.232154e+00  6.266793e-02  0.000000e+00
+000038 00030  2.244900e+00  1.960514e-02  8.618498e+00  9.683663e-02  0.000000e+00
+000038 00039  2.244900e+00  1.960514e-02  3.519540e+00  1.917928e-01  0.000000e+00
+000029 00030  4.232154e+00  6.266793e-02  8.618498e+00  9.683663e-02  0.000000e+00
+000029 00039  4.232154e+00  6.266793e-02  3.519540e+00  1.917928e-01  0.000000e+00
+000030 00039  8.618498e+00  9.683663e-02  3.519540e+00  1.917928e-01  0.000000e+00
+
+
+DATA_CLASS 4
+#CLASS  4 - weight  21   normalized weight 0.103   relative strength  5.02e-07 *******
+#                            class cross entropy w.r.t. global class  9.64e+00 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+24 02 D SM    make                  1.173  nissan               -3.75e+00   2.06e-03  8.76e-02
+                                           mazda                -3.66e+00   2.12e-03  8.27e-02
+                                           honda                -3.43e+00   2.05e-03  6.33e-02
+                                           mitsubishi           -3.43e+00   2.05e-03  6.33e-02
+                                           subaru               -3.35e+00   2.05e-03  5.85e-02
+                                           volvo                -3.26e+00   2.05e-03  5.36e-02
+                                           dodge                -3.06e+00   2.05e-03  4.39e-02
+                                           mercedes-benz        -2.95e+00   2.05e-03  3.91e-02
+                                           plymouth             -2.81e+00   2.05e-03  3.42e-02
+                                           isuzu                -2.26e+00   2.05e-03  1.96e-02
+                                           mercury               2.23e+00   4.72e-02  5.08e-03
+                                           audi                  2.08e+00   2.74e-01  3.42e-02
+                                           chevrolet            -1.98e+00   2.05e-03  1.48e-02
+                                           jaguar               -1.98e+00   2.05e-03  1.48e-02
+                                           renault              -1.58e+00   2.05e-03  9.93e-03
+                                           bmw                   1.55e+00   1.83e-01  3.91e-02
+                                           saab                  1.54e+00   1.37e-01  2.93e-02
+                                           alfa-romero           1.16e+00   4.72e-02  1.48e-02
+                                           porsche               6.55e-01   4.71e-02  2.45e-02
+                                           peugot                5.45e-01   9.25e-02  5.36e-02
+                                           toyota               -4.63e-01   9.79e-02  1.56e-01
+                                           volkswagen           -2.15e-01   4.72e-02  5.85e-02
+00 26 R SNcm  Log normalized-loses  1.052 ( 5.15e+00  1.04e-01)  3.71e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  6.69e-01   Prob-*k   is  known  8.00e-01
+12 38 R SNcn  Log compression-rati  1.035 ( 2.16e+00  6.70e-02)  1.60e+00 ( 2.27e+00  2.81e-01)
+              o                     
+05 31 R SNcm  Log price             0.984 ( 9.75e+00  1.58e-01)  2.51e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.54e-01   Prob-*k   is  known  9.80e-01
+10 36 R SNcn  Log curb-weight       0.673 ( 7.94e+00  7.84e-02)  1.48e+00 ( 7.83e+00  1.97e-01)
+15 17 D SM    fuel-system           0.645  2bbl                 -4.04e+00   5.64e-03  3.21e-01
+                                           idi                  -2.85e+00   5.64e-03  9.77e-02
+                                           1bbl                 -2.26e+00   5.64e-03  5.40e-02
+                                           spdi                 -2.06e+00   5.64e-03  4.43e-02
+                                           4bbl                 -9.89e-01   5.64e-03  1.52e-02
+                                           mpfi                  7.43e-01   9.61e-01  4.57e-01
+                                           spfi                  3.24e-02   5.64e-03  5.46e-03
+                                           mfi                   3.22e-02   5.64e-03  5.46e-03
+03 29 R SNcm  Log horse-power       0.501 ( 4.82e+00  1.89e-01)  1.27e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+16 15 D SM    num-of-cylinders      0.472  five                  1.78e+00   3.22e-01  5.41e-02
+                                           eight                -1.35e+00   6.45e-03  2.50e-02
+                                           two                  -1.14e+00   6.45e-03  2.01e-02
+                                           six                   7.09e-01   2.38e-01  1.17e-01
+                                           four                 -6.25e-01   4.14e-01  7.73e-01
+                                           three                 1.50e-01   6.45e-03  5.55e-03
+                                           twelve                1.50e-01   6.45e-03  5.55e-03
+13 39 R SNcn  Log city-mpg          0.459 ( 2.97e+00  1.92e-01)  1.18e+00 ( 3.19e+00  2.56e-01)
+07 33 R SNcn  Log length            0.458 ( 5.20e+00  4.01e-02)  1.20e+00 ( 5.16e+00  7.06e-02)
+11 37 R SNcn  Log engine-size       0.445 ( 4.91e+00  1.32e-01)  8.37e-01 ( 4.80e+00  2.82e-01)
+02 28 R SNcm  Log stroke            0.384 ( 1.12e+00  1.51e-01)  3.89e-01 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+14 40 R SNcn  Log highway-mpg       0.322 ( 3.23e+00  1.92e-01)  9.03e-01 ( 3.40e+00  2.23e-01)
+06 32 R SNcn  Log wheel-base        0.254 ( 4.62e+00  4.06e-02)  7.76e-01 ( 4.59e+00  5.91e-02)
+08 34 R SNcn  Log width             0.235 ( 4.21e+00  2.92e-02)  7.39e-01 ( 4.19e+00  3.20e-02)
+09 35 R SNcn  Log height            0.134 ( 4.00e+00  3.22e-02)  3.94e-01 ( 3.98e+00  4.53e-02)
+17 14 D SM    engine-type           0.117  ohcf                 -2.43e+00   6.45e-03  7.35e-02
+                                           rotor                -1.14e+00   6.45e-03  2.01e-02
+                                           dohc                  9.16e-01   1.47e-01  5.89e-02
+                                           l                     4.97e-01   9.68e-02  5.89e-02
+                                           ohcv                 -2.13e-01   5.16e-02  6.38e-02
+                                           dohcv                 1.50e-01   6.45e-03  5.55e-03
+                                           ohc                  -4.87e-02   6.85e-01  7.19e-01
+19 07 D SM    drive-wheels          0.097  4wd                   8.43e-01   1.05e-01  4.53e-02
+                                           fwd                  -4.38e-01   3.77e-01  5.84e-01
+                                           rwd                   3.35e-01   5.18e-01  3.71e-01
+23 03 D SM    fuel-type             0.047  diesel               -1.48e+00   2.26e-02  9.95e-02
+                                           gas                   8.20e-02   9.77e-01  9.00e-01
+04 30 R SNcm  Log peak-rpm          0.046 ( 8.56e+00  9.68e-02)  2.82e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+01 27 R SNcm  Log bore              0.042 ( 1.19e+00  9.36e-02)  1.06e-01 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+20 06 D SM    body-style            0.036  hardtop              -1.48e+00   9.02e-03  3.98e-02
+                                           convertible          -1.20e+00   9.02e-03  3.01e-02
+                                           hatchback             1.97e-01   4.15e-01  3.41e-01
+                                           wagon                -1.53e-01   1.05e-01  1.22e-01
+                                           sedan                -1.06e-02   4.62e-01  4.67e-01
+21 05 D SM    num-of-doors          0.032  ?                     2.84e-01   1.50e-02  1.13e-02
+                                           four                 -2.58e-01   4.29e-01  5.55e-01
+                                           two                   2.49e-01   5.56e-01  4.34e-01
+22 04 D SM    aspiration            0.001  turbo                 1.09e-01   2.03e-01  1.82e-01
+                                           std                  -2.59e-02   7.97e-01  8.18e-01
+18 08 D SM    engine-location       0.001  rear                  2.84e-01   2.26e-02  1.70e-02
+                                           front                -5.68e-03   9.77e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.189596e+00  9.358568e-02  1.116425e+00  1.513330e-01  0.000000e+00
+000027 00038  1.189596e+00  9.358568e-02  2.160039e+00  6.695802e-02  0.000000e+00
+000027 00029  1.189596e+00  9.358568e-02  4.824163e+00  1.891872e-01  0.000000e+00
+000027 00030  1.189596e+00  9.358568e-02  8.564838e+00  9.675360e-02  0.000000e+00
+000027 00039  1.189596e+00  9.358568e-02  2.969060e+00  1.916284e-01  0.000000e+00
+000028 00038  1.116425e+00  1.513330e-01  2.160039e+00  6.695802e-02  0.000000e+00
+000028 00029  1.116425e+00  1.513330e-01  4.824163e+00  1.891872e-01  0.000000e+00
+000028 00030  1.116425e+00  1.513330e-01  8.564838e+00  9.675360e-02  0.000000e+00
+000028 00039  1.116425e+00  1.513330e-01  2.969060e+00  1.916284e-01  0.000000e+00
+000038 00029  2.160039e+00  6.695802e-02  4.824163e+00  1.891872e-01  0.000000e+00
+000038 00030  2.160039e+00  6.695802e-02  8.564838e+00  9.675360e-02  0.000000e+00
+000038 00039  2.160039e+00  6.695802e-02  2.969060e+00  1.916284e-01  0.000000e+00
+000029 00030  4.824163e+00  1.891872e-01  8.564838e+00  9.675360e-02  0.000000e+00
+000029 00039  4.824163e+00  1.891872e-01  2.969060e+00  1.916284e-01  0.000000e+00
+000030 00039  8.564838e+00  9.675360e-02  2.969060e+00  1.916284e-01  0.000000e+00
+
+
+DATA_CLASS 5
+#CLASS  5 - weight  20   normalized weight 0.098   relative strength  1.06e-07 *******
+#                            class cross entropy w.r.t. global class  1.71e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  5.892 ( 3.09e+00  3.47e-02)  2.37e+01 ( 2.27e+00  2.81e-01)
+              o                     
+23 03 D SM    fuel-type             2.142  gas                  -3.63e+00   2.38e-02  9.00e-01
+                                           diesel                2.28e+00   9.76e-01  9.95e-02
+15 17 D SM    fuel-system           2.109  mpfi                 -4.34e+00   5.95e-03  4.57e-01
+                                           2bbl                 -3.99e+00   5.95e-03  3.21e-01
+                                           idi                   2.28e+00   9.58e-01  9.77e-02
+                                           1bbl                 -2.21e+00   5.95e-03  5.40e-02
+                                           spdi                 -2.01e+00   5.95e-03  4.43e-02
+                                           4bbl                 -9.36e-01   5.95e-03  1.52e-02
+                                           mfi                   8.61e-02   5.95e-03  5.46e-03
+                                           spfi                  8.61e-02   5.95e-03  5.46e-03
+02 28 R SNcm  Log stroke            1.048 ( 1.25e+00  2.97e-02)  2.46e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+04 30 R SNcm  Log peak-rpm          1.028 ( 8.40e+00  9.66e-02)  1.46e+00 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+24 02 D SM    make                  0.792  honda                -3.38e+00   2.16e-03  6.33e-02
+                                           mitsubishi           -3.38e+00   2.16e-03  6.33e-02
+                                           subaru               -3.30e+00   2.16e-03  5.85e-02
+                                           dodge                -3.01e+00   2.16e-03  4.39e-02
+                                           bmw                  -2.89e+00   2.16e-03  3.91e-02
+                                           audi                 -2.76e+00   2.16e-03  3.42e-02
+                                           plymouth             -2.76e+00   2.16e-03  3.42e-02
+                                           saab                 -2.61e+00   2.16e-03  2.93e-02
+                                           porsche              -2.43e+00   2.16e-03  2.45e-02
+                                           isuzu                -2.21e+00   2.16e-03  1.96e-02
+                                           alfa-romero          -1.92e+00   2.16e-03  1.48e-02
+                                           chevrolet            -1.92e+00   2.16e-03  1.48e-02
+                                           jaguar               -1.92e+00   2.16e-03  1.48e-02
+                                           mercedes-benz         1.60e+00   1.93e-01  3.91e-02
+                                           renault              -1.52e+00   2.16e-03  9.93e-03
+                                           peugot                1.50e+00   2.40e-01  5.36e-02
+                                           volkswagen            1.19e+00   1.93e-01  5.85e-02
+                                           mercury              -8.52e-01   2.16e-03  5.08e-03
+                                           nissan               -5.65e-01   4.98e-02  8.76e-02
+                                           mazda                 1.63e-01   9.74e-02  8.27e-02
+                                           volvo                -7.42e-02   4.98e-02  5.36e-02
+                                           toyota               -7.02e-02   1.45e-01  1.56e-01
+09 35 R SNcn  Log height            0.545 ( 4.02e+00  2.79e-02)  1.40e+00 ( 3.98e+00  4.53e-02)
+22 04 D SM    aspiration            0.515  turbo                 1.26e+00   6.43e-01  1.82e-01
+                                           std                  -8.29e-01   3.57e-01  8.18e-01
+06 32 R SNcn  Log wheel-base        0.434 ( 4.65e+00  6.27e-02)  8.75e-01 ( 4.59e+00  5.91e-02)
+13 39 R SNcn  Log city-mpg          0.325 ( 3.39e+00  2.06e-01)  9.35e-01 ( 3.19e+00  2.56e-01)
+17 14 D SM    engine-type           0.299  ohcf                 -2.38e+00   6.80e-03  7.35e-02
+                                           ohcv                 -2.24e+00   6.80e-03  6.38e-02
+                                           dohc                 -2.16e+00   6.80e-03  5.89e-02
+                                           l                     1.42e+00   2.45e-01  5.89e-02
+                                           rotor                -1.08e+00   6.80e-03  2.01e-02
+                                           dohcv                 2.04e-01   6.80e-03  5.55e-03
+                                           ohc                   2.71e-03   7.21e-01  7.19e-01
+20 06 D SM    body-style            0.258  hatchback            -1.79e+00   5.71e-02  3.41e-01
+                                           convertible          -1.15e+00   9.52e-03  3.01e-02
+                                           sedan                 4.38e-01   7.24e-01  4.67e-01
+                                           hardtop               3.62e-01   5.71e-02  3.98e-02
+                                           wagon                 2.20e-01   1.52e-01  1.22e-01
+08 34 R SNcn  Log width             0.252 ( 4.21e+00  3.17e-02)  7.15e-01 ( 4.19e+00  3.20e-02)
+07 33 R SNcn  Log length            0.229 ( 5.20e+00  5.98e-02)  7.54e-01 ( 5.16e+00  7.06e-02)
+21 05 D SM    num-of-doors          0.212  ?                     1.72e+00   6.35e-02  1.13e-02
+                                           two                  -1.01e+00   1.59e-01  4.34e-01
+                                           four                  3.37e-01   7.78e-01  5.55e-01
+10 36 R SNcn  Log curb-weight       0.201 ( 7.95e+00  1.96e-01)  6.40e-01 ( 7.83e+00  1.97e-01)
+03 29 R SNcm  Log horse-power       0.184 ( 4.39e+00  2.97e-01)  6.49e-01 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+16 15 D SM    num-of-cylinders      0.150  eight                -1.30e+00   6.80e-03  2.50e-02
+                                           five                  1.29e+00   1.97e-01  5.41e-02
+                                           two                  -1.08e+00   6.80e-03  2.01e-02
+                                           six                  -7.67e-01   5.44e-02  1.17e-01
+                                           three                 2.04e-01   6.80e-03  5.55e-03
+                                           twelve                2.04e-01   6.80e-03  5.55e-03
+                                           four                 -6.89e-02   7.21e-01  7.73e-01
+14 40 R SNcn  Log highway-mpg       0.141 ( 3.52e+00  2.37e-01)  4.92e-01 ( 3.40e+00  2.23e-01)
+05 31 R SNcm  Log price             0.105 ( 9.56e+00  4.64e-01)  4.43e-01 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+11 37 R SNcn  Log engine-size       0.084 ( 4.88e+00  2.27e-01)  3.66e-01 ( 4.80e+00  2.82e-01)
+00 26 R SNcm  Log normalized-loses  0.070 ( 4.66e+00  2.49e-01)  4.23e-01 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  7.52e-01   Prob-*k   is  known  8.00e-01
+19 07 D SM    drive-wheels          0.065  4wd                  -1.05e+00   1.59e-02  4.53e-02
+                                           rwd                   3.76e-01   5.40e-01  3.71e-01
+                                           fwd                  -2.73e-01   4.44e-01  5.84e-01
+01 27 R SNcm  Log bore              0.029 ( 1.21e+00  8.15e-02)  1.62e-01 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+18 08 D SM    engine-location       0.001  rear                  3.37e-01   2.38e-02  1.70e-02
+                                           front                -6.96e-03   9.76e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.212701e+00  8.146274e-02  1.248122e+00  2.966398e-02  0.000000e+00
+000027 00038  1.212701e+00  8.146274e-02  3.090496e+00  3.472891e-02  0.000000e+00
+000027 00029  1.212701e+00  8.146274e-02  4.391421e+00  2.971044e-01  0.000000e+00
+000027 00030  1.212701e+00  8.146274e-02  8.396474e+00  9.662692e-02  0.000000e+00
+000027 00039  1.212701e+00  8.146274e-02  3.387858e+00  2.063546e-01  0.000000e+00
+000028 00038  1.248122e+00  2.966398e-02  3.090496e+00  3.472891e-02  0.000000e+00
+000028 00029  1.248122e+00  2.966398e-02  4.391421e+00  2.971044e-01  0.000000e+00
+000028 00030  1.248122e+00  2.966398e-02  8.396474e+00  9.662692e-02  0.000000e+00
+000028 00039  1.248122e+00  2.966398e-02  3.387858e+00  2.063546e-01  0.000000e+00
+000038 00029  3.090496e+00  3.472891e-02  4.391421e+00  2.971044e-01  0.000000e+00
+000038 00030  3.090496e+00  3.472891e-02  8.396474e+00  9.662692e-02  0.000000e+00
+000038 00039  3.090496e+00  3.472891e-02  3.387858e+00  2.063546e-01  0.000000e+00
+000029 00030  4.391421e+00  2.971044e-01  8.396474e+00  9.662692e-02  0.000000e+00
+000029 00039  4.391421e+00  2.971044e-01  3.387858e+00  2.063546e-01  0.000000e+00
+000030 00039  8.396474e+00  9.662692e-02  3.387858e+00  2.063546e-01  0.000000e+00
+
+
+DATA_CLASS 6
+#CLASS  6 - weight  17   normalized weight 0.083   relative strength  2.31e-07 *******
+#                            class cross entropy w.r.t. global class  2.21e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+11 37 R SNcn  Log engine-size       2.483 ( 5.41e+00  1.83e-01)  3.33e+00 ( 4.80e+00  2.82e-01)
+05 31 R SNcm  Log price             2.205 ( 1.04e+01  2.73e-01)  3.72e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.43e-01   Prob-*k   is  known  9.80e-01
+03 29 R SNcm  Log horse-power       2.205 ( 5.24e+00  1.60e-01)  4.11e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+16 15 D SM    num-of-cylinders      1.825  four                 -4.57e+00   7.96e-03  7.73e-01
+                                           twelve                2.44e+00   6.35e-02  5.55e-03
+                                           eight                 2.44e+00   2.86e-01  2.50e-02
+                                           five                 -1.92e+00   7.94e-03  5.41e-02
+                                           six                   1.66e+00   6.19e-01  1.17e-01
+                                           two                  -9.30e-01   7.94e-03  2.01e-02
+                                           three                 3.58e-01   7.94e-03  5.55e-03
+24 02 D SM    make                  1.551  toyota               -4.12e+00   2.53e-03  1.56e-01
+                                           mazda                -3.49e+00   2.53e-03  8.27e-02
+                                           honda                -3.22e+00   2.53e-03  6.33e-02
+                                           mitsubishi           -3.22e+00   2.53e-03  6.33e-02
+                                           subaru               -3.14e+00   2.53e-03  5.85e-02
+                                           volkswagen           -3.14e+00   2.53e-03  5.85e-02
+                                           peugot               -3.06e+00   2.53e-03  5.36e-02
+                                           volvo                -3.06e+00   2.53e-03  5.36e-02
+                                           dodge                -2.86e+00   2.53e-03  4.39e-02
+                                           audi                 -2.61e+00   2.53e-03  3.42e-02
+                                           plymouth             -2.61e+00   2.53e-03  3.42e-02
+                                           saab                 -2.45e+00   2.53e-03  2.93e-02
+                                           jaguar                2.44e+00   1.69e-01  1.48e-02
+                                           porsche               2.22e+00   2.25e-01  2.45e-02
+                                           isuzu                -2.05e+00   2.53e-03  1.96e-02
+                                           alfa-romero          -1.77e+00   2.53e-03  1.48e-02
+                                           chevrolet            -1.77e+00   2.53e-03  1.48e-02
+                                           mercedes-benz         1.75e+00   2.25e-01  3.91e-02
+                                           bmw                   1.47e+00   1.69e-01  3.91e-02
+                                           renault              -1.37e+00   2.53e-03  9.93e-03
+                                           mercury              -6.98e-01   2.53e-03  5.08e-03
+                                           nissan                6.58e-01   1.69e-01  8.76e-02
+13 39 R SNcn  Log city-mpg          1.430 ( 2.77e+00  1.91e-01)  2.21e+00 ( 3.19e+00  2.56e-01)
+10 36 R SNcn  Log curb-weight       1.347 ( 8.13e+00  1.25e-01)  2.43e+00 ( 7.83e+00  1.97e-01)
+14 40 R SNcn  Log highway-mpg       1.274 ( 3.05e+00  1.91e-01)  1.85e+00 ( 3.40e+00  2.23e-01)
+17 14 D SM    engine-type           1.005  dohcv                 2.44e+00   6.35e-02  5.55e-03
+                                           l                    -2.01e+00   7.94e-03  5.89e-02
+                                           ohcv                  1.96e+00   4.52e-01  6.38e-02
+                                           ohc                  -1.42e+00   1.75e-01  7.19e-01
+                                           rotor                -9.30e-01   7.94e-03  2.01e-02
+                                           ohcf                  8.65e-01   1.75e-01  7.35e-02
+                                           dohc                  7.03e-01   1.19e-01  5.89e-02
+08 34 R SNcn  Log width             0.990 ( 4.23e+00  3.45e-02)  1.30e+00 ( 4.19e+00  3.20e-02)
+00 26 R SNcm  Log normalized-loses  0.932 ( 5.18e+00  1.82e-01)  2.29e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  3.22e-01   Prob-*k   is  known  8.00e-01
+01 27 R SNcm  Log bore              0.924 ( 1.29e+00  3.97e-02)  2.20e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+19 07 D SM    drive-wheels          0.839  fwd                  -3.45e+00   1.85e-02  5.84e-01
+                                           rwd                   9.55e-01   9.63e-01  3.71e-01
+                                           4wd                  -8.95e-01   1.85e-02  4.53e-02
+12 38 R SNcn  Log compression-rati  0.655 ( 2.16e+00  1.01e-01)  1.04e+00 ( 2.27e+00  2.81e-01)
+              o                     
+15 17 D SM    fuel-system           0.624  2bbl                 -3.83e+00   6.94e-03  3.21e-01
+                                           idi                  -2.64e+00   6.94e-03  9.77e-02
+                                           1bbl                 -2.05e+00   6.94e-03  5.40e-02
+                                           spdi                 -1.85e+00   6.94e-03  4.43e-02
+                                           4bbl                 -7.81e-01   6.94e-03  1.52e-02
+                                           mpfi                  7.33e-01   9.51e-01  4.57e-01
+                                           mfi                   2.40e-01   6.94e-03  5.46e-03
+                                           spfi                  2.40e-01   6.94e-03  5.46e-03
+06 32 R SNcn  Log wheel-base        0.454 ( 4.62e+00  9.46e-02)  3.33e-01 ( 4.59e+00  5.91e-02)
+07 33 R SNcn  Log length            0.439 ( 5.22e+00  7.04e-02)  9.40e-01 ( 5.16e+00  7.06e-02)
+18 08 D SM    engine-location       0.314  rear                  2.44e+00   1.94e-01  1.70e-02
+                                           front                -1.99e-01   8.06e-01  9.83e-01
+20 06 D SM    body-style            0.311  wagon                -2.40e+00   1.11e-02  1.22e-01
+                                           hardtop               1.50e+00   1.78e-01  3.98e-02
+                                           convertible           1.40e+00   1.22e-01  3.01e-02
+                                           hatchback            -3.79e-01   2.33e-01  3.41e-01
+                                           sedan                -2.48e-02   4.56e-01  4.67e-01
+09 35 R SNcn  Log height            0.134 ( 3.96e+00  4.97e-02)  4.55e-01 ( 3.98e+00  4.53e-02)
+21 05 D SM    num-of-doors          0.084  ?                     4.92e-01   1.85e-02  1.13e-02
+                                           four                 -4.56e-01   3.52e-01  5.55e-01
+                                           two                   3.73e-01   6.30e-01  4.34e-01
+22 04 D SM    aspiration            0.039  turbo                -7.81e-01   8.33e-02  1.82e-01
+                                           std                   1.14e-01   9.17e-01  8.18e-01
+23 03 D SM    fuel-type             0.039  diesel               -1.28e+00   2.78e-02  9.95e-02
+                                           gas                   7.67e-02   9.72e-01  9.00e-01
+02 28 R SNcm  Log stroke            0.019 ( 1.18e+00  1.06e-01)  6.48e-02 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.80e-01
+04 30 R SNcm  Log peak-rpm          0.017 ( 8.55e+00  9.62e-02)  1.35e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.286932e+00  3.971674e-02  1.182161e+00  1.062999e-01  0.000000e+00
+000027 00038  1.286932e+00  3.971674e-02  2.162583e+00  1.012414e-01  0.000000e+00
+000027 00029  1.286932e+00  3.971674e-02  5.242742e+00  1.602221e-01  0.000000e+00
+000027 00030  1.286932e+00  3.971674e-02  8.550602e+00  9.622352e-02  0.000000e+00
+000027 00039  1.286932e+00  3.971674e-02  2.773304e+00  1.905785e-01  0.000000e+00
+000028 00038  1.182161e+00  1.062999e-01  2.162583e+00  1.012414e-01  0.000000e+00
+000028 00029  1.182161e+00  1.062999e-01  5.242742e+00  1.602221e-01  0.000000e+00
+000028 00030  1.182161e+00  1.062999e-01  8.550602e+00  9.622352e-02  0.000000e+00
+000028 00039  1.182161e+00  1.062999e-01  2.773304e+00  1.905785e-01  0.000000e+00
+000038 00029  2.162583e+00  1.012414e-01  5.242742e+00  1.602221e-01  0.000000e+00
+000038 00030  2.162583e+00  1.012414e-01  8.550602e+00  9.622352e-02  0.000000e+00
+000038 00039  2.162583e+00  1.012414e-01  2.773304e+00  1.905785e-01  0.000000e+00
+000029 00030  5.242742e+00  1.602221e-01  8.550602e+00  9.622352e-02  0.000000e+00
+000029 00039  5.242742e+00  1.602221e-01  2.773304e+00  1.905785e-01  0.000000e+00
+000030 00039  8.550602e+00  9.622352e-02  2.773304e+00  1.905785e-01  0.000000e+00
+
+
+DATA_CLASS 7
+#CLASS  7 - weight  13   normalized weight 0.063   relative strength  1.38e-02 *******
+#                            class cross entropy w.r.t. global class  1.68e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+01 27 R SNcm  Log bore              1.672 ( 1.28e+00  1.49e-02)  5.15e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+11 37 R SNcn  Log engine-size       1.404 ( 4.99e+00  5.41e-02)  3.57e+00 ( 4.80e+00  2.82e-01)
+07 33 R SNcn  Log length            1.267 ( 5.17e+00  1.24e-02)  8.65e-01 ( 5.16e+00  7.06e-02)
+08 34 R SNcn  Log width             1.234 ( 4.19e+00  5.75e-03)  3.71e-01 ( 4.19e+00  3.20e-02)
+02 28 R SNcm  Log stroke            1.196 ( 1.31e+00  4.93e-02)  2.69e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+06 32 R SNcn  Log wheel-base        1.141 ( 4.58e+00  1.21e-02)  1.27e+00 ( 4.59e+00  5.91e-02)
+03 29 R SNcm  Log horse-power       1.140 ( 4.85e+00  1.07e-01)  2.53e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  8.56e-01   Prob-*k   is  known  9.90e-01
+24 02 D SM    make                  1.073  nissan               -3.30e+00   3.25e-03  8.76e-02
+                                           mazda                -3.24e+00   3.25e-03  8.27e-02
+                                           honda                -2.97e+00   3.25e-03  6.33e-02
+                                           subaru               -2.89e+00   3.25e-03  5.85e-02
+                                           volkswagen           -2.89e+00   3.25e-03  5.85e-02
+                                           peugot               -2.80e+00   3.25e-03  5.36e-02
+                                           volvo                -2.80e+00   3.25e-03  5.36e-02
+                                           renault               2.69e+00   1.46e-01  9.93e-03
+                                           bmw                  -2.49e+00   3.25e-03  3.91e-02
+                                           mercedes-benz        -2.49e+00   3.25e-03  3.91e-02
+                                           audi                 -2.35e+00   3.25e-03  3.42e-02
+                                           saab                 -2.20e+00   3.25e-03  2.93e-02
+                                           porsche              -2.02e+00   3.25e-03  2.45e-02
+                                           isuzu                -1.80e+00   3.25e-03  1.96e-02
+                                           alfa-romero          -1.52e+00   3.25e-03  1.48e-02
+                                           chevrolet            -1.52e+00   3.25e-03  1.48e-02
+                                           jaguar               -1.52e+00   3.25e-03  1.48e-02
+                                           mitsubishi            1.23e+00   2.18e-01  6.33e-02
+                                           toyota                1.02e+00   4.32e-01  1.56e-01
+                                           plymouth              7.81e-01   7.47e-02  3.42e-02
+                                           dodge                 5.31e-01   7.47e-02  4.39e-02
+                                           mercury              -4.47e-01   3.25e-03  5.08e-03
+00 26 R SNcm  Log normalized-loses  0.942 ( 4.91e+00  4.79e-02)  3.03e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  5.57e-01   Prob-*k   is  known  8.00e-01
+15 17 D SM    fuel-system           0.843  2bbl                 -3.58e+00   8.93e-03  3.21e-01
+                                           mfi                   2.69e+00   8.04e-02  5.46e-03
+                                           idi                  -2.39e+00   8.93e-03  9.77e-02
+                                           spdi                  1.89e+00   2.95e-01  4.43e-02
+                                           1bbl                 -1.80e+00   8.93e-03  5.40e-02
+                                           4bbl                 -5.30e-01   8.93e-03  1.52e-02
+                                           spfi                  4.92e-01   8.93e-03  5.46e-03
+                                           mpfi                  2.39e-01   5.80e-01  4.57e-01
+10 36 R SNcn  Log curb-weight       0.828 ( 7.91e+00  5.93e-02)  1.34e+00 ( 7.83e+00  1.97e-01)
+20 06 D SM    body-style            0.726  sedan                -3.49e+00   1.43e-02  4.67e-01
+                                           hardtop               1.75e+00   2.29e-01  3.98e-02
+                                           convertible           1.05e+00   8.57e-02  3.01e-02
+                                           hatchback             5.42e-01   5.86e-01  3.41e-01
+                                           wagon                -3.56e-01   8.57e-02  1.22e-01
+09 35 R SNcn  Log height            0.623 ( 3.94e+00  2.64e-02)  1.56e+00 ( 3.98e+00  4.53e-02)
+12 38 R SNcn  Log compression-rati  0.549 ( 2.11e+00  1.27e-01)  1.23e+00 ( 2.27e+00  2.81e-01)
+              o                     
+05 31 R SNcm  Log price             0.519 ( 9.37e+00  1.98e-01)  8.68e-02 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+21 05 D SM    num-of-doors          0.474  four                 -1.76e+00   9.52e-02  5.55e-01
+                                           ?                     7.43e-01   2.38e-02  1.13e-02
+                                           two                   7.09e-01   8.81e-01  4.34e-01
+04 30 R SNcm  Log peak-rpm          0.342 ( 8.50e+00  9.54e-02)  4.44e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  8.56e-01   Prob-*k   is  known  9.90e-01
+17 14 D SM    engine-type           0.175  ohcf                 -1.97e+00   1.02e-02  7.35e-02
+                                           ohcv                 -1.83e+00   1.02e-02  6.38e-02
+                                           dohc                 -1.75e+00   1.02e-02  5.89e-02
+                                           l                    -1.75e+00   1.02e-02  5.89e-02
+                                           rotor                -6.78e-01   1.02e-02  2.01e-02
+                                           dohcv                 6.09e-01   1.02e-02  5.55e-03
+                                           ohc                   2.67e-01   9.39e-01  7.19e-01
+13 39 R SNcn  Log city-mpg          0.172 ( 3.08e+00  1.89e-01)  5.95e-01 ( 3.19e+00  2.56e-01)
+16 15 D SM    num-of-cylinders      0.137  six                  -2.44e+00   1.02e-02  1.17e-01
+                                           five                 -1.67e+00   1.02e-02  5.41e-02
+                                           eight                -8.95e-01   1.02e-02  2.50e-02
+                                           two                  -6.78e-01   1.02e-02  2.01e-02
+                                           three                 6.09e-01   1.02e-02  5.55e-03
+                                           twelve                6.09e-01   1.02e-02  5.55e-03
+                                           four                  1.95e-01   9.39e-01  7.73e-01
+22 04 D SM    aspiration            0.121  turbo                 7.69e-01   3.93e-01  1.82e-01
+                                           std                  -2.98e-01   6.07e-01  8.18e-01
+14 40 R SNcn  Log highway-mpg       0.089 ( 3.32e+00  1.89e-01)  4.25e-01 ( 3.40e+00  2.23e-01)
+19 07 D SM    drive-wheels          0.050  4wd                  -6.43e-01   2.38e-02  4.53e-02
+                                           rwd                   3.46e-01   5.24e-01  3.71e-01
+                                           fwd                  -2.56e-01   4.52e-01  5.84e-01
+23 03 D SM    fuel-type             0.029  diesel               -1.02e+00   3.57e-02  9.95e-02
+                                           gas                   6.85e-02   9.64e-01  9.00e-01
+18 08 D SM    engine-location       0.008  rear                  7.43e-01   3.57e-02  1.70e-02
+                                           front                -1.92e-02   9.64e-01  9.83e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.276291e+00  1.489989e-02  1.307658e+00  4.928637e-02  0.000000e+00
+000027 00038  1.276291e+00  1.489989e-02  2.111036e+00  1.272601e-01  0.000000e+00
+000027 00029  1.276291e+00  1.489989e-02  4.854722e+00  1.070681e-01  0.000000e+00
+000027 00030  1.276291e+00  1.489989e-02  8.495182e+00  9.541144e-02  0.000000e+00
+000027 00039  1.276291e+00  1.489989e-02  3.082333e+00  1.889701e-01  0.000000e+00
+000028 00038  1.307658e+00  4.928637e-02  2.111036e+00  1.272601e-01  0.000000e+00
+000028 00029  1.307658e+00  4.928637e-02  4.854722e+00  1.070681e-01  0.000000e+00
+000028 00030  1.307658e+00  4.928637e-02  8.495182e+00  9.541144e-02  0.000000e+00
+000028 00039  1.307658e+00  4.928637e-02  3.082333e+00  1.889701e-01  0.000000e+00
+000038 00029  2.111036e+00  1.272601e-01  4.854722e+00  1.070681e-01  0.000000e+00
+000038 00030  2.111036e+00  1.272601e-01  8.495182e+00  9.541144e-02  0.000000e+00
+000038 00039  2.111036e+00  1.272601e-01  3.082333e+00  1.889701e-01  0.000000e+00
+000029 00030  4.854722e+00  1.070681e-01  8.495182e+00  9.541144e-02  0.000000e+00
+000029 00039  4.854722e+00  1.070681e-01  3.082333e+00  1.889701e-01  0.000000e+00
+000030 00039  8.495182e+00  9.541144e-02  3.082333e+00  1.889701e-01  0.000000e+00
+
+
+DATA_CLASS 8
+#CLASS  8 - weight  12   normalized weight 0.059   relative strength  4.58e-03 *******
+#                            class cross entropy w.r.t. global class  1.94e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+02 28 R SNcm  Log stroke            2.969 ( 9.62e-01  2.98e-02)  7.18e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+24 02 D SM    make                  2.393  toyota               -3.80e+00   3.50e-03  1.56e-01
+                                           nissan               -3.22e+00   3.50e-03  8.76e-02
+                                           mazda                -3.16e+00   3.50e-03  8.27e-02
+                                           honda                -2.90e+00   3.50e-03  6.33e-02
+                                           mitsubishi           -2.90e+00   3.50e-03  6.33e-02
+                                           volkswagen           -2.82e+00   3.50e-03  5.85e-02
+                                           subaru                2.76e+00   9.27e-01  5.85e-02
+                                           peugot               -2.73e+00   3.50e-03  5.36e-02
+                                           volvo                -2.73e+00   3.50e-03  5.36e-02
+                                           dodge                -2.53e+00   3.50e-03  4.39e-02
+                                           bmw                  -2.41e+00   3.50e-03  3.91e-02
+                                           mercedes-benz        -2.41e+00   3.50e-03  3.91e-02
+                                           audi                 -2.28e+00   3.50e-03  3.42e-02
+                                           plymouth             -2.28e+00   3.50e-03  3.42e-02
+                                           saab                 -2.13e+00   3.50e-03  2.93e-02
+                                           porsche              -1.95e+00   3.50e-03  2.45e-02
+                                           isuzu                -1.73e+00   3.50e-03  1.96e-02
+                                           alfa-romero          -1.44e+00   3.50e-03  1.48e-02
+                                           chevrolet            -1.44e+00   3.50e-03  1.48e-02
+                                           jaguar               -1.44e+00   3.50e-03  1.48e-02
+                                           renault              -1.04e+00   3.50e-03  9.93e-03
+                                           mercury              -3.73e-01   3.50e-03  5.08e-03
+17 14 D SM    engine-type           2.273  ohc                  -4.18e+00   1.10e-02  7.19e-01
+                                           ohcf                  2.54e+00   9.34e-01  7.35e-02
+                                           ohcv                 -1.76e+00   1.10e-02  6.38e-02
+                                           dohc                 -1.68e+00   1.10e-02  5.89e-02
+                                           l                    -1.68e+00   1.10e-02  5.89e-02
+                                           dohcv                 6.83e-01   1.10e-02  5.55e-03
+                                           rotor                -6.04e-01   1.10e-02  2.01e-02
+01 27 R SNcm  Log bore              1.828 ( 1.29e+00  1.44e-02)  6.04e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+11 37 R SNcn  Log engine-size       1.389 ( 4.67e+00  4.78e-02)  2.66e+00 ( 4.80e+00  2.82e-01)
+00 26 R SNcm  Log normalized-loses  1.237 ( 4.52e+00  8.76e-02)  2.77e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  9.85e-01   Prob-*k   is  known  8.00e-01
+12 38 R SNcn  Log compression-rati  1.083 ( 2.17e+00  6.24e-02)  1.49e+00 ( 2.27e+00  2.81e-01)
+              o                     
+06 32 R SNcn  Log wheel-base        0.976 ( 4.57e+00  1.52e-02)  1.63e+00 ( 4.59e+00  5.91e-02)
+19 07 D SM    drive-wheels          0.816  rwd                  -2.67e+00   2.56e-02  3.71e-01
+                                           4wd                   2.20e+00   4.10e-01  4.53e-02
+                                           fwd                  -3.49e-02   5.64e-01  5.84e-01
+10 36 R SNcn  Log curb-weight       0.682 ( 7.75e+00  7.01e-02)  1.16e+00 ( 7.83e+00  1.97e-01)
+08 34 R SNcn  Log width             0.672 ( 4.17e+00  1.17e-02)  1.21e+00 ( 4.19e+00  3.20e-02)
+05 31 R SNcm  Log price             0.652 ( 9.03e+00  2.16e-01)  1.49e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+03 29 R SNcm  Log horse-power       0.563 ( 4.45e+00  1.41e-01)  9.75e-01 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+09 35 R SNcn  Log height            0.481 ( 3.98e+00  1.85e-02)  7.09e-02 ( 3.98e+00  4.53e-02)
+07 33 R SNcn  Log length            0.330 ( 5.13e+00  3.88e-02)  7.33e-01 ( 5.16e+00  7.06e-02)
+15 17 D SM    fuel-system           0.254  idi                  -2.32e+00   9.62e-03  9.77e-02
+                                           1bbl                 -1.73e+00   9.62e-03  5.40e-02
+                                           spdi                 -1.53e+00   9.62e-03  4.43e-02
+                                           2bbl                  6.66e-01   6.25e-01  3.21e-01
+                                           mfi                   5.66e-01   9.62e-03  5.46e-03
+                                           spfi                  5.66e-01   9.62e-03  5.46e-03
+                                           4bbl                 -4.56e-01   9.62e-03  1.52e-02
+                                           mpfi                 -3.65e-01   3.17e-01  4.57e-01
+04 30 R SNcm  Log peak-rpm          0.241 ( 8.47e+00  9.51e-02)  7.09e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+20 06 D SM    body-style            0.147  wagon                 9.71e-01   3.23e-01  1.22e-01
+                                           hardtop              -9.51e-01   1.54e-02  3.98e-02
+                                           convertible          -6.71e-01   1.54e-02  3.01e-02
+                                           hatchback            -3.25e-01   2.46e-01  3.41e-01
+                                           sedan                -1.55e-01   4.00e-01  4.67e-01
+16 15 D SM    num-of-cylinders      0.133  six                  -2.37e+00   1.10e-02  1.17e-01
+                                           five                 -1.59e+00   1.10e-02  5.41e-02
+                                           eight                -8.21e-01   1.10e-02  2.50e-02
+                                           three                 6.83e-01   1.10e-02  5.55e-03
+                                           twelve                6.83e-01   1.10e-02  5.55e-03
+                                           two                  -6.04e-01   1.10e-02  2.01e-02
+                                           four                  1.90e-01   9.34e-01  7.73e-01
+13 39 R SNcn  Log city-mpg          0.114 ( 3.26e+00  1.88e-01)  3.72e-01 ( 3.19e+00  2.56e-01)
+21 05 D SM    num-of-doors          0.071  ?                     8.17e-01   2.56e-02  1.13e-02
+                                           two                  -5.25e-01   2.56e-01  4.34e-01
+                                           four                  2.57e-01   7.18e-01  5.55e-01
+14 40 R SNcn  Log highway-mpg       0.029 ( 3.42e+00  1.88e-01)  8.78e-02 ( 3.40e+00  2.23e-01)
+23 03 D SM    fuel-type             0.027  diesel               -9.51e-01   3.85e-02  9.95e-02
+                                           gas                   6.56e-02   9.62e-01  9.00e-01
+18 08 D SM    engine-location       0.010  rear                  8.17e-01   3.85e-02  1.70e-02
+                                           front                -2.21e-02   9.62e-01  9.83e-01
+22 04 D SM    aspiration            0.000  turbo                 5.49e-02   1.92e-01  1.82e-01
+                                           std                  -1.26e-02   8.08e-01  8.18e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.286443e+00  1.438996e-02  9.615647e-01  2.977192e-02  0.000000e+00
+000027 00038  1.286443e+00  1.438996e-02  2.174670e+00  6.243100e-02  0.000000e+00
+000027 00029  1.286443e+00  1.438996e-02  4.446475e+00  1.411023e-01  0.000000e+00
+000027 00030  1.286443e+00  1.438996e-02  8.470116e+00  9.512874e-02  0.000000e+00
+000027 00039  1.286443e+00  1.438996e-02  3.264910e+00  1.884102e-01  0.000000e+00
+000028 00038  9.615647e-01  2.977192e-02  2.174670e+00  6.243100e-02  0.000000e+00
+000028 00029  9.615647e-01  2.977192e-02  4.446475e+00  1.411023e-01  0.000000e+00
+000028 00030  9.615647e-01  2.977192e-02  8.470116e+00  9.512874e-02  0.000000e+00
+000028 00039  9.615647e-01  2.977192e-02  3.264910e+00  1.884102e-01  0.000000e+00
+000038 00029  2.174670e+00  6.243100e-02  4.446475e+00  1.411023e-01  0.000000e+00
+000038 00030  2.174670e+00  6.243100e-02  8.470116e+00  9.512874e-02  0.000000e+00
+000038 00039  2.174670e+00  6.243100e-02  3.264910e+00  1.884102e-01  0.000000e+00
+000029 00030  4.446475e+00  1.411023e-01  8.470116e+00  9.512874e-02  0.000000e+00
+000029 00039  4.446475e+00  1.411023e-01  3.264910e+00  1.884102e-01  0.000000e+00
+000030 00039  8.470116e+00  9.512874e-02  3.264910e+00  1.884102e-01  0.000000e+00
+
+
+DATA_CLASS 9
+#CLASS  9 - weight   9   normalized weight 0.044   relative strength  1.20e-02 *******
+#                            class cross entropy w.r.t. global class  2.22e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  2.308 ( 2.23e+00  1.71e-02)  2.26e+00 ( 2.27e+00  2.81e-01)
+              o                     
+07 33 R SNcn  Log length            1.947 ( 5.13e+00  6.54e-03)  3.86e+00 ( 5.16e+00  7.06e-02)
+17 14 D SM    engine-type           1.799  rotor                 3.03e+00   4.14e-01  2.01e-02
+                                           dohc                  1.95e+00   4.14e-01  5.89e-02
+                                           ohc                  -1.84e+00   1.14e-01  7.19e-01
+                                           ohcf                 -1.64e+00   1.43e-02  7.35e-02
+                                           ohcv                 -1.50e+00   1.43e-02  6.38e-02
+                                           l                    -1.42e+00   1.43e-02  5.89e-02
+                                           dohcv                 9.46e-01   1.43e-02  5.55e-03
+01 27 R SNcm  Log bore              1.268 ( 1.21e+00  3.03e-02)  4.89e-01 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  5.98e-01   Prob-*k   is  known  9.80e-01
+15 17 D SM    fuel-system           1.255  2bbl                 -3.25e+00   1.25e-02  3.21e-01
+                                           4bbl                  3.03e+00   3.13e-01  1.52e-02
+                                           spfi                  3.03e+00   1.12e-01  5.46e-03
+                                           idi                  -2.06e+00   1.25e-02  9.77e-02
+                                           1bbl                 -1.46e+00   1.25e-02  5.40e-02
+                                           spdi                 -1.27e+00   1.25e-02  4.43e-02
+                                           mfi                   8.28e-01   1.25e-02  5.46e-03
+                                           mpfi                  1.15e-01   5.13e-01  4.57e-01
+24 02 D SM    make                  1.248  nissan               -2.96e+00   4.55e-03  8.76e-02
+                                           honda                -2.63e+00   4.55e-03  6.33e-02
+                                           mitsubishi           -2.63e+00   4.55e-03  6.33e-02
+                                           alfa-romero           2.63e+00   2.05e-01  1.48e-02
+                                           subaru               -2.55e+00   4.55e-03  5.85e-02
+                                           volkswagen           -2.55e+00   4.55e-03  5.85e-02
+                                           peugot               -2.47e+00   4.55e-03  5.36e-02
+                                           volvo                -2.47e+00   4.55e-03  5.36e-02
+                                           dodge                -2.27e+00   4.55e-03  4.39e-02
+                                           bmw                  -2.15e+00   4.55e-03  3.91e-02
+                                           mercedes-benz        -2.15e+00   4.55e-03  3.91e-02
+                                           audi                 -2.02e+00   4.55e-03  3.42e-02
+                                           plymouth             -2.02e+00   4.55e-03  3.42e-02
+                                           saab                 -1.87e+00   4.55e-03  2.93e-02
+                                           porsche              -1.68e+00   4.55e-03  2.45e-02
+                                           isuzu                 1.67e+00   1.05e-01  1.96e-02
+                                           mazda                 1.59e+00   4.05e-01  8.27e-02
+                                           chevrolet            -1.18e+00   4.55e-03  1.48e-02
+                                           jaguar               -1.18e+00   4.55e-03  1.48e-02
+                                           renault              -7.81e-01   4.55e-03  9.93e-03
+                                           toyota                2.74e-01   2.05e-01  1.56e-01
+                                           mercury              -1.10e-01   4.55e-03  5.08e-03
+02 28 R SNcm  Log stroke            1.236 ( 1.08e+00  7.39e-02)  1.30e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  5.98e-01   Prob-*k   is  known  9.80e-01
+09 35 R SNcn  Log height            1.236 ( 3.92e+00  2.66e-02)  2.44e+00 ( 3.98e+00  4.53e-02)
+00 26 R SNcm  Log normalized-loses  1.224 ( 5.05e+00  5.07e-02)  5.61e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  6.80e-01   Prob-*k   is  known  8.00e-01
+16 15 D SM    num-of-cylinders      1.014  two                   3.03e+00   4.14e-01  2.01e-02
+                                           six                  -2.10e+00   1.43e-02  1.17e-01
+                                           five                 -1.33e+00   1.43e-02  5.41e-02
+                                           three                 9.46e-01   1.43e-02  5.55e-03
+                                           twelve                9.46e-01   1.43e-02  5.55e-03
+                                           eight                -5.58e-01   1.43e-02  2.50e-02
+                                           four                 -4.07e-01   5.14e-01  7.73e-01
+10 36 R SNcn  Log curb-weight       0.858 ( 7.80e+00  5.29e-02)  4.60e-01 ( 7.83e+00  1.97e-01)
+03 29 R SNcm  Log horse-power       0.820 ( 4.68e+00  1.00e-01)  9.40e-01 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+04 30 R SNcm  Log peak-rpm          0.758 ( 8.66e+00  1.02e-01)  1.19e+00 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.99e-01   Prob-*k   is  known  9.90e-01
+19 07 D SM    drive-wheels          0.757  fwd                  -2.86e+00   3.33e-02  5.84e-01
+                                           rwd                   9.24e-01   9.33e-01  3.71e-01
+                                           4wd                  -3.07e-01   3.33e-02  4.53e-02
+06 32 R SNcn  Log wheel-base        0.716 ( 4.54e+00  2.85e-02)  1.79e+00 ( 4.59e+00  5.91e-02)
+08 34 R SNcn  Log width             0.695 ( 4.17e+00  1.15e-02)  1.29e+00 ( 4.19e+00  3.20e-02)
+21 05 D SM    num-of-doors          0.658  four                 -2.81e+00   3.33e-02  5.55e-01
+                                           ?                     1.08e+00   3.33e-02  1.13e-02
+                                           two                   7.67e-01   9.33e-01  4.34e-01
+20 06 D SM    body-style            0.596  convertible           1.99e+00   2.20e-01  3.01e-02
+                                           wagon                -1.81e+00   2.00e-02  1.22e-01
+                                           sedan                -1.36e+00   1.20e-01  4.67e-01
+                                           hardtop              -6.88e-01   2.00e-02  3.98e-02
+                                           hatchback             5.98e-01   6.20e-01  3.41e-01
+05 31 R SNcm  Log price             0.593 ( 9.41e+00  1.82e-01)  3.28e-01 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.80e-01
+11 37 R SNcn  Log engine-size       0.465 ( 4.54e+00  2.36e-01)  1.12e+00 ( 4.80e+00  2.82e-01)
+13 39 R SNcn  Log city-mpg          0.350 ( 3.01e+00  1.86e-01)  1.01e+00 ( 3.19e+00  2.56e-01)
+14 40 R SNcn  Log highway-mpg       0.260 ( 3.25e+00  1.86e-01)  8.14e-01 ( 3.40e+00  2.23e-01)
+22 04 D SM    aspiration            0.078  turbo                -1.29e+00   5.00e-02  1.82e-01
+                                           std                   1.50e-01   9.50e-01  8.18e-01
+18 08 D SM    engine-location       0.022  rear                  1.08e+00   5.00e-02  1.70e-02
+                                           front                -3.42e-02   9.50e-01  9.83e-01
+23 03 D SM    fuel-type             0.016  diesel               -6.88e-01   5.00e-02  9.95e-02
+                                           gas                   5.35e-02   9.50e-01  9.00e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.214372e+00  3.034450e-02  1.079272e+00  7.388032e-02  0.000000e+00
+000027 00038  1.214372e+00  3.034450e-02  2.228660e+00  1.713752e-02  0.000000e+00
+000027 00029  1.214372e+00  3.034450e-02  4.678370e+00  1.002662e-01  0.000000e+00
+000027 00030  1.214372e+00  3.034450e-02  8.658711e+00  1.018736e-01  0.000000e+00
+000027 00039  1.214372e+00  3.034450e-02  3.007753e+00  1.860402e-01  0.000000e+00
+000028 00038  1.079272e+00  7.388032e-02  2.228660e+00  1.713752e-02  0.000000e+00
+000028 00029  1.079272e+00  7.388032e-02  4.678370e+00  1.002662e-01  0.000000e+00
+000028 00030  1.079272e+00  7.388032e-02  8.658711e+00  1.018736e-01  0.000000e+00
+000028 00039  1.079272e+00  7.388032e-02  3.007753e+00  1.860402e-01  0.000000e+00
+000038 00029  2.228660e+00  1.713752e-02  4.678370e+00  1.002662e-01  0.000000e+00
+000038 00030  2.228660e+00  1.713752e-02  8.658711e+00  1.018736e-01  0.000000e+00
+000038 00039  2.228660e+00  1.713752e-02  3.007753e+00  1.860402e-01  0.000000e+00
+000029 00030  4.678370e+00  1.002662e-01  8.658711e+00  1.018736e-01  0.000000e+00
+000029 00039  4.678370e+00  1.002662e-01  3.007753e+00  1.860402e-01  0.000000e+00
+000030 00039  8.658711e+00  1.018736e-01  3.007753e+00  1.860402e-01  0.000000e+00
+
+
+DATA_CLASS 10
+#CLASS 10 - weight   7   normalized weight 0.034   relative strength  6.45e-02 *******
+#                            class cross entropy w.r.t. global class  2.13e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  2.879 ( 2.02e+00  1.40e-02)  1.75e+01 ( 2.27e+00  2.81e-01)
+              o                     
+02 28 R SNcm  Log stroke            1.645 ( 1.23e+00  1.40e-02)  3.88e+00 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+09 35 R SNcn  Log height            1.549 ( 3.93e+00  1.27e-02)  4.34e+00 ( 3.98e+00  4.53e-02)
+15 17 D SM    fuel-system           1.505  2bbl                 -3.02e+00   1.56e-02  3.21e-01
+                                           spdi                  2.67e+00   6.41e-01  4.43e-02
+                                           idi                  -1.83e+00   1.56e-02  9.77e-02
+                                           1bbl                 -1.24e+00   1.56e-02  5.40e-02
+                                           mfi                   1.05e+00   1.56e-02  5.46e-03
+                                           spfi                  1.05e+00   1.56e-02  5.46e-03
+                                           mpfi                 -5.42e-01   2.66e-01  4.57e-01
+                                           4bbl                  2.96e-02   1.56e-02  1.52e-02
+24 02 D SM    make                  1.485  toyota               -3.31e+00   5.68e-03  1.56e-01
+                                           nissan               -2.74e+00   5.68e-03  8.76e-02
+                                           mazda                -2.68e+00   5.68e-03  8.27e-02
+                                           honda                -2.41e+00   5.68e-03  6.33e-02
+                                           subaru               -2.33e+00   5.68e-03  5.85e-02
+                                           volkswagen           -2.33e+00   5.68e-03  5.85e-02
+                                           peugot               -2.24e+00   5.68e-03  5.36e-02
+                                           volvo                -2.24e+00   5.68e-03  5.36e-02
+                                           mitsubishi            2.08e+00   5.06e-01  6.33e-02
+                                           bmw                  -1.93e+00   5.68e-03  3.91e-02
+                                           mercedes-benz        -1.93e+00   5.68e-03  3.91e-02
+                                           audi                 -1.79e+00   5.68e-03  3.42e-02
+                                           dodge                 1.76e+00   2.56e-01  4.39e-02
+                                           saab                 -1.64e+00   5.68e-03  2.93e-02
+                                           porsche              -1.46e+00   5.68e-03  2.45e-02
+                                           plymouth              1.34e+00   1.31e-01  3.42e-02
+                                           isuzu                -1.24e+00   5.68e-03  1.96e-02
+                                           alfa-romero          -9.56e-01   5.68e-03  1.48e-02
+                                           chevrolet            -9.56e-01   5.68e-03  1.48e-02
+                                           jaguar               -9.56e-01   5.68e-03  1.48e-02
+                                           renault              -5.58e-01   5.68e-03  9.93e-03
+                                           mercury               1.13e-01   5.68e-03  5.08e-03
+05 31 R SNcm  Log price             1.460 ( 9.06e+00  8.49e-02)  3.38e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+11 37 R SNcn  Log engine-size       1.352 ( 4.63e+00  5.35e-02)  3.10e+00 ( 4.80e+00  2.82e-01)
+03 29 R SNcm  Log horse-power       1.313 ( 4.68e+00  5.95e-02)  1.61e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.90e-01
+01 27 R SNcm  Log bore              1.288 ( 1.13e+00  2.09e-02)  3.42e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+06 32 R SNcn  Log wheel-base        1.216 ( 4.55e+00  1.37e-02)  2.92e+00 ( 4.59e+00  5.91e-02)
+10 36 R SNcn  Log curb-weight       1.040 ( 7.72e+00  5.07e-02)  2.12e+00 ( 7.83e+00  1.97e-01)
+22 04 D SM    aspiration            0.939  turbo                 1.50e+00   8.12e-01  1.82e-01
+                                           std                  -1.47e+00   1.88e-01  8.18e-01
+08 34 R SNcn  Log width             0.812 ( 4.17e+00  1.15e-02)  1.86e+00 ( 4.19e+00  3.20e-02)
+00 26 R SNcm  Log normalized-loses  0.795 ( 4.91e+00  1.09e-01)  1.39e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  9.75e-01   Prob-*k   is  known  8.00e-01
+07 33 R SNcn  Log length            0.525 ( 5.10e+00  4.30e-02)  1.36e+00 ( 5.16e+00  7.06e-02)
+21 05 D SM    num-of-doors          0.381  ?                     2.69e+00   1.67e-01  1.13e-02
+                                           four                 -6.43e-01   2.92e-01  5.55e-01
+                                           two                   2.22e-01   5.42e-01  4.34e-01
+19 07 D SM    drive-wheels          0.319  rwd                  -2.19e+00   4.17e-02  3.71e-01
+                                           fwd                   4.51e-01   9.17e-01  5.84e-01
+                                           4wd                  -8.38e-02   4.17e-02  4.53e-02
+04 30 R SNcm  Log peak-rpm          0.291 ( 8.61e+00  9.26e-02)  8.01e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.90e-01
+17 14 D SM    engine-type           0.121  ohcf                 -1.42e+00   1.79e-02  7.35e-02
+                                           ohcv                 -1.27e+00   1.79e-02  6.38e-02
+                                           dohc                 -1.19e+00   1.79e-02  5.89e-02
+                                           l                    -1.19e+00   1.79e-02  5.89e-02
+                                           dohcv                 1.17e+00   1.79e-02  5.55e-03
+                                           ohc                   2.16e-01   8.93e-01  7.19e-01
+                                           rotor                -1.19e-01   1.79e-02  2.01e-02
+16 15 D SM    num-of-cylinders      0.109  six                  -1.88e+00   1.79e-02  1.17e-01
+                                           three                 1.17e+00   1.79e-02  5.55e-03
+                                           twelve                1.17e+00   1.79e-02  5.55e-03
+                                           five                 -1.11e+00   1.79e-02  5.41e-02
+                                           eight                -3.35e-01   1.79e-02  2.50e-02
+                                           four                  1.45e-01   8.93e-01  7.73e-01
+                                           two                  -1.19e-01   1.79e-02  2.01e-02
+20 06 D SM    body-style            0.109  wagon                -1.59e+00   2.50e-02  1.22e-01
+                                           hardtop              -4.65e-01   2.50e-02  3.98e-02
+                                           hatchback             4.32e-01   5.25e-01  3.41e-01
+                                           convertible          -1.86e-01   2.50e-02  3.01e-02
+                                           sedan                -1.55e-01   4.00e-01  4.67e-01
+13 39 R SNcn  Log city-mpg          0.099 ( 3.16e+00  1.83e-01)  1.89e-01 ( 3.19e+00  2.56e-01)
+18 08 D SM    engine-location       0.037  rear                  1.30e+00   6.25e-02  1.70e-02
+                                           front                -4.74e-02   9.38e-01  9.83e-01
+14 40 R SNcn  Log highway-mpg       0.034 ( 3.40e+00  1.83e-01)  4.12e-04 ( 3.40e+00  2.23e-01)
+23 03 D SM    fuel-type             0.009  diesel               -4.65e-01   6.25e-02  9.95e-02
+                                           gas                   4.03e-02   9.38e-01  9.00e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.128014e+00  2.090918e-02  1.229577e+00  1.401021e-02  0.000000e+00
+000027 00038  1.128014e+00  2.090918e-02  2.022491e+00  1.401021e-02  0.000000e+00
+000027 00029  1.128014e+00  2.090918e-02  4.680034e+00  5.953823e-02  0.000000e+00
+000027 00030  1.128014e+00  2.090918e-02  8.611716e+00  9.261831e-02  0.000000e+00
+000027 00039  1.128014e+00  2.090918e-02  3.160182e+00  1.834381e-01  0.000000e+00
+000028 00038  1.229577e+00  1.401021e-02  2.022491e+00  1.401021e-02  0.000000e+00
+000028 00029  1.229577e+00  1.401021e-02  4.680034e+00  5.953823e-02  0.000000e+00
+000028 00030  1.229577e+00  1.401021e-02  8.611716e+00  9.261831e-02  0.000000e+00
+000028 00039  1.229577e+00  1.401021e-02  3.160182e+00  1.834381e-01  0.000000e+00
+000038 00029  2.022491e+00  1.401021e-02  4.680034e+00  5.953823e-02  0.000000e+00
+000038 00030  2.022491e+00  1.401021e-02  8.611716e+00  9.261831e-02  0.000000e+00
+000038 00039  2.022491e+00  1.401021e-02  3.160182e+00  1.834381e-01  0.000000e+00
+000029 00030  4.680034e+00  5.953823e-02  8.611716e+00  9.261831e-02  0.000000e+00
+000029 00039  4.680034e+00  5.953823e-02  3.160182e+00  1.834381e-01  0.000000e+00
+000030 00039  8.611716e+00  9.261831e-02  3.160182e+00  1.834381e-01  0.000000e+00
+
+
+DATA_CLASS 11
+#CLASS 11 - weight   6   normalized weight 0.029   relative strength  8.38e-07 *******
+#                            class cross entropy w.r.t. global class  1.49e+01 *******
+
+
+#DISCRETE ATTRIBUTE  (t = D)                                     log(
+# numb t mtt   description           I-jk   Value name/Index     Prob-jkl/     Prob      Prob
+# t  a                                                           Prob-*kl)     -jkl      -*kl
+
+#REAL ATTRIBUTE  (t = R)                                        |Mean-jk -
+# numb t mtt   description           I-jk      Mean     StDev    Mean-*k|/     Mean      StDev
+# t  a                                         -jk      -jk       StDev-jk     -*k       -*k
+
+12 38 R SNcn  Log compression-rati  1.747 ( 2.20e+00  3.07e-02)  2.18e+00 ( 2.27e+00  2.81e-01)
+              o                     
+08 34 R SNcn  Log width             1.287 ( 4.14e+00  1.96e-02)  2.43e+00 ( 4.19e+00  3.20e-02)
+05 31 R SNcm  Log price             1.219 ( 8.86e+00  1.52e-01)  3.21e+00 ( 9.35e+00  5.00e-01)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+03 29 R SNcm  Log horse-power       1.199 ( 4.16e+00  1.48e-01)  2.87e+00 ( 4.58e+00  3.45e-01)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.90e-01
+24 02 D SM    make                  1.032  nissan               -2.60e+00   6.49e-03  8.76e-02
+                                           mazda                -2.55e+00   6.49e-03  8.27e-02
+                                           chevrolet             2.31e+00   1.49e-01  1.48e-02
+                                           mitsubishi           -2.28e+00   6.49e-03  6.33e-02
+                                           subaru               -2.20e+00   6.49e-03  5.85e-02
+                                           volkswagen           -2.20e+00   6.49e-03  5.85e-02
+                                           peugot               -2.11e+00   6.49e-03  5.36e-02
+                                           volvo                -2.11e+00   6.49e-03  5.36e-02
+                                           isuzu                 2.03e+00   1.49e-01  1.96e-02
+                                           dodge                -1.91e+00   6.49e-03  4.39e-02
+                                           bmw                  -1.79e+00   6.49e-03  3.91e-02
+                                           mercedes-benz        -1.79e+00   6.49e-03  3.91e-02
+                                           audi                 -1.66e+00   6.49e-03  3.42e-02
+                                           plymouth             -1.66e+00   6.49e-03  3.42e-02
+                                           saab                 -1.51e+00   6.49e-03  2.93e-02
+                                           porsche              -1.33e+00   6.49e-03  2.45e-02
+                                           toyota                1.03e+00   4.35e-01  1.56e-01
+                                           honda                 8.59e-01   1.49e-01  6.33e-02
+                                           alfa-romero          -8.23e-01   6.49e-03  1.48e-02
+                                           jaguar               -8.23e-01   6.49e-03  1.48e-02
+                                           renault              -4.25e-01   6.49e-03  9.93e-03
+                                           mercury               2.46e-01   6.49e-03  5.08e-03
+01 27 R SNcm  Log bore              0.901 ( 1.11e+00  3.92e-02)  2.18e+00 ( 1.20e+00  8.22e-02)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+09 35 R SNcn  Log height            0.835 ( 4.04e+00  4.34e-02)  1.35e+00 ( 3.98e+00  4.53e-02)
+11 37 R SNcn  Log engine-size       0.817 ( 4.49e+00  1.67e-01)  1.87e+00 ( 4.80e+00  2.82e-01)
+15 17 D SM    fuel-system           0.720  mpfi                 -3.24e+00   1.78e-02  4.57e-01
+                                           idi                  -1.70e+00   1.78e-02  9.77e-02
+                                           mfi                   1.18e+00   1.78e-02  5.46e-03
+                                           spfi                  1.18e+00   1.78e-02  5.46e-03
+                                           1bbl                  1.09e+00   1.61e-01  5.40e-02
+                                           spdi                 -9.09e-01   1.78e-02  4.43e-02
+                                           2bbl                  8.25e-01   7.32e-01  3.21e-01
+                                           4bbl                  1.62e-01   1.78e-02  1.52e-02
+20 06 D SM    body-style            0.653  wagon                 1.59e+00   6.00e-01  1.22e-01
+                                           sedan                -1.00e+00   1.71e-01  4.67e-01
+                                           hatchback            -6.85e-01   1.72e-01  3.41e-01
+                                           hardtop              -3.32e-01   2.86e-02  3.98e-02
+                                           convertible          -5.26e-02   2.86e-02  3.01e-02
+06 32 R SNcn  Log wheel-base        0.643 ( 4.55e+00  2.77e-02)  1.58e+00 ( 4.59e+00  5.91e-02)
+00 26 R SNcm  Log normalized-loses  0.617 ( 4.48e+00  1.56e-01)  1.80e+00 ( 4.76e+00  2.82e-01)
+                                    Prob-jk is known  8.28e-01   Prob-*k   is  known  8.00e-01
+02 28 R SNcm  Log stroke            0.540 ( 1.14e+00  4.23e-02)  8.58e-01 ( 1.18e+00  1.02e-01)
+                                    Prob-jk is known  9.97e-01   Prob-*k   is  known  9.80e-01
+16 15 D SM    num-of-cylinders      0.482  three                 3.38e+00   1.63e-01  5.55e-03
+                                           six                  -1.75e+00   2.04e-02  1.17e-01
+                                           twelve                1.30e+00   2.04e-02  5.55e-03
+                                           five                 -9.75e-01   2.04e-02  5.41e-02
+                                           eight                -2.02e-01   2.04e-02  2.50e-02
+                                           four                 -5.00e-02   7.35e-01  7.73e-01
+                                           two                   1.40e-02   2.04e-02  2.01e-02
+19 07 D SM    drive-wheels          0.441  4wd                   2.00e+00   3.33e-01  4.53e-02
+                                           rwd                  -6.66e-01   1.90e-01  3.71e-01
+                                           fwd                  -2.04e-01   4.77e-01  5.84e-01
+07 33 R SNcn  Log length            0.422 ( 5.09e+00  6.45e-02)  9.96e-01 ( 5.16e+00  7.06e-02)
+13 39 R SNcn  Log city-mpg          0.397 ( 3.41e+00  1.98e-01)  1.07e+00 ( 3.19e+00  2.56e-01)
+14 40 R SNcn  Log highway-mpg       0.309 ( 3.57e+00  1.82e-01)  9.07e-01 ( 3.40e+00  2.23e-01)
+10 36 R SNcn  Log curb-weight       0.203 ( 7.70e+00  2.02e-01)  6.20e-01 ( 7.83e+00  1.97e-01)
+21 05 D SM    num-of-doors          0.153  ?                     1.44e+00   4.76e-02  1.13e-02
+                                           two                  -8.23e-01   1.90e-01  4.34e-01
+                                           four                  3.17e-01   7.62e-01  5.55e-01
+17 14 D SM    engine-type           0.138  dohcv                 1.30e+00   2.04e-02  5.55e-03
+                                           ohcf                 -1.28e+00   2.04e-02  7.35e-02
+                                           ohcv                 -1.14e+00   2.04e-02  6.38e-02
+                                           dohc                 -1.06e+00   2.04e-02  5.89e-02
+                                           l                     1.02e+00   1.63e-01  5.89e-02
+                                           ohc                   2.16e-02   7.35e-01  7.19e-01
+                                           rotor                 1.40e-02   2.04e-02  2.01e-02
+22 04 D SM    aspiration            0.051  turbo                -9.36e-01   7.14e-02  1.82e-01
+                                           std                   1.27e-01   9.29e-01  8.18e-01
+18 08 D SM    engine-location       0.050  rear                  1.44e+00   7.14e-02  1.70e-02
+                                           front                -5.69e-02   9.29e-01  9.83e-01
+04 30 R SNcm  Log peak-rpm          0.020 ( 8.52e+00  9.17e-02)  1.50e-01 ( 8.54e+00  9.88e-02)
+                                    Prob-jk is known  9.98e-01   Prob-*k   is  known  9.90e-01
+23 03 D SM    fuel-type             0.005  diesel               -3.32e-01   7.14e-02  9.95e-02
+                                           gas                   3.08e-02   9.29e-01  9.00e-01
+
+SIGMA CONTOURS 
+#att_x att_y        mean_x       sigma_x        mean_y       sigma_y  rotation-rad
+000027 00028  1.114134e+00  3.924392e-02  1.138997e+00  4.229865e-02  0.000000e+00
+000027 00038  1.114134e+00  3.924392e-02  2.200405e+00  3.073128e-02  0.000000e+00
+000027 00029  1.114134e+00  3.924392e-02  4.158649e+00  1.484995e-01  0.000000e+00
+000027 00030  1.114134e+00  3.924392e-02  8.523843e+00  9.167314e-02  0.000000e+00
+000027 00039  1.114134e+00  3.924392e-02  3.406145e+00  1.978766e-01  0.000000e+00
+000028 00038  1.138997e+00  4.229865e-02  2.200405e+00  3.073128e-02  0.000000e+00
+000028 00029  1.138997e+00  4.229865e-02  4.158649e+00  1.484995e-01  0.000000e+00
+000028 00030  1.138997e+00  4.229865e-02  8.523843e+00  9.167314e-02  0.000000e+00
+000028 00039  1.138997e+00  4.229865e-02  3.406145e+00  1.978766e-01  0.000000e+00
+000038 00029  2.200405e+00  3.073128e-02  4.158649e+00  1.484995e-01  0.000000e+00
+000038 00030  2.200405e+00  3.073128e-02  8.523843e+00  9.167314e-02  0.000000e+00
+000038 00039  2.200405e+00  3.073128e-02  3.406145e+00  1.978766e-01  0.000000e+00
+000029 00030  4.158649e+00  1.484995e-01  8.523843e+00  9.167314e-02  0.000000e+00
+000029 00039  4.158649e+00  1.484995e-01  3.406145e+00  1.978766e-01  0.000000e+00
+000030 00039  8.523843e+00  9.167314e-02  3.406145e+00  1.978766e-01  0.000000e+00

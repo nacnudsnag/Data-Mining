@@ -1,0 +1,53 @@
+### AUTOCLASS C MAKE FILE FOR GNU C Compiler -- SUN OS 4.1.3 
+### using gcc version 2.6.3 C compiler
+
+### WHEN ADDING FILES HERE, ALSO ADD THEM TO LOAD-AC ###
+
+## THE FIRST CHARACTER OF EACH commandList must be tab
+#  targetList:   dependencyList
+#	commandList
+## evaluate (setq-default indent-tabs-mode t)
+
+# optimize - stay with IEEE compliance
+BCFLAGS = $(OSFLAGS) -ansi -pedantic -O2 -Wall -fno-fast-math \
+        -I/usr/local2/GNU/lib/gcc-lib/sparc-sun-sunos4.1.3/2.6.3/include
+# CFLAGS = $(BCFLAGS)
+# with debugging
+CFLAGS = $(BCFLAGS) -g 
+# with profiling (gprof)
+# CFLAGS = $(BCFLAGS) -pg 
+
+LDFLAGS = -L/usr/local2/GNU/lib/gcc-lib/sparc-sun-sunos4.1.3/2.6.3
+
+# CodeCenter C compiler
+# will not work unless CenterLine libraries and include files are used
+
+CC = gcc
+
+DEPEND =
+
+SRCS =	globals.c init.c io-read-data.c io-read-model.c io-results.c \
+        io-results-bin.c model-expander-3.c matrix-utilities.c \
+	model-single-multinomial.c model-single-normal-cm.c \
+	model-single-normal-cn.c model-multi-normal-cn.c \
+	model-transforms.c model-update.c search-basic.c \
+        search-control.c search-control-2.c \
+	search-converge.c struct-class.c struct-clsf.c \
+	statistics.c predictions.c \
+	struct-data.c struct-matrix.c struct-model.c \
+        utils.c utils-math.c \
+        intf-reports.c intf-extensions.c intf-influence-values.c \
+        intf-sigma-contours.c \
+	prints.c getparams.c autoclass.c
+
+OBJS = $(SRCS:.c=.o)
+
+autoclass:	$(OBJS) 
+	$(CC) $(CFLAGS) -o autoclass $(OBJS) $(LDFLAGS) -lm
+
+%.o : %.c 
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# depend: $(SRCS)
+
+# IF YOU PUT ANYTHING HERE IT WILL GO AWAY

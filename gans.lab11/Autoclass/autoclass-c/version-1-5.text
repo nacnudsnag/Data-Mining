@@ -1,0 +1,97 @@
+
+
+	AUTOCLASS C VERSION 1.5 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass/doc/introduction-c.text, kdd-95.ps, tr-fia-90-12-7-01.ps -
+        Postscript papers are now included as postscript, instead of
+        uuencoded postscript.
+
+  2. autoclass/doc/preparation-c.text -
+        Added binary data file input option.
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/autoclass.c -
+        In "main", call "validate_data_pathname" to allow either .db2 ("ascii")
+        or .db2-bin ("binary") data file extensions.  The identifying header of
+        a .db2-bin file is
+        - ".db2-bin" - char[8]
+        - 32-bit integer with byte-length of each data case.
+        The data cases follow in binary "float" format -- 32 bit fields.
+
+  2. autoclass-c/prog/io-results.c -
+        Add "validate_data_pathname".
+
+  3. autoclass-c/prog/autoclass.h -
+        Function prototype definition change/addition.  Add DATA_BINARY_FILE_TYPE.
+        Change character array variables of length MAX_PATHNAME_LENGTH (81) to
+        variables of type fxlstr (length 160) to handle very long file
+        pathnames.  #define M_PI if not defined -- needed under Solaris.  Use
+        pow rather than exp2, since exp2 not available under Solaris gcc 2.6.3.
+
+  4. autoclass-c/prog/io-read-data.c -
+        In "read_database" change NULL to FALSE, so that int/int rather than
+        int/ptr comparison is made. Detected by Solaris GNU gcc.
+
+        "read_database", "read_data" and "read_database_doit" modified to handle
+        binary data files.
+
+  5. autoclass-c/prog/globals.h, globals.c -
+        Add G_data_file_format.
+
+  6. autoclass-c/prog/search-control.c -
+        In "autoclass-search" do not open/close ".db2" data file.
+
+        Check for non-NULL "best_clsfs" prior to writing ".results[-bin]"
+        file.
+
+  7. autoclass-c/prog/struct-data.c -
+        In "expand_database", call "validate_data_pathname" to allow either
+        .db2 ("ascii") or .db2-bin ("binary") data file extensions.
+
+  8. autoclass-c/prog/search-basic.c -
+        Modified "generate_clsf"'s call to "read_database".
+
+  9. autoclass-c/prog/utils.c, io-read-data.c, io-results-bin.c & io-results.c -
+        Since the include file <sys/fcntlcom.h> is not available in the Solaris
+        GNU gcc implementation, hard code them in "fcntlcom-ac.h".  Solaris 2.4
+        fails open, unless fopen/fclose is done first.
+
+ 10. autoclass-c/load-ac -
+        Add "fcntlcom-ac.h".  Use "clean" make target.
+
+ 11. autoclass-c/prog/search-control-2.c -
+        In "print_report", do not use NULL as value of delta_ln_p.
+
+        In "print_final_report", corrected the overwriting of a string array
+        in cases where long pathnames are used.
+
+ 12. autoclass-c/prog/utils.c, intf-reports.c, search-control.c, & getparams.c -
+        Correct compiler warnings found by Solaris gcc version 2.6.3.
+
+ 13. autoclass-c/prog/init.c -
+        In "init", use getcwd, rather than getwd for Solaris compatibility.
+   
+ 14. autoclass-c/prog/autoclass.make -
+        Include "clean" target.  Add compiler options "-pedantic -Wall".
+
+ 15. autoclass-c/prog/utils.c -
+        Add "safe_sprintf", and use it in other programs in lieu of "sprintf"
+        to detect string overwrites.  Corrected string overwrite which caused
+        abort and the message "Premature end of file reading symbol table".
+
+ 16. autoclass-c/prog/intf-reports.c -
+        In "search_summary" change search->n to search->n_tries to prevent
+        segment violation when there are duplicates.
+
+======================================================================
+
+
+

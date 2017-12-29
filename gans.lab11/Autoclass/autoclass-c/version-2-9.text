@@ -1,0 +1,76 @@
+
+
+	AUTOCLASS C VERSION 2.9 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/doc/search-c.text, reports-c.text -
+        Added new parameter for both ".s-params" & ".r-params"
+     files: break_on_warnings_p.  The default value asks the user 
+     whether to continue or not when data definition warnings are found.
+     If specified as false, then AutoClass will continue, despite 
+     warnings -- the warning will continue to be output to the terminal
+     and, in the case of the "-search" option, to the log file.
+
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 2.9.
+
+  2. autoclass-c/prog/autoclass.make.solaris.cc -
+         Correct compiler options for SC4.1 cc compiler
+
+  3. autoclass-c/prog/intf-reports.c -
+        In FORMAT_DISCRETE_ATTRIBUTE, correct bad test for 
+     warn_errs->single_valued_warning.  This prevented "discrete"
+     type attributes from being displayed in the influence values
+     report, because a segmentation fault occurred.   This 
+     problem was introduced in version 2.8.
+
+  4. autoclass-c/prog/autoclass.h -
+        In STRUCT I_REAL, type "last_sorted_term_n_att" as int,
+     not float.
+
+  5. autoclass-c/prog/intf-reports.c -
+        In SORT_MNCN_ATTRIBUTES, type "last_sorted_term_n_att"
+     as int, not float.  In PRE_FORMAT_ATTRIBUTES, revise logic for
+     computing/printing the correlation matrix.  Items 4. & 5 
+     correct the problem of the correlation matrix for attribute 
+     type multi_multinomial_cn is only printed if it is last in
+     the sorted list of attributes.
+
+  6. autoclass-c/prog/struct-data.c -
+        In EXPAND_DATABASE, make cosmetic change to an error message.
+
+  7. autoclass-c/prog/intf-reports.c -
+        In XREF_GET_DATA, validity check that .r-params file values
+     of xref_class_report_att_list are in the range 0 - (number of 
+     attributes - 1).  Prevents segmentation fault.
+        Also in XREF_GET_DATA, correct syntax and location of
+     memory free command.  Prevents segmentation fault when processing
+     discrete type data.  This problem was introduced in version 2.8.
+
+  8. autoclass-c/prog/getparams.h -
+        Increased MAXPARAMS to 40.
+
+  9. autoclass-c/prog/search-control.c, intf-reports.c -
+        Added code to parse the new parameter: break_on_warnings_p.
+
+ 10. autoclass-c/prog/autoclass.h, intf-reports.c -
+        Compute last_clsf_p and pass to XREF_GET_DATA, so that freeing
+     of data will not be done until all clsfs have been processed.
+     To take advantage of the memory reduction, only process one clsf
+     and a time -- this applies only to very large data sets.
+
+
+
+======================================================================
+
+
+

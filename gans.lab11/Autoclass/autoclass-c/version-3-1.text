@@ -1,0 +1,140 @@
+
+
+	AUTOCLASS C VERSION 3.1 NOTES 
+====================================================================== 
+======================================================================
+
+Documentation:
+------------------------------
+
+  1. autoclass-c/data/tests.c -
+        Reconfigure parameter values for the checkpointing test case.
+
+  2. autoclass-c/data/glass/glassc-chkpt.s-params -
+        Include checkpoint test param settings from tests.c
+
+  3. autoclass-c/data/autos/* -
+        Add input data files for last **non**-random trial test of
+     autoclass-c/data/tests.c
+
+  4. autoclass-c/doc/prediction-c.text -
+        Add text concerning handling of "test" cases which are not
+     predicted to be in any of the "training" classes.
+
+  5. autoclass-c/doc/reports-c.text -
+        Add new reports param: comment_data_headers_p, which prefixes
+     the "#" comment character to all lines except the minimum for 
+     selective parsing.
+
+        Add new reports param: max_num_xref_class_probs, which determines
+     how many lessor class probabilities will be printed for the case
+     and class cross-reference reports.  The default value is 5.
+
+        Add new report params: start_sigma_contours_att &
+     stop_sigma_contours_att.  This adds the capability to compute sigma 
+     class contour values for specified pairs of real valued attributes,
+     when generating the influence values report with the data option
+     (report_mode = "data"). See section "Generating Sigma Contour Values".
+
+
+
+Programming:
+------------------------------						
+
+  1. autoclass-c/prog/globals.c -
+        Update "G_ac_version" to 3.1.
+
+  2. autoclass-c/prog/io-results.c -
+        In VALIDATE_RESULTS_PATHNAME, handle checkpoint files similarly
+    to results files: determine if they are ascii or binary, rather than 
+    assuming they are binary.  This was only a problem when .s-params
+    parameters save_compact_p = false, and read_compact_p = false.
+
+    In GET_CLSF_SEQ, handle checkpoint files similarly to results files.
+    This fix now allows checkpoint files to be loaded for reconvergence.
+
+  3. autoclass-c/prog/intf-reports.c, autoclass.h -
+        In XREF_GET_DATA, allocate memory for collector once for each case, 
+     rather than n_classes times. This fix now permits reports to be 
+     generated for data sets of 100,000 cases and more, without causing
+     a segmentation fault.  Eliminate ATTR_ALLOC_INCREMENT, and allocate 
+     once for all discrete, and once for all real report attributes, if 
+     needed, rather than invoking malloc/realloc for each report attribute.
+
+  4. autoclass-c/prog/intf-reports.c, autoclass.h -
+        In AUTOCLASS_REPORTS, pass prediction_p to CASE_CLASS_DATA_SHARING,
+     so that XREF_GET_DATA can flag "test" cases which are not predicted
+     in be in any of the "training" classes.  Put them in class -1.
+     This is only functional for "autoclass -predict ..." runs.  The 
+     following message will appear in the screen output for each case that
+     is not a member of any of the "training" classes:
+        xref_get_data: case_num xxx => class 9999
+     Class 9999 members will appear in the "case" and "class" cross-
+     reference reports.
+
+  5. autoclass-c/prog/intf-influence-values.c -
+        In INFLUENCE_VALUE, do not process attribute values which have 
+     null translations.  This occurs when the user supplies an excessive range
+     value in .hd2, and ignores the warning to correct it.  This prevents
+     a segmentation fault.
+
+  6. autoclass-c/prog/struct-data.c -
+        In EXPAND_DATABASE, make error msg more informative.
+
+  7. autoclass-c/prog/autoclass.h, intf-reports.c, intf-extenstions.c,
+     search-control-2.c -
+        Implement new reports param "comment_data_headers_p", which prefixes
+     the "#" comment character to all lines except the minimum for selective
+     parsing.
+
+  8. autoclass-c/prog/io-read-data.c -
+        In OUTPUT_REAL_ATT_STATISTICS, add error check for attribute variance
+     exceeding infinity.  This situation is caused by "out-liers" with very large
+     deviations from the other attribute values, and usually means that these
+     attribute values are erroneous.  AutoClass C can not proceed in this
+     situation.
+
+  9. autoclass-c/prog/intf-reports.c -
+        In the influence values report for multi_normal_cn models, when there 
+     are more than one covariant normal correlation matrix, print all of them 
+     for each class, not just the one for the least significant attribute of 
+     the current class.  Changes to FORMAT_ATTRIBUTE & FORMAT_REAL_ATTRIBUTE.
+
+ 10.  autoclass-c/prog/intf-reports.c -
+        In the case cross-reference report (report_type = "xref_case")
+     generated with the data option (report_mode = "data"), other class
+     probabilities are now printed, if their values are greater than or
+     equal to 0.001, and there are not more than (MAX_NUM_XREF_CLASS_PROBS - 1)
+     of them.  Changes to XREF_PAGINATE_BY_CASE, & XREF_OUTPUT_PAGE_HEADERS.
+
+ 11. autoclass-c/prog/intf-reports.c -
+        In the case and class cross-reference reports, the print out of
+     probabilities has increased by one significant digit (0.04 => 0.041);
+     and the minimum value printed is now 0.001, rather than 0.01.
+     The maximum number of lessor probabilities printed out is
+     (MAX_NUM_XREF_CLASS_PROBS - 1).  Changes to XREF_PAGINATE_BY_CASE, &
+     XREF_OUTPUT_LINE_BY_CLASS.
+
+ 12. autoclass-c/prog/intf-reports.c -
+        Add new report parameter MAX_NUM_XREF_CLASS_PROBS, which determines
+     how many lessor class probability values will be printed in the
+     case and class cross-reference reports.
+
+ 13. autoclass-c/load-ac, autoclass-c/prog/autoclass.make.*,
+     autoclass-c/prog/autoclass.h, intf-sigma-contours.c, intf-reports.c -
+        Add capability to compute sigma class contour values for
+     specified pairs of real valued attributes, when generating the
+     influence values report with the data option (report_mode = "data").  
+     Add new report params start_sigma_contours_att & stop_sigma_contours_att.
+
+
+
+======================================================================
+
+
+
+
+
+
+
+

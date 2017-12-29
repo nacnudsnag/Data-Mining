@@ -1,0 +1,113 @@
+;;; NOTE: This script is for the UN*X environment.
+
+;;; The files in this directory were created by the following process:
+
+;;; To facilitate comparisons with runs that you make, copy
+;;; sample/imports-85c.s-params to sample/<choose-a-name>.s-params, and
+;;; use this file for the search arguments => all output files you
+;;; create will have <choose-a-name> in their names.
+
+;;; the file screenc.text was created by 'cat' ing files created by
+% autoclass -search sample/imports-85c.db2 sample/imports-85c.hd2 \
+  sample/imports-85c.model sample/imports-85c.s-params \
+  > & sample/screencN.text .....   => sample/screenc.text
+
+;;; (1) GET SOME DATA
+
+;we got many data sets from the machine learning repository at UCI
+
+http://www.ics.uci.edu/AI/ML/MLDBRepository.html
+
+
+; resulting data in files:  imports-85.data  and  imports-85.names
+
+;;; (2) CONVERT TO AUTOCLASS FORMAT
+
+Rename File imports-85.data to imports-85c.db2
+
+; using imports-85.names as a source, create files:
+; imports-85c.hd2  and  imports-85c.model
+; based on autoclass-c/doc/preparation.text documentation file
+
+;;; (3) SEARCH FOR GOOD CLASSIFICATIONS
+
+% ./autoclass -search sample/imports-85c.db2 \
+  sample/imports-85c.hd2 sample/imports-85c.model \
+  sample/imports-85c.s-params
+
+sample/imports-85c.s-params contains these overrides
+====================================================
+## force_new_search_p = true  is the default
+max_n_tries = 12
+
+;these files will be saved to disk:
+; ~/autoclass-c/sample/imports-85c.log
+; ~/autoclass-c/sample/imports-85c.search
+; ~/autoclass-c/sample/imports-85c.results-bin
+
+;will stop after 12 trials
+
+
+;;; (4) RESTART SEARCH FOR 10 TRIALS
+
+;continue the previous search
+
+% ./autoclass -search sample/imports-85c.db2 \
+  sample/imports-85c.hd2 sample/imports-85c.model \
+  sample/imports-85c.s-params
+
+sample/imports-85c.s-params contains these overrides
+==================================================
+force_new_search_p = false
+max_n_tries = 10
+
+;will stop after it completes 10 more trials
+
+
+;;; (5) RESTART SEARCH FOR 2 MINUTES
+
+% ./autoclass -search sample/imports-85c.db2 \
+  sample/imports-85c.hd2 sample/imports-85c.model \
+  sample/imports-85c.s-params
+
+sample/imports-85c.s-params contains these overrides
+====================================================
+force_new_search_p = false
+max_duration = 120
+
+;it stops itself this time after 2 minutes
+
+
+;;; (6) TEXT REPORTS ON WHAT HAS BEEN FOUND
+
+% ./autoclass -reports sample/imports-85c.results-bin \
+  sample/imports-85c.search sample/imports-85c.r-params
+
+sample/imports-85c.r-params contains this override
+====================================================
+xref_class_report_att_list = 2, 5, 6x
+
+;these files will show up on disk:
+; ~/autoclass-c/sample/imports-85c.rlog
+; ~/autoclass-c/sample/imports-85c.influ-o-text-1
+; ~/autoclass-c/sample/imports-85c.case-text-1
+; ~/autoclass-c/sample/imports-85c.class-text-1
+
+
+;;; (7) DATA REPORTS ON WHAT HAS BEEN FOUND
+
+% ./autoclass -reports sample/imports-85c.results-bin \
+  sample/imports-85c.search sample/imports-85c.r-params
+
+sample/imports-85c.r-params contains these overrides
+====================================================
+xref_class_report_att_list = 2, 5, 6
+report_mode = "data"
+comment_data_headers_p = true
+sigma_contours_att_list = 18, 19, 20, 21, 22, 23, 24, 25
+
+;these reports show up:
+; ~/autoclass-c/sample/imports-85c.influ-o-data-1
+; ~/autoclass-c/sample/imports-85c.case-data-1
+; ~/autoclass-c/sample/imports-85c.class-data-1
+

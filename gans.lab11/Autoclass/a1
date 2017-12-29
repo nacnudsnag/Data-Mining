@@ -1,0 +1,2 @@
+# to run autoclass with zoo data and initial settings
+autoclass -search zoo.db2 zoo.hd2 zoo.model zoo.s-params

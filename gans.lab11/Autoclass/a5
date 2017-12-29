@@ -1,0 +1,2 @@
+# to generate reports for the training run (a4)
+autoclass -reports zoo.results-bin zoo.search zoo.r-params
